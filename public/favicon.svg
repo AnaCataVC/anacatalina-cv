@@ -1,0 +1,69 @@
+<svg width="400" height="400" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins+Rounded:wght@700');
+
+    .quad-border {
+      fill: none;
+      stroke-width: 12;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+    .letter {
+      font-family: 'Poppins Rounded', sans-serif;
+      font-weight: 700;
+      text-anchor: middle;
+      dominant-baseline: middle;
+    }
+  </style>
+
+  <defs>
+    <!-- Sombra interna más marcada -->
+    <filter id="innerShadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="9" result="blur"/>
+      <feOffset dx="0" dy="0"/>
+      <feComposite in="blur" in2="SourceAlpha" operator="arithmetic" k2="-1" k3="1" result="innerShadow"/>
+      <feComposite in="SourceGraphic" in2="innerShadow" operator="over"/>
+    </filter>
+
+    <!-- Brillo suave pastel más suave (para puntos y letras) -->
+    <filter id="outerGlowPastel" x="-50%" y="-50%" width="200%" height="200%">
+      <feFlood flood-color="#ffffff" flood-opacity="0.22" result="color"/>
+      <feGaussianBlur in="SourceGraphic" stdDeviation="5" result="blur"/>
+      <feComposite in="color" in2="blur" operator="in" result="glow"/>
+      <feMerge>
+        <feMergeNode in="glow"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Cuadrantes con sombra interna -->
+  <path d="M 200 40 Q 120 40 80 80 Q 40 120 40 200 L 40 200 Q 40 120 80 80 Q 120 40 200 40 Z"
+        fill="#C7B8EA" filter="url(#innerShadow)"/>
+  <path d="M 200 40 Q 280 40 320 80 Q 360 120 360 200 L 360 200 Q 360 120 320 80 Q 280 40 200 40 Z"
+        fill="#BCDFFB" filter="url(#innerShadow)"/>
+  <path d="M 40 200 Q 40 280 80 320 Q 120 360 200 360 L 200 360 Q 120 360 80 320 Q 40 280 40 200 Z"
+        fill="#F7C6D9" filter="url(#innerShadow)"/>
+  <path d="M 200 360 Q 280 360 320 320 Q 360 280 360 200 L 360 200 Q 360 280 320 320 Q 280 360 200 360 Z"
+        fill="#C8F3E0" filter="url(#innerShadow)"/>
+
+  <!-- Bordes continuos -->
+  <path class="quad-border" stroke="#C7B8EA" d="M 200 40 Q 120 40 80 80 Q 40 120 40 200"/>
+  <path class="quad-border" stroke="#BCDFFB" d="M 200 40 Q 280 40 320 80 Q 360 120 360 200"/>
+  <path class="quad-border" stroke="#C8F3E0" d="M 360 200 Q 360 280 320 320 Q 280 360 200 360"/>
+  <path class="quad-border" stroke="#F7C6D9" d="M 200 360 Q 120 360 80 320 Q 40 280 40 200"/>
+
+  <!-- Puntos con radio 15 y brillo más suave -->
+  <circle cx="200" cy="40" r="15" fill="#C7B8EA" filter="url(#outerGlowPastel)"/>
+  <circle cx="360" cy="200" r="15" fill="#BCDFFB" filter="url(#outerGlowPastel)"/>
+  <circle cx="200" cy="360" r="15" fill="#C8F3E0" filter="url(#outerGlowPastel)"/>
+  <circle cx="40"  cy="200" r="15" fill="#F7C6D9" filter="url(#outerGlowPastel)"/>
+
+  <!-- Letras ACVC con brillo suave pastel -->
+  <text x="150" y="155" class="letter" fill="#C7B8EA" font-size="140" filter="url(#outerGlowPastel)">A</text>
+  <text x="250" y="155" class="letter" fill="#BCDFFB" font-size="140" filter="url(#outerGlowPastel)">C</text>
+  <text x="150" y="285" class="letter" fill="#F7C6D9" font-size="140" filter="url(#outerGlowPastel)">V</text>
+  <text x="250" y="285" class="letter" fill="#C8F3E0" font-size="140" filter="url(#outerGlowPastel)">C</text>
+
+</svg>
