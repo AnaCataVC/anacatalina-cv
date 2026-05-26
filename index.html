@@ -25,14 +25,37 @@
           </a>
         </div>
         
+        <!-- Desktop Navigation -->
         <div class="hidden md:block">
           <div class="ml-10 flex items-baseline space-x-6">
             <a href="#experiencia" class="text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">Experiencia</a>
             <a href="#habilidades" class="text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">Habilidades</a>
-            <a href="#publicaciones" class="text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">Publicaciones & Cursos</a>
+            <a href="#publicaciones" class="text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">Formación y Publicaciones</a>
             <a href="#contacto" class="text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">Contacto</a>
           </div>
         </div>
+
+        <!-- Mobile Menu Button -->
+        <div class="flex md:hidden">
+          <button id="mobile-menu-btn" class="inline-flex items-center justify-center p-2 rounded-xl text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 focus:outline-none transition-colors" aria-expanded="false">
+            <svg class="h-6 w-6" id="menu-icon" stroke="currentColor" fill="none" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+            </svg>
+            <svg class="h-6 w-6 hidden" id="close-icon" stroke="currentColor" fill="none" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile Navigation Drawer -->
+    <div id="mobile-menu" class="hidden md:hidden border-t border-slate-200/50 dark:border-slate-800/50 bg-white/95 dark:bg-slate-900/95 backdrop-blur-md transition-all duration-300 ease-in-out">
+      <div class="px-2 pt-2 pb-4 space-y-1 sm:px-3">
+        <a href="#experiencia" class="mobile-nav-link block px-3 py-2.5 rounded-xl text-base font-medium text-slate-600 dark:text-slate-300 hover:text-indigo-600 dark:hover:text-indigo-400 hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-all">Experiencia</a>
+        <a href="#habilidades" class="mobile-nav-link block px-3 py-2.5 rounded-xl text-base font-medium text-slate-600 dark:text-slate-300 hover:text-indigo-600 dark:hover:text-indigo-400 hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-all">Habilidades</a>
+        <a href="#publicaciones" class="mobile-nav-link block px-3 py-2.5 rounded-xl text-base font-medium text-slate-600 dark:text-slate-300 hover:text-indigo-600 dark:hover:text-indigo-400 hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-all">Formación y Publicaciones</a>
+        <a href="#contacto" class="mobile-nav-link block px-3 py-2.5 rounded-xl text-base font-medium text-slate-600 dark:text-slate-300 hover:text-indigo-600 dark:hover:text-indigo-400 hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-all">Contacto</a>
       </div>
     </div>
   </nav>
@@ -623,24 +646,14 @@
             <p class="text-xs text-slate-500 mt-1">Ingeniera Civil | Data Scientist & Machine Learning Engineer</p>
           </div>
         </div>
-        
-        <div class="flex space-x-6 text-sm">
-          <a href="#inicio" class="hover:text-white transition-colors">Inicio</a>
-          <a href="#experiencia" class="hover:text-white transition-colors">Experiencia</a>
-          <a href="#habilidades" class="hover:text-white transition-colors">Habilidades</a>
-          <a href="#contacto" class="hover:text-white transition-colors">Contacto</a>
-        </div>
       </div>
       
       <hr class="border-slate-800 my-8">
       
       <div class="flex flex-col sm:flex-row items-center justify-between gap-4 text-xs">
         <p>© 2026 Ana-Catalina Villalobos Contardo. Todos los derechos reservados.</p>
-        <p class="flex items-center space-x-1">
-          <span>Creado con</span>
-          <span class="text-pink-500">♥</span>
-          <span>en Vite + Tailwind CSS</span>
-          <span>· Hosted on GitHub Pages</span>
+        <p class="text-center sm:text-right">
+          Diseño y desarrollo propio · Creado con <span class="text-pink-500">♥</span> usando Vite + Tailwind CSS · Publicado en GitHub Pages
         </p>
       </div>
     </div>
