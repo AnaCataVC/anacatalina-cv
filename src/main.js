@@ -1,5 +1,5 @@
 const CONFIG = {
-  // Cambia a true para mostrar el badge de disponibilidad, false para ocultarlo
+  // Set to true to show the availability badge, false to hide it
   isAvailableForWork: false 
 };
 
@@ -62,7 +62,6 @@ function init() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   });
 
-  // --- Skill Category Filtering ---
   // --- Intersection Observer for Fade-In Scroll Animations ---
   const revealElements = document.querySelectorAll('.reveal');
   const observer = new IntersectionObserver((entries) => {
