@@ -7,6 +7,13 @@
   <meta name="description" content="CV y Portafolio Profesional de Ana-Catalina Villalobos Contardo, Ingeniera Civil, Data Scientist y ML Engineer especialista en pipelines de datos y modelos predictivos.">
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
   <link rel="stylesheet" href="/src/styles.css">
+  <script>
+    if (localStorage.getItem('theme') === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
+  </script>
 </head>
 <body class="bg-slate-50 text-slate-800 dark:bg-slate-900 dark:text-slate-100 transition-colors duration-300">
 
@@ -26,17 +33,41 @@
         </div>
         
         <!-- Desktop Navigation -->
-        <div class="hidden md:block">
+        <div class="hidden md:flex items-center space-x-6">
           <div class="ml-10 flex items-baseline space-x-6">
             <a href="#experiencia" class="text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">Experiencia</a>
             <a href="#habilidades" class="text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">Habilidades</a>
             <a href="#publicaciones" class="text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">Formación y Publicaciones</a>
             <a href="#contacto" class="text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">Contacto</a>
           </div>
+          
+          <!-- Desktop Theme Toggle Button -->
+          <button id="theme-toggle-desktop" class="p-2 rounded-xl text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 focus:outline-none transition-all duration-200 hover:scale-105" aria-label="Cambiar tema">
+            <!-- Sun Icon (visible in dark mode) -->
+            <svg id="theme-toggle-light-icon-desktop" class="hidden w-5 h-5 transition-transform duration-300 rotate-0 dark:rotate-90" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+              <path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.46 5.05l-.707-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 100 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path>
+            </svg>
+            <!-- Moon Icon (visible in light mode) -->
+            <svg id="theme-toggle-dark-icon-desktop" class="hidden w-5 h-5 transition-transform duration-300" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+              <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+            </svg>
+          </button>
         </div>
 
         <!-- Mobile Menu Button -->
-        <div class="flex md:hidden">
+        <div class="flex items-center space-x-2 md:hidden">
+          <!-- Mobile Theme Toggle Button -->
+          <button id="theme-toggle-mobile" class="p-2 rounded-xl text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 focus:outline-none transition-all duration-200" aria-label="Cambiar tema">
+            <!-- Sun Icon (visible in dark mode) -->
+            <svg id="theme-toggle-light-icon-mobile" class="hidden w-5 h-5 transition-transform duration-300 rotate-0 dark:rotate-90" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+              <path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.46 5.05l-.707-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 100 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path>
+            </svg>
+            <!-- Moon Icon (visible in light mode) -->
+            <svg id="theme-toggle-dark-icon-mobile" class="hidden w-5 h-5 transition-transform duration-300" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+              <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+            </svg>
+          </button>
+          
           <button id="mobile-menu-btn" class="inline-flex items-center justify-center p-2 rounded-xl text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 focus:outline-none transition-colors" aria-expanded="false">
             <svg class="h-6 w-6" id="menu-icon" stroke="currentColor" fill="none" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
@@ -636,21 +667,21 @@
   </section>
 
   <!-- Footer -->
-  <footer class="bg-slate-900 text-slate-400 py-12 transition-colors border-t border-slate-800">
+  <footer class="bg-slate-100 dark:bg-slate-950 text-slate-500 dark:text-slate-400 py-12 transition-colors duration-300 border-t border-slate-200 dark:border-slate-800/80">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex flex-col sm:flex-row items-center justify-between gap-6">
         <div class="flex items-center space-x-3">
-          <img src="/favicon.svg" alt="ACVC Logo" class="w-10 h-10 rounded-xl object-contain bg-white/10 p-1">
+          <img src="/favicon.svg" alt="ACVC Logo" class="w-10 h-10 rounded-xl object-contain bg-slate-200 dark:bg-white/10 p-1">
           <div>
-            <h2 class="text-lg font-bold text-white tracking-tight">Ana-Catalina Villalobos Contardo</h2>
-            <p class="text-xs text-slate-500 mt-1">Ingeniera Civil | Data Scientist & Machine Learning Engineer</p>
+            <h2 class="text-lg font-bold text-slate-900 dark:text-white tracking-tight">Ana-Catalina Villalobos Contardo</h2>
+            <p class="text-xs text-slate-500 dark:text-slate-400 mt-1">Ingeniera Civil | Data Scientist & Machine Learning Engineer</p>
           </div>
         </div>
       </div>
       
-      <hr class="border-slate-800 my-8">
+      <hr class="border-slate-200 dark:border-slate-800 my-8">
       
-      <div class="flex flex-col sm:flex-row items-center justify-between gap-4 text-xs">
+      <div class="flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500 dark:text-slate-400">
         <p>© 2026 Ana-Catalina Villalobos Contardo. Todos los derechos reservados.</p>
         <p class="text-center sm:text-right">
           Diseño y desarrollo propio · Creado con <span class="text-pink-500">♥</span> usando Vite + Tailwind CSS · Publicado en GitHub Pages
