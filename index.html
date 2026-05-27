@@ -35,14 +35,21 @@
         <!-- Desktop Navigation -->
         <div class="hidden md:flex items-center space-x-6">
           <div class="ml-10 flex items-baseline space-x-6">
-            <a href="#experiencia" class="text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">Experiencia</a>
-            <a href="#habilidades" class="text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">Habilidades</a>
-            <a href="#publicaciones" class="text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">Formación y Publicaciones</a>
-            <a href="#contacto" class="text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">Contacto</a>
+            <a href="#experiencia" data-i18n="hero.expBtn" data-i18n="nav.experiencia" class="text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">
+              Experiencia
+            </a>
+            <a href="#habilidades" data-i18n="nav.habilidades" class="text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">Habilidades</a>
+            <a href="#publicaciones" data-i18n="nav.publicaciones" class="text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">Formación y Publicaciones</a>
+            <a href="#contacto" data-i18n="nav.contacto" class="text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">Contacto</a>
           </div>
           
+          <!-- Desktop Language Toggle Button -->
+          <button id="lang-toggle-desktop" class="p-2 rounded-xl text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 focus:outline-none transition-all duration-200 hover:scale-105 font-bold text-sm" aria-label="Cambiar idioma">
+            <span id="current-lang-desktop">ES</span>
+          </button>
+          
           <!-- Desktop Theme Toggle Button -->
-          <button id="theme-toggle-desktop" class="p-2 rounded-xl text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 focus:outline-none transition-all duration-200 hover:scale-105" aria-label="Cambiar tema">
+          <button id="theme-toggle-desktop" class="p-2 rounded-xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 shadow-sm hover:shadow text-slate-600 dark:text-slate-300 hover:text-indigo-600 dark:hover:text-indigo-400 focus:outline-none transition-all duration-200 hover:scale-105" aria-label="Cambiar tema">
             <!-- Sun Icon (visible in dark mode) -->
             <svg id="theme-toggle-light-icon-desktop" class="hidden w-5 h-5 transition-transform duration-300 rotate-0 dark:rotate-90" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
               <path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.46 5.05l-.707-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 100 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path>
@@ -56,8 +63,13 @@
 
         <!-- Mobile Menu Button -->
         <div class="flex items-center space-x-2 md:hidden">
+          <!-- Mobile Language Toggle Button -->
+          <button id="lang-toggle-mobile" class="p-2 rounded-xl text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 focus:outline-none transition-all duration-200 font-bold text-sm" aria-label="Cambiar idioma">
+            <span id="current-lang-mobile">ES</span>
+          </button>
+
           <!-- Mobile Theme Toggle Button -->
-          <button id="theme-toggle-mobile" class="p-2 rounded-xl text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 focus:outline-none transition-all duration-200" aria-label="Cambiar tema">
+          <button id="theme-toggle-mobile" class="p-2 rounded-xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 shadow-sm hover:shadow text-slate-600 dark:text-slate-300 hover:text-indigo-600 dark:hover:text-indigo-400 focus:outline-none transition-all duration-200" aria-label="Cambiar tema">
             <!-- Sun Icon (visible in dark mode) -->
             <svg id="theme-toggle-light-icon-mobile" class="hidden w-5 h-5 transition-transform duration-300 rotate-0 dark:rotate-90" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
               <path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.46 5.05l-.707-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 100 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path>
@@ -83,10 +95,12 @@
     <!-- Mobile Navigation Drawer -->
     <div id="mobile-menu" class="hidden md:hidden border-t border-slate-200/50 dark:border-slate-800/50 bg-white/95 dark:bg-slate-900/95 backdrop-blur-md transition-all duration-300 ease-in-out">
       <div class="px-2 pt-2 pb-4 space-y-1 sm:px-3">
-        <a href="#experiencia" class="mobile-nav-link block px-3 py-2.5 rounded-xl text-base font-medium text-slate-600 dark:text-slate-300 hover:text-indigo-600 dark:hover:text-indigo-400 hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-all">Experiencia</a>
-        <a href="#habilidades" class="mobile-nav-link block px-3 py-2.5 rounded-xl text-base font-medium text-slate-600 dark:text-slate-300 hover:text-indigo-600 dark:hover:text-indigo-400 hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-all">Habilidades</a>
-        <a href="#publicaciones" class="mobile-nav-link block px-3 py-2.5 rounded-xl text-base font-medium text-slate-600 dark:text-slate-300 hover:text-indigo-600 dark:hover:text-indigo-400 hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-all">Formación y Publicaciones</a>
-        <a href="#contacto" class="mobile-nav-link block px-3 py-2.5 rounded-xl text-base font-medium text-slate-600 dark:text-slate-300 hover:text-indigo-600 dark:hover:text-indigo-400 hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-all">Contacto</a>
+        <a href="#experiencia" data-i18n="hero.expBtn" data-i18n="nav.experiencia" class="mobile-nav-link block px-3 py-2.5 rounded-xl text-base font-medium text-slate-600 dark:text-slate-300 hover:text-indigo-600 dark:hover:text-indigo-400 hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-all">
+              Experiencia
+            </a>
+        <a href="#habilidades" data-i18n="nav.habilidades" class="mobile-nav-link block px-3 py-2.5 rounded-xl text-base font-medium text-slate-600 dark:text-slate-300 hover:text-indigo-600 dark:hover:text-indigo-400 hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-all">Habilidades</a>
+        <a href="#publicaciones" data-i18n="nav.publicaciones" class="mobile-nav-link block px-3 py-2.5 rounded-xl text-base font-medium text-slate-600 dark:text-slate-300 hover:text-indigo-600 dark:hover:text-indigo-400 hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-all">Formación y Publicaciones</a>
+        <a href="#contacto" data-i18n="nav.contacto" class="mobile-nav-link block px-3 py-2.5 rounded-xl text-base font-medium text-slate-600 dark:text-slate-300 hover:text-indigo-600 dark:hover:text-indigo-400 hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-all">Contacto</a>
       </div>
     </div>
   </nav>
@@ -104,14 +118,14 @@
         <div class="md:col-span-6 flex flex-col items-center md:items-start text-center md:text-left space-y-6 animate-fade-in-up">
           <div id="availability-badge" class="inline-flex items-center space-x-2 px-3 py-1.5 rounded-full bg-pastelMint/45 dark:bg-pastelMint/10 border border-pastelMint text-emerald-800 dark:text-emerald-300 font-medium text-xs tracking-wide">
             <span class="w-2 h-2 rounded-full bg-emerald-500 animate-ping"></span>
-            <span>Disponible para Proyectos & Liderazgo de Datos</span>
+            <span data-i18n="hero.badge">Disponible para Proyectos & Liderazgo de Datos</span>
           </div>
           
           <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-slate-900 dark:text-white leading-tight">
-            <span class="bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-500 bg-clip-text text-transparent dark:from-indigo-400 dark:via-purple-400 dark:to-pink-400">Ana-Catalina</span> <br class="hidden sm:inline"> Villalobos Contardo
+            <span class="bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-500 bg-clip-text text-transparent dark:from-indigo-400 dark:via-purple-400 dark:to-pink-400">Ana-Catalina</span> <br> Villalobos Contardo
           </h1>
           
-          <p class="text-lg sm:text-xl font-medium text-slate-600 dark:text-slate-300">
+          <p data-i18n="hero.subtitle" class="text-lg sm:text-xl font-medium text-slate-600 dark:text-slate-300">
             Ingeniera Civil | Data Scientist & Machine Learning Engineer
           </p>
 
@@ -136,10 +150,10 @@
 
           <!-- Action Buttons -->
           <div class="flex flex-wrap items-center justify-center md:justify-start gap-3 w-full max-w-xs pt-4">
-            <a href="#contacto" class="flex-1 min-w-[120px] inline-flex items-center justify-center px-4 py-2.5 text-sm font-semibold text-white bg-slate-900 hover:bg-slate-800 dark:bg-white dark:text-slate-900 dark:hover:bg-slate-100 rounded-xl shadow-md transition-all transform hover:-translate-y-0.5">
+            <a href="#contacto" data-i18n="hero.contactBtn" class="flex-1 min-w-[120px] inline-flex items-center justify-center px-4 py-2.5 text-sm font-semibold text-white bg-slate-900 hover:bg-slate-800 dark:bg-white dark:text-slate-900 dark:hover:bg-slate-100 rounded-xl shadow-md transition-all transform hover:-translate-y-0.5">
               Contactar
             </a>
-            <a href="#experiencia" class="flex-1 min-w-[120px] inline-flex items-center justify-center px-4 py-2.5 text-sm font-semibold text-slate-700 bg-white hover:bg-slate-100 dark:bg-slate-800 dark:text-slate-200 dark:hover:bg-slate-700 border border-slate-200 dark:border-slate-700 rounded-xl shadow transition-all transform hover:-translate-y-0.5">
+            <a href="#experiencia" data-i18n="hero.expBtn" class="flex-1 min-w-[120px] inline-flex items-center justify-center px-4 py-2.5 text-sm font-semibold text-slate-700 bg-white hover:bg-slate-100 dark:bg-slate-800 dark:text-slate-200 dark:hover:bg-slate-700 border border-slate-200 dark:border-slate-700 rounded-xl shadow transition-all transform hover:-translate-y-0.5">
               Experiencia
             </a>
           </div>
@@ -166,26 +180,26 @@
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
               </svg>
-              <span>Región Metropolitana, Chile</span>
+              <span data-i18n="hero.location">Región Metropolitana, Chile</span>
             </span>
           </div>
         </div>
 
         <!-- About Me Section (Right Column on Desktop, Bottom on Mobile) -->
         <div class="md:col-span-6 flex flex-col justify-center space-y-6 animate-fade-in md:pl-6">
-          <h2 class="text-xl font-bold tracking-wider text-indigo-600 dark:text-indigo-400 uppercase text-center md:text-left">Sobre Mí</h2>
+          <h2 class="text-xl font-bold tracking-wider text-indigo-600 dark:text-indigo-400 uppercase text-center md:text-left" data-i18n="about.title">Sobre Mí</h2>
           
           <div class="space-y-4 text-slate-600 dark:text-slate-400 max-w-2xl leading-relaxed text-sm sm:text-base text-justify md:text-left">
-            <p class="text-lg font-semibold text-slate-800 dark:text-slate-100 leading-relaxed text-justify md:text-left">
-              Ingeniera especializada en Ciencia de Datos y Machine Learning, con experiencia liderando equipos y construyendo sistemas inteligentes para logística, automatización y análisis avanzado.
+            <p data-i18n="about.p1" class="text-lg font-semibold text-slate-800 dark:text-slate-100 leading-relaxed text-justify md:text-left">
+              Ingeniera especializada en <span data-i18n="skills.ai.4">Ciencia de Datos</span> y Machine Learning, con experiencia liderando equipos y construyendo sistemas inteligentes para logística, automatización y análisis avanzado.
             </p>
-            <p>
+            <p data-i18n="about.p2">
               De formación Ingeniera Civil de la Universidad de Chile, me motiva aplicar Machine Learning para resolver problemas complejos y transformar datos en valor real, tal como lo plasmé en mi trabajo de tesis publicado en <a href="#publicaciones" class="text-indigo-600 dark:text-indigo-400 hover:underline font-medium">Structural Control Health Monitoring</a> en 2021.
             </p>
-            <p>
+            <p data-i18n="about.p3">
               A lo largo de mi trayectoria, he liderado equipos multidisciplinarios y colaborado en el desarrollo de soluciones tecnológicas donde la ingeniería, el análisis avanzado y el impacto práctico convergen.
             </p>
-            <p>
+            <p data-i18n="about.p4">
               Actualmente como <a href="#simpliroute" class="text-indigo-600 dark:text-indigo-400 hover:underline font-medium">Learning Engineer en SimpliRoute</a>, contribuyo al diseño de modelos de optimización, al desarrollo de sistemas de aprendizaje automático y a la mejora continua de procesos de alta escala.
             </p>
           </div>
@@ -200,7 +214,7 @@
   <section id="experiencia" class="py-20 bg-slate-50 dark:bg-slate-900 transition-colors">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center space-y-3 mb-16">
-        <h2 class="text-3xl font-bold tracking-tight text-slate-900 dark:text-white">Experiencia Profesional</h2>
+        <h2 class="text-3xl font-bold tracking-tight text-slate-900 dark:text-white" data-i18n="exp.title">Experiencia Profesional</h2>
         <div class="w-16 h-1.5 bg-pastelPink mx-auto rounded-full"></div>
       </div>
 
@@ -222,18 +236,18 @@
                   <h3 class="text-xl font-bold text-slate-900 dark:text-white mt-1.5">Learning Engineer</h3>
                 </div>
                 <div class="text-right">
-                  <span class="text-xs font-bold text-slate-500 dark:text-slate-400 bg-slate-100 dark:bg-slate-700 px-3 py-1 rounded-full uppercase tracking-wider">
+                  <span data-i18n="exp.simpliroute.date" class="text-xs font-bold text-slate-500 dark:text-slate-400 bg-slate-100 dark:bg-slate-700 px-3 py-1 rounded-full uppercase tracking-wider">
                     Agosto 2025 - Presente
                   </span>
-                  <p class="text-xs text-slate-400 dark:text-slate-500 mt-1">Santiago, Chile (Remoto)</p>
+                  <p data-i18n="exp.simpliroute.location" class="text-xs text-slate-400 dark:text-slate-500 mt-1">Santiago, Chile (Remoto)</p>
                 </div>
               </div>
               
               <ul class="space-y-2 text-sm text-slate-600 dark:text-slate-300 list-disc list-inside">
-                <li>Diseño e implementación de <strong class="text-slate-800 dark:text-slate-100 font-semibold">soluciones de ML para la optimización de rutas y geolocalización</strong>, con foco en mejorar la precisión de georreferencias y aumentar la exactitud de ruteo.</li>
-                <li>Gestión y orquestación de flujos de datos a alta escala utilizando <strong class="text-slate-800 dark:text-slate-100 font-semibold">Airflow y Airbyte</strong>, asegurando calidad, trazabilidad y confiabilidad de los procesos.</li>
-                <li>Colaboración activa con equipos de Producto, Ingeniería y Operaciones para la validación y comunicación de hallazgos técnicos de manera clara y accionable.</li>
-                <li>Implementación de herramientas de IA aplicada para mejorar la experiencia del usuario final, priorizando la simplicidad, seguridad de datos y eficiencia operativa.</li>
+                <li data-i18n="exp.simpliroute.b1">Diseño e implementación de <strong class="text-slate-800 dark:text-slate-100 font-semibold">soluciones de ML para la optimización de rutas y geolocalización</strong>, con foco en mejorar la precisión de georreferencias y aumentar la exactitud de ruteo.</li>
+                <li data-i18n="exp.simpliroute.b2">Gestión y orquestación de flujos de datos a alta escala utilizando <strong class="text-slate-800 dark:text-slate-100 font-semibold">Airflow y Airbyte</strong>, asegurando calidad, trazabilidad y confiabilidad de los procesos.</li>
+                <li data-i18n="exp.simpliroute.b3">Colaboración activa con equipos de Producto, Ingeniería y Operaciones para la validación y comunicación de hallazgos técnicos de manera clara y accionable.</li>
+                <li data-i18n="exp.simpliroute.b4">Implementación de herramientas de IA aplicada para mejorar la experiencia del usuario final, priorizando la simplicidad, seguridad de datos y eficiencia operativa.</li>
               </ul>
             </div>
           </div>
@@ -248,21 +262,21 @@
                   <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold bg-pastelPink/30 dark:bg-pastelPink/10 text-pink-900 dark:text-pink-300">
                     Fracttal
                   </span>
-                  <h3 class="text-xl font-bold text-slate-900 dark:text-white mt-1.5">Tech Lead Fracttal Hub</h3>
+                  <h3 class="text-xl font-bold text-slate-900 dark:text-white mt-1.5" data-i18n="exp.fracttal1.title">Tech Lead Fracttal Hub</h3>
                 </div>
                 <div class="text-right">
-                  <span class="text-xs font-bold text-slate-500 dark:text-slate-400 bg-slate-100 dark:bg-slate-700 px-3 py-1 rounded-full uppercase tracking-wider">
+                  <span data-i18n="exp.fracttal1.date" class="text-xs font-bold text-slate-500 dark:text-slate-400 bg-slate-100 dark:bg-slate-700 px-3 py-1 rounded-full uppercase tracking-wider">
                     Noviembre 2023 - Julio 2025
                   </span>
-                  <p class="text-xs text-slate-400 dark:text-slate-500 mt-1">Santiago, Chile</p>
+                  <p data-i18n="exp.fracttal1.location" class="text-xs text-slate-400 dark:text-slate-500 mt-1">Santiago, Chile</p>
                 </div>
               </div>
               
               <ul class="space-y-2 text-sm text-slate-600 dark:text-slate-300 list-disc list-inside">
-                <li><strong class="text-slate-800 dark:text-slate-100 font-semibold">Liderazgo de equipo multidisciplinario de integraciones</strong> con personas en distintos países, enfocado en mentoría técnica, desarrollo profesional y un entorno colaborativo.</li>
-                <li>Planificación estratégica del roadmap de Fracttal Hub, alineando los objetivos de negocio y la entrega continua de valor a clientes.</li>
-                <li>Desarrollo en Python para librerías de procesamiento de datos y orquestación de tareas, habilitando la integración con múltiples fuentes y destinos, con <strong class="text-slate-800 dark:text-slate-100 font-semibold">más de 100 acciones posibles</strong> y capacidades avanzadas de transformación.</li>
-                <li>Supervisión y coordinación de proyectos de integración para decenas de clientes, aplicando gestión eficiente de recursos, plazos y flujos de datos confiables.</li>
+                <li data-i18n="exp.fracttal1.b1"><strong class="text-slate-800 dark:text-slate-100 font-semibold">Liderazgo de equipo multidisciplinario de integraciones</strong> con personas en distintos países, enfocado en mentoría técnica, desarrollo profesional y un entorno colaborativo.</li>
+                <li data-i18n="exp.fracttal1.b2">Planificación estratégica del roadmap de Fracttal Hub, alineando los objetivos de negocio y la entrega continua de valor a clientes.</li>
+                <li data-i18n="exp.fracttal1.b3">Desarrollo en Python para librerías de procesamiento de datos y orquestación de tareas, habilitando la integración con múltiples fuentes y destinos, con <strong class="text-slate-800 dark:text-slate-100 font-semibold">más de 100 acciones posibles</strong> y capacidades avanzadas de transformación.</li>
+                <li data-i18n="exp.fracttal1.b4">Supervisión y coordinación de proyectos de integración para decenas de clientes, aplicando gestión eficiente de recursos, plazos y flujos de datos confiables.</li>
               </ul>
             </div>
           </div>
@@ -280,18 +294,18 @@
                   <h3 class="text-xl font-bold text-slate-900 dark:text-white mt-1.5">Data Scientist</h3>
                 </div>
                 <div class="text-right">
-                  <span class="text-xs font-bold text-slate-500 dark:text-slate-400 bg-slate-100 dark:bg-slate-700 px-3 py-1 rounded-full uppercase tracking-wider">
+                  <span data-i18n="exp.fracttal2.date" class="text-xs font-bold text-slate-500 dark:text-slate-400 bg-slate-100 dark:bg-slate-700 px-3 py-1 rounded-full uppercase tracking-wider">
                     Agosto 2021 - Noviembre 2023
                   </span>
-                  <p class="text-xs text-slate-400 dark:text-slate-500 mt-1">Santiago, Chile</p>
+                  <p data-i18n="exp.fracttal1.location" class="text-xs text-slate-400 dark:text-slate-500 mt-1">Santiago, Chile</p>
                 </div>
               </div>
               
               <ul class="space-y-2 text-sm text-slate-600 dark:text-slate-300 list-disc list-inside">
-                <li>Diseño e implementación de procesos de ciencia de datos para las plataformas Predictto y Fracttal One, con foco en generar valor a partir de datos operacionales de maquinaria.</li>
-                <li>Desarrollo de modelos analíticos aplicados a <strong class="text-slate-800 dark:text-slate-100 font-semibold">mantenimiento predictivo, priorización de activos y predicción de fallas</strong> combinando ML, estadística y conocimiento del dominio.</li>
-                <li>Colaboración en la creación y desarrollo de producto para gestionar integraciones entre Fracttal y otras plataformas de software empresariales.</li>
-                <li>Evaluación continua de modelos en producción, optimizando pipelines de datos para garantizar la precisión y robustez en entornos reales.</li>
+                <li data-i18n="exp.fracttal2.b1">Diseño e implementación de procesos de ciencia de datos para las plataformas Predictto y Fracttal One, con foco en generar valor a partir de datos operacionales de maquinaria.</li>
+                <li data-i18n="exp.fracttal2.b2">Desarrollo de modelos analíticos aplicados a <strong class="text-slate-800 dark:text-slate-100 font-semibold">mantenimiento predictivo, priorización de activos y predicción de fallas</strong> combinando ML, estadística y conocimiento del dominio.</li>
+                <li data-i18n="exp.fracttal2.b3">Colaboración en la creación y desarrollo de producto para gestionar integraciones entre Fracttal y otras plataformas de software empresariales.</li>
+                <li data-i18n="exp.fracttal2.b4">Evaluación continua de modelos en producción, optimizando pipelines de datos para garantizar la precisión y robustez en entornos reales.</li>
               </ul>
             </div>
           </div>
@@ -306,20 +320,20 @@
                   <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold bg-pastelMint/45 dark:bg-pastelMint/10 text-emerald-900 dark:text-emerald-300">
                     Fracttal
                   </span>
-                  <h3 class="text-xl font-bold text-slate-900 dark:text-white mt-1.5">Analista de Datos</h3>
+                  <h3 class="text-xl font-bold text-slate-900 dark:text-white mt-1.5" data-i18n="exp.fracttal3.title">Analista de Datos</h3>
                 </div>
                 <div class="text-right">
-                  <span class="text-xs font-bold text-slate-500 dark:text-slate-400 bg-slate-100 dark:bg-slate-700 px-3 py-1 rounded-full uppercase tracking-wider">
+                  <span data-i18n="exp.fracttal3.date" class="text-xs font-bold text-slate-500 dark:text-slate-400 bg-slate-100 dark:bg-slate-700 px-3 py-1 rounded-full uppercase tracking-wider">
                     Febrero 2020 - Julio 2021
                   </span>
-                  <p class="text-xs text-slate-400 dark:text-slate-500 mt-1">Santiago, Chile</p>
+                  <p data-i18n="exp.fracttal1.location" class="text-xs text-slate-400 dark:text-slate-500 mt-1">Santiago, Chile</p>
                 </div>
               </div>
               
               <ul class="space-y-2 text-sm text-slate-600 dark:text-slate-300 list-disc list-inside">
-                <li>Desarrollo desde cero de la herramienta de mantenimiento predictivo, utilizando análisis estadístico avanzado y modelos preliminares de Machine Learning.</li>
-                <li>Diseño, manejo y optimización de bases de datos relacionales para almacenar lecturas de telemetría e historial de mantenimiento.</li>
-                <li>Apoyo en el desarrollo web frontend/backend básico de visualizaciones de datos y métricas para tomadores de decisiones.</li>
+                <li data-i18n="exp.fracttal3.b1">Desarrollo desde cero de la herramienta de mantenimiento predictivo, utilizando análisis estadístico avanzado y modelos preliminares de Machine Learning.</li>
+                <li data-i18n="exp.fracttal3.b2">Diseño, manejo y optimización de bases de datos relacionales para almacenar lecturas de telemetría e historial de mantenimiento.</li>
+                <li data-i18n="exp.fracttal3.b3">Apoyo en el desarrollo web frontend/backend básico de visualizaciones de datos y métricas para tomadores de decisiones.</li>
               </ul>
             </div>
           </div>
@@ -333,7 +347,7 @@
   <section id="habilidades" class="py-20 bg-white dark:bg-slate-800 transition-colors">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center space-y-3 mb-12">
-        <h2 class="text-3xl font-bold tracking-tight text-slate-900 dark:text-white">Habilidades & Herramientas</h2>
+        <h2 class="text-3xl font-bold tracking-tight text-slate-900 dark:text-white" data-i18n="skills.title">Habilidades & Herramientas</h2>
         <div class="w-16 h-1.5 bg-pastelBlue mx-auto rounded-full"></div>
       </div>
 
@@ -348,16 +362,16 @@
             <svg class="w-5 h-5 text-indigo-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
             </svg>
-            <span>IA Agéntica & Ciencia de Datos</span>
+            <span data-i18n="skills.ai.title">IA Agéntica & <span data-i18n="skills.ai.4">Ciencia de Datos</span></span>
           </h3>
           <div class="flex flex-wrap gap-2">
-            <span class="px-3 py-1 rounded-lg text-xs font-semibold bg-pastelLilac text-slate-800 border border-indigo-200">IA Agéntica (Claude & Antigravity)</span>
-            <span class="px-3 py-1 rounded-lg text-xs font-semibold bg-pastelPink text-slate-800 border border-pink-200">Agentes Autónomos (Skills & Hooks)</span>
+            <span class="px-3 py-1 rounded-lg text-xs font-semibold bg-pastelLilac text-slate-800 border border-indigo-200"><span data-i18n="skills.ai.1">IA Agéntica (Claude & Antigravity)</span></span>
+            <span class="px-3 py-1 rounded-lg text-xs font-semibold bg-pastelPink text-slate-800 border border-pink-200"><span data-i18n="skills.ai.2">Agentes Autónomos (Skills & Hooks)</span></span>
             <span class="px-3 py-1 rounded-lg text-xs font-semibold bg-pastelBlue text-slate-800 border border-blue-200">Machine Learning</span>
-            <span class="px-3 py-1 rounded-lg text-xs font-semibold bg-pastelMint text-slate-800 border border-emerald-200">Ciencia de Datos</span>
-            <span class="px-3 py-1 rounded-lg text-xs font-semibold bg-slate-200 dark:bg-slate-700 text-slate-800 dark:text-slate-200">Analítica</span>
-            <span class="px-3 py-1 rounded-lg text-xs font-semibold bg-slate-200 dark:bg-slate-700 text-slate-800 dark:text-slate-200">Probabilidades</span>
-            <span class="px-3 py-1 rounded-lg text-xs font-semibold bg-slate-200 dark:bg-slate-700 text-slate-800 dark:text-slate-200">Estadística</span>
+            <span class="px-3 py-1 rounded-lg text-xs font-semibold bg-pastelMint text-slate-800 border border-emerald-200"><span data-i18n="skills.ai.4">Ciencia de Datos</span></span>
+            <span class="px-3 py-1 rounded-lg text-xs font-semibold bg-slate-200 dark:bg-slate-700 text-slate-800 dark:text-slate-200" data-i18n="skills.ai.5">Analítica</span>
+            <span class="px-3 py-1 rounded-lg text-xs font-semibold bg-slate-200 dark:bg-slate-700 text-slate-800 dark:text-slate-200" data-i18n="skills.ai.6">Probabilidades</span>
+            <span class="px-3 py-1 rounded-lg text-xs font-semibold bg-slate-200 dark:bg-slate-700 text-slate-800 dark:text-slate-200" data-i18n="skills.ai.7">Estadística</span>
           </div>
         </div>
 
@@ -367,13 +381,13 @@
             <svg class="w-5 h-5 text-indigo-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
             </svg>
-            <span>Liderazgo & Metodologías</span>
+            <span data-i18n="skills.leadership.title">Liderazgo & Metodologías</span>
           </h3>
           <div class="flex flex-wrap gap-2">
-            <span class="px-3 py-1 rounded-lg text-xs font-semibold bg-pastelLilac text-slate-800 border border-indigo-200">Liderazgo Técnico</span>
-            <span class="px-3 py-1 rounded-lg text-xs font-semibold bg-pastelPink text-slate-800 border border-pink-200">Metodologías Ágiles (Scrum & Kanban)</span>
-            <span class="px-3 py-1 rounded-lg text-xs font-semibold bg-pastelBlue text-slate-800 border border-blue-200">Planificación de Roadmaps (OKRs)</span>
-            <span class="px-3 py-1 rounded-lg text-xs font-semibold bg-pastelMint text-slate-800 border border-emerald-200">Colaboración Cross-functional</span>
+            <span class="px-3 py-1 rounded-lg text-xs font-semibold bg-pastelLilac text-slate-800 border border-indigo-200"><span data-i18n="skills.leadership.1">Liderazgo Técnico</span></span>
+            <span class="px-3 py-1 rounded-lg text-xs font-semibold bg-pastelPink text-slate-800 border border-pink-200"><span data-i18n="skills.leadership.2">Metodologías Ágiles (Scrum & Kanban)</span></span>
+            <span class="px-3 py-1 rounded-lg text-xs font-semibold bg-pastelBlue text-slate-800 border border-blue-200"><span data-i18n="skills.leadership.3">Planificación de Roadmaps (OKRs)</span></span>
+            <span class="px-3 py-1 rounded-lg text-xs font-semibold bg-pastelMint text-slate-800 border border-emerald-200"><span data-i18n="skills.leadership.4">Colaboración Cross-functional</span></span>
             <span class="px-3 py-1 rounded-lg text-xs font-semibold bg-slate-200 dark:bg-slate-700 text-slate-800 dark:text-slate-200">Jira</span>
             <span class="px-3 py-1 rounded-lg text-xs font-semibold bg-slate-200 dark:bg-slate-700 text-slate-800 dark:text-slate-200">Notion</span>
           </div>
@@ -385,15 +399,15 @@
             <svg class="w-5 h-5 text-indigo-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path>
             </svg>
-            <span>Lenguajes de Programación</span>
+            <span data-i18n="skills.lang.title">Lenguajes de Programación</span>
           </h3>
           <div class="flex flex-wrap gap-2">
-            <span class="px-3 py-1 rounded-lg text-xs font-semibold bg-pastelLilac text-slate-800 border border-indigo-200">Python (Avanzado)</span>
-            <span class="px-3 py-1 rounded-lg text-xs font-semibold bg-pastelPink text-slate-800 border border-pink-200">SQL (Avanzado)</span>
-            <span class="px-3 py-1 rounded-lg text-xs font-semibold bg-pastelBlue text-slate-800 border border-blue-200">MATLAB (Avanzado)</span>
-            <span class="px-3 py-1 rounded-lg text-xs font-semibold bg-pastelMint text-slate-800 border border-emerald-200">JavaScript (Intermedio)</span>
-            <span class="px-3 py-1 rounded-lg text-xs font-semibold bg-slate-200 dark:bg-slate-700 text-slate-800 dark:text-slate-200">TypeScript (Intermedio)</span>
-            <span class="px-3 py-1 rounded-lg text-xs font-semibold bg-slate-200 dark:bg-slate-700 text-slate-800 dark:text-slate-200">Java (Intermedio)</span>
+            <span class="px-3 py-1 rounded-lg text-xs font-semibold bg-pastelLilac text-slate-800 border border-indigo-200"><span data-i18n="skills.lang.1">Python (Avanzado)</span></span>
+            <span class="px-3 py-1 rounded-lg text-xs font-semibold bg-pastelPink text-slate-800 border border-pink-200"><span data-i18n="skills.lang.2">SQL (Avanzado)</span></span>
+            <span class="px-3 py-1 rounded-lg text-xs font-semibold bg-pastelBlue text-slate-800 border border-blue-200"><span data-i18n="skills.lang.3">MATLAB (Avanzado)</span></span>
+            <span class="px-3 py-1 rounded-lg text-xs font-semibold bg-pastelMint text-slate-800 border border-emerald-200"><span data-i18n="skills.lang.4">JavaScript (Intermedio)</span></span>
+            <span class="px-3 py-1 rounded-lg text-xs font-semibold bg-slate-200 dark:bg-slate-700 text-slate-800 dark:text-slate-200"><span data-i18n="skills.lang.5">TypeScript (Intermedio)</span></span>
+            <span class="px-3 py-1 rounded-lg text-xs font-semibold bg-slate-200 dark:bg-slate-700 text-slate-800 dark:text-slate-200"><span data-i18n="skills.lang.6">Java (Intermedio)</span></span>
           </div>
         </div>
 
@@ -403,7 +417,7 @@
             <svg class="w-5 h-5 text-indigo-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path>
             </svg>
-            <span>Ecosistema Tecnológico</span>
+            <span data-i18n="skills.ecosystem.title">Ecosistema Tecnológico</span>
           </h3>
           <div class="flex flex-wrap gap-2">
             <span class="px-3 py-1 rounded-lg text-xs font-semibold bg-pastelLilac text-slate-800 border border-indigo-200">Pandas & NumPy</span>
@@ -422,7 +436,7 @@
             <svg class="w-5 h-5 text-indigo-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7v10c0 2.21 3.58 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.58 4 8 4s8-1.79 8-4M4 7c0-2.21 3.58-4 8-4s8 1.79 8 4m0 5c0 2.21-3.58 4-8 4s-8-1.79-8-4"></path>
             </svg>
-            <span>Bases de Datos & Big Data</span>
+            <span data-i18n="skills.db.title">Bases de Datos & Big Data</span>
           </h3>
           <div class="flex flex-wrap gap-2">
             <span class="px-3 py-1 rounded-lg text-xs font-semibold bg-pastelLilac text-slate-800 border border-indigo-200">PostgreSQL</span>
@@ -441,7 +455,7 @@
             <svg class="w-5 h-5 text-indigo-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z"></path>
             </svg>
-            <span>Contenedores, Orquestación & Cloud</span>
+            <span data-i18n="skills.cloud.title">Contenedores, Orquestación & Cloud</span>
           </h3>
           <div class="flex flex-wrap gap-2">
             <span class="px-3 py-1 rounded-lg text-xs font-semibold bg-pastelLilac text-slate-800 border border-indigo-200">Airflow</span>
@@ -467,7 +481,7 @@
         <div class="reveal space-y-8">
           <div class="space-y-6">
             <div class="space-y-3">
-              <h2 class="text-3xl font-bold tracking-tight text-slate-900 dark:text-white">Educación & Certificaciones</h2>
+              <h2 class="text-3xl font-bold tracking-tight text-slate-900 dark:text-white" data-i18n="edu.title">Educación & Certificaciones</h2>
               <div class="w-16 h-1.5 bg-pastelMint rounded-full"></div>
             </div>
 
@@ -481,9 +495,9 @@
                 </div>
                 <div>
                   <h4 class="text-sm font-bold text-slate-400">Universidad de Chile</h4>
-                  <h3 class="text-lg font-bold text-slate-900 dark:text-white">Ingeniería Civil</h3>
-                  <p class="text-xs text-slate-500 font-semibold uppercase tracking-wider mt-0.5">Egresada en 2019, Titulada en 2020</p>
-                  <p class="text-xs text-slate-500 dark:text-slate-400 mt-2 leading-relaxed">
+                  <h3 class="text-lg font-bold text-slate-900 dark:text-white" data-i18n="edu.civil.title">Ingeniería Civil</h3>
+                  <p class="text-xs text-slate-500 font-semibold uppercase tracking-wider mt-0.5" data-i18n="edu.civil.date">Egresada en 2019, Titulada en 2020</p>
+                  <p data-i18n="edu.civil.desc" class="text-xs text-slate-500 dark:text-slate-400 mt-2 leading-relaxed">
                     Mención en estructuras, construcción y geotecnia. Trabajo de título en Procesos Gaussianos para detección de fallas estructurales. <strong class="text-slate-700 dark:text-slate-300">Titulada con distinción máxima.</strong>
                   </p>
                 </div>
@@ -497,16 +511,16 @@
                 </div>
                 <div>
                   <h4 class="text-sm font-bold text-slate-400">Universidad de Chile</h4>
-                  <h3 class="text-base font-bold text-slate-900 dark:text-white">Licenciada en Ciencias de la Ingeniería</h3>
-                  <p class="text-xs text-slate-500 font-semibold uppercase tracking-wider mt-0.5">Finalizada en 2017</p>
-                  <p class="text-xs text-slate-500 dark:text-slate-400 mt-1">Actividad destacada: Ayudante del curso Probabilidades y Estadística.</p>
+                  <h3 class="text-base font-bold text-slate-900 dark:text-white" data-i18n="edu.bsc.title">Licenciada en Ciencias de la Ingeniería</h3>
+                  <p class="text-xs text-slate-500 font-semibold uppercase tracking-wider mt-0.5" data-i18n="edu.bsc.date">Finalizada en 2017</p>
+                  <p class="text-xs text-slate-500 dark:text-slate-400 mt-1" data-i18n="edu.bsc.desc">Actividad destacada: Ayudante del curso Probabilidades y Estadística.</p>
                 </div>
               </div>
             </div>
 
             <!-- Courses and Certifications -->
             <div class="space-y-4">
-              <h3 class="text-xl font-bold text-slate-900 dark:text-white">Cursos & Certificaciones</h3>
+              <h3 class="text-xl font-bold text-slate-900 dark:text-white" data-i18n="edu.cert.title">Cursos & Certificaciones</h3>
               <div class="space-y-3">
                 
                 <div class="flex items-center justify-between p-4 bg-white dark:bg-slate-800 rounded-xl border border-slate-100 dark:border-slate-700">
@@ -514,7 +528,7 @@
                     <span class="w-2.5 h-2.5 rounded-full bg-pastelLilac"></span>
                     <div>
                       <h4 class="text-sm font-bold text-slate-900 dark:text-white">EFSET English Certificate</h4>
-                      <p class="text-xs text-slate-500">EF SET - Nivel C2 Proficient</p>
+                      <p class="text-xs text-slate-500" data-i18n="edu.cert.1.desc">EF SET - Nivel C2 Proficient</p>
                     </div>
                   </div>
                   <span class="text-xs font-semibold text-slate-400">2020</span>
@@ -564,7 +578,7 @@
           <!-- Scientific Publications -->
           <div class="space-y-6">
             <div class="space-y-3">
-              <h2 class="text-3xl font-bold tracking-tight text-slate-900 dark:text-white">Publicaciones Científicas</h2>
+              <h2 class="text-3xl font-bold tracking-tight text-slate-900 dark:text-white" data-i18n="pub.title">Publicaciones Científicas</h2>
               <div class="w-16 h-1.5 bg-pastelLilac rounded-full"></div>
             </div>
             
@@ -575,13 +589,13 @@
               <h3 class="text-lg font-bold text-slate-900 dark:text-white leading-snug">
                 Generalized Gaussian smoothing for baseline‐free debonding assessment of sandwich panels
               </h3>
-              <p class="text-xs font-semibold text-slate-400 uppercase tracking-wider">Publicado en Marzo 2021</p>
-              <p class="text-sm text-slate-600 dark:text-slate-300">
+              <p class="text-xs font-semibold text-slate-400 uppercase tracking-wider" data-i18n="pub.date">Publicado en Marzo 2021</p>
+              <p data-i18n="pub.desc" class="text-sm text-slate-600 dark:text-slate-300">
                 Se propone una metodología para la detección y evaluación de delaminación en placas de materiales compuestos a partir de modos de vibración, utilizando Procesos Gaussianos y análisis Bayesiano.
               </p>
               <div class="pt-2">
                 <a href="https://doi.org/10.1002/stc.2727" target="_blank" class="inline-flex items-center text-sm font-semibold text-indigo-600 dark:text-indigo-400 hover:text-indigo-800 dark:hover:text-indigo-300 transition-colors">
-                  Ver artículo en Wiley Online Library
+                  <span data-i18n="pub.link">Ver artículo en Wiley Online Library</span>
                   <svg class="w-4 h-4 ml-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
                   </svg>
@@ -593,22 +607,22 @@
           <!-- Internships & Training -->
           <div class="space-y-6">
             <div class="space-y-3">
-              <h2 class="text-3xl font-bold tracking-tight text-slate-900 dark:text-white">Prácticas de Formación</h2>
+              <h2 class="text-3xl font-bold tracking-tight text-slate-900 dark:text-white" data-i18n="intern.title">Prácticas de Formación</h2>
               <div class="w-16 h-1.5 bg-pastelPink rounded-full"></div>
             </div>
             
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div class="bg-white dark:bg-slate-800 p-4 rounded-xl border border-slate-100 dark:border-slate-700 hover:shadow-md transition-shadow">
                 <span class="text-xs font-bold text-slate-400">EGIS Municipal Curicó</span>
-                <h4 class="text-sm font-bold text-slate-900 dark:text-white mt-1">Estudiante en práctica</h4>
-                <p class="text-xs text-slate-500 mt-1">Ene 2019 - Feb 2019</p>
-                <p class="text-xs text-slate-600 dark:text-slate-400 mt-2">Apoyo en diseño de viviendas habitacionales y cálculos estructurales.</p>
+                <h4 class="text-sm font-bold text-slate-900 dark:text-white mt-1" data-i18n="intern.1.title">Estudiante en práctica</h4>
+                <p class="text-xs text-slate-500 mt-1" data-i18n="intern.1.date">Ene 2019 - Feb 2019</p>
+                <p class="text-xs text-slate-600 dark:text-slate-400 mt-2" data-i18n="intern.1.desc">Apoyo en diseño de viviendas habitacionales y cálculos estructurales.</p>
               </div>
               <div class="bg-white dark:bg-slate-800 p-4 rounded-xl border border-slate-100 dark:border-slate-700 hover:shadow-md transition-shadow">
                 <span class="text-xs font-bold text-slate-400">Dirección de Obras Curicó</span>
-                <h4 class="text-sm font-bold text-slate-900 dark:text-white mt-1">Estudiante en práctica</h4>
-                <p class="text-xs text-slate-500 mt-1">Ene 2018 - Feb 2018</p>
-                <p class="text-xs text-slate-600 dark:text-slate-400 mt-2">Desarrollo de cubicaciones, presupuestos y diseño de estructuras simples.</p>
+                <h4 class="text-sm font-bold text-slate-900 dark:text-white mt-1" data-i18n="intern.1.title">Estudiante en práctica</h4>
+                <p class="text-xs text-slate-500 mt-1" data-i18n="intern.2.date">Ene 2018 - Feb 2018</p>
+                <p class="text-xs text-slate-600 dark:text-slate-400 mt-2" data-i18n="intern.2.desc">Desarrollo de cubicaciones, presupuestos y diseño de estructuras simples.</p>
               </div>
             </div>
           </div>
@@ -623,9 +637,9 @@
   <section id="contacto" class="py-20 bg-white dark:bg-slate-800 transition-colors">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center space-y-3 mb-16">
-        <h2 class="text-3xl font-bold tracking-tight text-slate-900 dark:text-white">Hablemos</h2>
+        <h2 class="text-3xl font-bold tracking-tight text-slate-900 dark:text-white" data-i18n="contact.title">Hablemos</h2>
         <div class="w-16 h-1.5 bg-pastelLilac mx-auto rounded-full"></div>
-        <p class="text-slate-500 dark:text-slate-400 max-w-lg mx-auto text-sm sm:text-base">
+        <p data-i18n="contact.desc" class="text-slate-500 dark:text-slate-400 max-w-lg mx-auto text-sm sm:text-base">
           ¿Tienes una propuesta o quieres colaborar en algún proyecto? Contáctame a través de mis canales oficiales:
         </p>
       </div>
@@ -674,7 +688,7 @@
           <img src="/favicon.svg" alt="ACVC Logo" class="w-10 h-10 rounded-xl object-contain bg-slate-200 dark:bg-white/10 p-1">
           <div>
             <h2 class="text-lg font-bold text-slate-900 dark:text-white tracking-tight">Ana-Catalina Villalobos Contardo</h2>
-            <p class="text-xs text-slate-500 dark:text-slate-400 mt-1">Ingeniera Civil | Data Scientist & Machine Learning Engineer</p>
+            <p data-i18n="footer.desc" class="text-xs text-slate-500 dark:text-slate-400 mt-1">Ingeniera Civil | Data Scientist & Machine Learning Engineer</p>
           </div>
         </div>
       </div>
@@ -682,9 +696,9 @@
       <hr class="border-slate-200 dark:border-slate-800 my-8">
       
       <div class="flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500 dark:text-slate-400">
-        <p>© 2026 Ana-Catalina Villalobos Contardo. Todos los derechos reservados.</p>
+        <p data-i18n="footer.rights">© 2026 Ana-Catalina Villalobos Contardo. Todos los derechos reservados.</p>
         <p class="text-center sm:text-right">
-          Diseño y desarrollo propio · Creado con <span class="text-pink-500">♥</span> usando Vite + Tailwind CSS · Publicado en GitHub Pages
+          <span data-i18n="footer.made">Diseño y desarrollo propio · Creado con <span class="text-pink-500">♥</span> usando Vite + Tailwind CSS · Publicado en GitHub Pages</span>
         </p>
       </div>
     </div>
