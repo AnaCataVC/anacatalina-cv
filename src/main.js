@@ -1,9 +1,53 @@
+import { translations } from './i18n.js';
+
 const CONFIG = {
   // Set to true to show the availability badge, false to hide it
   isAvailableForWork: false 
 };
 
 function init() {
+  // --- Internationalization (i18n) Logic ---
+  let currentLang = localStorage.getItem('lang');
+  if (!currentLang) {
+    const browserLang = navigator.language || navigator.userLanguage;
+    currentLang = browserLang.toLowerCase().startsWith('en') ? 'en' : 'es';
+  }
+
+  function updateTexts() {
+    const elements = document.querySelectorAll('[data-i18n]');
+    elements.forEach(el => {
+      const key = el.getAttribute('data-i18n');
+      if (translations[key] && translations[key][currentLang]) {
+        el.innerHTML = translations[key][currentLang];
+      }
+    });
+    
+    // Update toggle button text
+    const desktopLangText = document.getElementById('current-lang-desktop');
+    const mobileLangText = document.getElementById('current-lang-mobile');
+    const langText = currentLang === 'es' ? 'EN' : 'ES'; // show the language to switch TO
+    if (desktopLangText) desktopLangText.textContent = langText;
+    if (mobileLangText) mobileLangText.textContent = langText;
+    
+    // Update HTML lang attribute
+    document.documentElement.lang = currentLang;
+  }
+
+  function toggleLanguage() {
+    currentLang = currentLang === 'es' ? 'en' : 'es';
+    localStorage.setItem('lang', currentLang);
+    updateTexts();
+  }
+
+  const langToggleDesktop = document.getElementById('lang-toggle-desktop');
+  const langToggleMobile = document.getElementById('lang-toggle-mobile');
+
+  if (langToggleDesktop) langToggleDesktop.addEventListener('click', toggleLanguage);
+  if (langToggleMobile) langToggleMobile.addEventListener('click', toggleLanguage);
+
+  // Apply translations on load
+  updateTexts();
+
   // --- Theme Toggle Logic ---
   console.log('Theme Toggle Init:', {
     localStorageTheme: localStorage.getItem('theme'),
