@@ -2,7 +2,7 @@
 
 Este repositorio contiene el código fuente para el sitio web personal y CV profesional de **Ana-Catalina Alejandra Villalobos Contardo**, Ingeniera Civil y Data Scientist / ML Engineer.
 
-El sitio web está diseñado con una estética moderna, responsiva, con soporte para modo oscuro, animaciones al hacer scroll, filtrado dinámico de habilidades e integración directa para guardar como PDF.
+El sitio web está diseñado con una estética moderna, responsiva, con soporte para modo oscuro, animaciones al hacer scroll y traducción a inglés.
 
 ## 🛠️ Tecnologías Utilizadas
 
@@ -41,47 +41,13 @@ anacatalina-cv/
 
 ---
 
-## 🚀 Guía de Desarrollo Local
-
-Para correr el proyecto localmente y realizar cambios:
-
-### 1. Requisitos Previos
-
-Asegúrate de tener instalado [Node.js](https://nodejs.org/) (versión 18 o superior).
-
-### 2. Clonar e Instalar
-
-```bash
-# Instalar dependencias
-npm install
-```
-
-### 3. Ejecutar Servidor de Desarrollo
-
-```bash
-npm run dev
-```
-Abre tu navegador en la dirección local indicada (habitualmente `http://localhost:5173/anacatalina-cv/`).
-
-### 4. Compilar para Producción
-
-```bash
-npm run build
-```
-Esto generará los archivos optimizados dentro de la carpeta `dist/`.
-
----
-
 ## 🌍 Despliegue en GitHub Pages
 
 El proyecto está configurado para desplegarse automáticamente en GitHub Pages usando GitHub Actions cada vez que se hace un `push` a la rama `main`.
 
-### Pasos en GitHub para activar la publicación:
 
-1. Ve a tu repositorio en GitHub.
-2. Ingresa a la sección **Settings** > **Pages**.
-3. En **Build and deployment** > **Source**, selecciona **GitHub Actions**.
-4. Haz push de tus cambios a la rama `main` y GitHub Actions compilará y publicará tu CV de forma automatizada en:
-   `https://<tu-usuario>.github.io/anacatalina-cv/`
+> CV público: https://anacatavc.github.io/anacatalina-cv/
 
-> **Nota:** Si utilizas un dominio personalizado, asegúrate de actualizar la propiedad `base` en `vite.config.js` a `'/'`.
+## 🔨 Crea tu propio CV
+
+Repositorio con versión personalizable, para clonar, ajustar y desplegar **está en desarrollo**.
