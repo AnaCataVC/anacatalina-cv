@@ -326,5 +326,9 @@ export const translations = {
   "footer.made": {
     es: "Diseño y desarrollo propio · Creado con <span class=\"text-pink-500\">♥</span> usando Vite + Tailwind CSS · Publicado en GitHub Pages",
     en: "Designed and developed by me · Built with <span class=\"text-pink-500\">♥</span> using Vite + Tailwind CSS · Hosted on GitHub Pages"
+  },
+  "footer.template": {
+    es: "¿Te gusta este diseño? <a href=\"https://github.com/AnaCataVC/my-cv/\" target=\"_blank\" class=\"text-indigo-500 dark:text-indigo-400 hover:underline font-medium\">Usa la plantilla base aquí</a>.",
+    en: "Do you like this design? <a href=\"https://github.com/AnaCataVC/my-cv/\" target=\"_blank\" class=\"text-indigo-500 dark:text-indigo-400 hover:underline font-medium\">Use the base template here</a>."
   }
 };
