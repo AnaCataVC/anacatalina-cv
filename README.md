@@ -2,7 +2,7 @@
 
 Este repositorio contiene el código fuente para el sitio web personal y CV profesional de **Ana-Catalina Alejandra Villalobos Contardo**, Ingeniera Civil y Data Scientist / ML Engineer.
 
-El sitio web está diseñado con una estética moderna, responsiva, con soporte para modo oscuro, animaciones al hacer scroll y traducción a inglés.
+El sitio web está diseñado con una estética moderna, responsiva, con soporte para modo oscuro, descarga de CV en PDF animaciones al hacer scroll y traducción a inglés.
 
 ## 🛠️ Tecnologías Utilizadas
 
@@ -39,15 +39,8 @@ anacatalina-cv/
  └── README.md                # Este archivo informativo
 ```
 
----
+## 🌐 CV Público 
 
-## 🌍 Despliegue en GitHub Pages
+[https://anacatavc.github.io/anacatalina-cv/](https://anacatavc.github.io/anacatalina-cv/)
 
-El proyecto está configurado para desplegarse automáticamente en GitHub Pages usando GitHub Actions cada vez que se hace un `push` a la rama `main`.
-
-
-> CV público: https://anacatavc.github.io/anacatalina-cv/
-
-## 🔨 Crea tu propio CV
-
-Repositorio con versión personalizable, para clonar, ajustar y desplegar **está en desarrollo**.
+> 💡 **¿Te gusta este diseño?** He creado un template básico de este CV para que puedas usarlo y personalizarlo. Puedes encontrarlo aquí: [AnaCataVC/my-cv](https://github.com/AnaCataVC/my-cv/)
