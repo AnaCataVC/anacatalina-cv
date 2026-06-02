@@ -26,9 +26,13 @@ export const translations = {
     es: "Data Scientist & Machine Learning Engineer",
     en: "Data Scientist & Machine Learning Engineer"
   },
-  "hero.contactBtn": {
-    es: "Contactar",
-    en: "Contact Me"
+  "hero.downloadBtn": {
+    es: "Descargar CV",
+    en: "Download CV"
+  },
+  "hero.cvUrl": {
+    es: "ACVC_es.pdf",
+    en: "ACVC_en.pdf"
   },
   "hero.expBtn": {
     es: "Experiencia",

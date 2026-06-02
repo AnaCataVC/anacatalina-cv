@@ -21,6 +21,14 @@ function init() {
         el.innerHTML = translations[key][currentLang];
       }
     });
+
+    const hrefElements = document.querySelectorAll('[data-i18n-href]');
+    hrefElements.forEach(el => {
+      const key = el.getAttribute('data-i18n-href');
+      if (translations[key] && translations[key][currentLang]) {
+        el.setAttribute('href', translations[key][currentLang]);
+      }
+    });
     
     // Update toggle button text
     const desktopLangText = document.getElementById('current-lang-desktop');
