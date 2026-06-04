@@ -320,8 +320,8 @@ export const translations = {
     en: "Civil Engineer | Data Scientist & Machine Learning Engineer"
   },
   "footer.rights": {
-    es: "© 2026 Ana-Catalina Villalobos Contardo. Todos los derechos reservados.",
-    en: "© 2026 Ana-Catalina Villalobos Contardo. All rights reserved."
+    es: "© 2026 Ana-Catalina Villalobos Contardo | ana-catalina.com. Todos los derechos reservados.",
+    en: "© 2026 Ana-Catalina Villalobos Contardo | ana-catalina.com. All rights reserved."
   },
   "footer.made": {
     es: "Diseño y desarrollo propio · Creado con <span class=\"text-pink-500\">♥</span> usando Vite + Tailwind CSS · Publicado en GitHub Pages",
