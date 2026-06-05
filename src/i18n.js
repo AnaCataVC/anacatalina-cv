@@ -324,8 +324,8 @@ export const translations = {
     en: "© 2026 Ana-Catalina Villalobos Contardo | ana-catalina.com. All rights reserved."
   },
   "footer.made": {
-    es: "Diseño y desarrollo propio · Creado con <span class=\"text-pink-500\">♥</span> usando Vite + Tailwind CSS · Publicado en GitHub Pages",
-    en: "Designed and developed by me · Built with <span class=\"text-pink-500\">♥</span> using Vite + Tailwind CSS · Hosted on GitHub Pages"
+    es: "Diseño y desarrollo propio · Creado con <span class=\"text-pink-500\">♥</span> usando Vite + Tailwind CSS · Publicado en Vercel",
+    en: "Designed and developed by me · Built with <span class=\"text-pink-500\">♥</span> using Vite + Tailwind CSS · Hosted on Vercel"
   },
   "footer.template": {
     es: "¿Te gusta este diseño? <a href=\"https://github.com/AnaCataVC/my-cv/\" target=\"_blank\" class=\"text-indigo-500 dark:text-indigo-400 hover:underline font-medium\">Usa la plantilla base aquí</a>.",
