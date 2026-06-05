@@ -6,7 +6,7 @@
 
 Professional CV and personal website for **Ana-Catalina Alejandra Villalobos Contardo**, Civil Engineer and Data Scientist / ML Engineer. The site is a static single-page application (SPA) with a modern, responsive design, dark mode, PDF CV download, scroll animations, and bilingual support (Spanish/English).
 
-**Public URL:** https://anacatavc.github.io/anacatalina-cv/
+**Public URL:** https://ana-catalina.com/
 
 ## Tech Stack
 
@@ -17,15 +17,13 @@ Professional CV and personal website for **Ana-Catalina Alejandra Villalobos Con
 | PostCSS      | PostCSS + Autoprefixer                          |
 | JavaScript   | ES6+ (vanilla, no frameworks)                   |
 | Typography   | Google Fonts — Outfit (headings), Inter (body)   |
-| Deployment   | GitHub Pages via GitHub Actions                 |
+| Deployment   | Vercel                                          |
 | Node         | v20+                                            |
 
 ## Repository Structure
 
 ```
 anacatalina-cv/
-├── .github/workflows/
-│   └── deploy.yml           # CI/CD: build + deploy to GitHub Pages
 ├── public/
 │   ├── ACVC_es.pdf          # Downloadable CV in Spanish
 │   ├── ACVC_en.pdf          # Downloadable CV in English
@@ -37,7 +35,7 @@ anacatalina-cv/
 │   ├── i18n.js              # ES/EN translations (exported `translations` object)
 │   └── styles.css           # Global styles: font imports, Tailwind directives, custom utilities
 ├── index.html               # Main HTML structure (all CV content lives here)
-├── vite.config.js           # Vite config (base: '/anacatalina-cv/')
+├── vite.config.js           # Vite config (base: '/')
 ├── tailwind.config.js       # Custom colors, fonts, animations (fadeInUp, fadeIn)
 ├── postcss.config.js        # Plugin chain: tailwindcss + autoprefixer
 ├── package.json             # Scripts: dev, build, preview
@@ -92,10 +90,10 @@ The base theme uses Tailwind's `slate` scale for grays. Functional accents use `
 
 ## Deployment
 
-- **CI/CD:** GitHub Actions in `.github/workflows/deploy.yml`.
-- **Trigger:** Push to `main` or manual dispatch.
-- **Process:** Checkout → Node 20 → `npm ci` → `npm run build` → Upload artifact → Deploy Pages.
-- **Base path:** `/anacatalina-cv/` (configured in `vite.config.js`).
+- **CI/CD:** Vercel.
+- **Trigger:** Push to `main`.
+- **Process:** Automatic build and deployment via Vercel.
+- **Base path:** `/` (configured in `vite.config.js`).
 
 ## Development Commands
 

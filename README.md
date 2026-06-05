@@ -15,7 +15,7 @@ El sitio web está diseñado con una estética moderna, responsiva, con soporte 
 - **Core:** HTML5, CSS3, JavaScript (ES6+)
 - **Framework & Configuración:** [Vite](https://vitejs.dev/)
 - **Estilos:** [Tailwind CSS](https://tailwindcss.com/) (con paleta personalizada en tonos pastel)
-- **Deployment:** GitHub Pages a través de GitHub Actions
+- **Deployment:** Vercel
 
 🎨 **Paleta de Colores Pastel Utilizada:**
 - `pastelLilac`: `#c7b8ea`
@@ -27,8 +27,6 @@ El sitio web está diseñado con una estética moderna, responsiva, con soporte 
 
 ```text
 anacatalina-cv/
- ├── .github/workflows/
- │    └── deploy.yml          # Pipeline de GitHub Actions para despliegue automático
  ├── public/
  │    ├── foto-perfil.jpg     # Foto de perfil del CV
  │    └── favicon.ico         # Icono del sitio
@@ -45,7 +43,7 @@ anacatalina-cv/
 
 ### 🌐 CV Público 
 
-[https://anacatavc.github.io/anacatalina-cv/](https://anacatavc.github.io/anacatalina-cv/)
+[https://ana-catalina.com/](https://ana-catalina.com/)
 
 > 💡 **¿Te gusta este diseño?** He creado un template básico de este CV para que puedas usarlo y personalizarlo. Puedes encontrarlo aquí: [AnaCataVC/my-cv](https://github.com/AnaCataVC/my-cv/)
 
@@ -62,7 +60,7 @@ The website is designed with a modern, responsive aesthetic, featuring dark mode
 - **Core:** HTML5, CSS3, JavaScript (ES6+)
 - **Framework & Config:** [Vite](https://vitejs.dev/)
 - **Styles:** [Tailwind CSS](https://tailwindcss.com/) (with a custom pastel color palette)
-- **Deployment:** GitHub Pages via GitHub Actions
+- **Deployment:** Vercel
 
 🎨 **Pastel Color Palette Used:**
 - `pastelLilac`: `#c7b8ea`
@@ -74,8 +72,6 @@ The website is designed with a modern, responsive aesthetic, featuring dark mode
 
 ```text
 anacatalina-cv/
- ├── .github/workflows/
- │    └── deploy.yml          # GitHub Actions pipeline for automated deployment
  ├── public/
  │    ├── foto-perfil.jpg     # CV profile photo
  │    └── favicon.ico         # Site icon
@@ -92,6 +88,6 @@ anacatalina-cv/
 
 ### 🌐 Public CV 
 
-[https://anacatavc.github.io/anacatalina-cv/](https://anacatavc.github.io/anacatalina-cv/)
+[https://ana-catalina.com/](https://ana-catalina.com/)
 
 > 💡 **Do you like this design?** I have created a basic template of this CV for you to use and customize. You can find it here: [AnaCataVC/my-cv](https://github.com/AnaCataVC/my-cv/)
