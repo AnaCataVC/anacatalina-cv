@@ -1,5 +1,6 @@
 ---
 import '../styles.css';
+import Analytics from '@vercel/analytics/astro';
 ---
 <!DOCTYPE html>
 <html lang="es" class="scroll-smooth">
@@ -1160,5 +1161,7 @@ c28 -28 1 -75 -37 -63 -27 8 -34 35 -15 56 20 22 35 24 52 7z m-770 -290 c30
   <!-- JS Bundler Hook -->
   <script src="../main.js"></script>
 
+  <!-- Vercel Analytics -->
+  <Analytics />
 </body>
 </html>
