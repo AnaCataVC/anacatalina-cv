@@ -57,12 +57,6 @@ function init() {
   updateTexts();
 
   // --- Theme Toggle Logic ---
-  console.log('Theme Toggle Init:', {
-    localStorageTheme: localStorage.getItem('theme'),
-    systemThemeDark: window.matchMedia('(prefers-color-scheme: dark)').matches,
-    documentElementClasses: document.documentElement.className
-  });
-
   const themeToggleDesktop = document.getElementById('theme-toggle-desktop');
   const themeToggleMobile = document.getElementById('theme-toggle-mobile');
   
@@ -74,7 +68,6 @@ function init() {
 
   function updateThemeIcons() {
     const isDark = document.documentElement.classList.contains('dark');
-    console.log('updateThemeIcons: isDark =', isDark);
     if (isDark) {
       if (lightIconDesktop) lightIconDesktop.classList.remove('hidden');
       if (darkIconDesktop) darkIconDesktop.classList.add('hidden');
@@ -90,31 +83,22 @@ function init() {
 
   function toggleTheme() {
     const isDark = document.documentElement.classList.contains('dark');
-    console.log('toggleTheme clicked. Current state is dark?', isDark);
     if (isDark) {
       document.documentElement.classList.remove('dark');
       localStorage.setItem('theme', 'light');
-      console.log('Theme changed to light. classes:', document.documentElement.className);
     } else {
       document.documentElement.classList.add('dark');
       localStorage.setItem('theme', 'dark');
-      console.log('Theme changed to dark. classes:', document.documentElement.className);
     }
     updateThemeIcons();
   }
 
   if (themeToggleDesktop) {
-    console.log('Desktop toggle element found.');
     themeToggleDesktop.addEventListener('click', toggleTheme);
-  } else {
-    console.warn('Desktop toggle element NOT found.');
   }
   
   if (themeToggleMobile) {
-    console.log('Mobile toggle element found.');
     themeToggleMobile.addEventListener('click', toggleTheme);
-  } else {
-    console.warn('Mobile toggle element NOT found.');
   }
 
   // Initialize icons state

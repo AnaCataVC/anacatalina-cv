@@ -1,3 +1,6 @@
+---
+import '../styles.css';
+---
 <!DOCTYPE html>
 <html lang="es" class="scroll-smooth">
 <head>
@@ -6,8 +9,7 @@
   <title>Ana-Catalina Villalobos | Ingeniera Civil & Data Scientist</title>
   <meta name="description" content="CV y Portafolio Profesional de Ana-Catalina Villalobos Contardo, Ingeniera Civil, Data Scientist y ML Engineer especialista en pipelines de datos y modelos predictivos.">
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-  <link rel="stylesheet" href="/src/styles.css">
-  <script>
+  <script is:inline>
     if (localStorage.getItem('theme') === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
       document.documentElement.classList.add('dark');
     } else {
@@ -51,12 +53,12 @@
           <!-- Desktop Theme Toggle Button -->
           <button id="theme-toggle-desktop" class="p-2 rounded-xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 shadow-sm hover:shadow text-slate-600 dark:text-slate-300 hover:text-indigo-600 dark:hover:text-indigo-400 focus:outline-none transition-all duration-200 hover:scale-105" aria-label="Cambiar tema">
             <!-- Sun Icon (visible in dark mode) -->
-            <svg id="theme-toggle-light-icon-desktop" class="hidden w-5 h-5 transition-transform duration-300 rotate-0 dark:rotate-90" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-              <path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.46 5.05l-.707-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 100 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path>
+            <svg id="theme-toggle-light-icon-desktop" class="hidden w-5 h-5 transition-transform duration-300 rotate-0 dark:rotate-90" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+              <circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/>
             </svg>
             <!-- Moon Icon (visible in light mode) -->
-            <svg id="theme-toggle-dark-icon-desktop" class="hidden w-5 h-5 transition-transform duration-300" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-              <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+            <svg id="theme-toggle-dark-icon-desktop" class="hidden w-5 h-5 transition-transform duration-300" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+              <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/>
             </svg>
           </button>
         </div>
@@ -71,21 +73,21 @@
           <!-- Mobile Theme Toggle Button -->
           <button id="theme-toggle-mobile" class="p-2 rounded-xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 shadow-sm hover:shadow text-slate-600 dark:text-slate-300 hover:text-indigo-600 dark:hover:text-indigo-400 focus:outline-none transition-all duration-200" aria-label="Cambiar tema">
             <!-- Sun Icon (visible in dark mode) -->
-            <svg id="theme-toggle-light-icon-mobile" class="hidden w-5 h-5 transition-transform duration-300 rotate-0 dark:rotate-90" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-              <path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.46 5.05l-.707-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 100 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path>
+            <svg id="theme-toggle-light-icon-mobile" class="hidden w-5 h-5 transition-transform duration-300 rotate-0 dark:rotate-90" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+              <circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/>
             </svg>
             <!-- Moon Icon (visible in light mode) -->
-            <svg id="theme-toggle-dark-icon-mobile" class="hidden w-5 h-5 transition-transform duration-300" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-              <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+            <svg id="theme-toggle-dark-icon-mobile" class="hidden w-5 h-5 transition-transform duration-300" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+              <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/>
             </svg>
           </button>
           
           <button id="mobile-menu-btn" class="inline-flex items-center justify-center p-2 rounded-xl text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 focus:outline-none transition-colors" aria-expanded="false">
-            <svg class="h-6 w-6" id="menu-icon" stroke="currentColor" fill="none" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+            <svg class="h-6 w-6" id="menu-icon" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+              <line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/>
             </svg>
-            <svg class="h-6 w-6 hidden" id="close-icon" stroke="currentColor" fill="none" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+            <svg class="h-6 w-6 hidden" id="close-icon" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+              <path d="M18 6 6 18"/><path d="m6 6 12 12"/>
             </svg>
           </button>
         </div>
@@ -108,7 +110,7 @@
   <!-- Hero and Experience Wrapper for Background Glow -->
   <div class="relative overflow-hidden">
   <!-- Hero Section -->
-  <header id="home" class="relative pt-12 pb-16 md:pt-20 md:pb-20">
+  <header id="home" class="relative w-full pt-12 pb-16 md:pt-0 md:pb-0 md:min-h-screen md:flex md:items-center">
     <!-- Background Blur Blobs for Premium Aesthetic -->
     
 
@@ -150,37 +152,27 @@
             </a>
           </div>
 
-          <!-- Action Buttons -->
-          <div class="flex flex-wrap items-center justify-center md:justify-start gap-3 w-56 sm:w-64 pt-4">
+          <!-- Action Buttons (Mobile) -->
+          <div class="flex md:hidden flex-wrap items-center justify-center gap-3 w-56 sm:w-64 pt-4">
             <a href="ACVC_es.pdf" target="_blank" data-i18n="hero.downloadBtn" data-i18n-href="hero.cvUrl" class="flex-1 min-w-[120px] inline-flex items-center justify-center px-4 py-2.5 text-sm font-semibold text-white bg-gradient-to-r from-purple-500 to-blue-500 hover:from-purple-400 hover:to-blue-400 rounded-xl shadow-sm transition-all transform hover:-translate-y-0.5">
               Descargar CV
-            </a>
-            <a href="#experience" data-i18n="hero.expBtn" class="flex-1 min-w-[120px] inline-flex md:hidden items-center justify-center px-4 py-2.5 text-sm font-semibold bg-slate-100 hover:bg-slate-200 text-slate-700 dark:bg-slate-800 dark:hover:bg-slate-700 dark:text-slate-300 rounded-xl transition-all transform hover:-translate-y-0.5">
-              Experiencia
             </a>
           </div>
 
           <!-- Social Details Quick Links & Location -->
-          <div class="flex flex-wrap justify-center md:justify-start items-center gap-y-2 gap-x-5 pt-2 text-slate-500 dark:text-slate-400">
+          <div class="flex flex-wrap justify-center items-center gap-y-2 gap-x-6 pt-2 text-slate-500 dark:text-slate-400 w-56 sm:w-64">
             <a href="mailto:anacatalina@outlook.cl" class="hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors" title="Email">
-              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
-              </svg>
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
             </a>
             <a href="https://linkedin.com/in/ana-catalina/" target="_blank" class="hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors" title="LinkedIn">
-              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
-              </svg>
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
             </a>
             <a href="https://github.com/AnaCataVC/" target="_blank" class="hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors" title="GitHub">
-              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.008-.866-.013-1.7-2.782.603-3.369-1.34-3.369-1.34-.454-1.156-1.11-1.464-1.11-1.464-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.831.092-.646.35-1.086.636-1.336-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.579.688.481C19.138 20.162 22 16.418 22 12c0-5.523-4.477-10-10-10z"/>
-              </svg>
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>
             </a>
-            <span class="text-sm inline-flex items-center space-x-1.5 font-medium whitespace-nowrap">
-              <svg class="w-4 h-4 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+            <span class="text-sm inline-flex md:hidden items-center space-x-1.5 font-medium whitespace-nowrap">
+              <svg class="w-4 h-4 text-slate-400" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+                <path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/>
               </svg>
               <span data-i18n="hero.location">Región Metropolitana, Chile</span>
             </span>
@@ -623,7 +615,33 @@ c28 -28 1 -75 -37 -63 -27 8 -34 35 -15 56 20 22 35 24 52 7z m-770 -290 c30
 337 -2 337 17 0 10 -6 20 -12 22 -7 2 -161 3 -341 1z"/>
 </g>
 </svg>
-          <h2 class="text-xl font-bold tracking-wider text-indigo-600 dark:text-indigo-400 uppercase text-center md:text-left" data-i18n="about.title">Sobre Mí</h2>
+          <!-- Desktop "Sobre Mí" Title (Visible above location/buttons) -->
+          <h2 class="hidden md:block text-xl font-bold tracking-wider text-indigo-600 dark:text-indigo-400 uppercase text-left mb-4" data-i18n="about.title">Sobre Mí</h2>
+
+          <!-- Desktop Top Meta & Actions -->
+          <div class="hidden md:flex flex-col space-y-5 mb-4">
+            <span class="text-sm inline-flex items-center space-x-1.5 font-medium whitespace-nowrap text-slate-500 dark:text-slate-400">
+              <svg class="w-4 h-4 text-slate-400" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+                <path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/>
+              </svg>
+              <span data-i18n="hero.location">Región Metropolitana, Chile</span>
+            </span>
+
+            <div class="flex flex-wrap items-center justify-start gap-3 lg:gap-4">
+              <a href="ACVC_es.pdf" target="_blank" data-i18n="hero.downloadBtn" data-i18n-href="hero.cvUrl" class="flex-1 lg:flex-none lg:min-w-[140px] inline-flex items-center justify-center px-4 lg:px-5 py-2.5 lg:py-3 text-xs lg:text-sm font-semibold text-white bg-gradient-to-r from-purple-500 to-blue-500 hover:from-purple-400 hover:to-blue-400 rounded-xl shadow-sm transition-all transform hover:-translate-y-0.5">
+                Descargar CV
+              </a>
+              <a href="#experience" data-i18n="hero.expBtn" class="flex-1 lg:flex-none lg:min-w-[140px] inline-flex items-center justify-center px-4 lg:px-5 py-2.5 lg:py-3 text-xs lg:text-sm font-semibold bg-slate-100 hover:bg-slate-200 text-slate-700 dark:bg-slate-800 dark:hover:bg-slate-700 dark:text-slate-300 rounded-xl transition-all transform hover:-translate-y-0.5">
+                Experiencia
+              </a>
+              <a href="#skills" data-i18n="hero.skillsBtn" class="flex-1 lg:flex-none lg:min-w-[140px] inline-flex items-center justify-center px-4 lg:px-5 py-2.5 lg:py-3 text-xs lg:text-sm font-semibold bg-slate-100 hover:bg-slate-200 text-slate-700 dark:bg-slate-800 dark:hover:bg-slate-700 dark:text-slate-300 rounded-xl transition-all transform hover:-translate-y-0.5">
+                Habilidades
+              </a>
+            </div>
+          </div>
+
+          <!-- Mobile "Sobre Mí" Title (Visible below location/buttons) -->
+          <h2 class="md:hidden text-xl font-bold tracking-wider text-indigo-600 dark:text-indigo-400 uppercase text-center mb-4" data-i18n="about.title">Sobre Mí</h2>
           
           <div class="space-y-4 text-slate-600 dark:text-slate-400 max-w-2xl leading-relaxed text-sm sm:text-base text-justify md:text-left">
             <p data-i18n="about.p1" class="text-lg font-semibold text-slate-800 dark:text-slate-100 leading-relaxed text-justify md:text-left">
@@ -781,7 +799,7 @@ c28 -28 1 -75 -37 -63 -27 8 -34 35 -15 56 20 22 35 24 52 7z m-770 -290 c30
   </div>
 
   <!-- Skills Section -->
-  <section id="skills" class="py-20 bg-white dark:bg-slate-800 transition-colors">
+  <section id="skills" class="py-20 transition-colors">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center space-y-3 mb-12">
         <h2 class="text-3xl font-bold tracking-tight text-slate-900 dark:text-white" data-i18n="skills.title">Habilidades & Herramientas</h2>
@@ -794,10 +812,10 @@ c28 -28 1 -75 -37 -63 -27 8 -34 35 -15 56 20 22 35 24 52 7z m-770 -290 c30
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-5xl mx-auto">
         
         <!-- AI & Data Science -->
-        <div class="skill-group reveal bg-slate-50 dark:bg-slate-900/60 p-6 rounded-2xl border border-slate-100 dark:border-slate-700 space-y-4">
+        <div class="skill-group reveal bg-white dark:bg-slate-800 p-6 rounded-2xl border border-slate-100 dark:border-slate-700 space-y-4">
           <h3 class="text-md font-bold text-slate-900 dark:text-white flex items-center space-x-2">
-            <svg class="w-5 h-5 text-indigo-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
+            <svg class="w-5 h-5 text-indigo-500" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+              <path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1 .2 2.2 1.5 3.5.7.9 1.2 1.5 1.5 2.5"/><path d="M9 18h6"/><path d="M10 22h4"/>
             </svg>
             <span data-i18n="skills.ai.title">IA Agéntica & <span data-i18n="skills.ai.4">Ciencia de Datos</span></span>
           </h3>
@@ -813,10 +831,10 @@ c28 -28 1 -75 -37 -63 -27 8 -34 35 -15 56 20 22 35 24 52 7z m-770 -290 c30
         </div>
 
         <!-- Leadership & Methodologies -->
-        <div class="skill-group reveal bg-slate-50 dark:bg-slate-900/60 p-6 rounded-2xl border border-slate-100 dark:border-slate-700 space-y-4">
+        <div class="skill-group reveal bg-white dark:bg-slate-800 p-6 rounded-2xl border border-slate-100 dark:border-slate-700 space-y-4">
           <h3 class="text-md font-bold text-slate-900 dark:text-white flex items-center space-x-2">
-            <svg class="w-5 h-5 text-indigo-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+            <svg class="w-5 h-5 text-indigo-500" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+              <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>
             </svg>
             <span data-i18n="skills.leadership.title">Liderazgo & Metodologías</span>
           </h3>
@@ -831,10 +849,10 @@ c28 -28 1 -75 -37 -63 -27 8 -34 35 -15 56 20 22 35 24 52 7z m-770 -290 c30
         </div>
 
         <!-- Languages -->
-        <div data-category="lang" class="skill-group reveal bg-slate-50 dark:bg-slate-900/60 p-6 rounded-2xl border border-slate-100 dark:border-slate-700 space-y-4">
+        <div data-category="lang" class="skill-group reveal bg-white dark:bg-slate-800 p-6 rounded-2xl border border-slate-100 dark:border-slate-700 space-y-4">
           <h3 class="text-md font-bold text-slate-900 dark:text-white flex items-center space-x-2">
-            <svg class="w-5 h-5 text-indigo-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path>
+            <svg class="w-5 h-5 text-indigo-500" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+              <polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/>
             </svg>
             <span data-i18n="skills.lang.title">Lenguajes de Programación</span>
           </h3>
@@ -849,10 +867,10 @@ c28 -28 1 -75 -37 -63 -27 8 -34 35 -15 56 20 22 35 24 52 7z m-770 -290 c30
         </div>
 
         <!-- Frameworks & Libs -->
-        <div data-category="frameworks" class="skill-group reveal bg-slate-50 dark:bg-slate-900/60 p-6 rounded-2xl border border-slate-100 dark:border-slate-700 space-y-4">
+        <div data-category="frameworks" class="skill-group reveal bg-white dark:bg-slate-800 p-6 rounded-2xl border border-slate-100 dark:border-slate-700 space-y-4">
           <h3 class="text-md font-bold text-slate-900 dark:text-white flex items-center space-x-2">
-            <svg class="w-5 h-5 text-indigo-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path>
+            <svg class="w-5 h-5 text-indigo-500" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+              <polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/>
             </svg>
             <span data-i18n="skills.ecosystem.title">Ecosistema Tecnológico</span>
           </h3>
@@ -869,10 +887,10 @@ c28 -28 1 -75 -37 -63 -27 8 -34 35 -15 56 20 22 35 24 52 7z m-770 -290 c30
         </div>
 
         <!-- Databases -->
-        <div data-category="db" class="skill-group reveal bg-slate-50 dark:bg-slate-900/60 p-6 rounded-2xl border border-slate-100 dark:border-slate-700 space-y-4">
+        <div data-category="db" class="skill-group reveal bg-white dark:bg-slate-800 p-6 rounded-2xl border border-slate-100 dark:border-slate-700 space-y-4">
           <h3 class="text-md font-bold text-slate-900 dark:text-white flex items-center space-x-2">
-            <svg class="w-5 h-5 text-indigo-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7v10c0 2.21 3.58 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.58 4 8 4s8-1.79 8-4M4 7c0-2.21 3.58-4 8-4s8 1.79 8 4m0 5c0 2.21-3.58 4-8 4s-8-1.79-8-4"></path>
+            <svg class="w-5 h-5 text-indigo-500" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+              <ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5V19A9 3 0 0 0 21 19V5"/><path d="M3 12A9 3 0 0 0 21 12"/>
             </svg>
             <span data-i18n="skills.db.title">Bases de Datos & Big Data</span>
           </h3>
@@ -888,10 +906,10 @@ c28 -28 1 -75 -37 -63 -27 8 -34 35 -15 56 20 22 35 24 52 7z m-770 -290 c30
         </div>
 
         <!-- Orchestration & Cloud -->
-        <div data-category="orchestration" class="skill-group reveal bg-slate-50 dark:bg-slate-900/60 p-6 rounded-2xl border border-slate-100 dark:border-slate-700 space-y-4">
+        <div data-category="orchestration" class="skill-group reveal bg-white dark:bg-slate-800 p-6 rounded-2xl border border-slate-100 dark:border-slate-700 space-y-4">
           <h3 class="text-md font-bold text-slate-900 dark:text-white flex items-center space-x-2">
-            <svg class="w-5 h-5 text-indigo-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z"></path>
+            <svg class="w-5 h-5 text-indigo-500" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+              <path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"/>
             </svg>
             <span data-i18n="skills.cloud.title">Contenedores, Orquestación & Cloud</span>
           </h3>
@@ -912,7 +930,7 @@ c28 -28 1 -75 -37 -63 -27 8 -34 35 -15 56 20 22 35 24 52 7z m-770 -290 c30
   </section>
 
   <!-- Publications & Certifications Section -->
-  <section id="education" class="py-20 bg-slate-50 dark:bg-slate-900 transition-colors">
+  <section id="education" class="py-20 transition-colors">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
         
@@ -928,8 +946,8 @@ c28 -28 1 -75 -37 -63 -27 8 -34 35 -15 56 20 22 35 24 52 7z m-770 -290 c30
             <div class="bg-white dark:bg-slate-800 p-6 rounded-2xl border border-slate-200 dark:border-slate-700 hover:-translate-y-1 hover:border-slate-300 dark:hover:border-slate-600 hover:shadow-xl hover:shadow-slate-200/50 dark:hover:shadow-black/30 transition-all duration-300 space-y-4">
               <div class="flex items-start space-x-3">
                 <div class="p-2 rounded-xl bg-pastelLilac/30 dark:bg-pastelLilac/10 text-indigo-900 dark:text-indigo-300">
-                  <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222"></path>
+                  <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+                    <path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/>
                   </svg>
                 </div>
                 <div>
@@ -944,9 +962,8 @@ c28 -28 1 -75 -37 -63 -27 8 -34 35 -15 56 20 22 35 24 52 7z m-770 -290 c30
               <hr class="border-slate-100 dark:border-slate-700">
               <div class="flex items-start space-x-3">
                 <div class="p-2 rounded-xl bg-pastelMint/45 dark:bg-pastelMint/10 text-emerald-900 dark:text-emerald-300">
-                  <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <circle cx="12" cy="8" r="6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></circle>
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"></path>
+                  <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+                    <path d="M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76Z"/><path d="m9 12 2 2 4-4"/>
                   </svg>
                 </div>
                 <div>
@@ -1036,8 +1053,8 @@ c28 -28 1 -75 -37 -63 -27 8 -34 35 -15 56 20 22 35 24 52 7z m-770 -290 c30
               <div class="pt-2">
                 <a href="https://doi.org/10.1002/stc.2727" target="_blank" class="inline-flex items-center text-sm font-semibold text-indigo-600 dark:text-indigo-400 hover:text-indigo-800 dark:hover:text-indigo-300 transition-colors">
                   <span data-i18n="pub.link">Ver artículo en Wiley Online Library</span>
-                  <svg class="w-4 h-4 ml-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+                  <svg class="w-4 h-4 ml-1.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" x2="21" y1="14" y2="3"/>
                   </svg>
                 </a>
               </div>
@@ -1074,7 +1091,7 @@ c28 -28 1 -75 -37 -63 -27 8 -34 35 -15 56 20 22 35 24 52 7z m-770 -290 c30
   </section>
 
   <!-- Contact Section -->
-  <section id="contact" class="py-20 bg-white dark:bg-slate-800 transition-colors">
+  <section id="contact" class="py-20 transition-colors">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center space-y-3 mb-16">
         <h2 class="text-3xl font-bold tracking-tight text-slate-900 dark:text-white" data-i18n="contact.title">Hablemos</h2>
@@ -1087,10 +1104,10 @@ c28 -28 1 -75 -37 -63 -27 8 -34 35 -15 56 20 22 35 24 52 7z m-770 -290 c30
       <div class="flex flex-col sm:flex-row justify-center gap-6 max-w-3xl mx-auto items-stretch">
         
         <!-- Email Card -->
-        <div class="reveal w-full sm:w-1/2 p-6 bg-slate-50 dark:bg-slate-900/60 rounded-2xl border border-slate-100 dark:border-slate-700 flex items-center space-x-4 hover:shadow-md transition-shadow">
+        <div class="reveal w-full sm:w-1/2 p-6 bg-white dark:bg-slate-800 rounded-2xl border border-slate-100 dark:border-slate-700 flex items-center space-x-4 hover:shadow-md transition-shadow">
           <div class="p-3 bg-pastelLilac/30 rounded-xl text-indigo-900 dark:text-indigo-300">
-            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+              <rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
             </svg>
           </div>
           <div>
@@ -1102,10 +1119,10 @@ c28 -28 1 -75 -37 -63 -27 8 -34 35 -15 56 20 22 35 24 52 7z m-770 -290 c30
         </div>
 
         <!-- LinkedIn Card -->
-        <div class="reveal w-full sm:w-1/2 p-6 bg-slate-50 dark:bg-slate-900/60 rounded-2xl border border-slate-100 dark:border-slate-700 flex items-center space-x-4 hover:shadow-md transition-shadow" style="transition-delay: 100ms;">
+        <div class="reveal w-full sm:w-1/2 p-6 bg-white dark:bg-slate-800 rounded-2xl border border-slate-100 dark:border-slate-700 flex items-center space-x-4 hover:shadow-md transition-shadow" style="transition-delay: 100ms;">
           <div class="p-3 bg-pastelBlue/30 rounded-xl text-blue-900 dark:text-blue-300">
-            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-              <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+              <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/>
             </svg>
           </div>
           <div>
@@ -1123,22 +1140,10 @@ c28 -28 1 -75 -37 -63 -27 8 -34 35 -15 56 20 22 35 24 52 7z m-770 -290 c30
   <!-- Footer -->
   <footer class="bg-slate-100 dark:bg-slate-950 text-slate-500 dark:text-slate-400 pt-12 pb-24 lg:pb-12 transition-colors duration-300 border-t border-slate-200 dark:border-slate-800/80">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex flex-col sm:flex-row items-center justify-between gap-6">
-        <div class="flex items-center space-x-3">
-          <img src="/favicon.svg" alt="ACVC Logo" class="w-10 h-10 rounded-xl object-contain bg-slate-200 dark:bg-white/10 p-1">
-          <div>
-            <h2 class="text-lg font-bold text-slate-900 dark:text-white tracking-tight">Ana-Catalina Villalobos Contardo</h2>
-            <p data-i18n="footer.desc" class="text-xs text-slate-500 dark:text-slate-400 mt-1">Ingeniera Civil | Data Scientist & Machine Learning Engineer</p>
-          </div>
-        </div>
-      </div>
-      
-      <hr class="border-slate-200 dark:border-slate-800 my-8">
-      
       <div class="flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500 dark:text-slate-400">
-        <p data-i18n="footer.rights" class="text-center sm:text-left">© 2026 Ana-Catalina Villalobos Contardo | ana-catalina.com. Todos los derechos reservados.</p>
+        <p data-i18n="footer.rights" class="text-center sm:text-left">© 2026 Ana-Catalina Villalobos Contardo. Todos los derechos reservados.</p>
         <div class="text-center sm:text-right flex flex-col space-y-1">
-          <span data-i18n="footer.made">Diseño y desarrollo propio · Creado con <span class="text-pink-500">♥</span> usando Vite + Tailwind CSS · Publicado en Vercel</span>
+          <span data-i18n="footer.made">Diseño y desarrollo propio · Creado con <span class="text-pink-500">♥</span> usando Astro + Tailwind CSS · Publicado en Vercel</span>
           <span data-i18n="footer.template">¿Te gusta este diseño? <a href="https://github.com/AnaCataVC/my-cv/" target="_blank" class="text-indigo-500 dark:text-indigo-400 hover:underline font-medium">Usa la plantilla base aquí</a>.</span>
         </div>
       </div>
@@ -1147,13 +1152,13 @@ c28 -28 1 -75 -37 -63 -27 8 -34 35 -15 56 20 22 35 24 52 7z m-770 -290 c30
 
   <!-- Back to Top Button -->
   <button id="back-to-top" class="fixed bottom-6 right-6 p-3 bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-500 hover:to-purple-500 text-white rounded-full shadow-2xl opacity-0 translate-y-10 pointer-events-none transition-all duration-300 z-50 focus:outline-none">
-    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7"></path>
+    <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+      <path d="m18 15-6-6-6 6"/>
     </svg>
   </button>
 
   <!-- JS Bundler Hook -->
-  <script type="module" src="/src/main.js"></script>
+  <script src="../main.js"></script>
 
 </body>
 </html>

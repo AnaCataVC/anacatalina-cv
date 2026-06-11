@@ -12,7 +12,7 @@ Professional CV and personal website for **Ana-Catalina Alejandra Villalobos Con
 
 | Category     | Technology                                      |
 | ------------ | ----------------------------------------------- |
-| Bundler      | Vite 5                                          |
+| Bundler      | Astro 4                                         |
 | Styles       | Tailwind CSS 3.4 (with custom pastel palette)   |
 | PostCSS      | PostCSS + Autoprefixer                          |
 | JavaScript   | ES6+ (vanilla, no frameworks)                   |
@@ -31,11 +31,12 @@ anacatalina-cv/
 │   ├── favicon.ico          # Favicon (ICO)
 │   └── favicon.svg          # Favicon (SVG)
 ├── src/
+│   ├── pages/
+│   │   └── index.astro      # Main Astro component (HTML + Frontmatter)
 │   ├── main.js              # Core logic: theme, i18n, mobile menu, scroll, animations
 │   ├── i18n.js              # ES/EN translations (exported `translations` object)
 │   └── styles.css           # Global styles: font imports, Tailwind directives, custom utilities
-├── index.html               # Main HTML structure (all CV content lives here)
-├── vite.config.js           # Vite config (base: '/')
+├── astro.config.mjs         # Astro config
 ├── tailwind.config.js       # Custom colors, fonts, animations (fadeInUp, fadeIn)
 ├── postcss.config.js        # Plugin chain: tailwindcss + autoprefixer
 ├── package.json             # Scripts: dev, build, preview
@@ -93,13 +94,13 @@ The base theme uses Tailwind's `slate` scale for grays. Functional accents use `
 - **CI/CD:** Vercel.
 - **Trigger:** Push to `main`.
 - **Process:** Automatic build and deployment via Vercel.
-- **Base path:** `/` (configured in `vite.config.js`).
+- Base path: `/` (managed by Vercel adapter or default Astro config).
 
 ## Development Commands
 
 ```bash
 npm install      # Install dependencies
-npm run dev      # Development server (Vite)
+npm run dev      # Development server (Astro)
 npm run build    # Production build → ./dist/
 npm run preview  # Preview production build
 ```
@@ -107,7 +108,7 @@ npm run preview  # Preview production build
 ## Conventions & Rules
 
 ### When modifying CV content:
-1. Textual content lives in `index.html` (structure) and `src/i18n.js` (translations).
+1. Textual content lives in `src/pages/index.astro` (structure) and `src/i18n.js` (translations).
 2. **Always** add translations in both languages (ES and EN).
 3. Use the `data-i18n="new.key"` attribute in HTML for translatable text.
 4. Use `data-i18n-href="new.key"` for links that change by language.
@@ -127,4 +128,4 @@ npm run preview  # Preview production build
 - Never commit `node_modules/` or `dist/`.
 - CV PDFs go in `public/`.
 - Static assets (images, favicons) go in `public/`.
-- `index.html` is at the root (not in `src/`).
+- `index.astro` is in `src/pages/`.
