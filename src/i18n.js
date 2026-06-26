@@ -12,10 +12,6 @@ export const translations = {
     es: "Formación y Publicaciones",
     en: "Education & Publications"
   },
-  "nav.contacto": {
-    es: "Contacto",
-    en: "Contact"
-  },
   
   // Hero Section
   "hero.badge": {
@@ -308,16 +304,6 @@ export const translations = {
     en: "Development of takeoffs, budgets, and simple structure design."
   },
 
-  // Contact
-  "contact.title": {
-    es: "Hablemos",
-    en: "Let's Talk"
-  },
-  "contact.desc": {
-    es: "¿Tienes una propuesta o quieres colaborar en algún proyecto? Contáctame a través de mis canales oficiales:",
-    en: "Do you have a proposal or want to collaborate on a project? Contact me through my official channels:"
-  },
-
   "exp.fracttal1.b4": {
     es: "Supervisión y coordinación de proyectos de integración para decenas de clientes, aplicando gestión eficiente de recursos, plazos y flujos de datos confiables.",
     en: "Supervision and coordination of integration projects for dozens of clients, applying efficient resource management, meeting deadlines, and ensuring reliable data flows."
@@ -501,16 +487,6 @@ export const translations = {
   "intern.2.desc": {
     es: "Desarrollo de cubicaciones, presupuestos y diseño de estructuras simples.",
     en: "Development of takeoffs, budgets, and simple structure design."
-  },
-
-  // Contact
-  "contact.title": {
-    es: "Hablemos",
-    en: "Let's Talk"
-  },
-  "contact.desc": {
-    es: "¿Tienes una propuesta o quieres colaborar en algún proyecto? Contáctame a través de mis canales oficiales:",
-    en: "Do you have a proposal or want to collaborate on a project? Contact me through my official channels:"
   },
 
   // Footer
