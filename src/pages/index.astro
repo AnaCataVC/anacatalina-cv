@@ -1,109 +1,7 @@
 ---
-import '../styles.css';
+import Layout from '../layouts/Layout.astro';
 ---
-<!DOCTYPE html>
-<html lang="es" class="scroll-smooth">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ana-Catalina Villalobos | Ingeniera Civil & Data Scientist</title>
-  <meta name="description" content="CV y Portafolio Profesional de Ana-Catalina Villalobos Contardo, Ingeniera Civil, Data Scientist y ML Engineer especialista en pipelines de datos y modelos predictivos.">
-  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-  <script is:inline>
-    if (localStorage.getItem('theme') === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-      document.documentElement.classList.add('dark');
-    } else {
-      document.documentElement.classList.remove('dark');
-    }
-  </script>
-</head>
-<body class="bg-slate-50 text-slate-800 dark:bg-slate-900 dark:text-slate-100 transition-colors duration-300">
-
-  <!-- Scroll Progress Bar -->
-  <div class="fixed top-0 left-0 w-full h-1 z-50 bg-transparent">
-    <div id="scroll-progress" class="h-full bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 w-0 transition-all duration-75"></div>
-  </div>
-
-  <!-- Header / Navigation -->
-  <nav class="sticky top-0 z-40 w-full bg-white/70 dark:bg-slate-900/80 backdrop-blur-md border-b border-slate-200/50 dark:border-slate-800/50 transition-colors duration-300">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex items-center justify-between h-16">
-        <div class="flex-shrink-0">
-          <a href="https://ana-catalina.com/" class="flex items-center">
-            <img src="/favicon.svg" alt="ACVC Logo" class="w-8 h-8 rounded-lg object-contain">
-          </a>
-        </div>
-        
-        <!-- Desktop Navigation -->
-        <div class="hidden md:flex items-center space-x-6">
-          <div class="ml-10 flex items-baseline space-x-6">
-            <a href="#experience" data-i18n="hero.expBtn" data-i18n="nav.experiencia" class="text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">
-              Experiencia
-            </a>
-            <a href="#skills" data-i18n="nav.habilidades" class="text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">Habilidades</a>
-            <a href="#education" data-i18n="nav.publicaciones" class="text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">Formación y Publicaciones</a>
-          </div>
-          
-          <!-- Desktop Language Toggle Button -->
-          <button id="lang-toggle-desktop" class="p-2 rounded-xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 shadow-sm hover:shadow text-slate-600 dark:text-slate-300 hover:text-indigo-600 dark:hover:text-indigo-400 focus:outline-none transition-all duration-200 hover:scale-105 font-bold text-sm" aria-label="Cambiar idioma">
-            <span id="current-lang-desktop">ES</span>
-          </button>
-          
-          <!-- Desktop Theme Toggle Button -->
-          <button id="theme-toggle-desktop" class="p-2 rounded-xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 shadow-sm hover:shadow text-slate-600 dark:text-slate-300 hover:text-indigo-600 dark:hover:text-indigo-400 focus:outline-none transition-all duration-200 hover:scale-105" aria-label="Cambiar tema">
-            <!-- Sun Icon (visible in dark mode) -->
-            <svg id="theme-toggle-light-icon-desktop" class="hidden w-5 h-5 transition-transform duration-300 rotate-0 dark:rotate-90" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
-              <circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/>
-            </svg>
-            <!-- Moon Icon (visible in light mode) -->
-            <svg id="theme-toggle-dark-icon-desktop" class="hidden w-5 h-5 transition-transform duration-300" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
-              <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/>
-            </svg>
-          </button>
-        </div>
-
-        <!-- Mobile Menu Button -->
-        <div class="flex items-center space-x-2 md:hidden">
-          <!-- Mobile Language Toggle Button -->
-          <button id="lang-toggle-mobile" class="p-2 rounded-xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 shadow-sm hover:shadow text-slate-600 dark:text-slate-300 hover:text-indigo-600 dark:hover:text-indigo-400 focus:outline-none transition-all duration-200 font-bold text-sm" aria-label="Cambiar idioma">
-            <span id="current-lang-mobile">ES</span>
-          </button>
-
-          <!-- Mobile Theme Toggle Button -->
-          <button id="theme-toggle-mobile" class="p-2 rounded-xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 shadow-sm hover:shadow text-slate-600 dark:text-slate-300 hover:text-indigo-600 dark:hover:text-indigo-400 focus:outline-none transition-all duration-200" aria-label="Cambiar tema">
-            <!-- Sun Icon (visible in dark mode) -->
-            <svg id="theme-toggle-light-icon-mobile" class="hidden w-5 h-5 transition-transform duration-300 rotate-0 dark:rotate-90" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
-              <circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/>
-            </svg>
-            <!-- Moon Icon (visible in light mode) -->
-            <svg id="theme-toggle-dark-icon-mobile" class="hidden w-5 h-5 transition-transform duration-300" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
-              <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/>
-            </svg>
-          </button>
-          
-          <button id="mobile-menu-btn" class="inline-flex items-center justify-center p-2 rounded-xl text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 focus:outline-none transition-colors" aria-expanded="false">
-            <svg class="h-6 w-6" id="menu-icon" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
-              <line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/>
-            </svg>
-            <svg class="h-6 w-6 hidden" id="close-icon" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
-              <path d="M18 6 6 18"/><path d="m6 6 12 12"/>
-            </svg>
-          </button>
-        </div>
-      </div>
-    </div>
-
-    <!-- Mobile Navigation Drawer -->
-    <div id="mobile-menu" class="hidden md:hidden border-t border-slate-200/50 dark:border-slate-800/50 bg-white/95 dark:bg-slate-900/95 backdrop-blur-md transition-all duration-300 ease-in-out">
-      <div class="px-2 pt-2 pb-4 space-y-1 sm:px-3">
-        <a href="#experience" data-i18n="hero.expBtn" data-i18n="nav.experiencia" class="mobile-nav-link block px-3 py-2.5 rounded-xl text-base font-medium text-slate-600 dark:text-slate-300 hover:text-indigo-600 dark:hover:text-indigo-400 hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-all">
-              Experiencia
-            </a>
-        <a href="#skills" data-i18n="nav.habilidades" class="mobile-nav-link block px-3 py-2.5 rounded-xl text-base font-medium text-slate-600 dark:text-slate-300 hover:text-indigo-600 dark:hover:text-indigo-400 hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-all">Habilidades</a>
-        <a href="#education" data-i18n="nav.publicaciones" class="mobile-nav-link block px-3 py-2.5 rounded-xl text-base font-medium text-slate-600 dark:text-slate-300 hover:text-indigo-600 dark:hover:text-indigo-400 hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-all">Formación y Publicaciones</a>
-      </div>
-    </div>
-  </nav>
+<Layout title="Ana-Catalina Villalobos | Ingeniera Civil & Data Scientist" description="CV y Portafolio Profesional de Ana-Catalina Villalobos Contardo, Ingeniera Civil, Data Scientist y ML Engineer especialista en pipelines de datos y modelos predictivos.">
 
   <!-- Hero and Experience Wrapper for Background Glow -->
   <div class="relative overflow-hidden">
@@ -118,7 +16,7 @@ import '../styles.css';
       <div class="grid grid-cols-1 md:grid-cols-12 gap-12 items-center">
         <!-- Profile details & Photo (Left Column on Desktop, Top on Mobile) -->
         <div class="md:col-span-6 flex flex-col items-center md:items-start text-center md:text-left space-y-6 animate-fade-in-up">
-          <div id="availability-badge" class="inline-flex items-center space-x-2 px-3 py-1.5 rounded-full bg-pastelMint/45 dark:bg-pastelMint/10 border border-pastelMint text-emerald-800 dark:text-emerald-300 font-medium text-xs tracking-wide">
+          <div id="availability-badge" class="inline-flex items-center space-x-2 px-3 py-1.5 rounded-full bg-pastel-mint/45 dark:bg-pastel-mint/10 border border-pastel-mint text-emerald-800 dark:text-emerald-300 font-medium text-xs tracking-wide">
             <span class="w-2 h-2 rounded-full bg-emerald-500 animate-ping"></span>
             <span data-i18n="hero.badge">Disponible para Proyectos & Liderazgo de Datos</span>
           </div>
@@ -667,7 +565,7 @@ c28 -28 1 -75 -37 -63 -27 8 -34 35 -15 56 20 22 35 24 52 7z m-770 -290 c30
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center space-y-3 mb-16">
         <h2 class="text-3xl font-bold tracking-tight text-slate-900 dark:text-white" data-i18n="exp.title">Experiencia Profesional</h2>
-        <div class="w-16 h-1.5 bg-pastelPink mx-auto rounded-full"></div>
+        <div class="w-16 h-1.5 bg-pastel-pink mx-auto rounded-full"></div>
       </div>
 
       <div class="max-w-4xl mx-auto">
@@ -682,7 +580,7 @@ c28 -28 1 -75 -37 -63 -27 8 -34 35 -15 56 20 22 35 24 52 7z m-770 -290 c30
             <div class="bg-white dark:bg-slate-800 p-6 rounded-2xl border border-slate-200 dark:border-slate-700 hover:-translate-y-1 hover:border-slate-300 dark:hover:border-slate-600 hover:shadow-xl hover:shadow-slate-200/50 dark:hover:shadow-black/30 transition-all duration-300">
               <div class="flex flex-wrap items-center justify-between gap-2 mb-4">
                 <div>
-                  <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold bg-pastelLilac/30 dark:bg-pastelLilac/10 text-indigo-900 dark:text-indigo-300">
+                  <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold bg-pastel-lilac/30 dark:bg-pastel-lilac/10 text-indigo-900 dark:text-indigo-300">
                     SimpliRoute
                   </span>
                   <h3 class="text-xl font-bold text-slate-900 dark:text-white mt-1.5">Learning Engineer</h3>
@@ -711,7 +609,7 @@ c28 -28 1 -75 -37 -63 -27 8 -34 35 -15 56 20 22 35 24 52 7z m-770 -290 c30
             <div class="bg-white dark:bg-slate-800 p-6 rounded-2xl border border-slate-200 dark:border-slate-700 hover:-translate-y-1 hover:border-slate-300 dark:hover:border-slate-600 hover:shadow-xl hover:shadow-slate-200/50 dark:hover:shadow-black/30 transition-all duration-300">
               <div class="flex flex-wrap items-center justify-between gap-2 mb-4">
                 <div>
-                  <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold bg-pastelPink/30 dark:bg-pastelPink/10 text-pink-900 dark:text-pink-300">
+                  <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold bg-pastel-pink/30 dark:bg-pastel-pink/10 text-pink-900 dark:text-pink-300">
                     Fracttal
                   </span>
                   <h3 class="text-xl font-bold text-slate-900 dark:text-white mt-1.5" data-i18n="exp.fracttal1.title">Tech Lead Fracttal Hub</h3>
@@ -740,7 +638,7 @@ c28 -28 1 -75 -37 -63 -27 8 -34 35 -15 56 20 22 35 24 52 7z m-770 -290 c30
             <div class="bg-white dark:bg-slate-800 p-6 rounded-2xl border border-slate-200 dark:border-slate-700 hover:-translate-y-1 hover:border-slate-300 dark:hover:border-slate-600 hover:shadow-xl hover:shadow-slate-200/50 dark:hover:shadow-black/30 transition-all duration-300">
               <div class="flex flex-wrap items-center justify-between gap-2 mb-4">
                 <div>
-                  <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold bg-pastelBlue/30 dark:bg-pastelBlue/10 text-blue-900 dark:text-blue-300">
+                  <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold bg-pastel-blue/30 dark:bg-pastel-blue/10 text-blue-900 dark:text-blue-300">
                     Fracttal
                   </span>
                   <h3 class="text-xl font-bold text-slate-900 dark:text-white mt-1.5">Data Scientist</h3>
@@ -769,7 +667,7 @@ c28 -28 1 -75 -37 -63 -27 8 -34 35 -15 56 20 22 35 24 52 7z m-770 -290 c30
             <div class="bg-white dark:bg-slate-800 p-6 rounded-2xl border border-slate-200 dark:border-slate-700 hover:-translate-y-1 hover:border-slate-300 dark:hover:border-slate-600 hover:shadow-xl hover:shadow-slate-200/50 dark:hover:shadow-black/30 transition-all duration-300">
               <div class="flex flex-wrap items-center justify-between gap-2 mb-4">
                 <div>
-                  <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold bg-pastelMint/45 dark:bg-pastelMint/10 text-emerald-900 dark:text-emerald-300">
+                  <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold bg-pastel-mint/45 dark:bg-pastel-mint/10 text-emerald-900 dark:text-emerald-300">
                     Fracttal
                   </span>
                   <h3 class="text-xl font-bold text-slate-900 dark:text-white mt-1.5" data-i18n="exp.fracttal3.title">Analista de Datos</h3>
@@ -801,7 +699,7 @@ c28 -28 1 -75 -37 -63 -27 8 -34 35 -15 56 20 22 35 24 52 7z m-770 -290 c30
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center space-y-3 mb-12">
         <h2 class="text-3xl font-bold tracking-tight text-slate-900 dark:text-white" data-i18n="skills.title">Habilidades & Herramientas</h2>
-        <div class="w-16 h-1.5 bg-pastelBlue mx-auto rounded-full"></div>
+        <div class="w-16 h-1.5 bg-pastel-blue mx-auto rounded-full"></div>
       </div>
 
 
@@ -818,10 +716,10 @@ c28 -28 1 -75 -37 -63 -27 8 -34 35 -15 56 20 22 35 24 52 7z m-770 -290 c30
             <span data-i18n="skills.ai.title">IA Agéntica & <span data-i18n="skills.ai.4">Ciencia de Datos</span></span>
           </h3>
           <div class="flex flex-wrap gap-2">
-            <span class="px-3 py-1 rounded-lg text-xs font-semibold bg-pastelLilac text-slate-800 border border-indigo-200"><span data-i18n="skills.ai.1">IA Agéntica (Claude & Antigravity)</span></span>
-            <span class="px-3 py-1 rounded-lg text-xs font-semibold bg-pastelPink text-slate-800 border border-pink-200"><span data-i18n="skills.ai.2">Agentes Autónomos (Skills & Hooks)</span></span>
-            <span class="px-3 py-1 rounded-lg text-xs font-semibold bg-pastelBlue text-slate-800 border border-blue-200">Machine Learning</span>
-            <span class="px-3 py-1 rounded-lg text-xs font-semibold bg-pastelMint text-slate-800 border border-emerald-200"><span data-i18n="skills.ai.4">Ciencia de Datos</span></span>
+            <span class="px-3 py-1 rounded-lg text-xs font-semibold bg-pastel-lilac text-slate-800 border border-indigo-200"><span data-i18n="skills.ai.1">IA Agéntica (Claude & Antigravity)</span></span>
+            <span class="px-3 py-1 rounded-lg text-xs font-semibold bg-pastel-pink text-slate-800 border border-pink-200"><span data-i18n="skills.ai.2">Agentes Autónomos (Skills & Hooks)</span></span>
+            <span class="px-3 py-1 rounded-lg text-xs font-semibold bg-pastel-blue text-slate-800 border border-blue-200">Machine Learning</span>
+            <span class="px-3 py-1 rounded-lg text-xs font-semibold bg-pastel-mint text-slate-800 border border-emerald-200"><span data-i18n="skills.ai.4">Ciencia de Datos</span></span>
             <span class="px-3 py-1 rounded-lg text-xs font-semibold bg-slate-200 dark:bg-slate-700 text-slate-800 dark:text-slate-200" data-i18n="skills.ai.5">Analítica</span>
             <span class="px-3 py-1 rounded-lg text-xs font-semibold bg-slate-200 dark:bg-slate-700 text-slate-800 dark:text-slate-200" data-i18n="skills.ai.6">Probabilidades</span>
             <span class="px-3 py-1 rounded-lg text-xs font-semibold bg-slate-200 dark:bg-slate-700 text-slate-800 dark:text-slate-200" data-i18n="skills.ai.7">Estadística</span>
@@ -837,10 +735,10 @@ c28 -28 1 -75 -37 -63 -27 8 -34 35 -15 56 20 22 35 24 52 7z m-770 -290 c30
             <span data-i18n="skills.leadership.title">Liderazgo & Metodologías</span>
           </h3>
           <div class="flex flex-wrap gap-2">
-            <span class="px-3 py-1 rounded-lg text-xs font-semibold bg-pastelLilac text-slate-800 border border-indigo-200"><span data-i18n="skills.leadership.1">Liderazgo Técnico</span></span>
-            <span class="px-3 py-1 rounded-lg text-xs font-semibold bg-pastelPink text-slate-800 border border-pink-200"><span data-i18n="skills.leadership.2">Metodologías Ágiles (Scrum & Kanban)</span></span>
-            <span class="px-3 py-1 rounded-lg text-xs font-semibold bg-pastelBlue text-slate-800 border border-blue-200"><span data-i18n="skills.leadership.3">Planificación de Roadmaps (OKRs)</span></span>
-            <span class="px-3 py-1 rounded-lg text-xs font-semibold bg-pastelMint text-slate-800 border border-emerald-200"><span data-i18n="skills.leadership.4">Colaboración Cross-functional</span></span>
+            <span class="px-3 py-1 rounded-lg text-xs font-semibold bg-pastel-lilac text-slate-800 border border-indigo-200"><span data-i18n="skills.leadership.1">Liderazgo Técnico</span></span>
+            <span class="px-3 py-1 rounded-lg text-xs font-semibold bg-pastel-pink text-slate-800 border border-pink-200"><span data-i18n="skills.leadership.2">Metodologías Ágiles (Scrum & Kanban)</span></span>
+            <span class="px-3 py-1 rounded-lg text-xs font-semibold bg-pastel-blue text-slate-800 border border-blue-200"><span data-i18n="skills.leadership.3">Planificación de Roadmaps (OKRs)</span></span>
+            <span class="px-3 py-1 rounded-lg text-xs font-semibold bg-pastel-mint text-slate-800 border border-emerald-200"><span data-i18n="skills.leadership.4">Colaboración Cross-functional</span></span>
             <span class="px-3 py-1 rounded-lg text-xs font-semibold bg-slate-200 dark:bg-slate-700 text-slate-800 dark:text-slate-200">Jira</span>
             <span class="px-3 py-1 rounded-lg text-xs font-semibold bg-slate-200 dark:bg-slate-700 text-slate-800 dark:text-slate-200">Notion</span>
           </div>
@@ -855,10 +753,10 @@ c28 -28 1 -75 -37 -63 -27 8 -34 35 -15 56 20 22 35 24 52 7z m-770 -290 c30
             <span data-i18n="skills.lang.title">Lenguajes de Programación</span>
           </h3>
           <div class="flex flex-wrap gap-2">
-            <span class="px-3 py-1 rounded-lg text-xs font-semibold bg-pastelLilac text-slate-800 border border-indigo-200"><span data-i18n="skills.lang.1">Python (Avanzado)</span></span>
-            <span class="px-3 py-1 rounded-lg text-xs font-semibold bg-pastelPink text-slate-800 border border-pink-200"><span data-i18n="skills.lang.2">SQL (Avanzado)</span></span>
-            <span class="px-3 py-1 rounded-lg text-xs font-semibold bg-pastelBlue text-slate-800 border border-blue-200"><span data-i18n="skills.lang.3">MATLAB (Avanzado)</span></span>
-            <span class="px-3 py-1 rounded-lg text-xs font-semibold bg-pastelMint text-slate-800 border border-emerald-200"><span data-i18n="skills.lang.4">JavaScript (Intermedio)</span></span>
+            <span class="px-3 py-1 rounded-lg text-xs font-semibold bg-pastel-lilac text-slate-800 border border-indigo-200"><span data-i18n="skills.lang.1">Python (Avanzado)</span></span>
+            <span class="px-3 py-1 rounded-lg text-xs font-semibold bg-pastel-pink text-slate-800 border border-pink-200"><span data-i18n="skills.lang.2">SQL (Avanzado)</span></span>
+            <span class="px-3 py-1 rounded-lg text-xs font-semibold bg-pastel-blue text-slate-800 border border-blue-200"><span data-i18n="skills.lang.3">MATLAB (Avanzado)</span></span>
+            <span class="px-3 py-1 rounded-lg text-xs font-semibold bg-pastel-mint text-slate-800 border border-emerald-200"><span data-i18n="skills.lang.4">JavaScript (Intermedio)</span></span>
             <span class="px-3 py-1 rounded-lg text-xs font-semibold bg-slate-200 dark:bg-slate-700 text-slate-800 dark:text-slate-200"><span data-i18n="skills.lang.5">TypeScript (Intermedio)</span></span>
             <span class="px-3 py-1 rounded-lg text-xs font-semibold bg-slate-200 dark:bg-slate-700 text-slate-800 dark:text-slate-200"><span data-i18n="skills.lang.6">Java (Intermedio)</span></span>
           </div>
@@ -873,10 +771,10 @@ c28 -28 1 -75 -37 -63 -27 8 -34 35 -15 56 20 22 35 24 52 7z m-770 -290 c30
             <span data-i18n="skills.ecosystem.title">Ecosistema Tecnológico</span>
           </h3>
           <div class="flex flex-wrap gap-2">
-            <span class="px-3 py-1 rounded-lg text-xs font-semibold bg-pastelLilac text-slate-800 border border-indigo-200">Pandas & NumPy</span>
-            <span class="px-3 py-1 rounded-lg text-xs font-semibold bg-pastelPink text-slate-800 border border-pink-200">Scikit-learn</span>
-            <span class="px-3 py-1 rounded-lg text-xs font-semibold bg-pastelBlue text-slate-800 border border-blue-200">TensorFlow</span>
-            <span class="px-3 py-1 rounded-lg text-xs font-semibold bg-pastelMint text-slate-800 border border-emerald-200">Django</span>
+            <span class="px-3 py-1 rounded-lg text-xs font-semibold bg-pastel-lilac text-slate-800 border border-indigo-200">Pandas & NumPy</span>
+            <span class="px-3 py-1 rounded-lg text-xs font-semibold bg-pastel-pink text-slate-800 border border-pink-200">Scikit-learn</span>
+            <span class="px-3 py-1 rounded-lg text-xs font-semibold bg-pastel-blue text-slate-800 border border-blue-200">TensorFlow</span>
+            <span class="px-3 py-1 rounded-lg text-xs font-semibold bg-pastel-mint text-slate-800 border border-emerald-200">Django</span>
             <span class="px-3 py-1 rounded-lg text-xs font-semibold bg-slate-200 dark:bg-slate-700 text-slate-800 dark:text-slate-200">LangChain</span>
             <span class="px-3 py-1 rounded-lg text-xs font-semibold bg-slate-200 dark:bg-slate-700 text-slate-800 dark:text-slate-200">React JS</span>
             <span class="px-3 py-1 rounded-lg text-xs font-semibold bg-slate-200 dark:bg-slate-700 text-slate-800 dark:text-slate-200">Vite</span>
@@ -893,10 +791,10 @@ c28 -28 1 -75 -37 -63 -27 8 -34 35 -15 56 20 22 35 24 52 7z m-770 -290 c30
             <span data-i18n="skills.db.title">Bases de Datos & Big Data</span>
           </h3>
           <div class="flex flex-wrap gap-2">
-            <span class="px-3 py-1 rounded-lg text-xs font-semibold bg-pastelLilac text-slate-800 border border-indigo-200">PostgreSQL</span>
-            <span class="px-3 py-1 rounded-lg text-xs font-semibold bg-pastelPink text-slate-800 border border-pink-200">BigQuery</span>
-            <span class="px-3 py-1 rounded-lg text-xs font-semibold bg-pastelBlue text-slate-800 border border-blue-200">MySQL</span>
-            <span class="px-3 py-1 rounded-lg text-xs font-semibold bg-pastelMint text-slate-800 border border-emerald-200">SQL Server</span>
+            <span class="px-3 py-1 rounded-lg text-xs font-semibold bg-pastel-lilac text-slate-800 border border-indigo-200">PostgreSQL</span>
+            <span class="px-3 py-1 rounded-lg text-xs font-semibold bg-pastel-pink text-slate-800 border border-pink-200">BigQuery</span>
+            <span class="px-3 py-1 rounded-lg text-xs font-semibold bg-pastel-blue text-slate-800 border border-blue-200">MySQL</span>
+            <span class="px-3 py-1 rounded-lg text-xs font-semibold bg-pastel-mint text-slate-800 border border-emerald-200">SQL Server</span>
             <span class="px-3 py-1 rounded-lg text-xs font-semibold bg-slate-200 dark:bg-slate-700 text-slate-800 dark:text-slate-200">MongoDB</span>
             <span class="px-3 py-1 rounded-lg text-xs font-semibold bg-slate-200 dark:bg-slate-700 text-slate-800 dark:text-slate-200">Pub/Sub</span>
             <span class="px-3 py-1 rounded-lg text-xs font-semibold bg-slate-200 dark:bg-slate-700 text-slate-800 dark:text-slate-200">ETLs</span>
@@ -912,10 +810,10 @@ c28 -28 1 -75 -37 -63 -27 8 -34 35 -15 56 20 22 35 24 52 7z m-770 -290 c30
             <span data-i18n="skills.cloud.title">Contenedores, Orquestación & Cloud</span>
           </h3>
           <div class="flex flex-wrap gap-2">
-            <span class="px-3 py-1 rounded-lg text-xs font-semibold bg-pastelLilac text-slate-800 border border-indigo-200">Airflow</span>
-            <span class="px-3 py-1 rounded-lg text-xs font-semibold bg-pastelPink text-slate-800 border border-pink-200">Google Cloud (GCP)</span>
-            <span class="px-3 py-1 rounded-lg text-xs font-semibold bg-pastelBlue text-slate-800 border border-blue-200">Docker</span>
-            <span class="px-3 py-1 rounded-lg text-xs font-semibold bg-pastelMint text-slate-800 border border-emerald-200">Kubernetes</span>
+            <span class="px-3 py-1 rounded-lg text-xs font-semibold bg-pastel-lilac text-slate-800 border border-indigo-200">Airflow</span>
+            <span class="px-3 py-1 rounded-lg text-xs font-semibold bg-pastel-pink text-slate-800 border border-pink-200">Google Cloud (GCP)</span>
+            <span class="px-3 py-1 rounded-lg text-xs font-semibold bg-pastel-blue text-slate-800 border border-blue-200">Docker</span>
+            <span class="px-3 py-1 rounded-lg text-xs font-semibold bg-pastel-mint text-slate-800 border border-emerald-200">Kubernetes</span>
             <span class="px-3 py-1 rounded-lg text-xs font-semibold bg-slate-200 dark:bg-slate-700 text-slate-800 dark:text-slate-200">Git</span>
             <span class="px-3 py-1 rounded-lg text-xs font-semibold bg-slate-200 dark:bg-slate-700 text-slate-800 dark:text-slate-200">GitHub</span>
             <span class="px-3 py-1 rounded-lg text-xs font-semibold bg-slate-200 dark:bg-slate-700 text-slate-800 dark:text-slate-200">Bitbucket</span>
@@ -937,13 +835,13 @@ c28 -28 1 -75 -37 -63 -27 8 -34 35 -15 56 20 22 35 24 52 7z m-770 -290 c30
           <div class="space-y-6">
             <div class="space-y-3">
               <h2 class="text-3xl font-bold tracking-tight text-slate-900 dark:text-white" data-i18n="edu.title">Educación & Certificaciones</h2>
-              <div class="w-16 h-1.5 bg-pastelMint rounded-full"></div>
+              <div class="w-16 h-1.5 bg-pastel-mint rounded-full"></div>
             </div>
 
             <!-- Education -->
             <div class="bg-white dark:bg-slate-800 p-6 rounded-2xl border border-slate-200 dark:border-slate-700 hover:-translate-y-1 hover:border-slate-300 dark:hover:border-slate-600 hover:shadow-xl hover:shadow-slate-200/50 dark:hover:shadow-black/30 transition-all duration-300 space-y-4">
               <div class="flex items-start space-x-3">
-                <div class="p-2 rounded-xl bg-pastelLilac/30 dark:bg-pastelLilac/10 text-indigo-900 dark:text-indigo-300">
+                <div class="p-2 rounded-xl bg-pastel-lilac/30 dark:bg-pastel-lilac/10 text-indigo-900 dark:text-indigo-300">
                   <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
                     <path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/>
                   </svg>
@@ -959,7 +857,7 @@ c28 -28 1 -75 -37 -63 -27 8 -34 35 -15 56 20 22 35 24 52 7z m-770 -290 c30
               </div>
               <hr class="border-slate-100 dark:border-slate-700">
               <div class="flex items-start space-x-3">
-                <div class="p-2 rounded-xl bg-pastelMint/45 dark:bg-pastelMint/10 text-emerald-900 dark:text-emerald-300">
+                <div class="p-2 rounded-xl bg-pastel-mint/45 dark:bg-pastel-mint/10 text-emerald-900 dark:text-emerald-300">
                   <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
                     <path d="M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76Z"/><path d="m9 12 2 2 4-4"/>
                   </svg>
@@ -980,7 +878,7 @@ c28 -28 1 -75 -37 -63 -27 8 -34 35 -15 56 20 22 35 24 52 7z m-770 -290 c30
                 
                 <div class="flex items-center justify-between p-4 bg-white dark:bg-slate-800 rounded-xl border border-slate-100 dark:border-slate-700">
                   <div class="flex items-center space-x-3">
-                    <span class="w-2.5 h-2.5 rounded-full bg-pastelLilac"></span>
+                    <span class="w-2.5 h-2.5 rounded-full bg-pastel-lilac"></span>
                     <div>
                       <h4 class="text-sm font-bold text-slate-900 dark:text-white">EFSET English Certificate</h4>
                       <p class="text-xs text-slate-500" data-i18n="edu.cert.1.desc">EF SET - Nivel C2 Proficient</p>
@@ -991,7 +889,7 @@ c28 -28 1 -75 -37 -63 -27 8 -34 35 -15 56 20 22 35 24 52 7z m-770 -290 c30
 
                 <div class="flex items-center justify-between p-4 bg-white dark:bg-slate-800 rounded-xl border border-slate-100 dark:border-slate-700">
                   <div class="flex items-center space-x-3">
-                    <span class="w-2.5 h-2.5 rounded-full bg-pastelPink"></span>
+                    <span class="w-2.5 h-2.5 rounded-full bg-pastel-pink"></span>
                     <div>
                       <h4 class="text-sm font-bold text-slate-900 dark:text-white">Applied Machine Learning in Python</h4>
                       <p class="text-xs text-slate-500">University of Michigan (Coursera)</p>
@@ -1002,7 +900,7 @@ c28 -28 1 -75 -37 -63 -27 8 -34 35 -15 56 20 22 35 24 52 7z m-770 -290 c30
 
                 <div class="flex items-center justify-between p-4 bg-white dark:bg-slate-800 rounded-xl border border-slate-100 dark:border-slate-700">
                   <div class="flex items-center space-x-3">
-                    <span class="w-2.5 h-2.5 rounded-full bg-pastelBlue"></span>
+                    <span class="w-2.5 h-2.5 rounded-full bg-pastel-blue"></span>
                     <div>
                       <h4 class="text-sm font-bold text-slate-900 dark:text-white">React & Django Full Stack Developer</h4>
                       <p class="text-xs text-slate-500">Udemy Web & Backend Development</p>
@@ -1013,7 +911,7 @@ c28 -28 1 -75 -37 -63 -27 8 -34 35 -15 56 20 22 35 24 52 7z m-770 -290 c30
 
                 <div class="flex items-center justify-between p-4 bg-white dark:bg-slate-800 rounded-xl border border-slate-100 dark:border-slate-700">
                   <div class="flex items-center space-x-3">
-                    <span class="w-2.5 h-2.5 rounded-full bg-pastelMint"></span>
+                    <span class="w-2.5 h-2.5 rounded-full bg-pastel-mint"></span>
                     <div>
                       <h4 class="text-sm font-bold text-slate-900 dark:text-white">Mastering Data Visualization</h4>
                       <p class="text-xs text-slate-500">Udemy - Theory and Foundations</p>
@@ -1034,7 +932,7 @@ c28 -28 1 -75 -37 -63 -27 8 -34 35 -15 56 20 22 35 24 52 7z m-770 -290 c30
           <div class="space-y-6">
             <div class="space-y-3">
               <h2 class="text-3xl font-bold tracking-tight text-slate-900 dark:text-white" data-i18n="pub.title">Publicaciones Científicas</h2>
-              <div class="w-16 h-1.5 bg-pastelLilac rounded-full"></div>
+              <div class="w-16 h-1.5 bg-pastel-lilac rounded-full"></div>
             </div>
             
             <div class="bg-white dark:bg-slate-800 p-6 rounded-2xl border border-slate-200 dark:border-slate-700 hover:-translate-y-1 hover:border-slate-300 dark:hover:border-slate-600 hover:shadow-xl hover:shadow-slate-200/50 dark:hover:shadow-black/30 transition-all duration-300 space-y-4">
@@ -1063,7 +961,7 @@ c28 -28 1 -75 -37 -63 -27 8 -34 35 -15 56 20 22 35 24 52 7z m-770 -290 c30
           <div class="space-y-6">
             <div class="space-y-3">
               <h2 class="text-3xl font-bold tracking-tight text-slate-900 dark:text-white" data-i18n="intern.title">Prácticas de Formación</h2>
-              <div class="w-16 h-1.5 bg-pastelPink rounded-full"></div>
+              <div class="w-16 h-1.5 bg-pastel-pink rounded-full"></div>
             </div>
             
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -1088,33 +986,4 @@ c28 -28 1 -75 -37 -63 -27 8 -34 35 -15 56 20 22 35 24 52 7z m-770 -290 c30
     </div>
   </section>
 
-  <!-- Footer -->
-  <footer class="bg-slate-100 dark:bg-slate-950 text-slate-500 dark:text-slate-400 pt-12 pb-24 lg:pb-12 transition-colors duration-300 border-t border-slate-200 dark:border-slate-800/80">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500 dark:text-slate-400">
-        <p data-i18n="footer.rights" class="text-center sm:text-left">© 2026 Ana-Catalina Villalobos Contardo. Todos los derechos reservados.</p>
-        <div class="text-center sm:text-right flex flex-col space-y-1">
-          <span data-i18n="footer.made">Diseño y desarrollo propio · Creado con <span class="text-pink-500">♥</span> usando Astro + Tailwind CSS · Publicado en Vercel</span>
-          <span data-i18n="footer.template">¿Te gusta este diseño? <a href="https://github.com/AnaCataVC/my-cv/" target="_blank" class="text-indigo-500 dark:text-indigo-400 hover:underline font-medium">Usa la plantilla base aquí</a>.</span>
-        </div>
-      </div>
-    </div>
-  </footer>
-
-  <!-- Back to Top Button -->
-  <button id="back-to-top" class="fixed bottom-6 right-6 p-3 bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-500 hover:to-purple-500 text-white rounded-full shadow-2xl opacity-0 translate-y-10 pointer-events-none transition-all duration-300 z-50 focus:outline-none">
-    <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
-      <path d="m18 15-6-6-6 6"/>
-    </svg>
-  </button>
-
-  <!-- JS Bundler Hook -->
-  <script src="../main.js"></script>
-
-  <!-- Vercel Analytics -->
-  <script>
-    import { inject } from '@vercel/analytics';
-    inject();
-  </script>
-</body>
-</html>
+  </Layout>
