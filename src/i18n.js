@@ -360,41 +360,53 @@ export const translations = {
     es: "IA Agéntica & Ciencia de Datos",
     en: "Agentic AI & Data Science"
   },
-  "skills.ai.1": { es: "IA Agéntica (Claude & Antigravity)", en: "Agentic AI (Claude & Antigravity)" },
-  "skills.ai.2": { es: "Agentes Autónomos (Skills & Hooks)", en: "Autonomous Agents (Skills & Hooks)" },
-  "skills.ai.4": { es: "Ciencia de Datos", en: "Data Science" },
-  "skills.ai.5": { es: "Analítica", en: "Analytics" },
-  "skills.ai.6": { es: "Probabilidades", en: "Probability" },
-  "skills.ai.7": { es: "Estadística", en: "Statistics" },
+  "skills.ai.1": { es: "Sistemas Multi-Agente", en: "Multi-Agent Systems" },
+  "skills.ai.2": { es: "LLMs & GenAI", en: "LLMs & GenAI" },
+  "skills.ai.4": { es: "Analítica de Datos", en: "Data Analytics" },
+  "skills.ai.5": { es: "Estadística & Probabilidad", en: "Statistics & Probability" },
 
-  "skills.leadership.title": {
-    es: "Liderazgo & Metodologías",
-    en: "Leadership & Methodologies"
+  "skills.methodologies.title": {
+    es: "Metodologías & Gestión de Producto",
+    en: "Methodologies & Product Management"
   },
   "skills.leadership.1": { es: "Liderazgo Técnico", en: "Technical Leadership" },
-  "skills.leadership.2": { es: "Metodologías Ágiles (Scrum & Kanban)", en: "Agile Methodologies (Scrum & Kanban)" },
-  "skills.leadership.3": { es: "Planificación de Roadmaps (OKRs)", en: "Roadmap Planning (OKRs)" },
+  "skills.leadership.2": { es: "Metodologías Ágiles", en: "Agile Methodologies" },
+  "skills.leadership.3": { es: "Planificación de Roadmaps", en: "Roadmap Planning" },
   "skills.leadership.4": { es: "Colaboración Cross-functional", en: "Cross-functional Collaboration" },
+  "skills.methodologies.1": { es: "Diseño de Sistemas", en: "System Design" },
+
+  "skills.soft.title": {
+    es: "Liderazgo & Habilidades Blandas",
+    en: "Leadership & Soft Skills"
+  },
+  "skills.soft.1": { es: "Team Building", en: "Team Building" },
+  "skills.soft.2": { es: "Comunicación Efectiva", en: "Effective Communication" },
+  "skills.soft.4": { es: "Resolución de Problemas", en: "Problem Solving" },
 
   "skills.lang.title": {
     es: "Lenguajes de Programación",
     en: "Programming Languages"
   },
-  "skills.lang.1": { es: "Python (Avanzado)", en: "Python (Advanced)" },
-  "skills.lang.2": { es: "SQL (Avanzado)", en: "SQL (Advanced)" },
-  "skills.lang.3": { es: "MATLAB (Avanzado)", en: "MATLAB (Advanced)" },
-  "skills.lang.4": { es: "JavaScript (Intermedio)", en: "JavaScript (Intermediate)" },
-  "skills.lang.5": { es: "TypeScript (Intermedio)", en: "TypeScript (Intermediate)" },
-  "skills.lang.6": { es: "Java (Intermedio)", en: "Java (Intermediate)" },
+  "skills.lang.1": { es: "Python", en: "Python" },
+  "skills.lang.2": { es: "SQL", en: "SQL" },
+  "skills.lang.3": { es: "MATLAB", en: "MATLAB" },
+  "skills.lang.4": { es: "JavaScript", en: "JavaScript" },
+  "skills.lang.5": { es: "TypeScript", en: "TypeScript" },
+  "skills.lang.6": { es: "Java", en: "Java" },
 
-  "skills.ecosystem.title": {
-    es: "Ecosistema Tecnológico",
-    en: "Technology Ecosystem"
+  "skills.frontend.title": {
+    es: "Frontend & Desarrollo Web",
+    en: "Frontend & Web Development"
   },
 
-  "skills.db.title": {
-    es: "Bases de Datos & Big Data",
-    en: "Databases & Big Data"
+  "skills.ml.title": {
+    es: "Librerías ML & IA",
+    en: "ML & AI Libraries"
+  },
+
+  "skills.backend_db.title": {
+    es: "Backend, Bases de Datos & Big Data",
+    en: "Backend, Databases & Big Data"
   },
 
   "skills.cloud.title": {
