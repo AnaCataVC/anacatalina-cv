@@ -129,3 +129,10 @@ npm run preview  # Preview production build
 - CV PDFs go in `public/`.
 - Static assets (images, favicons) go in `public/`.
 - `index.astro` is in `src/pages/`.
+
+### Cross-Project Visual Consistency (Header & Toggles):
+To maintain a seamless visual flow across the three portfolio websites (Homepage, CV, and Projects Hub), the following constraints must be respected in all repositories:
+- **Header Layout:** The logo and actions header must use the exact unified layout: absolute positioning at `top-0 left-0 w-full` (with `pointer-events-none`), wrapping a container of `max-w-6xl mx-auto px-4 sm:px-6 lg:px-8` and `h-16` (64px) height with `flex items-center justify-between` and `pointer-events-auto` for interactive child elements.
+- **Language Toggle Dimensions:** The language toggle buttons must be styled identically with `w-10 sm:w-12 h-7 sm:h-8` dimensions, `text-[11px] sm:text-xs font-medium`, and `p-1` padding for the outer pill.
+- **Language State Sync (`localStorage`):** Every language toggle interaction must store the chosen language in `localStorage.setItem('lang', 'es' | 'en')` so the selection translates seamlessly across projects.
+- **SEO-Safe Redirection:** Client-side redirections based on language must ONLY occur if a saved preference exists in `localStorage` (e.g. `localStorage.getItem('lang')`). Never redirect on first load using browser language detection (`navigator.language`) to ensure search bots (Googlebot) can crawl all language versions natively without indexation issues.
