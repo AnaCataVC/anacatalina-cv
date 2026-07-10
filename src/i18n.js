@@ -222,6 +222,10 @@ export const translations = {
     es: "Educación & Certificaciones",
     en: "Education & Certifications"
   },
+  "edu.title.only": {
+    es: "Educación",
+    en: "Education"
+  },
   "edu.civil.title": {
     es: "Ingeniería Civil",
     en: "Civil Engineering"
@@ -231,8 +235,8 @@ export const translations = {
     en: "Graduated in 2019, Degree awarded in 2020"
   },
   "edu.civil.desc": {
-    es: "Mención en estructuras, construcción y geotecnia. Trabajo de título en Procesos Gaussianos para detección de fallas estructurales. <strong class=\"text-slate-700 dark:text-slate-300\">Titulada con distinción máxima.</strong>",
-    en: "Specialization in structures, construction, and geotechnics. Thesis on Gaussian Processes for structural fault detection. <strong class=\"text-slate-700 dark:text-slate-300\">Graduated with highest honors.</strong>"
+    es: "Mención en estructuras, construcción y geotecnia. Trabajo de título en Procesos Gaussianos para detección de fallas estructurales. <strong class=\"text-slate-700 dark:text-slate-300\">Titulada con distinción máxima.</strong><br /><br /><strong>Prácticas profesionales:</strong> EGIS y DOM Curicó (cálculo estructural y presupuestos).",
+    en: "Specialization in structures, construction, and geotechnics. Thesis on Gaussian Processes for structural fault detection. <strong class=\"text-slate-700 dark:text-slate-300\">Graduated with highest honors.</strong><br /><br /><strong>Professional Internships:</strong> EGIS and DOM Curicó (structural calculations and budgeting)."
   },
   "edu.bsc.title": {
     es: "Licenciada en Ciencias de la Ingeniería",
@@ -274,35 +278,7 @@ export const translations = {
     en: "View article in Wiley Online Library"
   },
 
-  // Internships
-  "intern.title": {
-    es: "Prácticas de Formación",
-    en: "Internships & Training"
-  },
-  "intern.1.title": {
-    es: "Estudiante en práctica",
-    en: "Intern"
-  },
-  "intern.1.date": {
-    es: "Ene 2019 - Feb 2019",
-    en: "Jan 2019 - Feb 2019"
-  },
-  "intern.1.desc": {
-    es: "Apoyo en diseño de viviendas habitacionales y cálculos estructurales.",
-    en: "Support in residential housing design and structural calculations."
-  },
-  "intern.2.title": {
-    es: "Estudiante en práctica",
-    en: "Intern"
-  },
-  "intern.2.date": {
-    es: "Ene 2018 - Feb 2018",
-    en: "Jan 2018 - Feb 2018"
-  },
-  "intern.2.desc": {
-    es: "Desarrollo de cubicaciones, presupuestos y diseño de estructuras simples.",
-    en: "Development of takeoffs, budgets, and simple structure design."
-  },
+
 
   "exp.fracttal1.b4": {
     es: "Supervisión y coordinación de proyectos de integración para decenas de clientes, aplicando gestión eficiente de recursos, plazos y flujos de datos confiables.",
@@ -419,6 +395,10 @@ export const translations = {
     es: "Educación & Certificaciones",
     en: "Education & Certifications"
   },
+  "edu.title.only": {
+    es: "Educación",
+    en: "Education"
+  },
   "edu.civil.title": {
     es: "Ingeniería Civil",
     en: "Civil Engineering"
@@ -428,8 +408,8 @@ export const translations = {
     en: "Graduated in 2019, Degree awarded in 2020"
   },
   "edu.civil.desc": {
-    es: "Mención en estructuras, construcción y geotecnia. Trabajo de título en Procesos Gaussianos para detección de fallas estructurales. <strong class=\"text-slate-700 dark:text-slate-300\">Titulada con distinción máxima.</strong>",
-    en: "Specialization in structures, construction, and geotechnics. Thesis on Gaussian Processes for structural fault detection. <strong class=\"text-slate-700 dark:text-slate-300\">Graduated with highest honors.</strong>"
+    es: "Mención en estructuras, construcción y geotecnia. Trabajo de título en Procesos Gaussianos para detección de fallas estructurales. <strong class=\"text-slate-700 dark:text-slate-300\">Titulada con distinción máxima.</strong><br /><br /><strong>Prácticas profesionales:</strong> EGIS y DOM Curicó (cálculo estructural y presupuestos).",
+    en: "Specialization in structures, construction, and geotechnics. Thesis on Gaussian Processes for structural fault detection. <strong class=\"text-slate-700 dark:text-slate-300\">Graduated with highest honors.</strong><br /><br /><strong>Professional Internships:</strong> EGIS and DOM Curicó (structural calculations and budgeting)."
   },
   "edu.bsc.title": {
     es: "Licenciada en Ciencias de la Ingeniería",
@@ -471,35 +451,7 @@ export const translations = {
     en: "View article in Wiley Online Library"
   },
 
-  // Internships
-  "intern.title": {
-    es: "Prácticas de Formación",
-    en: "Internships & Training"
-  },
-  "intern.1.title": {
-    es: "Estudiante en práctica",
-    en: "Intern"
-  },
-  "intern.1.date": {
-    es: "Ene 2019 - Feb 2019",
-    en: "Jan 2019 - Feb 2019"
-  },
-  "intern.1.desc": {
-    es: "Apoyo en diseño de viviendas habitacionales y cálculos estructurales.",
-    en: "Support in residential housing design and structural calculations."
-  },
-  "intern.2.title": {
-    es: "Estudiante en práctica",
-    en: "Intern"
-  },
-  "intern.2.date": {
-    es: "Ene 2018 - Feb 2018",
-    en: "Jan 2018 - Feb 2018"
-  },
-  "intern.2.desc": {
-    es: "Desarrollo de cubicaciones, presupuestos y diseño de estructuras simples.",
-    en: "Development of takeoffs, budgets, and simple structure design."
-  },
+
 
   // Footer
   "footer.rights": {
