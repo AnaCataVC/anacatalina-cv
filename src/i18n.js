@@ -49,8 +49,8 @@ export const translations = {
     en: "About Me"
   },
   "about.p1": {
-    es: "Ingeniera especializada en Ciencia de Datos y Machine Learning, con experiencia liderando equipos y construyendo sistemas inteligentes para logística, automatización y análisis avanzado.",
-    en: "Engineer specialized in Data Science and Machine Learning, with experience leading teams and building intelligent systems for logistics, automation, and advanced analytics."
+    es: "Ingeniera especializada en Ciencia de Datos, Machine Learning e IA Agéntica, con experiencia liderando equipos y construyendo sistemas inteligentes para logística, automatización y análisis avanzado.",
+    en: "Engineer specialized in Data Science, Machine Learning, and Agentic AI, with experience leading teams and building intelligent systems for logistics, automation, and advanced analytics."
   },
   "about.p2": {
     es: "De formación Ingeniera Civil de la Universidad de Chile, me motiva aplicar Machine Learning para resolver problemas complejos y transformar datos en valor real, tal como lo plasmé en mi trabajo de tesis publicado en <a href=\"#publicaciones\" class=\"text-indigo-600 dark:text-indigo-400 hover:underline font-medium\">Structural Control Health Monitoring</a> en 2021.",
@@ -61,8 +61,8 @@ export const translations = {
     en: "Throughout my career, I have led multidisciplinary teams and collaborated on the development of technological solutions where engineering, advanced analytics, and practical impact converge."
   },
   "about.p4": {
-    es: "Actualmente como <a href=\"#simpliroute\" class=\"text-indigo-600 dark:text-indigo-400 hover:underline font-medium\">Learning Engineer en SimpliRoute</a>, contribuyo al diseño de modelos de optimización, al desarrollo de sistemas de aprendizaje automático y a la mejora continua de procesos de alta escala.",
-    en: "Currently working as a <a href=\"#simpliroute\" class=\"text-indigo-600 dark:text-indigo-400 hover:underline font-medium\">Learning Engineer at SimpliRoute</a>, I contribute to the design of optimization models, the development of machine learning systems, and the continuous improvement of large-scale processes."
+    es: "Actualmente como <a href=\"#simpliroute\" class=\"text-indigo-600 dark:text-indigo-400 hover:underline font-medium\">Learning Engineer en SimpliRoute</a>, contribuyo al diseño de modelos de optimización, al desarrollo de sistemas de aprendizaje automático, y a la integración de IA agéntica en flujos de trabajo.",
+    en: "Currently working as a <a href=\"#simpliroute\" class=\"text-indigo-600 dark:text-indigo-400 hover:underline font-medium\">Learning Engineer at SimpliRoute</a>, I contribute to the design of optimization models, the development of machine learning systems, and the integration of agentic AI into workflows."
   },
   
   // Experience Section
@@ -91,8 +91,12 @@ export const translations = {
     en: "Active collaboration with Product, Engineering, and Operations teams to validate and communicate technical findings in a clear and actionable manner."
   },
   "exp.simpliroute.b4": {
-    es: "Implementación de herramientas de IA aplicada para mejorar la experiencia del usuario final, priorizando la simplicidad, seguridad de datos y eficiencia operativa.",
-    en: "Implementation of applied AI tools to enhance the end-user experience, prioritizing simplicity, data security, and operational efficiency."
+    es: "Integración de LLMs y GenAI en procesos internos y productos, mejorando la experiencia del usuario final, priorizando la simplicidad, seguridad de datos y eficiencia operativa.",
+    en: "Integration of LLMs and GenAI into internal processes and products, enhancing the end-user experience, prioritizing simplicity, data security, and operational efficiency."
+  },
+  "exp.simpliroute.b5": {
+    es: "Diseño y desarrollo de <strong class=\"text-slate-800 dark:text-slate-100 font-semibold\">sistemas multi-agente y skills personalizados</strong> con Claude Code y Antigravity, automatizando workflows de desarrollo.",
+    en: "Design and development of <strong class=\"text-slate-800 dark:text-slate-100 font-semibold\">multi-agent systems and custom skills</strong> with Claude Code and Antigravity, automating development workflows."
   },
   
   "exp.fracttal1.title": {
@@ -333,13 +337,16 @@ export const translations = {
     en: "Skills & Tools"
   },
   "skills.ai.title": {
-    es: "IA Agéntica & Ciencia de Datos",
-    en: "Agentic AI & Data Science"
+    es: "IA Agéntica & Machine Learning",
+    en: "Agentic AI & Machine Learning"
   },
   "skills.ai.1": { es: "Sistemas Multi-Agente", en: "Multi-Agent Systems" },
   "skills.ai.2": { es: "LLMs & GenAI", en: "LLMs & GenAI" },
   "skills.ai.4": { es: "Analítica de Datos", en: "Data Analytics" },
   "skills.ai.5": { es: "Estadística & Probabilidad", en: "Statistics & Probability" },
+  "skills.ai.6": { es: "Claude Code & Antigravity", en: "Claude Code & Antigravity" },
+  "skills.ai.7": { es: "Prompt Engineering", en: "Prompt Engineering" },
+  "skills.ai.8": { es: "Automatización CI/CD con IA", en: "AI-Powered CI/CD Automation" },
 
   "skills.methodologies.title": {
     es: "Metodologías & Gestión de Producto",
@@ -371,14 +378,15 @@ export const translations = {
   "skills.lang.6": { es: "Java", en: "Java" },
 
   "skills.frontend.title": {
-    es: "Frontend & Desarrollo Web",
-    en: "Frontend & Web Development"
+    es: "Frontend, Mobile & Desarrollo Web",
+    en: "Frontend, Mobile & Web Development"
   },
 
   "skills.ml.title": {
-    es: "Librerías ML & IA",
-    en: "ML & AI Libraries"
+    es: "Ciencia de Datos & Librerías ML",
+    en: "Data Science & ML Libraries"
   },
+  "skills.ml.1": { es: "Teoría de Grafos", en: "Graph Theory" },
 
   "skills.backend_db.title": {
     es: "Backend, Bases de Datos & Big Data",
