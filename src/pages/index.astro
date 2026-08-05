@@ -2,6 +2,28 @@
 import Layout from '../layouts/Layout.astro';
 ---
 <Layout title="Ana-Catalina Villalobos | Ingeniera Civil & Data Scientist" description="CV y Portafolio Profesional de Ana-Catalina Villalobos Contardo, Ingeniera Civil, Data Scientist y ML Engineer especialista en pipelines de datos y modelos predictivos.">
+  <script type="application/ld+json" is:inline>
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Ana-Catalina Villalobos Contardo",
+      "jobTitle": "Data Scientist & Machine Learning Engineer",
+      "url": "https://ana-catalina.com/",
+      "sameAs": [
+        "https://linkedin.com/in/ana-catalina/",
+        "https://github.com/AnaCataVC/"
+      ],
+      "alumniOf": {
+        "@type": "CollegeOrUniversity",
+        "name": "Universidad de Chile"
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Región Metropolitana",
+        "addressCountry": "CL"
+      }
+    }
+  </script>
 
   <!-- Hero and Experience Wrapper for Background Glow -->
   <div class="relative overflow-hidden">
@@ -35,7 +57,7 @@ import Layout from '../layouts/Layout.astro';
 
             
             <div class="relative w-56 h-56 sm:w-64 sm:h-64 bg-white dark:bg-slate-800 p-2.5 rounded-2xl shadow-xl flex items-center justify-center overflow-hidden">
-              <img src="/foto-perfil.jpg" alt="Ana-Catalina Villalobos" class="w-full h-full object-cover rounded-xl">
+              <img src="/foto-perfil.jpg" alt="Ana-Catalina Villalobos" width="320" height="320" loading="eager" fetchpriority="high" class="w-full h-full object-cover rounded-xl">
             </div>
             
             <!-- Minimal tag overlay linked to SimpliRoute experience -->
@@ -50,7 +72,7 @@ import Layout from '../layouts/Layout.astro';
 
           <!-- Action Buttons (Mobile) -->
           <div class="flex md:hidden flex-wrap items-center justify-center gap-3 w-56 sm:w-64 pt-4">
-            <a href="ACVC_es.pdf" target="_blank" data-i18n="hero.downloadBtn" data-i18n-href="hero.cvUrl" class="flex-1 min-w-[120px] inline-flex items-center justify-center px-4 py-2.5 text-sm font-semibold text-white bg-gradient-to-r from-purple-500 to-blue-500 hover:from-purple-400 hover:to-blue-400 rounded-xl shadow-sm transition-all transform hover:-translate-y-0.5">
+            <a href="ACVC_es.pdf" target="_blank" rel="noopener noreferrer" data-i18n="hero.downloadBtn" data-i18n-href="hero.cvUrl" class="flex-1 min-w-[120px] inline-flex items-center justify-center px-4 py-2.5 text-sm font-semibold text-white bg-gradient-to-r from-purple-500 to-blue-500 hover:from-purple-400 hover:to-blue-400 rounded-xl shadow-sm transition-all transform hover:-translate-y-0.5">
               Descargar CV
             </a>
           </div>
@@ -60,10 +82,10 @@ import Layout from '../layouts/Layout.astro';
             <a href="mailto:anacatalina@outlook.cl" class="hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors" title="Email">
               <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
             </a>
-            <a href="https://linkedin.com/in/ana-catalina/" target="_blank" class="hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors" title="LinkedIn">
+            <a href="https://linkedin.com/in/ana-catalina/" target="_blank" rel="noopener noreferrer" class="hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors" title="LinkedIn">
               <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
             </a>
-            <a href="https://github.com/AnaCataVC/" target="_blank" class="hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors" title="GitHub">
+            <a href="https://github.com/AnaCataVC/" target="_blank" rel="noopener noreferrer" class="hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors" title="GitHub">
               <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>
             </a>
             <span class="text-sm inline-flex md:hidden items-center space-x-1.5 font-medium whitespace-nowrap">
@@ -511,8 +533,8 @@ c28 -28 1 -75 -37 -63 -27 8 -34 35 -15 56 20 22 35 24 52 7z m-770 -290 c30
 337 -2 337 17 0 10 -6 20 -12 22 -7 2 -161 3 -341 1z"/>
 </g>
 </svg>
-          <!-- Desktop "Sobre Mí" Title (Visible above location/buttons) -->
-          <h2 class="hidden md:block text-xl font-bold tracking-wider text-indigo-600 dark:text-indigo-400 uppercase text-left mb-4" data-i18n="about.title">Sobre Mí</h2>
+          <!-- "Sobre Mí" Title -->
+          <h2 class="text-xl font-bold tracking-wider text-indigo-600 dark:text-indigo-400 uppercase text-center md:text-left mb-4" data-i18n="about.title">Sobre Mí</h2>
 
           <!-- Desktop Top Meta & Actions -->
           <div class="hidden md:flex flex-col space-y-5 mb-4">
@@ -524,7 +546,7 @@ c28 -28 1 -75 -37 -63 -27 8 -34 35 -15 56 20 22 35 24 52 7z m-770 -290 c30
             </span>
 
             <div class="flex flex-wrap items-center justify-start gap-3 lg:gap-4">
-              <a href="ACVC_es.pdf" target="_blank" data-i18n="hero.downloadBtn" data-i18n-href="hero.cvUrl" class="flex-1 lg:flex-none lg:min-w-[140px] inline-flex items-center justify-center px-4 lg:px-5 py-2.5 lg:py-3 text-xs lg:text-sm font-semibold text-white bg-gradient-to-r from-purple-500 to-blue-500 hover:from-purple-400 hover:to-blue-400 rounded-xl shadow-sm transition-all transform hover:-translate-y-0.5">
+              <a href="ACVC_es.pdf" target="_blank" rel="noopener noreferrer" data-i18n="hero.downloadBtn" data-i18n-href="hero.cvUrl" class="flex-1 lg:flex-none lg:min-w-[140px] inline-flex items-center justify-center px-4 lg:px-5 py-2.5 lg:py-3 text-xs lg:text-sm font-semibold text-white bg-gradient-to-r from-purple-500 to-blue-500 hover:from-purple-400 hover:to-blue-400 rounded-xl shadow-sm transition-all transform hover:-translate-y-0.5">
                 Descargar CV
               </a>
               <a href="#experience" data-i18n="hero.expBtn" class="flex-1 lg:flex-none lg:min-w-[140px] inline-flex items-center justify-center px-4 lg:px-5 py-2.5 lg:py-3 text-xs lg:text-sm font-semibold bg-slate-100 hover:bg-slate-200 text-slate-700 dark:bg-slate-800 dark:hover:bg-slate-700 dark:text-slate-300 rounded-xl transition-all transform hover:-translate-y-0.5">
@@ -535,9 +557,6 @@ c28 -28 1 -75 -37 -63 -27 8 -34 35 -15 56 20 22 35 24 52 7z m-770 -290 c30
               </a>
             </div>
           </div>
-
-          <!-- Mobile "Sobre Mí" Title (Visible below location/buttons) -->
-          <h2 class="md:hidden text-xl font-bold tracking-wider text-indigo-600 dark:text-indigo-400 uppercase text-center mb-4" data-i18n="about.title">Sobre Mí</h2>
           
           <div class="space-y-4 text-slate-600 dark:text-slate-400 max-w-2xl leading-relaxed text-sm sm:text-base text-justify md:text-left">
             <p data-i18n="about.p1" class="text-lg font-semibold text-slate-800 dark:text-slate-100 leading-relaxed text-justify md:text-left">
@@ -739,6 +758,7 @@ c28 -28 1 -75 -37 -63 -27 8 -34 35 -15 56 20 22 35 24 52 7z m-770 -290 c30
             <span class="px-3 py-1 rounded-lg text-xs font-semibold bg-slate-200 dark:bg-slate-700 text-slate-800 dark:text-slate-200">Vertex AI</span>
             <span class="px-3 py-1 rounded-lg text-xs font-semibold bg-slate-200 dark:bg-slate-700 text-slate-800 dark:text-slate-200"><span data-i18n="skills.ai.4">Analítica de Datos</span></span>
             <span class="px-3 py-1 rounded-lg text-xs font-semibold bg-slate-200 dark:bg-slate-700 text-slate-800 dark:text-slate-200" data-i18n="skills.ai.5">Estadística & Probabilidad</span>
+            <span class="px-3 py-1 rounded-lg text-xs font-semibold bg-slate-200 dark:bg-slate-700 text-slate-800 dark:text-slate-200" data-i18n="skills.ml.1">Teoría de Grafos</span>
           </div>
         </div>
 
@@ -757,6 +777,8 @@ c28 -28 1 -75 -37 -63 -27 8 -34 35 -15 56 20 22 35 24 52 7z m-770 -290 c30
             <span class="px-3 py-1 rounded-lg text-xs font-semibold bg-pastel-mint text-slate-800 border border-emerald-200"><span data-i18n="skills.lang.4">JavaScript</span></span>
             <span class="px-3 py-1 rounded-lg text-xs font-semibold bg-slate-200 dark:bg-slate-700 text-slate-800 dark:text-slate-200"><span data-i18n="skills.lang.5">TypeScript</span></span>
             <span class="px-3 py-1 rounded-lg text-xs font-semibold bg-slate-200 dark:bg-slate-700 text-slate-800 dark:text-slate-200"><span data-i18n="skills.lang.6">Java</span></span>
+            <span class="px-3 py-1 rounded-lg text-xs font-semibold bg-slate-200 dark:bg-slate-700 text-slate-800 dark:text-slate-200">Kotlin</span>
+            <span class="px-3 py-1 rounded-lg text-xs font-semibold bg-slate-200 dark:bg-slate-700 text-slate-800 dark:text-slate-200">Node.js</span>
             <span class="px-3 py-1 rounded-lg text-xs font-semibold bg-slate-200 dark:bg-slate-700 text-slate-800 dark:text-slate-200">Bash / Shell</span>
           </div>
         </div>
@@ -767,13 +789,14 @@ c28 -28 1 -75 -37 -63 -27 8 -34 35 -15 56 20 22 35 24 52 7z m-770 -290 c30
             <svg class="w-5 h-5 text-indigo-500" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
               <rect width="18" height="18" x="3" y="3" rx="2" ry="2"/><line x1="3" x2="21" y1="9" y2="9"/><line x1="9" x2="9" y1="21" y2="9"/>
             </svg>
-            <span data-i18n="skills.frontend.title">Frontend & Desarrollo Web</span>
+            <span data-i18n="skills.frontend.title">Frontend, Mobile & Desarrollo Web</span>
           </h3>
           <div class="flex flex-wrap gap-2">
             <span class="px-3 py-1 rounded-lg text-xs font-semibold bg-pastel-lilac text-slate-800 border border-indigo-200">React JS</span>
             <span class="px-3 py-1 rounded-lg text-xs font-semibold bg-pastel-pink text-slate-800 border border-pink-200">Astro</span>
             <span class="px-3 py-1 rounded-lg text-xs font-semibold bg-pastel-blue text-slate-800 border border-blue-200">Tailwind CSS</span>
-            <span class="px-3 py-1 rounded-lg text-xs font-semibold bg-pastel-mint text-slate-800 border border-emerald-200">Vite</span>
+            <span class="px-3 py-1 rounded-lg text-xs font-semibold bg-pastel-mint text-slate-800 border border-emerald-200">Android & Jetpack Compose</span>
+            <span class="px-3 py-1 rounded-lg text-xs font-semibold bg-slate-200 dark:bg-slate-700 text-slate-800 dark:text-slate-200">Vite</span>
             <span class="px-3 py-1 rounded-lg text-xs font-semibold bg-slate-200 dark:bg-slate-700 text-slate-800 dark:text-slate-200">Streamlit</span>
             <span class="px-3 py-1 rounded-lg text-xs font-semibold bg-slate-200 dark:bg-slate-700 text-slate-800 dark:text-slate-200">HTML & CSS</span>
             <span class="px-3 py-1 rounded-lg text-xs font-semibold bg-slate-200 dark:bg-slate-700 text-slate-800 dark:text-slate-200">Plotly / Dash</span>
@@ -795,6 +818,7 @@ c28 -28 1 -75 -37 -63 -27 8 -34 35 -15 56 20 22 35 24 52 7z m-770 -290 c30
             <span class="px-3 py-1 rounded-lg text-xs font-semibold bg-pastel-blue text-slate-800 border border-blue-200">Django</span>
             <span class="px-3 py-1 rounded-lg text-xs font-semibold bg-pastel-mint text-slate-800 border border-emerald-200">SQL Server</span>
             <span class="px-3 py-1 rounded-lg text-xs font-semibold bg-slate-200 dark:bg-slate-700 text-slate-800 dark:text-slate-200">MySQL</span>
+            <span class="px-3 py-1 rounded-lg text-xs font-semibold bg-slate-200 dark:bg-slate-700 text-slate-800 dark:text-slate-200">SQLite</span>
             <span class="px-3 py-1 rounded-lg text-xs font-semibold bg-slate-200 dark:bg-slate-700 text-slate-800 dark:text-slate-200">MongoDB</span>
             <span class="px-3 py-1 rounded-lg text-xs font-semibold bg-slate-200 dark:bg-slate-700 text-slate-800 dark:text-slate-200">Dexie.js (IndexedDB)</span>
             <span class="px-3 py-1 rounded-lg text-xs font-semibold bg-slate-200 dark:bg-slate-700 text-slate-800 dark:text-slate-200">SQLModel</span>
@@ -883,7 +907,7 @@ c28 -28 1 -75 -37 -63 -27 8 -34 35 -15 56 20 22 35 24 52 7z m-770 -290 c30
                 </svg>
               </div>
               <div>
-                <h4 class="text-sm font-bold text-slate-400">Universidad de Chile</h4>
+                <p class="text-sm font-bold text-slate-400">Universidad de Chile</p>
                 <h3 class="text-lg font-bold text-slate-900 dark:text-white" data-i18n="edu.civil.title">Ingeniería Civil</h3>
                 <p class="text-xs text-slate-500 font-semibold uppercase tracking-wider mt-0.5" data-i18n="edu.civil.date">Egresada en 2019, Titulada en 2020</p>
                 <p data-i18n="edu.civil.desc" class="text-xs text-slate-500 dark:text-slate-400 mt-2 leading-relaxed">
@@ -899,7 +923,7 @@ c28 -28 1 -75 -37 -63 -27 8 -34 35 -15 56 20 22 35 24 52 7z m-770 -290 c30
                 </svg>
               </div>
               <div>
-                <h4 class="text-sm font-bold text-slate-400">Universidad de Chile</h4>
+                <p class="text-sm font-bold text-slate-400">Universidad de Chile</p>
                 <h3 class="text-base font-bold text-slate-900 dark:text-white" data-i18n="edu.bsc.title">Licenciada en Ciencias de la Ingeniería</h3>
                 <p class="text-xs text-slate-500 font-semibold uppercase tracking-wider mt-0.5" data-i18n="edu.bsc.date">Finalizada en 2017</p>
                 <p class="text-xs text-slate-500 dark:text-slate-400 mt-1" data-i18n="edu.bsc.desc">Actividad destacada: Ayudante del curso Probabilidades y Estadística.</p>
@@ -927,7 +951,7 @@ c28 -28 1 -75 -37 -63 -27 8 -34 35 -15 56 20 22 35 24 52 7z m-770 -290 c30
               Se propone una metodología para la detección y evaluación de delaminación en placas de materiales compuestos a partir de modos de vibración, utilizando Procesos Gaussianos y análisis Bayesiano.
             </p>
             <div class="pt-2">
-              <a href="https://doi.org/10.1002/stc.2727" target="_blank" class="inline-flex items-center text-sm font-semibold text-indigo-600 dark:text-indigo-400 hover:text-indigo-800 dark:hover:text-indigo-300 transition-colors">
+              <a href="https://doi.org/10.1002/stc.2727" target="_blank" rel="noopener noreferrer" class="inline-flex items-center text-sm font-semibold text-indigo-600 dark:text-indigo-400 hover:text-indigo-800 dark:hover:text-indigo-300 transition-colors">
                 <span data-i18n="pub.link">Ver artículo en Wiley Online Library</span>
                 <svg class="w-4 h-4 ml-1.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
                   <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" x2="21" y1="14" y2="3"/>
@@ -952,7 +976,7 @@ c28 -28 1 -75 -37 -63 -27 8 -34 35 -15 56 20 22 35 24 52 7z m-770 -290 c30
             <div class="flex items-center space-x-3">
               <span class="w-2.5 h-2.5 rounded-full bg-pastel-lilac"></span>
               <div>
-                <h4 class="text-sm font-bold text-slate-900 dark:text-white">EFSET English Certificate</h4>
+                <h3 class="text-sm font-bold text-slate-900 dark:text-white">EFSET English Certificate</h3>
                 <p class="text-xs text-slate-500" data-i18n="edu.cert.1.desc">EF SET - Nivel C2 Proficient</p>
               </div>
             </div>
@@ -963,7 +987,7 @@ c28 -28 1 -75 -37 -63 -27 8 -34 35 -15 56 20 22 35 24 52 7z m-770 -290 c30
             <div class="flex items-center space-x-3">
               <span class="w-2.5 h-2.5 rounded-full bg-pastel-pink"></span>
               <div>
-                <h4 class="text-sm font-bold text-slate-900 dark:text-white">Applied Machine Learning in Python</h4>
+                <h3 class="text-sm font-bold text-slate-900 dark:text-white">Applied Machine Learning in Python</h3>
                 <p class="text-xs text-slate-500">University of Michigan (Coursera)</p>
               </div>
             </div>
@@ -974,7 +998,7 @@ c28 -28 1 -75 -37 -63 -27 8 -34 35 -15 56 20 22 35 24 52 7z m-770 -290 c30
             <div class="flex items-center space-x-3">
               <span class="w-2.5 h-2.5 rounded-full bg-pastel-blue"></span>
               <div>
-                <h4 class="text-sm font-bold text-slate-900 dark:text-white">React & Django Full Stack Developer</h4>
+                <h3 class="text-sm font-bold text-slate-900 dark:text-white">React & Django Full Stack Developer</h3>
                 <p class="text-xs text-slate-500">Udemy Web & Backend Development</p>
               </div>
             </div>
@@ -985,7 +1009,7 @@ c28 -28 1 -75 -37 -63 -27 8 -34 35 -15 56 20 22 35 24 52 7z m-770 -290 c30
             <div class="flex items-center space-x-3">
               <span class="w-2.5 h-2.5 rounded-full bg-pastel-mint"></span>
               <div>
-                <h4 class="text-sm font-bold text-slate-900 dark:text-white">Mastering Data Visualization</h4>
+                <h3 class="text-sm font-bold text-slate-900 dark:text-white">Mastering Data Visualization</h3>
                 <p class="text-xs text-slate-500">Udemy - Theory and Foundations</p>
               </div>
             </div>
