@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://ana-catalina.com/sitemap-index.xml
+Sitemap: https://cv.ana-catalina.com/sitemap-index.xml

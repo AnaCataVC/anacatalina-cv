@@ -6,7 +6,7 @@
 
 Professional CV and personal website for **Ana-Catalina Alejandra Villalobos Contardo**, Civil Engineer and Data Scientist / ML Engineer. The site is a static single-page application (SPA) with a modern, responsive design, dark mode, PDF CV download, scroll animations, and bilingual support (Spanish/English).
 
-**Public URL:** https://ana-catalina.com/
+**Public URL:** https://cv.ana-catalina.com/
 
 ## Tech Stack
 

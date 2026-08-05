@@ -51,7 +51,7 @@ During the development of this project, the main learnings and challenges includ
 - **UX/UI:** Optimizing the User Experience (UX) and User Interface (UI), including smooth animations and dark mode support.
 
 ### 4. Live Demo
-🌐 **Public CV:** [https://ana-catalina.com/](https://ana-catalina.com/)
+🌐 **Public CV:** [https://cv.ana-catalina.com/](https://cv.ana-catalina.com/)
 
 
 > 💡 **Do you like this design?** I have created a basic template of this CV for you to use and customize. You can find it here: [AnaCataVC/my-cv](https://github.com/AnaCataVC/my-cv/)
