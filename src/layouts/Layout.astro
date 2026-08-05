@@ -31,13 +31,18 @@ const { title, description } = Astro.props;
   <meta property="og:description" content={description} />
   <meta property="og:type" content="website" />
   <meta property="og:url" content={new URL(Astro.url.pathname, Astro.site || 'https://cv.ana-catalina.com/')} />
-  <meta property="og:image" content={new URL('/foto-perfil.jpg', Astro.site || 'https://cv.ana-catalina.com/')} />
+  <meta property="og:image" content={new URL('/og-banner-hd.jpg?v=20260806', Astro.site || 'https://cv.ana-catalina.com/')} />
+  <meta property="og:image:type" content="image/jpeg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Banner del portafolio y CV de Ana-Catalina Villalobos Contardo, Data Scientist & Engineer" />
   <meta property="og:locale" content="es_ES" />
 
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content={title} />
   <meta name="twitter:description" content={description} />
-  <meta name="twitter:image" content={new URL('/foto-perfil.jpg', Astro.site || 'https://cv.ana-catalina.com/')} />
+  <meta name="twitter:image" content={new URL('/og-banner-hd.jpg?v=20260806', Astro.site || 'https://cv.ana-catalina.com/')} />
+  <meta name="twitter:image:alt" content="Banner del portafolio y CV de Ana-Catalina Villalobos Contardo, Data Scientist & Engineer" />
 
   <script is:inline>
     if (localStorage.getItem('theme') === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
