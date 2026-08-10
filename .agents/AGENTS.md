@@ -136,3 +136,7 @@ To maintain a seamless visual flow across the three portfolio websites (Homepage
 - **Language Toggle Dimensions:** The language toggle buttons must be styled identically with `w-10 sm:w-12 h-7 sm:h-8` dimensions, `text-[11px] sm:text-xs font-medium`, and `p-1` padding for the outer pill.
 - **Language State Sync (`localStorage`):** Every language toggle interaction must store the chosen language in `localStorage.setItem('lang', 'es' | 'en')` so the selection translates seamlessly across projects.
 - **SEO-Safe Redirection:** Client-side redirections based on language must ONLY occur if a saved preference exists in `localStorage` (e.g. `localStorage.getItem('lang')`). Never redirect on first load using browser language detection (`navigator.language`) to ensure search bots (Googlebot) can crawl all language versions natively without indexation issues.
+
+### Layout and Styling Guidelines:
+- **Sticky Headers & Anchor Links:** When implementing anchor links (`#id`) that jump to sections below a sticky header, use Tailwind's `scroll-mt-*` (e.g., `scroll-mt-24`) on the target element to prevent the sticky header from hiding the content.
+- **Invisible Anchors in CSS Grid:** Do not place empty `<div>` anchor elements as direct children of a `grid` container, as this breaks the grid structure by consuming a full column. Instead, nest the anchor inside a grid item with `relative` positioning, and use absolute positioning for the offset (e.g., `absolute inset-x-0 -top-24`) on the invisible anchor.

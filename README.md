@@ -26,6 +26,7 @@ Durante la construcción de este proyecto, los principales aprendizajes y desaf�
 - **Despliegue (Deployment):** Comparar y aprender las diferencias entre el despliegue en GitHub Pages vs Vercel.
 - **Diseño Web:** Profundizar en técnicas modernas de diseño, estructurando una paleta de colores y una estética limpia.
 - **UX/UI:** Optimización de la experiencia de usuario (UX) e interfaz de usuario (UI), incluyendo animaciones suaves y soporte para modo oscuro.
+- **Maquetación Avanzada:** Resolución de conflictos de scroll con headers sticky y estructuración de layouts complejos utilizando CSS Grid y Tailwind CSS.
 
 
 > 💡 **¿Te gusta este diseño?** He creado un template básico de este CV para que puedas usarlo y personalizarlo. Puedes encontrarlo aquí: [AnaCataVC/my-cv](https://github.com/AnaCataVC/my-cv/)
@@ -49,6 +50,7 @@ During the development of this project, the main learnings and challenges includ
 - **Deployment:** Comparing and learning the differences between deploying on GitHub Pages vs Vercel.
 - **Web Design:** Deepening knowledge in modern design techniques, structuring a color palette, and a clean aesthetic.
 - **UX/UI:** Optimizing the User Experience (UX) and User Interface (UI), including smooth animations and dark mode support.
+- **Advanced Layout:** Resolving scroll conflicts with sticky headers and structuring complex layouts using CSS Grid and Tailwind CSS.
 
 ### 4. Live Demo
 🌐 **Public CV:** [https://cv.ana-catalina.com/](https://cv.ana-catalina.com/)

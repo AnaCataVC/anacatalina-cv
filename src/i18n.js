@@ -54,7 +54,7 @@ export const translations = {
   },
   "about.p2": {
     es: "De formación Ingeniera Civil de la Universidad de Chile, me motiva aplicar Machine Learning para resolver problemas complejos y transformar datos en valor real, tal como lo plasmé en mi trabajo de tesis publicado en <a href=\"#publicaciones\" class=\"text-indigo-600 dark:text-indigo-400 hover:underline font-medium\">Structural Control Health Monitoring</a> en 2021.",
-    en: "With a background in Civil Engineering from the Universidad de Chile, I am driven to apply Machine Learning to solve complex problems and transform data into real value, as reflected in my thesis published in <a href=\"#publicaciones\" class=\"text-indigo-600 dark:text-indigo-400 hover:underline font-medium\">Structural Control Health Monitoring</a> in 2021."
+    en: "With a background in Civil Engineering from the Universidad de Chile, I am driven to apply Machine Learning to solve complex problems and transform data into real value, as reflected in my thesis published in <a href=\"#publications\" class=\"text-indigo-600 dark:text-indigo-400 hover:underline font-medium\">Structural Control Health Monitoring</a> in 2021."
   },
   "about.p3": {
     es: "A lo largo de mi trayectoria, he liderado equipos multidisciplinarios y colaborado en el desarrollo de soluciones tecnológicas donde la ingeniería, el análisis avanzado y el impacto práctico convergen.",
