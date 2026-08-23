@@ -1,7 +1,0 @@
-fix: resolve sticky header anchor offset and CSS grid layout bugs
-
-- Fixed broken anchor links associated with sticky headers by applying "scroll-mt-*" utility classes to prevent content from being hidden.
-- Solved a CSS grid layout bug caused by empty anchor divs acting as grid children by nesting absolute-positioned invisible anchors inside relative grid items.
-- docs: Generated learning document at "docs/learning/anchor-links-and-grid-layouts.md" detailing the applied patterns.
-- docs: Updated "README.md" to mention key learnings regarding scroll conflicts and complex layout structures.
-- docs: Appended new AI instructions in ".agents/AGENTS.md" under Layout and Styling Guidelines to prevent future regressions.
