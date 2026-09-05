@@ -61,8 +61,8 @@ export const translations = {
     en: "Throughout my career, I have led multidisciplinary teams and collaborated on the development of technological solutions where engineering, advanced analytics, and practical impact converge."
   },
   "about.p4": {
-    es: "Actualmente como <a href=\"#simpliroute\" class=\"text-indigo-600 dark:text-indigo-400 hover:underline font-medium\">Learning Engineer en SimpliRoute</a>, contribuyo al diseño de modelos de optimización, al desarrollo de sistemas de aprendizaje automático, y a la integración de IA agéntica en flujos de trabajo.",
-    en: "Currently working as a <a href=\"#simpliroute\" class=\"text-indigo-600 dark:text-indigo-400 hover:underline font-medium\">Learning Engineer at SimpliRoute</a>, I contribute to the design of optimization models, the development of machine learning systems, and the integration of agentic AI into workflows."
+    es: "Actualmente como <a href=\"#simpliroute\" class=\"text-indigo-600 dark:text-indigo-400 hover:underline font-medium\">Learning Engineer en SimpliRoute</a>, contribuyo al diseño de soluciones de optimización, al desarrollo de servidores MCP e integración de IA, y al procesamiento de datos a escala.",
+    en: "Currently working as a <a href=\"#simpliroute\" class=\"text-indigo-600 dark:text-indigo-400 hover:underline font-medium\">Learning Engineer at SimpliRoute</a>, I contribute to the design of optimization solutions, development of MCP servers and AI integration, and large-scale data processing."
   },
   
   // Experience Section
@@ -79,24 +79,20 @@ export const translations = {
     en: "Santiago, Chile (Remote)"
   },
   "exp.simpliroute.b1": {
-    es: "Diseño e implementación de <strong class=\"text-slate-800 dark:text-slate-100 font-semibold\">soluciones de ML para la optimización de rutas y geolocalización</strong>, con foco en mejorar la precisión de georreferencias y aumentar la exactitud de ruteo.",
-    en: "Design and implementation of <strong class=\"text-slate-800 dark:text-slate-100 font-semibold\">ML solutions for route optimization and geolocation</strong>, focusing on improving georeferencing accuracy and routing precision."
+    es: "Diseño e implementación de <strong class=\"text-slate-800 dark:text-slate-100 font-semibold\">soluciones para la optimización de rutas y geolocalización</strong>, con foco en mejorar la precisión de georreferencias y aumentar la exactitud de ruteo.",
+    en: "Design and implementation of <strong class=\"text-slate-800 dark:text-slate-100 font-semibold\">solutions for route optimization and geolocation</strong>, focusing on improving georeferencing accuracy and routing precision."
   },
   "exp.simpliroute.b2": {
-    es: "Gestión y orquestación de flujos de datos a alta escala utilizando <strong class=\"text-slate-800 dark:text-slate-100 font-semibold\">Airflow y Airbyte</strong>, asegurando calidad, trazabilidad y confiabilidad de los procesos.",
-    en: "Management and orchestration of large-scale data flows using <strong class=\"text-slate-800 dark:text-slate-100 font-semibold\">Airflow and Airbyte</strong>, ensuring quality, traceability, and reliability of processes."
+    es: "Diseño y desarrollo de <strong class=\"text-slate-800 dark:text-slate-100 font-semibold\">servidores Model Context Protocol (MCP)</strong> para el motor de optimización, permitiendo a modelos de lenguaje (LLMs) y agentes interactuar de forma segura y estructurada con el solucionador logístico.",
+    en: "Design and development of <strong class=\"text-slate-800 dark:text-slate-100 font-semibold\">Model Context Protocol (MCP) servers</strong> for the optimization engine, enabling LLMs and AI agents to interact securely and structurally with the logistics solver."
   },
   "exp.simpliroute.b3": {
-    es: "Colaboración activa con equipos de Producto, Ingeniería y Operaciones para la validación y comunicación de hallazgos técnicos de manera clara y accionable.",
-    en: "Active collaboration with Product, Engineering, and Operations teams to validate and communicate technical findings in a clear and actionable manner."
+    es: "Gestión y modelado de datos a gran escala en <strong class=\"text-slate-800 dark:text-slate-100 font-semibold\">Google BigQuery</strong> y orquestación de flujos de eventos y datos utilizando <strong class=\"text-slate-800 dark:text-slate-100 font-semibold\">Google Pub/Sub y Apache Airflow</strong>, asegurando alta calidad, trazabilidad y confiabilidad operativa.",
+    en: "Large-scale data management and modeling in <strong class=\"text-slate-800 dark:text-slate-100 font-semibold\">Google BigQuery</strong>, and orchestration of event-driven and data workflows using <strong class=\"text-slate-800 dark:text-slate-100 font-semibold\">Google Pub/Sub and Apache Airflow</strong>, ensuring high quality, traceability, and operational reliability."
   },
   "exp.simpliroute.b4": {
-    es: "Integración de LLMs y GenAI en procesos internos y productos, mejorando la experiencia del usuario final, priorizando la simplicidad, seguridad de datos y eficiencia operativa.",
-    en: "Integration of LLMs and GenAI into internal processes and products, enhancing the end-user experience, prioritizing simplicity, data security, and operational efficiency."
-  },
-  "exp.simpliroute.b5": {
-    es: "Diseño y desarrollo de <strong class=\"text-slate-800 dark:text-slate-100 font-semibold\">sistemas multi-agente y skills personalizados</strong> con Claude Code y Antigravity, automatizando workflows de desarrollo.",
-    en: "Design and development of <strong class=\"text-slate-800 dark:text-slate-100 font-semibold\">multi-agent systems and custom skills</strong> with Claude Code and Antigravity, automating development workflows."
+    es: "Integración de <strong class=\"text-slate-800 dark:text-slate-100 font-semibold\">LLMs y GenAI en procesos internos y productos</strong>, incorporando herramientas asistidas por IA como <strong class=\"text-slate-800 dark:text-slate-100 font-semibold\">Claude Code</strong> para acelerar ciclos de iteración, optimizar pruebas y elevar la eficiencia operativa.",
+    en: "Integration of <strong class=\"text-slate-800 dark:text-slate-100 font-semibold\">LLMs and GenAI into internal processes and products</strong>, adopting AI-assisted tooling like <strong class=\"text-slate-800 dark:text-slate-100 font-semibold\">Claude Code</strong> to accelerate iteration cycles, streamline testing, and increase operational efficiency."
   },
   
   "exp.fracttal1.title": {
@@ -176,167 +172,6 @@ export const translations = {
     en: "Skills & Tools"
   },
   "skills.ai.title": {
-    es: "IA Agéntica & Ciencia de Datos",
-    en: "Agentic AI & Data Science"
-  },
-  "skills.ai.1": { es: "IA Agéntica (Claude & Antigravity)", en: "Agentic AI (Claude & Antigravity)" },
-  "skills.ai.2": { es: "Agentes Autónomos (Skills & Hooks)", en: "Autonomous Agents (Skills & Hooks)" },
-  "skills.ai.4": { es: "Ciencia de Datos", en: "Data Science" },
-  "skills.ai.5": { es: "Analítica", en: "Analytics" },
-  "skills.ai.6": { es: "Probabilidades", en: "Probability" },
-  "skills.ai.7": { es: "Estadística", en: "Statistics" },
-
-  "skills.leadership.title": {
-    es: "Liderazgo & Metodologías",
-    en: "Leadership & Methodologies"
-  },
-  "skills.leadership.1": { es: "Liderazgo Técnico", en: "Technical Leadership" },
-  "skills.leadership.2": { es: "Metodologías Ágiles (Scrum & Kanban)", en: "Agile Methodologies (Scrum & Kanban)" },
-  "skills.leadership.3": { es: "Planificación de Roadmaps (OKRs)", en: "Roadmap Planning (OKRs)" },
-  "skills.leadership.4": { es: "Colaboración Cross-functional", en: "Cross-functional Collaboration" },
-
-  "skills.lang.title": {
-    es: "Lenguajes de Programación",
-    en: "Programming Languages"
-  },
-  "skills.lang.1": { es: "Python (Avanzado)", en: "Python (Advanced)" },
-  "skills.lang.2": { es: "SQL (Avanzado)", en: "SQL (Advanced)" },
-  "skills.lang.3": { es: "MATLAB (Avanzado)", en: "MATLAB (Advanced)" },
-  "skills.lang.4": { es: "JavaScript (Intermedio)", en: "JavaScript (Intermediate)" },
-  "skills.lang.5": { es: "TypeScript (Intermedio)", en: "TypeScript (Intermediate)" },
-  "skills.lang.6": { es: "Java (Intermedio)", en: "Java (Intermediate)" },
-
-  "skills.ecosystem.title": {
-    es: "Ecosistema Tecnológico",
-    en: "Technology Ecosystem"
-  },
-
-  "skills.db.title": {
-    es: "Bases de Datos & Big Data",
-    en: "Databases & Big Data"
-  },
-
-  "skills.cloud.title": {
-    es: "Contenedores, Orquestación & Cloud",
-    en: "Containers, Orchestration & Cloud"
-  },
-
-  // Education Section
-  "edu.title": {
-    es: "Educación & Certificaciones",
-    en: "Education & Certifications"
-  },
-  "edu.title.only": {
-    es: "Educación",
-    en: "Education"
-  },
-  "edu.civil.title": {
-    es: "Ingeniería Civil",
-    en: "Civil Engineering"
-  },
-  "edu.civil.date": {
-    es: "Egresada en 2019, Titulada en 2020",
-    en: "Graduated in 2019, Degree awarded in 2020"
-  },
-  "edu.civil.desc": {
-    es: "Mención en estructuras, construcción y geotecnia. Trabajo de título en Procesos Gaussianos para detección de fallas estructurales. <strong class=\"text-slate-700 dark:text-slate-300\">Titulada con distinción máxima.</strong><br /><br /><strong>Prácticas profesionales:</strong> EGIS y DOM Curicó (cálculo estructural y presupuestos).",
-    en: "Specialization in structures, construction, and geotechnics. Thesis on Gaussian Processes for structural fault detection. <strong class=\"text-slate-700 dark:text-slate-300\">Graduated with highest honors.</strong><br /><br /><strong>Professional Internships:</strong> EGIS and DOM Curicó (structural calculations and budgeting)."
-  },
-  "edu.bsc.title": {
-    es: "Licenciada en Ciencias de la Ingeniería",
-    en: "Bachelor of Science in Engineering"
-  },
-  "edu.bsc.date": {
-    es: "Finalizada en 2017",
-    en: "Completed in 2017"
-  },
-  "edu.bsc.desc": {
-    es: "Actividad destacada: Ayudante del curso Probabilidades y Estadística.",
-    en: "Notable activity: Teaching Assistant for Probability and Statistics."
-  },
-
-  "edu.cert.title": {
-    es: "Cursos & Certificaciones",
-    en: "Courses & Certifications"
-  },
-  "edu.cert.1.desc": {
-    es: "EF SET - Nivel C2 Proficient",
-    en: "EF SET - C2 Proficient Level"
-  },
-  
-  // Publications Section
-  "pub.title": {
-    es: "Publicaciones Científicas",
-    en: "Scientific Publications"
-  },
-  "pub.date": {
-    es: "Publicado en Marzo 2021",
-    en: "Published in March 2021"
-  },
-  "pub.desc": {
-    es: "Se propone una metodología para la detección y evaluación de delaminación en placas de materiales compuestos a partir de modos de vibración, utilizando Procesos Gaussianos y análisis Bayesiano.",
-    en: "A methodology is proposed for the detection and assessment of delamination in composite material plates from vibration modes, using Gaussian Processes and Bayesian analysis."
-  },
-  "pub.link": {
-    es: "Ver artículo en Wiley Online Library",
-    en: "View article in Wiley Online Library"
-  },
-
-
-
-  "exp.fracttal1.b4": {
-    es: "Supervisión y coordinación de proyectos de integración para decenas de clientes, aplicando gestión eficiente de recursos, plazos y flujos de datos confiables.",
-    en: "Supervision and coordination of integration projects for dozens of clients, applying efficient resource management, meeting deadlines, and ensuring reliable data flows."
-  },
-
-  "exp.fracttal2.date": {
-    es: "Agosto 2021 - Noviembre 2023",
-    en: "August 2021 - November 2023"
-  },
-  "exp.fracttal2.b1": {
-    es: "Diseño e implementación de procesos de ciencia de datos para las plataformas Predictto y Fracttal One, con foco en generar valor a partir de datos operacionales de maquinaria.",
-    en: "Design and implementation of data science processes for the Predictto and Fracttal One platforms, focusing on generating value from operational machinery data."
-  },
-  "exp.fracttal2.b2": {
-    es: "Desarrollo de modelos analíticos aplicados a <strong class=\"text-slate-800 dark:text-slate-100 font-semibold\">mantenimiento predictivo, priorización de activos y predicción de fallas</strong> combinando ML, estadística y conocimiento del dominio.",
-    en: "Development of analytical models applied to <strong class=\"text-slate-800 dark:text-slate-100 font-semibold\">predictive maintenance, asset prioritization, and failure prediction</strong>, combining ML, statistics, and domain knowledge."
-  },
-  "exp.fracttal2.b3": {
-    es: "Colaboración en la creación y desarrollo de producto para gestionar integraciones entre Fracttal y otras plataformas de software empresariales.",
-    en: "Collaboration in product creation and development to manage integrations between Fracttal and other enterprise software platforms."
-  },
-  "exp.fracttal2.b4": {
-    es: "Evaluación continua de modelos en producción, optimizando pipelines de datos para garantizar la precisión y robustez en entornos reales.",
-    en: "Continuous evaluation of production models, optimizing data pipelines to ensure accuracy and robustness in real-world environments."
-  },
-
-  "exp.fracttal3.title": {
-    es: "Analista de Datos",
-    en: "Data Analyst"
-  },
-  "exp.fracttal3.date": {
-    es: "Febrero 2020 - Julio 2021",
-    en: "February 2020 - July 2021"
-  },
-  "exp.fracttal3.b1": {
-    es: "Desarrollo desde cero de la herramienta de mantenimiento predictivo, utilizando análisis estadístico avanzado y modelos preliminares de Machine Learning.",
-    en: "Development from scratch of the predictive maintenance tool, using advanced statistical analysis and preliminary Machine Learning models."
-  },
-  "exp.fracttal3.b2": {
-    es: "Diseño, manejo y optimización de bases de datos relacionales para almacenar lecturas de telemetría e historial de mantenimiento.",
-    en: "Design, management, and optimization of relational databases to store telemetry readings and maintenance history."
-  },
-  "exp.fracttal3.b3": {
-    es: "Apoyo en el desarrollo web frontend/backend básico de visualizaciones de datos y métricas para tomadores de decisiones.",
-    en: "Support in basic frontend/backend web development for data visualizations and metrics for decision-makers."
-  },
-
-  // Skills Section
-  "skills.title": {
-    es: "Habilidades & Herramientas",
-    en: "Skills & Tools"
-  },
-  "skills.ai.title": {
     es: "IA Agéntica & Machine Learning",
     en: "Agentic AI & Machine Learning"
   },
@@ -347,6 +182,8 @@ export const translations = {
   "skills.ai.6": { es: "Claude Code & Antigravity", en: "Claude Code & Antigravity" },
   "skills.ai.7": { es: "Prompt Engineering", en: "Prompt Engineering" },
   "skills.ai.8": { es: "Automatización CI/CD con IA", en: "AI-Powered CI/CD Automation" },
+  "skills.ai.9": { es: "Model Context Protocol (MCP)", en: "Model Context Protocol (MCP)" },
+  "skills.ai.10": { es: "Monitoreo de Modelos ML", en: "ML Model Monitoring" },
 
   "skills.methodologies.title": {
     es: "Metodologías & Gestión de Producto",
@@ -357,6 +194,7 @@ export const translations = {
   "skills.leadership.3": { es: "Planificación de Roadmaps", en: "Roadmap Planning" },
   "skills.leadership.4": { es: "Colaboración Cross-functional", en: "Cross-functional Collaboration" },
   "skills.methodologies.1": { es: "Diseño de Sistemas", en: "System Design" },
+  "skills.methodologies.2": { es: "Test-Driven Development (TDD)", en: "Test-Driven Development (TDD)" },
 
   "skills.soft.title": {
     es: "Liderazgo & Habilidades Blandas",
@@ -376,11 +214,14 @@ export const translations = {
   "skills.lang.4": { es: "JavaScript", en: "JavaScript" },
   "skills.lang.5": { es: "TypeScript", en: "TypeScript" },
   "skills.lang.6": { es: "Java", en: "Java" },
+  "skills.lang.7": { es: "C# (.NET)", en: "C# (.NET)" },
 
   "skills.frontend.title": {
     es: "Frontend, Mobile & Desarrollo Web",
     en: "Frontend, Mobile & Web Development"
   },
+  "skills.frontend.1": { es: "WinUI 3 (.NET 9 / XAML)", en: "WinUI 3 (.NET 9 / XAML)" },
+  "skills.frontend.2": { es: "FastHTML & HTMX", en: "FastHTML & HTMX" },
 
   "skills.ml.title": {
     es: "Ciencia de Datos & Librerías ML",
@@ -397,6 +238,7 @@ export const translations = {
     es: "Contenedores, Orquestación & Cloud",
     en: "Containers, Orchestration & Cloud"
   },
+  "skills.cloud.1": { es: "Google Cloud Run & Artifact Registry", en: "Google Cloud Run & Artifact Registry" },
 
   // Education Section
   "edu.title": {
