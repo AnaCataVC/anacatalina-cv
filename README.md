@@ -2,8 +2,8 @@
 
 ![License](https://img.shields.io/badge/License-All_Rights_Reserved-red.svg) 
 ![Vercel](https://img.shields.io/badge/Vercel-Deployed-000000?logo=vercel&logoColor=white)
-![Vite](https://img.shields.io/badge/Vite-B73BFE?logo=vite&logoColor=FFD62E)
-![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?logo=tailwind-css&logoColor=white)
+![Astro](https://img.shields.io/badge/Astro_6-BC52EE?logo=astro&logoColor=white)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS_v4-38B2AC?logo=tailwind-css&logoColor=white)
 
 [Español](#español) | [English](#english)
 
@@ -17,8 +17,8 @@ Este repositorio contiene el código fuente para el sitio web personal y CV prof
 
 ### 2. Tecnologías Utilizadas
 - **Core:** HTML5, CSS3, JavaScript (ES6+)
-- **Framework & Configuración:** [Vite](https://vitejs.dev/)
-- **Estilos:** [Tailwind CSS](https://tailwindcss.com/) (con paleta personalizada en tonos pastel)
+- **Framework & Configuración:** [Astro](https://astro.build/)
+- **Estilos:** [Tailwind CSS v4](https://tailwindcss.com/) (con paleta personalizada en tonos pastel)
 - **Deployment:** Vercel
 
 ### 3. Aprendizajes Destacados
@@ -41,8 +41,8 @@ This repository contains the source code for the personal website and profession
 
 ### 2. Technologies Used
 - **Core:** HTML5, CSS3, JavaScript (ES6+)
-- **Framework & Config:** [Vite](https://vitejs.dev/)
-- **Styles:** [Tailwind CSS](https://tailwindcss.com/) (with a custom pastel color palette)
+- **Framework & Config:** [Astro](https://astro.build/)
+- **Styles:** [Tailwind CSS v4](https://tailwindcss.com/) (with a custom pastel color palette)
 - **Deployment:** Vercel
 
 ### 3. Key Learnings
