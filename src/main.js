@@ -1,10 +1,5 @@
 import { translations } from './i18n.js';
 
-const CONFIG = {
-  // Set to true to show the availability badge, false to hide it
-  isAvailableForWork: false 
-};
-
 function init() {
   // --- Internationalization (i18n) Logic ---
   let currentLang = localStorage.getItem('lang');
@@ -103,12 +98,6 @@ function init() {
 
   // Initialize icons state
   updateThemeIcons();
-
-  // --- Availability Badge Toggle ---
-  const availabilityBadge = document.getElementById('availability-badge');
-  if (availabilityBadge && !CONFIG.isAvailableForWork) {
-    availabilityBadge.style.display = 'none';
-  }
 
   // --- Mobile Menu Toggle ---
   const mobileMenuBtn = document.getElementById('mobile-menu-btn');
