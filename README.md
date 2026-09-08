@@ -21,7 +21,10 @@ Este repositorio contiene el código fuente para el sitio web personal y CV prof
 - **Estilos:** [Tailwind CSS v4](https://tailwindcss.com/) (con paleta personalizada en tonos pastel)
 - **Deployment:** Vercel
 
-### 3. Aprendizajes Destacados
+### 3. Demo en Vivo
+🌐 **CV Público:** [https://cv.ana-catalina.com/](https://cv.ana-catalina.com/)
+
+### 4. Aprendizajes Destacados
 Durante la construcción de este proyecto, los principales aprendizajes y desafíos incluyeron:
 - **Despliegue (Deployment):** Comparar y aprender las diferencias entre el despliegue en GitHub Pages vs Vercel.
 - **Diseño Web:** Profundizar en técnicas modernas de diseño, estructurando una paleta de colores y una estética limpia.
@@ -45,14 +48,39 @@ This repository contains the source code for the personal website and profession
 - **Styles:** [Tailwind CSS v4](https://tailwindcss.com/) (with a custom pastel color palette)
 - **Deployment:** Vercel
 
-### 3. Key Learnings
+### 3. Repository Structure
+```
+anacatalina-cv/
+├── public/               # Static assets (PDFs, favicons, OG image, CNAME, robots.txt)
+├── src/
+│   ├── pages/            # index.astro — main page
+│   ├── layouts/          # Layout.astro — shared HTML shell
+│   ├── components/       # Navbar, Footer, PoppyBackground
+│   ├── assets/           # Profile photo (optimized at build time)
+│   ├── main.js           # Theme, i18n, mobile menu, scroll, animations
+│   ├── i18n.js           # ES/EN translations
+│   └── styles.css        # Tailwind v4 + custom palette + animations
+├── templates/            # HTML templates for the downloadable PDF CVs
+└── scripts/              # generate-pdf.mjs (Windows-only local script)
+```
+
+### 4. Development Commands
+```bash
+npm install       # Install dependencies
+npm run dev       # Start development server
+npm run build     # Type-check + production build → ./dist/
+npm run preview   # Preview production build locally
+npm run build:pdf # Generate PDF CVs (Windows only — requires Edge or Chrome)
+```
+
+### 5. Key Learnings
 During the development of this project, the main learnings and challenges included:
 - **Deployment:** Comparing and learning the differences between deploying on GitHub Pages vs Vercel.
 - **Web Design:** Deepening knowledge in modern design techniques, structuring a color palette, and a clean aesthetic.
 - **UX/UI:** Optimizing the User Experience (UX) and User Interface (UI), including smooth animations and dark mode support.
 - **Advanced Layout:** Resolving scroll conflicts with sticky headers and structuring complex layouts using CSS Grid and Tailwind CSS.
 
-### 4. Live Demo
+### 6. Live Demo
 🌐 **Public CV:** [https://cv.ana-catalina.com/](https://cv.ana-catalina.com/)
 
 

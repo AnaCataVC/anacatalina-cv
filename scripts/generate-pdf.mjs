@@ -1,3 +1,18 @@
+/**
+ * PDF Generation Script — Windows only
+ *
+ * This script generates the downloadable CV PDFs by printing the HTML templates
+ * to PDF using a headless browser (Microsoft Edge or Google Chrome).
+ *
+ * IMPORTANT: This script only works on Windows. It searches for browser
+ * executables in default Windows installation paths. Running this on
+ * Linux or macOS will fail with "browser not found" error.
+ *
+ * Usage: npm run build:pdf   (run locally before committing updated PDFs)
+ * The generated PDFs in public/ should be committed to the repository
+ * so that Vercel's build process (which runs on Linux) can serve them.
+ */
+
 import { execSync } from 'node:child_process';
 import { existsSync, copyFileSync } from 'node:fs';
 import { resolve, join } from 'node:path';
@@ -13,6 +28,7 @@ const candidates = [
 let browserPath = candidates.find(p => existsSync(p));
 if (!browserPath) {
   console.error('Error: Neither Microsoft Edge nor Google Chrome was found on this system.');
+  console.error('Note: This script is designed for Windows only. See script header for details.');
   process.exit(1);
 }
 
