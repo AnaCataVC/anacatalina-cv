@@ -145,6 +145,11 @@ export const translations = {
     en: "Continuous evaluation of production models, optimizing data pipelines to ensure accuracy and robustness in real-world environments."
   },
 
+  "exp.fracttal2.location": {
+    es: "Santiago, Chile",
+    en: "Santiago, Chile"
+  },
+
   "exp.fracttal3.title": {
     es: "Analista de Datos",
     en: "Data Analyst"
@@ -152,6 +157,10 @@ export const translations = {
   "exp.fracttal3.date": {
     es: "Febrero 2020 - Julio 2021",
     en: "February 2020 - July 2021"
+  },
+  "exp.fracttal3.location": {
+    es: "Santiago, Chile",
+    en: "Santiago, Chile"
   },
   "exp.fracttal3.b1": {
     es: "Desarrollo desde cero de la herramienta de mantenimiento predictivo, utilizando análisis estadístico avanzado y modelos preliminares de Machine Learning.",
@@ -177,6 +186,7 @@ export const translations = {
   },
   "skills.ai.1": { es: "Sistemas Multi-Agente", en: "Multi-Agent Systems" },
   "skills.ai.2": { es: "LLMs & GenAI", en: "LLMs & GenAI" },
+  // Note: skills.ai.3 was intentionally removed; numbering preserved to avoid breaking changes
   "skills.ai.4": { es: "Analítica de Datos", en: "Data Analytics" },
   "skills.ai.5": { es: "Estadística & Probabilidad", en: "Statistics & Probability" },
   "skills.ai.6": { es: "Claude Code & Antigravity", en: "Claude Code & Antigravity" },
@@ -202,6 +212,7 @@ export const translations = {
   },
   "skills.soft.1": { es: "Team Building", en: "Team Building" },
   "skills.soft.2": { es: "Comunicación Efectiva", en: "Effective Communication" },
+  // Note: skills.soft.3 was intentionally removed; numbering preserved to avoid breaking changes
   "skills.soft.4": { es: "Resolución de Problemas", en: "Problem Solving" },
 
   "skills.lang.title": {
@@ -315,5 +326,23 @@ export const translations = {
   "footer.template": {
     es: "¿Te gusta este diseño? <a href=\"https://github.com/AnaCataVC/my-cv/\" target=\"_blank\" class=\"text-indigo-500 dark:text-indigo-400 hover:underline font-medium\">Usa la plantilla base aquí</a>.",
     en: "Do you like this design? <a href=\"https://github.com/AnaCataVC/my-cv/\" target=\"_blank\" class=\"text-indigo-500 dark:text-indigo-400 hover:underline font-medium\">Use the base template here</a>."
+  },
+
+  // Accessibility strings (used for aria-label and skip-link via data-i18n-aria)
+  "a11y.skipLink": {
+    es: "Saltar al contenido principal",
+    en: "Skip to main content"
+  },
+  "aria.changeLang": {
+    es: "Cambiar idioma",
+    en: "Switch language"
+  },
+  "aria.changeTheme": {
+    es: "Cambiar tema",
+    en: "Toggle theme"
+  },
+  "aria.openMenu": {
+    es: "Abrir menú de navegación",
+    en: "Open navigation menu"
   }
 };

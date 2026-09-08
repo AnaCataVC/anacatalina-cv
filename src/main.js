@@ -4,7 +4,7 @@ function init() {
   // --- Internationalization (i18n) Logic ---
   let currentLang = localStorage.getItem('lang');
   if (!currentLang) {
-    const browserLang = navigator.language || navigator.userLanguage;
+    const browserLang = navigator.language;
     currentLang = browserLang.toLowerCase().startsWith('en') ? 'en' : 'es';
   }
 
@@ -22,6 +22,15 @@ function init() {
       const key = el.getAttribute('data-i18n-href');
       if (translations[key] && translations[key][currentLang]) {
         el.setAttribute('href', translations[key][currentLang]);
+      }
+    });
+
+    // Update aria-label for accessibility elements
+    const ariaElements = document.querySelectorAll('[data-i18n-aria]');
+    ariaElements.forEach(el => {
+      const key = el.getAttribute('data-i18n-aria');
+      if (translations[key] && translations[key][currentLang]) {
+        el.setAttribute('aria-label', translations[key][currentLang]);
       }
     });
     
@@ -132,24 +141,26 @@ function init() {
     const winScroll = document.documentElement.scrollTop || document.body.scrollTop;
     const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
     const scrolled = height > 0 ? (winScroll / height) * 100 : 0;
-    progressBar.style.width = scrolled + '%';
+    if (progressBar) progressBar.style.width = scrolled + '%';
   });
 
   // --- Back to Top Button ---
   const backToTopBtn = document.getElementById('back-to-top');
-  window.addEventListener('scroll', () => {
-    if (window.scrollY > 300) {
-      backToTopBtn.classList.remove('opacity-0', 'translate-y-10', 'pointer-events-none');
-      backToTopBtn.classList.add('opacity-100', 'translate-y-0');
-    } else {
-      backToTopBtn.classList.remove('opacity-100', 'translate-y-0');
-      backToTopBtn.classList.add('opacity-0', 'translate-y-10', 'pointer-events-none');
-    }
-  });
+  if (backToTopBtn) {
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 300) {
+        backToTopBtn.classList.remove('opacity-0', 'translate-y-10', 'pointer-events-none');
+        backToTopBtn.classList.add('opacity-100', 'translate-y-0');
+      } else {
+        backToTopBtn.classList.remove('opacity-100', 'translate-y-0');
+        backToTopBtn.classList.add('opacity-0', 'translate-y-10', 'pointer-events-none');
+      }
+    });
 
-  backToTopBtn.addEventListener('click', () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  });
+    backToTopBtn.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  }
 
   // --- Intersection Observer for Fade-In Scroll Animations ---
   const revealElements = document.querySelectorAll('.reveal');
