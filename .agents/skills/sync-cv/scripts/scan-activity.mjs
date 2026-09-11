@@ -52,10 +52,14 @@ function getUserIdentities() {
     if (name) identities.add(name.toLowerCase());
   } catch {}
 
-  // Known developer handles
+  // Known developer handles (personal and workplace)
   identities.add('anacatavc');
   identities.add('catavillalobosc');
   identities.add('ana-catalina');
+  identities.add('catalina villalobos');
+  identities.add('catalina.villalobos');
+  identities.add('anacatalina@outlook.cl');
+  identities.add('catalina.villalobos@simplit-solutions.com');
 
   return Array.from(identities);
 }
@@ -170,13 +174,35 @@ function detectTechStack(repoPath) {
   // .NET / C#
   try {
     const files = fs.readdirSync(repoPath);
-    if (files.some(f => f.endsWith('.csproj') || f.endsWith('.sln'))) stack.add('.NET / C#');
+    if (files.some(f => f.endsWith('.csproj') || f.endsWith('.sln'))) {
+      stack.add('.NET / C#');
+    } else if (fs.existsSync(path.join(repoPath, 'src'))) {
+      const srcFiles = fs.readdirSync(path.join(repoPath, 'src'));
+      if (srcFiles.some(f => f.endsWith('.csproj') || f.endsWith('.sln'))) stack.add('.NET / C#');
+    }
   } catch {}
+
+  // Android / Kotlin
+  try {
+    if (fs.existsSync(path.join(repoPath, 'build.gradle')) || fs.existsSync(path.join(repoPath, 'build.gradle.kts')) || fs.existsSync(path.join(repoPath, 'settings.gradle'))) {
+      stack.add('Android / Kotlin');
+    }
+  } catch {}
+
+  // C++ / CMake
+  if (fs.existsSync(path.join(repoPath, 'CMakeLists.txt'))) stack.add('C++');
 
   // Docker
   if (fs.existsSync(path.join(repoPath, 'Dockerfile')) || fs.existsSync(path.join(repoPath, 'docker-compose.yml'))) {
     stack.add('Docker');
   }
+
+  // Kubernetes / Helm
+  try {
+    if (fs.existsSync(path.join(repoPath, 'Chart.yaml')) || fs.existsSync(path.join(repoPath, 'k8s')) || fs.existsSync(path.join(repoPath, 'manifests'))) {
+      stack.add('Kubernetes');
+    }
+  } catch {}
 
   return Array.from(stack);
 }
@@ -202,11 +228,11 @@ function sanitizeWorkContributions(commits) {
 }
 
 /**
- * Scans a target directory for repositories
+ * Scans a target directory for repositories (recursing if intermediate grouping folders exist)
  */
-function scanDirectory(baseDir, isWorkplace = false) {
+function scanDirectory(baseDir, isWorkplace = false, currentDepth = 0, maxDepth = 4) {
   const results = [];
-  if (!fs.existsSync(baseDir)) return results;
+  if (!fs.existsSync(baseDir) || currentDepth > maxDepth) return results;
 
   let entries = [];
   try {
@@ -217,13 +243,27 @@ function scanDirectory(baseDir, isWorkplace = false) {
 
   for (const entry of entries) {
     if (!entry.isDirectory()) continue;
-    // Skip node_modules or hidden folders
-    if (entry.name.startsWith('.') || entry.name === 'node_modules') continue;
+    // Skip node_modules, build caches, or hidden folders
+    if (
+      entry.name.startsWith('.') ||
+      entry.name === 'node_modules' ||
+      entry.name === 'dist' ||
+      entry.name === 'releases' ||
+      entry.name === 'bin' ||
+      entry.name === 'obj' ||
+      entry.name === '.venv_ci'
+    ) continue;
 
-    const repoPath = path.join(baseDir, entry.name);
-    const activity = checkAuthorshipAndActivity(repoPath, isWorkplace);
-    if (activity) {
-      results.push(activity);
+    const fullPath = path.join(baseDir, entry.name);
+    if (fs.existsSync(path.join(fullPath, '.git'))) {
+      const activity = checkAuthorshipAndActivity(fullPath, isWorkplace);
+      if (activity) {
+        results.push(activity);
+      }
+    } else {
+      // Grouping folder (e.g. Repositories/simplit/...) -> recurse
+      const nested = scanDirectory(fullPath, isWorkplace, currentDepth + 1, maxDepth);
+      results.push(...nested);
     }
   }
 

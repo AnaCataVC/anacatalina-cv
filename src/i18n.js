@@ -79,20 +79,20 @@ export const translations = {
     en: "Santiago, Chile (Remote)"
   },
   "exp.simpliroute.b1": {
-    es: "Diseño e implementación de <strong class=\"text-slate-800 dark:text-slate-100 font-semibold\">soluciones para la optimización de rutas y geolocalización</strong>, con foco en mejorar la precisión de georreferencias y aumentar la exactitud de ruteo.",
-    en: "Design and implementation of <strong class=\"text-slate-800 dark:text-slate-100 font-semibold\">solutions for route optimization and geolocation</strong>, focusing on improving georeferencing accuracy and routing precision."
+    es: "Diseño e implementación de una <strong class=\"text-slate-800 dark:text-slate-100 font-semibold\">arquitectura de geolocalización y geocodificación multi-proveedor</strong>, construyendo pipelines asíncronos con ejecución paralela de limpiadores y proveedores, políticas de fallback y timeout, estandarización de endpoints en microservicios y redacción automatizada de credenciales en logs.",
+    en: "Design and implementation of a <strong class=\"text-slate-800 dark:text-slate-100 font-semibold\">multi-provider geolocation and geocoding architecture</strong>, building asynchronous pipelines with parallelized cleaners and provider calls, fallback/timeout policies, microservice endpoint standardization, and automated credential redaction in logs."
   },
   "exp.simpliroute.b2": {
-    es: "Diseño y desarrollo de <strong class=\"text-slate-800 dark:text-slate-100 font-semibold\">servidores Model Context Protocol (MCP)</strong> para el motor de optimización, permitiendo a modelos de lenguaje (LLMs) y agentes interactuar de forma segura y estructurada con el solucionador logístico.",
-    en: "Design and development of <strong class=\"text-slate-800 dark:text-slate-100 font-semibold\">Model Context Protocol (MCP) servers</strong> for the optimization engine, enabling LLMs and AI agents to interact securely and structurally with the logistics solver."
+    es: "Diseño y despliegue en producción de <strong class=\"text-slate-800 dark:text-slate-100 font-semibold\">servidores Model Context Protocol (MCP) y consolas agénticas</strong> para motores logísticos, implementando control estricto de acceso a herramientas (tool-permission boundaries), mitigación de llamadas destructivas no confirmadas y persistencia de estado con Redis en Kubernetes.",
+    en: "Design and production deployment of <strong class=\"text-slate-800 dark:text-slate-100 font-semibold\">Model Context Protocol (MCP) servers and agentic workbenches</strong> for logistics engines, establishing strict tool-permission boundaries, prevention of unconfirmed destructive actions, and distributed state persistence with Redis on Kubernetes."
   },
   "exp.simpliroute.b3": {
     es: "Gestión y modelado de datos a gran escala en <strong class=\"text-slate-800 dark:text-slate-100 font-semibold\">Google BigQuery</strong> y orquestación de flujos de eventos y datos utilizando <strong class=\"text-slate-800 dark:text-slate-100 font-semibold\">Google Pub/Sub y Apache Airflow</strong>, asegurando alta calidad, trazabilidad y confiabilidad operativa.",
     en: "Large-scale data management and modeling in <strong class=\"text-slate-800 dark:text-slate-100 font-semibold\">Google BigQuery</strong>, and orchestration of event-driven and data workflows using <strong class=\"text-slate-800 dark:text-slate-100 font-semibold\">Google Pub/Sub and Apache Airflow</strong>, ensuring high quality, traceability, and operational reliability."
   },
   "exp.simpliroute.b4": {
-    es: "Integración de <strong class=\"text-slate-800 dark:text-slate-100 font-semibold\">LLMs y GenAI en procesos internos y productos</strong>, incorporando herramientas asistidas por IA como <strong class=\"text-slate-800 dark:text-slate-100 font-semibold\">Claude Code</strong> para acelerar ciclos de iteración, optimizar pruebas y elevar la eficiencia operativa.",
-    en: "Integration of <strong class=\"text-slate-800 dark:text-slate-100 font-semibold\">LLMs and GenAI into internal processes and products</strong>, adopting AI-assisted tooling like <strong class=\"text-slate-800 dark:text-slate-100 font-semibold\">Claude Code</strong> to accelerate iteration cycles, streamline testing, and increase operational efficiency."
+    es: "Integración de <strong class=\"text-slate-800 dark:text-slate-100 font-semibold\">LLMs y GenAI en procesos internos y productos</strong>, incorporando herramientas asistidas por IA como <strong class=\"text-slate-800 dark:text-slate-100 font-semibold\">Claude Code y Antigravity</strong> para acelerar ciclos de iteración, optimizar pruebas y elevar la eficiencia operativa.",
+    en: "Integration of <strong class=\"text-slate-800 dark:text-slate-100 font-semibold\">LLMs and GenAI into internal processes and products</strong>, adopting AI-assisted tooling like <strong class=\"text-slate-800 dark:text-slate-100 font-semibold\">Claude Code and Antigravity</strong> to accelerate iteration cycles, streamline testing, and increase operational efficiency."
   },
   
   "exp.fracttal1.title": {
@@ -231,7 +231,7 @@ export const translations = {
     es: "Frontend, Mobile & Desarrollo Web",
     en: "Frontend, Mobile & Web Development"
   },
-  "skills.frontend.1": { es: "WinUI 3 (.NET 9 / XAML)", en: "WinUI 3 (.NET 9 / XAML)" },
+  "skills.frontend.1": { es: ".NET 9 (WPF / WinUI 3)", en: ".NET 9 (WPF / WinUI 3)" },
   "skills.frontend.2": { es: "FastHTML & HTMX", en: "FastHTML & HTMX" },
 
   "skills.ml.title": {

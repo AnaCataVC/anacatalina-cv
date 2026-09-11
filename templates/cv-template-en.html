@@ -82,6 +82,8 @@
       text-transform: uppercase;
       letter-spacing: 0.01em;
       margin-bottom: 0.3rem;
+      break-after: avoid;
+      page-break-after: avoid;
     }
 
     .summary-p {
@@ -96,6 +98,8 @@
     /* Experience entries */
     .exp-item {
       margin-bottom: 0.55rem;
+      break-inside: avoid;
+      page-break-inside: avoid;
     }
 
     .exp-header {
@@ -146,14 +150,6 @@
       font-weight: 700;
     }
 
-    .page-break {
-      page-break-after: always;
-      break-after: page;
-      height: 0;
-      margin: 0;
-      padding: 0;
-    }
-
     .mono-bold {
       font-family: 'Roboto Mono', monospace;
       font-weight: 700;
@@ -200,10 +196,10 @@
     <div class="exp-item">
       <div class="exp-header"><span class="comp">SimpliRoute</span> | <span class="role">Learning Engineer</span> | <span class="date">August 2025 - Present</span></div>
       <ul>
-        <li>Design and implementation of solutions for route optimization and geolocation, focusing on improving georeferencing accuracy and routing precision.</li>
-        <li>Design and development of Model Context Protocol (MCP) servers for the optimization engine, enabling LLMs and AI agents to interact securely and structurally with the logistics solver.</li>
-        <li>Large-scale data management and modeling in Google BigQuery, and orchestration of event-driven and data workflows using Google Pub/Sub and Apache Airflow, ensuring high quality, traceability, and operational reliability.</li>
-        <li>Integration of LLMs and GenAI into internal processes and products, adopting AI-assisted tooling like Claude Code to accelerate iteration cycles, streamline testing, and increase operational efficiency.</li>
+        <li>Design and implementation of a multi-provider geolocation and geocoding architecture, building asynchronous pipelines with parallelized cleaners and provider calls, fallback/timeout policies, microservice endpoint standardization, and automated credential redaction in logs.</li>
+        <li>Design and production deployment of Model Context Protocol (MCP) servers and agentic workbenches for logistics engines, establishing strict tool-permission boundaries, prevention of unconfirmed destructive actions, and distributed state persistence with Redis on Kubernetes.</li>
+        <li>Large-scale data management and modeling in Google BigQuery, and orchestration of event-driven workflows using Google Pub/Sub and Apache Airflow, ensuring high quality, traceability, and operational reliability.</li>
+        <li>Integration of LLMs and GenAI into internal processes and products, adopting AI-assisted tooling like Claude Code and Antigravity to accelerate iteration cycles, streamline testing, and increase operational efficiency.</li>
       </ul>
     </div>
 
@@ -234,16 +230,16 @@
     </div>
   </div>
 
-  <div class="page-break"></div>
+  
 
   <!-- PAGE 2 -->
   <div class="section" style="margin-top: 0.15rem;">
     <div class="section-title">TOOLS &amp; TECHNICAL SKILLS</div>
     <ul class="skill-list">
-      <li><span class="label">Programming Languages:</span> Python (Principal/Advanced) | SQL | JavaScript | TypeScript | MATLAB | Java | C# (.NET).</li>
-      <li><span class="label">Cloud &amp; DevOps:</span> Google Cloud Platform (BigQuery, Cloud Run, Artifact Registry, Google Pub/Sub, Cloud Storage) | Git | GitHub | Bitbucket.</li>
-      <li><span class="label">Frameworks &amp; Libraries:</span> Pandas | NumPy | Scikit-learn | FastHTML | WinUI 3 | LangChain | TensorFlow | Django | React JS.</li>
-      <li><span class="label">Databases:</span> PostgreSQL | SQL Server | MySQL | MongoDB | BigQuery | SQLite.</li>
+      <li><span class="label">Programming Languages:</span> Python (Principal/Advanced) | SQL | JavaScript | TypeScript | MATLAB | Java | C# (.NET) | Rust.</li>
+      <li><span class="label">Cloud &amp; DevOps:</span> Google Cloud Platform (BigQuery, Cloud Run, Artifact Registry, Google Pub/Sub, Cloud Storage, GKE) | ArgoCD | Git | GitHub | Bitbucket.</li>
+      <li><span class="label">Frameworks &amp; Libraries:</span> FastAPI | Pydantic | Pandas | NumPy | Scikit-learn | .NET 9 (WPF / WinUI 3) | FastHTML | LangChain | TensorFlow | Django | React JS.</li>
+      <li><span class="label">Databases:</span> PostgreSQL | Redis | BigQuery | SQL Server | MySQL | MongoDB | SQLite.</li>
       <li><span class="label">Containers &amp; Orchestration:</span> Airflow | Airbyte | Docker | Kubernetes.</li>
       <li><span class="label">Management &amp; Communication:</span> Jira | MS Planner | MS Teams | Sharepoint | Notion | Slack | Trello.</li>
       <li><span class="label">Methodologies:</span> Test-Driven Development (TDD) | Agile Methodologies (Scrum &amp; Kanban) | Roadmap Planning.</li>
