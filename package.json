@@ -8,6 +8,7 @@
     "start": "astro dev",
     "build": "astro check && astro build",
     "build:pdf": "node scripts/generate-pdf.mjs",
+    "audit:activity": "node .agents/skills/sync-cv/scripts/scan-activity.mjs",
     "preview": "astro preview",
     "astro": "astro"
   },

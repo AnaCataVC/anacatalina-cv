@@ -46,6 +46,14 @@ anacatalina-cv/
 ├── templates/                # Hand-maintained HTML used to render the downloadable PDFs
 ├── scripts/generate-pdf.mjs # Renders templates/*.html to PDF via headless Chrome/Edge
 ├── package.json             # Scripts: dev, build, build:pdf, preview
+├── .agents/                 # Workspace agent customizations
+│   ├── agents/
+│   │   └── cv-reviewer.md   # CV review & synchronization orchestrator
+│   └── skills/
+│       └── sync-cv/         # Procedures to audit repos and propose CV updates
+│           ├── SKILL.md
+│           └── scripts/
+│               └── scan-activity.mjs # Dynamic repository audit script
 └── AGENTS.md                 # This file
 ```
 
