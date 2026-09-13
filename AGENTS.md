@@ -32,19 +32,22 @@ anacatalina-cv/
 │   ├── CNAME                # Custom domain: cv.ana-catalina.com
 │   └── robots.txt           # Allows all crawlers, points to sitemap
 ├── src/
+│   ├── data/
+│   │   └── cv.ts            # Single Source of Truth (SSOT) for all CV content (ES/EN)
 │   ├── pages/
-│   │   └── index.astro      # Main Astro component (HTML + Frontmatter)
+│   │   ├── index.astro      # Main Astro component (HTML + Frontmatter)
+│   │   └── print/
+│   │       └── [lang].astro # Print-optimized template for headless PDF rendering
 │   ├── layouts/
 │   │   └── Layout.astro     # Shared HTML shell: head/meta, theme init script, Navbar/Footer
 │   ├── components/          # Navbar.astro, Footer.astro, PoppyBackground.astro
 │   ├── assets/
 │   │   └── foto-perfil.jpg  # Profile photo (optimized at build time via astro:assets)
 │   ├── main.js              # Core logic: theme, i18n, mobile menu, scroll, animations
-│   ├── i18n.js              # ES/EN translations (exported `translations` object)
+│   ├── i18n.js              # ES/EN translations (hydrated dynamically from src/data/cv.ts)
 │   └── styles.css           # Tailwind v4 import, `@theme` tokens, custom utilities
 ├── astro.config.mjs         # Astro config: @tailwindcss/vite + @astrojs/sitemap
-├── templates/                # Hand-maintained HTML used to render the downloadable PDFs
-├── scripts/generate-pdf.mjs # Renders templates/*.html to PDF via headless Chrome/Edge
+├── scripts/generate-pdf.mjs # Renders print pages to PDF via headless Chrome/Edge with 2-page check
 ├── package.json             # Scripts: dev, build, build:pdf, preview
 ├── .agents/                 # Workspace agent customizations
 │   ├── agents/
@@ -122,11 +125,11 @@ npm run preview  # Preview production build
 ## Conventions & Rules
 
 ### When modifying CV content:
-1. Textual content lives in `src/pages/index.astro` (structure) and `src/i18n.js` (translations).
-2. **Always** add translations in both languages (ES and EN).
-3. Use the `data-i18n="new.key"` attribute in HTML for translatable text.
+1. Core CV data (experience, education, skills, publications, contact) lives in `src/data/cv.ts` (Single Source of Truth).
+2. **Always** maintain translations in both languages (`es` and `en`).
+3. Use the `data-i18n="new.key"` attribute in HTML for translatable text if adding new UI elements.
 4. Use `data-i18n-href="new.key"` for links that change by language.
-5. Also check `templates/cv-template-es.html` / `cv-template-en.html` (rendered to the downloadable PDFs by `scripts/generate-pdf.mjs`) for equivalent updates — they are hand-maintained separately from `src/i18n.js`, not generated from it, and already differ in wording where they haven't been kept in sync.
+5. To regenerate the downloadable PDFs (`ACVC_es.pdf`, `ACVC_en.pdf`), run `npm run build:pdf`. The script automatically uses `dist/print/[lang]/index.html` compiled from `src/data/cv.ts` and enforces a strict 2-page limit.
 
 ### When modifying styles:
 1. Prefer inline Tailwind classes.

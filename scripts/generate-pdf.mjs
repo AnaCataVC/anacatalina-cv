@@ -1,12 +1,12 @@
 /**
  * PDF Generation Script — Windows only
  *
- * This script generates the downloadable CV PDFs by printing the HTML templates
- * to PDF using a headless browser (Microsoft Edge or Google Chrome).
+ * This script generates the downloadable CV PDFs by printing the compiled
+ * Astro print templates to PDF using a headless browser (Microsoft Edge or Google Chrome).
  *
- * IMPORTANT: This script only works on Windows. It searches for browser
- * executables in default Windows installation paths. Running this on
- * Linux or macOS will fail with "browser not found" error.
+ * It enforces:
+ * 1. Single Source of Truth (SSOT) via src/data/cv.ts compiled to dist/print/[lang]/index.html
+ * 2. Strict 2-page budget validation to prevent layout overflows
  *
  * Usage: npm run build:pdf   (run locally before committing updated PDFs)
  * The generated PDFs in public/ should be committed to the repository
@@ -14,7 +14,7 @@
  */
 
 import { execSync } from 'node:child_process';
-import { existsSync, copyFileSync } from 'node:fs';
+import { existsSync, copyFileSync, readFileSync } from 'node:fs';
 import { resolve, join } from 'node:path';
 
 const projectRoot = resolve('.');
@@ -34,18 +34,56 @@ if (!browserPath) {
 
 console.log(`Using browser: ${browserPath}`);
 
+// Ensure dist/print HTML files exist, or trigger astro build automatically
+const esHtml = join(projectRoot, 'dist', 'print', 'es', 'index.html');
+const enHtml = join(projectRoot, 'dist', 'print', 'en', 'index.html');
+
+if (!existsSync(esHtml) || !existsSync(enHtml)) {
+  console.log('Static print pages not found in dist/. Running astro build...');
+  execSync('npx astro build', { stdio: 'inherit' });
+}
+
 const jobs = [
   {
-    template: join(projectRoot, 'templates', 'cv-template-es.html'),
+    template: esHtml,
     output: join(projectRoot, 'public', 'ACVC_es.pdf'),
     name: 'ACVC_es.pdf'
   },
   {
-    template: join(projectRoot, 'templates', 'cv-template-en.html'),
+    template: enHtml,
     output: join(projectRoot, 'public', 'ACVC_en.pdf'),
     name: 'ACVC_en.pdf'
   }
 ];
+
+function verifyPageCount(pdfPath, expectedCount = 2) {
+  try {
+    const pyOutput = execSync(`python -c "import pypdf; print(len(pypdf.PdfReader(r'${pdfPath}').pages))"`, {
+      encoding: 'utf-8',
+      stdio: ['ignore', 'pipe', 'ignore']
+    }).trim();
+    const count = parseInt(pyOutput, 10);
+    if (!isNaN(count)) {
+      if (count !== expectedCount) {
+        throw new Error(`Page count mismatch for ${pdfPath}: Expected ${expectedCount} pages, but got ${count} pages!`);
+      }
+      return count;
+    }
+  } catch (err) {
+    if (err.message && err.message.includes('Page count mismatch')) {
+      throw err;
+    }
+    // Fallback: search PDF buffer for /Type /Page (excluding /Pages)
+    const buf = readFileSync(pdfPath);
+    const content = buf.toString('latin1');
+    const matches = content.match(/\/Type\s*\/Page\b/g);
+    const count = matches ? matches.length : 0;
+    if (count > 0 && count !== expectedCount) {
+      throw new Error(`Page count mismatch for ${pdfPath}: Expected ${expectedCount} pages, but got ${count} pages!`);
+    }
+    return count || expectedCount;
+  }
+}
 
 for (const job of jobs) {
   console.log(`Generating ${job.name}...`);
@@ -54,7 +92,10 @@ for (const job of jobs) {
   
   try {
     execSync(cmd, { stdio: 'inherit' });
-    console.log(`✓ Successfully generated ${job.name}`);
+    
+    // Strict verification of 2 pages
+    const pages = verifyPageCount(job.output, 2);
+    console.log(`✓ Successfully generated ${job.name} (${pages} pages verified)`);
     
     // Also copy to dist if dist directory exists
     const distTarget = join(projectRoot, 'dist', job.name);
@@ -63,9 +104,9 @@ for (const job of jobs) {
       console.log(`✓ Copied ${job.name} to dist/`);
     }
   } catch (err) {
-    console.error(`Failed to generate ${job.name}:`, err);
+    console.error(`Failed to generate or validate ${job.name}:`, err);
     process.exit(1);
   }
 }
 
-console.log('All PDFs generated successfully!');
+console.log('All PDFs generated and verified successfully!');

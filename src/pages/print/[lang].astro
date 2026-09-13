@@ -1,0 +1,270 @@
+---
+import { cvData } from '../../data/cv';
+
+export function getStaticPaths() {
+  return [
+    { params: { lang: 'es' } },
+    { params: { lang: 'en' } }
+  ];
+}
+
+const { lang } = Astro.params as { lang: 'es' | 'en' };
+const isEs = lang === 'es';
+
+const languagesFormatted = cvData.languages
+  .map(l => l.language[lang])
+  .join(' | ');
+
+const certificationsFormatted = cvData.certifications
+  .map(c => `${c.title[lang]} (${c.issuer}, ${c.year})`)
+  .join(' | ') + '.';
+---
+<!DOCTYPE html>
+<html lang={lang}>
+<head>
+  <meta charset="UTF-8">
+  <title>{`ACVC_${lang}`}</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@600;700&family=Montserrat:ital,wght@0,400;0,700;1,400&family=Roboto+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <style is:inline>
+    @page {
+      size: letter;
+      margin: 0.65in 0.8in 0.5in 0.8in;
+    }
+    
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Montserrat', sans-serif;
+      color: #000000;
+      background-color: #ffffff;
+      font-size: 10pt;
+      line-height: 1.33;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Header */
+    .header {
+      text-align: center;
+      margin-bottom: 0.8rem;
+    }
+
+    .header h1 {
+      font-family: 'Lexend', sans-serif;
+      font-size: 23pt;
+      font-weight: 600;
+      color: #8e70d5;
+      margin-bottom: 0.25rem;
+      letter-spacing: -0.01em;
+    }
+
+    .header .subtitle {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 13pt;
+      font-weight: 700;
+      color: #e47399;
+      letter-spacing: 0.05em;
+      margin-bottom: 0.3rem;
+      text-transform: uppercase;
+    }
+
+    .header .contact {
+      font-family: 'Roboto Mono', monospace;
+      font-size: 9.5pt;
+      color: #53c88c;
+      line-height: 1.3;
+    }
+
+    .header .contact a {
+      color: #53c88c;
+      text-decoration: underline;
+    }
+
+    /* Sections */
+    .section {
+      margin-bottom: 0.75rem;
+    }
+
+    .section-title {
+      font-family: 'Lexend', sans-serif;
+      font-size: 13pt;
+      font-weight: 600;
+      color: #5ca3e4;
+      text-transform: uppercase;
+      letter-spacing: 0.01em;
+      margin-bottom: 0.3rem;
+      break-after: avoid;
+      page-break-after: avoid;
+    }
+
+    .summary-p {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 400;
+      font-size: 10pt;
+      line-height: 1.33;
+      text-align: justify;
+      color: #000000;
+    }
+
+    /* Experience entries */
+    .exp-item {
+      margin-bottom: 0.55rem;
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+
+    .exp-header {
+      font-family: 'Roboto Mono', monospace;
+      font-size: 10pt;
+      color: #000000;
+      margin-bottom: 0.15rem;
+    }
+
+    .exp-header .comp {
+      font-weight: 700;
+    }
+
+    .exp-header .role {
+      font-style: italic;
+    }
+
+    .exp-header .date {
+      font-weight: 400;
+    }
+
+    /* Lists */
+    ul {
+      list-style-type: disc;
+      margin-left: 1.35rem;
+      padding-left: 0;
+    }
+
+    li {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 400;
+      font-size: 10pt;
+      line-height: 1.33;
+      text-align: justify;
+      color: #000000;
+      margin-bottom: 0.22rem;
+    }
+
+    .skill-list li {
+      font-family: 'Roboto Mono', monospace;
+      font-size: 9.8pt;
+      line-height: 1.33;
+      margin-bottom: 0.32rem;
+    }
+
+    .skill-list .label {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+    }
+
+    .mono-bold {
+      font-family: 'Roboto Mono', monospace;
+      font-weight: 700;
+    }
+
+    .mono-italic {
+      font-family: 'Roboto Mono', monospace;
+      font-style: italic;
+    }
+
+    .mono-regular {
+      font-family: 'Roboto Mono', monospace;
+      font-weight: 400;
+    }
+
+    a {
+      color: #5ca3e4;
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- PÁGINA 1 -->
+  <div class="header">
+    <h1>{cvData.basics.contact.name}</h1>
+    <div class="subtitle">{cvData.basics.contact.title[lang].toUpperCase()}</div>
+    <div class="contact">
+      {cvData.basics.contact.location[lang]}<br>
+      <a href={`mailto:${cvData.basics.contact.email}`}>{cvData.basics.contact.email}</a> &bull; <a href={cvData.basics.contact.website}>{cvData.basics.contact.websiteDisplay}</a>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">{isEs ? 'RESUMEN' : 'SUMMARY'}</div>
+    <p class="summary-p">
+      {cvData.basics.summary.pdf[lang]}
+    </p>
+  </div>
+
+  <div class="section">
+    <div class="section-title">{isEs ? 'EXPERIENCIA' : 'EXPERIENCE'}</div>
+
+    {cvData.experience.map(exp => {
+      const bullets = exp.pdfBullets || exp.bullets;
+      return (
+        <div class="exp-item">
+          <div class="exp-header"><span class="comp">{exp.company}</span> | <span class="role">{exp.role[lang]}</span> | <span class="date">{exp.date[lang]}</span></div>
+          <ul>
+            {bullets.map(b => (
+              <li set:html={b[lang]} />
+            ))}
+          </ul>
+        </div>
+      );
+    })}
+  </div>
+
+  <!-- PÁGINA 2 -->
+  <div class="section" style="margin-top: 0.15rem;">
+    <div class="section-title">{isEs ? 'HERRAMIENTAS Y HABILIDADES TÉCNICAS' : 'TOOLS & TECHNICAL SKILLS'}</div>
+    <ul class="skill-list">
+      {cvData.skillCategories.map(cat => (
+        <li><span class="label">{cat.pdfLabel[lang]}</span> {cat.pdfFormatted[lang]}</li>
+      ))}
+    </ul>
+  </div>
+
+  <div class="section">
+    <div class="section-title">{isEs ? 'FORMACIÓN ACADÉMICA' : 'EDUCATION'}</div>
+    <ul>
+      {cvData.education.map((edu, idx) => (
+        <li style={idx > 0 ? "margin-top: 0.35rem;" : undefined}>
+          <span class="mono-bold">{edu.institution[lang]}</span> | <span class="mono-italic">{edu.degree[lang]}</span> | <span class="mono-regular">{edu.date[lang]}</span><br>
+          {edu.pdfDetails ? edu.pdfDetails[lang] : edu.details[lang]}
+        </li>
+      ))}
+    </ul>
+  </div>
+
+  <div class="section">
+    <div class="section-title">{isEs ? 'PUBLICACIONES' : 'PUBLICATIONS'}</div>
+    <ul>
+      {cvData.publications.map(pub => (
+        <li>
+          <span class="mono-bold">{pub.title}</span> | <span class="mono-italic">{pub.journal}</span> - <span class="mono-regular">{pub.date[lang]} (<a href={pub.url}>{pub.url}</a>)</span><br>
+          {pub.description[lang]}
+        </li>
+      ))}
+    </ul>
+  </div>
+
+  <div class="section">
+    <div class="section-title">{isEs ? 'IDIOMAS Y CERTIFICACIONES' : 'LANGUAGES & CERTIFICATIONS'}</div>
+    <ul class="skill-list">
+      <li><span class="label">{isEs ? 'Idiomas:' : 'Languages:'}</span> {languagesFormatted}</li>
+      <li><span class="label">{isEs ? 'Certificaciones:' : 'Certifications:'}</span> {certificationsFormatted}</li>
+    </ul>
+  </div>
+
+</body>
+</html>

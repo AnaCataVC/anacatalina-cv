@@ -1,3 +1,14 @@
+import { cvData } from './data/cv';
+
+const simpliroute = cvData.experience.find(e => e.id === 'simpliroute');
+const fracttal1 = cvData.experience.find(e => e.id === 'fracttal1');
+const fracttal2 = cvData.experience.find(e => e.id === 'fracttal2');
+const fracttal3 = cvData.experience.find(e => e.id === 'fracttal3');
+
+const eduCivil = cvData.education.find(e => e.id === 'civil');
+const eduBsc = cvData.education.find(e => e.id === 'bsc');
+const pub = cvData.publications[0];
+
 export const translations = {
   // Navigation
   "nav.experiencia": {
@@ -18,10 +29,7 @@ export const translations = {
     es: "Disponible para Proyectos & Liderazgo de Datos",
     en: "Available for Data Leadership & Projects"
   },
-  "hero.subtitle": {
-    es: "Data Scientist & Machine Learning Engineer",
-    en: "Data Scientist & Machine Learning Engineer"
-  },
+  "hero.subtitle": cvData.basics.contact.title,
   "hero.downloadBtn": {
     es: "Descargar CV",
     en: "Download CV"
@@ -38,142 +46,53 @@ export const translations = {
     es: "Habilidades",
     en: "Skills"
   },
-  "hero.location": {
-    es: "Región Metropolitana, Chile",
-    en: "Santiago Metropolitan Region, Chile"
-  },
+  "hero.location": cvData.basics.contact.location,
   
   // About Me Section
   "about.title": {
     es: "Sobre Mí",
     en: "About Me"
   },
-  "about.p1": {
-    es: "Ingeniera especializada en Ciencia de Datos, Machine Learning e IA Agéntica, con experiencia liderando equipos y construyendo sistemas inteligentes para logística, automatización y análisis avanzado.",
-    en: "Engineer specialized in Data Science, Machine Learning, and Agentic AI, with experience leading teams and building intelligent systems for logistics, automation, and advanced analytics."
-  },
-  "about.p2": {
-    es: "De formación Ingeniera Civil de la Universidad de Chile, me motiva aplicar Machine Learning para resolver problemas complejos y transformar datos en valor real, tal como lo plasmé en mi trabajo de tesis publicado en <a href=\"#publicaciones\" class=\"text-indigo-600 dark:text-indigo-400 hover:underline font-medium\">Structural Control Health Monitoring</a> en 2021.",
-    en: "With a background in Civil Engineering from the Universidad de Chile, I am driven to apply Machine Learning to solve complex problems and transform data into real value, as reflected in my thesis published in <a href=\"#publications\" class=\"text-indigo-600 dark:text-indigo-400 hover:underline font-medium\">Structural Control Health Monitoring</a> in 2021."
-  },
-  "about.p3": {
-    es: "A lo largo de mi trayectoria, he liderado equipos multidisciplinarios y colaborado en el desarrollo de soluciones tecnológicas donde la ingeniería, el análisis avanzado y el impacto práctico convergen.",
-    en: "Throughout my career, I have led multidisciplinary teams and collaborated on the development of technological solutions where engineering, advanced analytics, and practical impact converge."
-  },
-  "about.p4": {
-    es: "Actualmente como <a href=\"#simpliroute\" class=\"text-indigo-600 dark:text-indigo-400 hover:underline font-medium\">Learning Engineer en SimpliRoute</a>, contribuyo al diseño de soluciones de optimización, al desarrollo de servidores MCP e integración de IA, y al procesamiento de datos a escala.",
-    en: "Currently working as a <a href=\"#simpliroute\" class=\"text-indigo-600 dark:text-indigo-400 hover:underline font-medium\">Learning Engineer at SimpliRoute</a>, I contribute to the design of optimization solutions, development of MCP servers and AI integration, and large-scale data processing."
-  },
+  "about.p1": cvData.basics.summary.web[0],
+  "about.p2": cvData.basics.summary.web[1],
+  "about.p3": cvData.basics.summary.web[2],
+  "about.p4": cvData.basics.summary.web[3],
   
   // Experience Section
   "exp.title": {
     es: "Experiencia Profesional",
     en: "Professional Experience"
   },
-  "exp.simpliroute.date": {
-    es: "Agosto 2025 - Presente",
-    en: "August 2025 - Present"
-  },
-  "exp.simpliroute.location": {
-    es: "Santiago, Chile (Remoto)",
-    en: "Santiago, Chile (Remote)"
-  },
-  "exp.simpliroute.b1": {
-    es: "<strong class=\"text-slate-800 dark:text-slate-100 font-semibold\">Arquitectura e implementación de un sistema distribuido de geolocalización y geocodificación multi-proveedor</strong>, diseñando pipelines asíncronos desacoplados, estrategias de alta disponibilidad y estandarización de microservicios con tolerancia a fallos.",
-    en: "<strong class=\"text-slate-800 dark:text-slate-100 font-semibold\">Architecture and implementation of a fault-tolerant, multi-provider geolocation and geocoding platform</strong>, designing decoupled asynchronous pipelines, high-availability fallback strategies, and standardized microservices."
-  },
-  "exp.simpliroute.b2": {
-    es: "Diseño y despliegue en producción de <strong class=\"text-slate-800 dark:text-slate-100 font-semibold\">infraestructura agéntica basada en Model Context Protocol (MCP)</strong> para motores logísticos, implementando guardrails deterministas, permisos de ejecución de herramientas de mínimo privilegio y persistencia distribuida con Redis en Kubernetes.",
-    en: "Design and production deployment of <strong class=\"text-slate-800 dark:text-slate-100 font-semibold\">enterprise agentic infrastructure leveraging Model Context Protocol (MCP)</strong> for logistics engines, establishing deterministic guardrails, least-privilege tool execution boundaries, and distributed state persistence on Kubernetes with Redis."
-  },
-  "exp.simpliroute.b3": {
-    es: "Gestión y modelado de datos a gran escala en <strong class=\"text-slate-800 dark:text-slate-100 font-semibold\">Google BigQuery</strong> y orquestación de flujos de eventos mediante <strong class=\"text-slate-800 dark:text-slate-100 font-semibold\">Google Pub/Sub y Apache Airflow</strong>, garantizando alta confiabilidad operativa, linaje de datos y telemetría crítica.",
-    en: "Large-scale data modeling and event orchestration in <strong class=\"text-slate-800 dark:text-slate-100 font-semibold\">Google Cloud (BigQuery, Pub/Sub, and Apache Airflow)</strong>, ensuring data lineage, operational reliability, and real-time telemetry for optimization systems."
-  },
-  "exp.simpliroute.b4": {
-    es: "Impulso de la adopción de <strong class=\"text-slate-800 dark:text-slate-100 font-semibold\">IA Generativa en el ciclo de desarrollo (DevEx) y productos</strong>, diseñando flujos de trabajo asistidos por agentes para optimizar pruebas, acelerar ciclos de iteración y elevar la eficiencia operativa.",
-    en: "Leadership in <strong class=\"text-slate-800 dark:text-slate-100 font-semibold\">Generative AI adoption across development lifecycles (DevEx) and core systems</strong>, integrating agentic workflows to streamline automated testing, accelerate delivery cycles, and enhance operational efficiency."
-  },
+  "exp.simpliroute.title": simpliroute.role,
+  "exp.simpliroute.date": simpliroute.date,
+  "exp.simpliroute.location": simpliroute.location,
+  "exp.simpliroute.b1": simpliroute.bullets[0],
+  "exp.simpliroute.b2": simpliroute.bullets[1],
+  "exp.simpliroute.b3": simpliroute.bullets[2],
+  "exp.simpliroute.b4": simpliroute.bullets[3],
   
-  "exp.fracttal1.title": {
-    es: "Tech Lead Fracttal Hub",
-    en: "Tech Lead Fracttal Hub"
-  },
-  "exp.fracttal1.date": {
-    es: "Noviembre 2023 - Julio 2025",
-    en: "November 2023 - July 2025"
-  },
-  "exp.fracttal1.location": {
-    es: "Santiago, Chile",
-    en: "Santiago, Chile"
-  },
-  "exp.fracttal1.b1": {
-    es: "<strong class=\"text-slate-800 dark:text-slate-100 font-semibold\">Liderazgo de equipo multidisciplinario de integraciones</strong> con personas en distintos países, enfocado en mentoría técnica, desarrollo profesional y un entorno colaborativo.",
-    en: "<strong class=\"text-slate-800 dark:text-slate-100 font-semibold\">Leadership of a multidisciplinary integrations team</strong> with members across different countries, focused on technical mentoring, professional development, and a collaborative environment."
-  },
-  "exp.fracttal1.b2": {
-    es: "Planificación estratégica del roadmap de Fracttal Hub, alineando los objetivos de negocio y la entrega continua de valor a clientes.",
-    en: "Strategic planning of the Fracttal Hub roadmap, aligning business objectives with the continuous delivery of value to clients."
-  },
-  "exp.fracttal1.b3": {
-    es: "Desarrollo en Python para librerías de procesamiento de datos y orquestación de tareas, habilitando la integración con múltiples fuentes y destinos, con <strong class=\"text-slate-800 dark:text-slate-100 font-semibold\">más de 100 acciones posibles</strong> y capacidades avanzadas de transformación.",
-    en: "Python development for data processing libraries and task orchestration, enabling integration with multiple sources and destinations, featuring <strong class=\"text-slate-800 dark:text-slate-100 font-semibold\">over 100 possible actions</strong> and advanced transformation capabilities."
-  },
-  "exp.fracttal1.b4": {
-    es: "Supervisión y coordinación de proyectos de integración para decenas de clientes, aplicando gestión eficiente de recursos, plazos y flujos de datos confiables.",
-    en: "Supervision and coordination of integration projects for dozens of clients, applying efficient resource management, meeting deadlines, and ensuring reliable data flows."
-  },
+  "exp.fracttal1.title": fracttal1.role,
+  "exp.fracttal1.date": fracttal1.date,
+  "exp.fracttal1.location": fracttal1.location,
+  "exp.fracttal1.b1": fracttal1.bullets[0],
+  "exp.fracttal1.b2": fracttal1.bullets[1],
+  "exp.fracttal1.b3": fracttal1.bullets[2],
+  "exp.fracttal1.b4": fracttal1.bullets[3],
 
-  "exp.fracttal2.date": {
-    es: "Agosto 2021 - Noviembre 2023",
-    en: "August 2021 - November 2023"
-  },
-  "exp.fracttal2.b1": {
-    es: "Diseño e implementación de procesos de ciencia de datos para las plataformas Predictto y Fracttal One, con foco en generar valor a partir de datos operacionales de maquinaria.",
-    en: "Design and implementation of data science processes for the Predictto and Fracttal One platforms, focusing on generating value from operational machinery data."
-  },
-  "exp.fracttal2.b2": {
-    es: "Desarrollo de modelos analíticos aplicados a <strong class=\"text-slate-800 dark:text-slate-100 font-semibold\">mantenimiento predictivo, priorización de activos y predicción de fallas</strong> combinando ML, estadística y conocimiento del dominio.",
-    en: "Development of analytical models applied to <strong class=\"text-slate-800 dark:text-slate-100 font-semibold\">predictive maintenance, asset prioritization, and failure prediction</strong>, combining ML, statistics, and domain knowledge."
-  },
-  "exp.fracttal2.b3": {
-    es: "Colaboración en la creación y desarrollo de producto para gestionar integraciones entre Fracttal y otras plataformas de software empresariales.",
-    en: "Collaboration in product creation and development to manage integrations between Fracttal and other enterprise software platforms."
-  },
-  "exp.fracttal2.b4": {
-    es: "Evaluación continua de modelos en producción, optimizando pipelines de datos para garantizar la precisión y robustez en entornos reales.",
-    en: "Continuous evaluation of production models, optimizing data pipelines to ensure accuracy and robustness in real-world environments."
-  },
+  "exp.fracttal2.title": fracttal2.role,
+  "exp.fracttal2.date": fracttal2.date,
+  "exp.fracttal2.location": fracttal2.location,
+  "exp.fracttal2.b1": fracttal2.bullets[0],
+  "exp.fracttal2.b2": fracttal2.bullets[1],
+  "exp.fracttal2.b3": fracttal2.bullets[2],
+  "exp.fracttal2.b4": fracttal2.bullets[3],
 
-  "exp.fracttal2.location": {
-    es: "Santiago, Chile",
-    en: "Santiago, Chile"
-  },
-
-  "exp.fracttal3.title": {
-    es: "Analista de Datos",
-    en: "Data Analyst"
-  },
-  "exp.fracttal3.date": {
-    es: "Febrero 2020 - Julio 2021",
-    en: "February 2020 - July 2021"
-  },
-  "exp.fracttal3.location": {
-    es: "Santiago, Chile",
-    en: "Santiago, Chile"
-  },
-  "exp.fracttal3.b1": {
-    es: "Desarrollo desde cero de la herramienta de mantenimiento predictivo, utilizando análisis estadístico avanzado y modelos preliminares de Machine Learning.",
-    en: "Development from scratch of the predictive maintenance tool, using advanced statistical analysis and preliminary Machine Learning models."
-  },
-  "exp.fracttal3.b2": {
-    es: "Diseño, manejo y optimización de bases de datos relacionales para almacenar lecturas de telemetría e historial de mantenimiento.",
-    en: "Design, management, and optimization of relational databases to store telemetry readings and maintenance history."
-  },
-  "exp.fracttal3.b3": {
-    es: "Apoyo en el desarrollo web frontend/backend básico de visualizaciones de datos y métricas para tomadores de decisiones.",
-    en: "Support in basic frontend/backend web development for data visualizations and metrics for decision-makers."
-  },
+  "exp.fracttal3.title": fracttal3.role,
+  "exp.fracttal3.date": fracttal3.date,
+  "exp.fracttal3.location": fracttal3.location,
+  "exp.fracttal3.b1": fracttal3.bullets[0],
+  "exp.fracttal3.b2": fracttal3.bullets[1],
+  "exp.fracttal3.b3": fracttal3.bullets[2],
 
   // Skills Section
   "skills.title": {
@@ -252,38 +171,16 @@ export const translations = {
   "skills.cloud.1": { es: "Google Cloud Run & Artifact Registry", en: "Google Cloud Run & Artifact Registry" },
 
   // Education Section
-  "edu.title": {
-    es: "Educación & Certificaciones",
-    en: "Education & Certifications"
-  },
   "edu.title.only": {
     es: "Educación",
     en: "Education"
   },
-  "edu.civil.title": {
-    es: "Ingeniería Civil",
-    en: "Civil Engineering"
-  },
-  "edu.civil.date": {
-    es: "Egresada en 2019, Titulada en 2020",
-    en: "Graduated in 2019, Degree awarded in 2020"
-  },
-  "edu.civil.desc": {
-    es: "Mención en estructuras, construcción y geotecnia. Trabajo de título en Procesos Gaussianos para detección de fallas estructurales. <strong class=\"text-slate-700 dark:text-slate-300\">Titulada con distinción máxima.</strong><br /><br /><strong>Prácticas profesionales:</strong> EGIS y DOM Curicó (cálculo estructural y presupuestos).",
-    en: "Specialization in structures, construction, and geotechnics. Thesis on Gaussian Processes for structural fault detection. <strong class=\"text-slate-700 dark:text-slate-300\">Graduated with highest honors.</strong><br /><br /><strong>Professional Internships:</strong> EGIS and DOM Curicó (structural calculations and budgeting)."
-  },
-  "edu.bsc.title": {
-    es: "Licenciada en Ciencias de la Ingeniería",
-    en: "Bachelor of Science in Engineering"
-  },
-  "edu.bsc.date": {
-    es: "Finalizada en 2017",
-    en: "Completed in 2017"
-  },
-  "edu.bsc.desc": {
-    es: "Actividad destacada: Ayudante del curso Probabilidades y Estadística.",
-    en: "Notable activity: Teaching Assistant for Probability and Statistics."
-  },
+  "edu.civil.title": eduCivil.degree,
+  "edu.civil.date": eduCivil.date,
+  "edu.civil.desc": eduCivil.details,
+  "edu.bsc.title": eduBsc.degree,
+  "edu.bsc.date": eduBsc.date,
+  "edu.bsc.desc": eduBsc.details,
 
   "edu.cert.title": {
     es: "Cursos & Certificaciones",
@@ -299,20 +196,12 @@ export const translations = {
     es: "Publicaciones Científicas",
     en: "Scientific Publications"
   },
-  "pub.date": {
-    es: "Publicado en Marzo 2021",
-    en: "Published in March 2021"
-  },
-  "pub.desc": {
-    es: "Se propone una metodología para la detección y evaluación de delaminación en placas de materiales compuestos a partir de modos de vibración, utilizando Procesos Gaussianos y análisis Bayesiano.",
-    en: "A methodology is proposed for the detection and assessment of delamination in composite material plates from vibration modes, using Gaussian Processes and Bayesian analysis."
-  },
+  "pub.date": pub.date,
+  "pub.desc": pub.description,
   "pub.link": {
     es: "Ver artículo en Wiley Online Library",
     en: "View article in Wiley Online Library"
   },
-
-
 
   // Footer
   "footer.rights": {
