@@ -4,7 +4,7 @@
  * scan-activity.mjs
  *
  * Dynamically audits local personal repositories (~/Repos) and workplace repositories
- * (~/Archivos Trabajo) to detect recent technical activity, technologies, and achievements
+ * (~/SimplitSolutions) to detect recent technical activity, technologies, and achievements
  * for updating the CV and portfolio.
  *
  * INVARIANTS:
@@ -26,7 +26,7 @@ const PERSONAL_DIR = process.env.PERSONAL_REPOS_DIR
 
 const WORK_DIR = process.env.WORK_REPOS_DIR
   ? path.resolve(process.env.WORK_REPOS_DIR)
-  : path.join(HOME_DIR, 'Archivos Trabajo');
+  : path.join(HOME_DIR, 'SimplitSolutions');
 
 // Parse CLI arguments
 const args = process.argv.slice(2);
@@ -38,7 +38,8 @@ const cutoffDate = new Date();
 cutoffDate.setDate(cutoffDate.getDate() - lookbackDays);
 
 /**
- * Get configured git author identities and known handles
+ * Get configured git author identities and dynamically authenticated GitHub accounts
+ * without hardcoding workplace usernames/emails in the public repository.
  */
 function getUserIdentities() {
   const identities = new Set();
@@ -52,14 +53,28 @@ function getUserIdentities() {
     if (name) identities.add(name.toLowerCase());
   } catch {}
 
-  // Known developer handles (personal and workplace)
+  // Dynamically discover logged-in GitHub CLI accounts (personal and workplace)
+  try {
+    const ghStatus = execSync('gh auth status', { encoding: 'utf-8', stdio: ['ignore', 'pipe', 'pipe'] });
+    const matches = ghStatus.matchAll(/account\s+([A-Za-z0-9_-]+)/gi);
+    for (const match of matches) {
+      if (match[1]) identities.add(match[1].toLowerCase());
+    }
+  } catch {}
+
+  // Optional comma-separated overrides from environment
+  if (process.env.GIT_AUTHOR_IDENTITIES) {
+    for (const id of process.env.GIT_AUTHOR_IDENTITIES.split(',')) {
+      if (id.trim()) identities.add(id.trim().toLowerCase());
+    }
+  }
+
+  // Public personal portfolio identities
   identities.add('anacatavc');
-  identities.add('catavillalobosc');
   identities.add('ana-catalina');
   identities.add('catalina villalobos');
   identities.add('catalina.villalobos');
   identities.add('anacatalina@outlook.cl');
-  identities.add('catalina.villalobos@simplit-solutions.com');
 
   return Array.from(identities);
 }
@@ -75,8 +90,14 @@ function checkAuthorshipAndActivity(repoPath, isWorkplace = false) {
 
   let authorCommits = [];
   try {
-    const authorFilters = userIdentities.map(id => `--author="${id}"`).join(' ');
-    const logCmd = `git log --all ${authorFilters} --since="${lookbackDays} days ago" --format="%cd|%h|%s" --date=iso -n 25`;
+    const repoIdentities = new Set(userIdentities);
+    try {
+      const repoEmail = execSync('git config user.email', { cwd: repoPath, encoding: 'utf-8', stdio: ['ignore', 'pipe', 'ignore'] }).trim();
+      if (repoEmail) repoIdentities.add(repoEmail.toLowerCase());
+    } catch {}
+
+    const authorFilters = Array.from(repoIdentities).map(id => `--author="${id}"`).join(' ');
+    const logCmd = `git log --all --no-merges ${authorFilters} --since="${lookbackDays} days ago" --format="%cd|%h|%s" --date=iso -n 25`;
     const logOutput = execSync(logCmd, {
       cwd: repoPath,
       encoding: 'utf-8',

@@ -134,6 +134,7 @@ npm run preview  # Preview production build
 4. Use the `data-i18n="new.key"` attribute in HTML for translatable text if adding new UI elements.
 5. Use `data-i18n-href="new.key"` for links that change by language.
 6. To regenerate the downloadable PDFs (`ACVC_es.pdf`, `ACVC_en.pdf`), run `npm run build:pdf`. The script automatically uses `dist/print/[lang]/index.html` compiled from `src/data/cv.ts` and enforces a strict 2-page limit.
+7. **Strict Authorship Verification (Workplace & Collaborative Repos):** When scanning local repositories to identify new achievements or skills for the CV, always filter commit history (`git log --author=... --no-merges`) strictly by the user's own Git/GitHub identities (resolved dynamically from local Git config, `gh auth status`, or global environment settings). Never attribute teammates' commits or third-party code in shared repositories to the user.
 
 ### When modifying styles:
 1. Prefer inline Tailwind classes.
