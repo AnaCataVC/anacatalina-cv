@@ -66,6 +66,7 @@ export interface PublicationItem {
   url: string;
   doi: string;
   description: BilingualText;
+  pdfDescription?: BilingualText;
 }
 
 export interface LanguageItem {
@@ -128,13 +129,13 @@ export const cvData: CVData = {
           en: 'Throughout my career, I have led multidisciplinary teams and collaborated on the development of technological solutions where engineering, advanced analytics, and practical impact converge.'
         },
         {
-          es: 'Actualmente como <a href="#simpliroute" class="text-indigo-600 dark:text-indigo-400 hover:underline font-medium">Learning Engineer en SimpliRoute</a>, contribuyo al diseño de soluciones de optimización, al desarrollo de servidores MCP e integración de IA, y al procesamiento de datos a escala.',
-          en: 'Currently working as a <a href="#simpliroute" class="text-indigo-600 dark:text-indigo-400 hover:underline font-medium">Learning Engineer at SimpliRoute</a>, I contribute to the design of optimization solutions, development of MCP servers and AI integration, and large-scale data processing.'
+          es: 'Actualmente como <a href="#simpliroute" class="text-indigo-600 dark:text-indigo-400 hover:underline font-medium">Learning Engineer en SimpliRoute</a>, me enfoco principalmente en el diseño de infraestructura agéntica basada en MCP y sistemas distribuidos de geocodificación, junto con procesamiento de datos a gran escala y operación de modelos de ML.',
+          en: 'Currently working as a <a href="#simpliroute" class="text-indigo-600 dark:text-indigo-400 hover:underline font-medium">Learning Engineer at SimpliRoute</a>, I focus primarily on designing MCP-based agentic infrastructure and distributed geocoding systems, alongside large-scale data processing and ML model operations.'
         }
       ],
       pdf: {
-        es: 'Profesional con formación en Ingeniería Civil y vasta trayectoria en Ciencia de Datos, Machine Learning (ML), Ingeniería de Datos y Desarrollo Backend. Conjuga una base teórica sólida (matemáticas, estadística) con la práctica en el desarrollo e implementación de soluciones ML (mantenimiento predictivo, optimización operacional). Especialista en el diseño e implementación de data pipelines robustos (ETL/ELT), modelos predictivos interpretables y arquitecturas de integración complejas. Experiencia en liderazgo técnico para la gestión de equipos multidisciplinarios, con un enfoque claro en la resolución de problemas complejos, la generación de valor estratégico y la excelencia operativa.',
-        en: 'Civil Engineer with a solid background in Data Science, Machine Learning (ML), Data Engineering, and Backend Development. Combines a strong theoretical foundation (mathematics, statistics) with practical experience in developing and implementing ML solutions (predictive maintenance, operational optimization). Specialist in designing robust data pipelines (ETL/ELT), interpretable predictive models, and complex integration architectures. Proven technical leadership managing multidisciplinary teams, with a clear focus on solving complex problems, generating strategic value, and operational excellence.'
+        es: 'Ingeniera Civil con sólida trayectoria en Ciencia de Datos, Machine Learning, IA Agéntica e Ingeniería de Datos. Conjuga una base analítica y matemática rigurosa con experiencia práctica construyendo infraestructura agéntica basada en Model Context Protocol (MCP), sistemas distribuidos de alta disponibilidad (geocodificación, microservicios), pipelines de datos a escala (ETL/ELT) y soluciones de ML (mantenimiento predictivo, optimización operacional). Experiencia comprobada en liderazgo técnico de equipos multidisciplinarios, con foco en la resolución de problemas complejos, confiabilidad operativa e impacto estratégico.',
+        en: 'Civil Engineer with a strong track record in Data Science, Machine Learning, Agentic AI, and Data Engineering. Combines a rigorous analytical and mathematical foundation with hands-on experience building agentic infrastructure powered by Model Context Protocol (MCP), high-availability distributed systems (geocoding, microservices), large-scale data pipelines (ETL/ELT), and ML solutions (predictive maintenance, operational optimization). Proven technical leadership managing multidisciplinary teams, focused on solving complex problems, operational reliability, and strategic impact.'
       }
     }
   },
@@ -157,38 +158,38 @@ export const cvData: CVData = {
       badgeVariant: 'lilac',
       bullets: [
         {
-          es: '<strong class="text-slate-800 dark:text-slate-100 font-semibold">Arquitectura e implementación de un sistema distribuido de geolocalización y geocodificación multi-proveedor</strong>, diseñando pipelines asíncronos desacoplados, estrategias de alta disponibilidad y estandarización de microservicios con tolerancia a fallos.',
-          en: '<strong class="text-slate-800 dark:text-slate-100 font-semibold">Architecture and implementation of a fault-tolerant, multi-provider geolocation and geocoding platform</strong>, designing decoupled asynchronous pipelines, high-availability fallback strategies, and standardized microservices.'
-        },
-        {
           es: 'Diseño y despliegue en producción de <strong class="text-slate-800 dark:text-slate-100 font-semibold">infraestructura agéntica basada en Model Context Protocol (MCP)</strong> para motores logísticos, implementando guardrails deterministas, permisos de ejecución de herramientas de mínimo privilegio y persistencia distribuida con Redis en Kubernetes.',
           en: 'Design and production deployment of <strong class="text-slate-800 dark:text-slate-100 font-semibold">enterprise agentic infrastructure leveraging Model Context Protocol (MCP)</strong> for logistics engines, establishing deterministic guardrails, least-privilege tool execution boundaries, and distributed state persistence on Kubernetes with Redis.'
+        },
+        {
+          es: '<strong class="text-slate-800 dark:text-slate-100 font-semibold">Arquitectura e implementación de un sistema distribuido de geolocalización y geocodificación multi-proveedor</strong>, diseñando pipelines asíncronos desacoplados, estrategias de alta disponibilidad y estandarización de microservicios con tolerancia a fallos.',
+          en: '<strong class="text-slate-800 dark:text-slate-100 font-semibold">Architecture and implementation of a fault-tolerant, multi-provider geolocation and geocoding platform</strong>, designing decoupled asynchronous pipelines, high-availability fallback strategies, and standardized microservices.'
         },
         {
           es: 'Gestión y modelado de datos a gran escala en <strong class="text-slate-800 dark:text-slate-100 font-semibold">Google BigQuery</strong> y orquestación de flujos de eventos mediante <strong class="text-slate-800 dark:text-slate-100 font-semibold">Google Pub/Sub y Apache Airflow</strong>, garantizando alta confiabilidad operativa, linaje de datos y telemetría crítica.',
           en: 'Large-scale data modeling and event orchestration in <strong class="text-slate-800 dark:text-slate-100 font-semibold">Google Cloud (BigQuery, Pub/Sub, and Apache Airflow)</strong>, ensuring data lineage, operational reliability, and real-time telemetry for optimization systems.'
         },
         {
-          es: 'Impulso de la adopción de <strong class="text-slate-800 dark:text-slate-100 font-semibold">IA Generativa en el ciclo de desarrollo (DevEx) y productos</strong>, diseñando flujos de trabajo asistidos por agentes para optimizar pruebas, acelerar ciclos de iteración y elevar la eficiencia operativa.',
-          en: 'Leadership in <strong class="text-slate-800 dark:text-slate-100 font-semibold">Generative AI adoption across development lifecycles (DevEx) and core systems</strong>, integrating agentic workflows to streamline automated testing, accelerate delivery cycles, and enhance operational efficiency.'
+          es: 'Participación en la evolución y operación de <strong class="text-slate-800 dark:text-slate-100 font-semibold">modelos predictivos en producción</strong>, automatizando flujos de reentrenamiento y monitoreo de desempeño.',
+          en: 'Contribution to the evolution and operation of <strong class="text-slate-800 dark:text-slate-100 font-semibold">production predictive models</strong>, automating retraining workflows and performance monitoring.'
         }
       ],
       pdfBullets: [
         {
-          es: 'Arquitectura e implementación de un sistema distribuido de geolocalización y geocodificación multi-proveedor, diseñando pipelines asíncronos desacoplados, estrategias de alta disponibilidad y estandarización de microservicios con tolerancia a fallos.',
-          en: 'Architecture and implementation of a fault-tolerant, multi-provider geolocation and geocoding platform, designing decoupled asynchronous pipelines, high-availability fallback strategies, and standardized microservices.'
+          es: 'Diseño y despliegue de infraestructura agéntica en producción basada en Model Context Protocol (MCP), con guardrails deterministas, mínimo privilegio y estado distribuido en Redis/Kubernetes.',
+          en: 'Designed and deployed production agentic infrastructure using Model Context Protocol (MCP), featuring deterministic guardrails, least-privilege execution, and Redis/Kubernetes state persistence.'
         },
         {
-          es: 'Diseño y despliegue en producción de infraestructura agéntica basada en Model Context Protocol (MCP) para motores logísticos, implementando guardrails deterministas, permisos de ejecución de herramientas de mínimo privilegio y persistencia distribuida con Redis en Kubernetes.',
-          en: 'Design and production deployment of enterprise agentic infrastructure leveraging Model Context Protocol (MCP) for logistics engines, establishing deterministic guardrails, least-privilege tool execution boundaries, and distributed state persistence on Kubernetes with Redis.'
+          es: 'Arquitectura de plataforma distribuida de geolocalización y geocodificación multi-proveedor mediante microservicios asíncronos desacoplados de alta disponibilidad y tolerancia a fallos.',
+          en: 'Architected a high-availability, fault-tolerant multi-provider geolocation and geocoding platform using decoupled asynchronous microservices.'
         },
         {
-          es: 'Gestión y modelado de datos a gran escala en Google BigQuery y orquestación de flujos de eventos mediante Google Pub/Sub y Apache Airflow, garantizando alta confiabilidad operativa, linaje de datos y telemetría crítica.',
-          en: 'Large-scale data modeling and event orchestration in Google Cloud (BigQuery, Pub/Sub, and Apache Airflow), ensuring data lineage, operational reliability, and real-time telemetry for optimization systems.'
+          es: 'Modelado de datos a gran escala en Google BigQuery y orquestación de eventos con Google Pub/Sub y Apache Airflow, asegurando linaje de datos y confiabilidad operativa.',
+          en: 'Large-scale data modeling in Google BigQuery and event orchestration with Google Pub/Sub and Apache Airflow, ensuring data lineage and operational reliability.'
         },
         {
-          es: 'Impulso de la adopción de IA Generativa en el ciclo de desarrollo (DevEx) y productos, diseñando flujos de trabajo asistidos por agentes para optimizar pruebas, acelerar ciclos de iteración y elevar la eficiencia operativa.',
-          en: 'Leadership in Generative AI adoption across development lifecycles (DevEx) and core systems, integrating agentic workflows to streamline automated testing, accelerate delivery cycles, and enhance operational efficiency.'
+          es: 'Automatización de pipelines de reentrenamiento y monitoreo operativo para modelos predictivos de Machine Learning en producción.',
+          en: 'Automated retraining pipelines and operational monitoring for production Machine Learning predictive models.'
         }
       ]
     },
@@ -228,20 +229,16 @@ export const cvData: CVData = {
       ],
       pdfBullets: [
         {
-          es: 'Liderazgo de equipo multidisciplinario de integraciones, logrando alcanzar metas de producto y proyectos de clientes, priorizando la mentoría.',
-          en: 'Led a multidisciplinary integration team, achieving product development goals and client projects, while prioritizing team mentoring.'
+          es: 'Liderazgo técnico de un equipo multidisciplinario e internacional de integraciones y planificación estratégica del roadmap de Fracttal Hub, alineando objetivos de negocio, mentoría y entrega continua de valor.',
+          en: 'Technical leadership of an international, multidisciplinary integrations team and strategic roadmap planning for Fracttal Hub, aligning business objectives, mentoring, and continuous value delivery.'
         },
         {
-          es: 'Planificación estratégica del roadmap del producto, asegurando alineación con los objetivos de negocio y entrega continua de valor.',
-          en: 'Strategic planning of the product roadmap, ensuring alignment with business objectives and continuous value delivery.'
+          es: 'Desarrollo en Python de librerías de procesamiento de datos y orquestación de tareas con más de 100 acciones de integración y transformación avanzada entre sistemas heterogéneos.',
+          en: 'Python development of data processing and task orchestration libraries featuring over 100 integration actions and advanced transformations across heterogeneous systems.'
         },
         {
-          es: 'Desarrollo en Python para librerías de procesamiento de datos y orquestación, habilitando integraciones con múltiples sistemas.',
-          en: 'Python development for data processing and orchestration libraries, enabling integrations with multiple systems.'
-        },
-        {
-          es: 'Supervisión de proyectos de integración, asegurando cumplimiento de plazos y calidad en el flujo de datos.',
-          en: 'Supervision of integration projects, ensuring deadlines and quality in data flows across heterogeneous systems.'
+          es: 'Supervisión y coordinación de proyectos de integración para decenas de clientes empresariales, garantizando cumplimiento de plazos y confiabilidad en los flujos de datos.',
+          en: 'Supervised and coordinated enterprise integration projects for dozens of clients, ensuring on-time delivery and high-reliability data pipelines.'
         }
       ]
     },
@@ -346,16 +343,13 @@ export const cvData: CVData = {
       skills: [
         { name: 'Python' },
         { name: 'SQL' },
-        { name: 'JavaScript' },
         { name: 'TypeScript' },
-        { name: 'MATLAB' },
-        { name: 'Java' },
-        { name: 'C# (.NET)' },
-        { name: 'Rust' }
+        { name: 'JavaScript' },
+        { name: 'MATLAB' }
       ],
       pdfFormatted: {
-        es: 'Python (Principal/Avanzado) | SQL | JavaScript | TypeScript | MATLAB | Java | C# (.NET) | Rust.',
-        en: 'Python (Principal/Advanced) | SQL | JavaScript | TypeScript | MATLAB | Java | C# (.NET) | Rust.'
+        es: 'Python (Principal/Avanzado) | SQL | TypeScript | JavaScript | MATLAB.',
+        en: 'Python (Principal/Advanced) | SQL | TypeScript | JavaScript | MATLAB.'
       }
     },
     {
@@ -396,16 +390,14 @@ export const cvData: CVData = {
         { name: 'Pandas' },
         { name: 'NumPy' },
         { name: 'Scikit-learn' },
-        { name: '.NET 9 (WPF / WinUI 3)' },
-        { name: 'FastHTML' },
         { name: 'LangChain' },
         { name: 'TensorFlow' },
         { name: 'Django' },
         { name: 'React JS' }
       ],
       pdfFormatted: {
-        es: 'FastAPI | Pydantic | Pandas | NumPy | Scikit-learn | .NET 9 (WPF / WinUI 3) | FastHTML | LangChain | TensorFlow | Django | React JS.',
-        en: 'FastAPI | Pydantic | Pandas | NumPy | Scikit-learn | .NET 9 (WPF / WinUI 3) | FastHTML | LangChain | TensorFlow | Django | React JS.'
+        es: 'FastAPI | Pydantic | Pandas | NumPy | Scikit-learn | LangChain | TensorFlow | Django | React JS.',
+        en: 'FastAPI | Pydantic | Pandas | NumPy | Scikit-learn | LangChain | TensorFlow | Django | React JS.'
       }
     },
     {
@@ -454,47 +446,26 @@ export const cvData: CVData = {
       }
     },
     {
-      id: 'management',
-      title: {
-        es: 'Gestión y Comunicación',
-        en: 'Management & Communication'
-      },
-      pdfLabel: {
-        es: 'Gestión y Comunicación:',
-        en: 'Management & Communication:'
-      },
-      skills: [
-        { name: 'Jira' },
-        { name: 'Trello' },
-        { name: 'MS Planner' },
-        { name: 'MS Teams' },
-        { name: 'Sharepoint' },
-        { name: 'Notion' },
-        { name: 'Slack' }
-      ],
-      pdfFormatted: {
-        es: 'Jira | Trello | MS Planner | MS Teams | Sharepoint | Notion | Slack.',
-        en: 'Jira | MS Planner | MS Teams | Sharepoint | Notion | Slack | Trello.'
-      }
-    },
-    {
       id: 'methodologies',
       title: {
-        es: 'Metodologías',
-        en: 'Methodologies'
+        es: 'Metodologías y Gestión',
+        en: 'Methodologies & Management'
       },
       pdfLabel: {
-        es: 'Metodologías:',
-        en: 'Methodologies:'
+        es: 'Metodologías y Gestión:',
+        en: 'Methodologies & Management:'
       },
       skills: [
+        { name: { es: 'Diseño de Sistemas', en: 'System Design' } },
         { name: { es: 'Test-Driven Development (TDD)', en: 'Test-Driven Development (TDD)' } },
         { name: { es: 'Metodologías Ágiles (Scrum & Kanban)', en: 'Agile Methodologies (Scrum & Kanban)' } },
-        { name: { es: 'Planificación de Roadmaps', en: 'Roadmap Planning' } }
+        { name: { es: 'Planificación de Roadmaps', en: 'Roadmap Planning' } },
+        { name: 'Jira' },
+        { name: 'Notion' }
       ],
       pdfFormatted: {
-        es: 'Test-Driven Development (TDD) | Metodologías Ágiles (Scrum & Kanban) | Planificación de Roadmaps.',
-        en: 'Test-Driven Development (TDD) | Agile Methodologies (Scrum & Kanban) | Roadmap Planning.'
+        es: 'Diseño de Sistemas | Test-Driven Development (TDD) | Metodologías Ágiles (Scrum & Kanban) | Planificación de Roadmaps | Jira | Notion.',
+        en: 'System Design | Test-Driven Development (TDD) | Agile Methodologies (Scrum & Kanban) | Roadmap Planning | Jira | Notion.'
       }
     },
     {
@@ -509,17 +480,16 @@ export const cvData: CVData = {
       },
       skills: [
         { name: 'Model Context Protocol (MCP)' },
-        { name: { es: 'Sistemas Multi-Agente & LLMs', en: 'Multi-Agent Systems & LLMs' } },
+        { name: { es: 'IA Agéntica & Sistemas Multi-Agente (LLMs)', en: 'Agentic AI & Multi-Agent Systems (LLMs)' } },
+        { name: { es: 'Sistemas Distribuidos & Geocodificación', en: 'Distributed Systems & Geocoding' } },
+        { name: { es: 'Arquitectura de Pipelines de Datos (ETL/ELT)', en: 'Data Pipeline Architecture (ETL/ELT)' } },
         { name: { es: 'Monitoreo de Modelos ML', en: 'ML Model Monitoring' } },
-        { name: { es: 'Extracción y procesamiento de datos', en: 'Data Extraction & Processing' } },
-        { name: { es: 'Visualización', en: 'Data Visualization' } },
-        { name: { es: 'Diseño de BDD relacionales', en: 'Relational DB Design' } },
-        { name: { es: 'Liderazgo técnico', en: 'Technical Leadership' } },
-        { name: { es: 'IA Agéntica', en: 'Agentic AI' } }
+        { name: { es: 'Diseño de BDD Relacionales', en: 'Relational DB Design' } },
+        { name: { es: 'Liderazgo Técnico', en: 'Technical Leadership' } }
       ],
       pdfFormatted: {
-        es: 'Model Context Protocol (MCP) | Sistemas Multi-Agente & LLMs | Monitoreo de Modelos ML | Extracción y procesamiento de datos | Visualización | Diseño de BDD relacionales | Liderazgo técnico | IA Agéntica.',
-        en: 'Model Context Protocol (MCP) | Multi-Agent Systems & LLMs | ML Model Monitoring | Data Extraction & Processing | Data Visualization | Relational DB Design | Technical Leadership | Agentic AI.'
+        es: 'IA Agéntica & Sistemas Multi-Agente (MCP, LLMs) | Sistemas Distribuidos & Geocodificación | Arquitectura de Pipelines de Datos (ETL/ELT) | Monitoreo de Modelos ML | Diseño de BDD Relacionales | Liderazgo Técnico.',
+        en: 'Agentic AI & Multi-Agent Systems (MCP, LLMs) | Distributed Systems & Geocoding | Data Pipeline Architecture (ETL/ELT) | ML Model Monitoring | Relational DB Design | Technical Leadership.'
       }
     }
   ],
@@ -583,6 +553,10 @@ export const cvData: CVData = {
       url: 'https://doi.org/10.1002/stc.2727',
       doi: '10.1002/stc.2727',
       description: {
+        es: 'Se propone una metodología para la detección y evaluación de delaminación en placas de materiales compuestos a partir de modos de vibración, utilizando Procesos Gaussianos y análisis Bayesiano.',
+        en: 'Proposes a methodology for delamination detection and assessment in composite material plates from vibration modes, using Gaussian Processes and Bayesian analysis.'
+      },
+      pdfDescription: {
         es: 'Propuesta metodológica para detección y evaluación de delaminación en placas usando Procesos Gaussianos y análisis Bayesiano.',
         en: 'Methodological proposal for delamination detection and evaluation in composite plates using Gaussian Processes and Bayesian analysis.'
       }

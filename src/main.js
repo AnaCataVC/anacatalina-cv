@@ -25,12 +25,15 @@ function init() {
       }
     });
 
-    // Update aria-label for accessibility elements
+    // Update aria-label (and title when present) for accessibility elements
     const ariaElements = document.querySelectorAll('[data-i18n-aria]');
     ariaElements.forEach(el => {
       const key = el.getAttribute('data-i18n-aria');
       if (translations[key] && translations[key][currentLang]) {
         el.setAttribute('aria-label', translations[key][currentLang]);
+        if (el.hasAttribute('title')) {
+          el.setAttribute('title', translations[key][currentLang]);
+        }
       }
     });
     

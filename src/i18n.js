@@ -233,5 +233,9 @@ export const translations = {
   "aria.openMenu": {
     es: "Abrir menú de navegación",
     en: "Open navigation menu"
+  },
+  "aria.projects": {
+    es: "Portafolio de Proyectos",
+    en: "Projects Portfolio"
   }
 };

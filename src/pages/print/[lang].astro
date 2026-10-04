@@ -225,7 +225,7 @@ const certificationsFormatted = cvData.certifications
   </div>
 
   <!-- PÁGINA 2 -->
-  <div class="section" style="margin-top: 0.15rem;">
+  <div class="section" style="break-before: page; page-break-before: always; margin-top: 0.15rem;">
     <div class="section-title">{isEs ? 'HERRAMIENTAS Y HABILIDADES TÉCNICAS' : 'TOOLS & TECHNICAL SKILLS'}</div>
     <ul class="skill-list">
       {cvData.skillCategories.map(cat => (
@@ -252,7 +252,7 @@ const certificationsFormatted = cvData.certifications
       {cvData.publications.map(pub => (
         <li>
           <span class="mono-bold">{pub.title}</span> | <span class="mono-italic">{pub.journal}</span> - <span class="mono-regular">{pub.date[lang]} (<a href={pub.url}>{pub.url}</a>)</span><br>
-          {pub.description[lang]}
+          {pub.pdfDescription ? pub.pdfDescription[lang] : pub.description[lang]}
         </li>
       ))}
     </ul>
