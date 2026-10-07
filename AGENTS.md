@@ -28,7 +28,8 @@ anacatalina-cv/
 │   ├── ACVC_en.pdf          # Downloadable CV in English
 │   ├── favicon.ico          # Favicon (ICO fallback)
 │   ├── favicon.svg          # Favicon (SVG, primary)
-│   ├── og-banner-hd.jpg     # Open Graph banner (1200×630, ~150KB)
+│   ├── og-image.png         # Open Graph banner (1536×1024, ~700KB, primary)
+│   ├── og-banner-hd.jpg     # Open Graph banner (1536×1024, legacy fallback)
 │   ├── CNAME                # Custom domain: cv.ana-catalina.com
 │   └── robots.txt           # Allows all crawlers, points to sitemap
 ├── src/
