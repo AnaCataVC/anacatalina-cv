@@ -82,7 +82,8 @@ function getUserIdentities() {
 const userIdentities = getUserIdentities();
 
 /**
- * Check if the repository has commits authored by the user within the lookback window
+ * Check if the repository has commits genuinely authored by the user within the lookback window,
+ * strictly filtering out repositories where the user only performed code reviews or stashes.
  */
 function checkAuthorshipAndActivity(repoPath, isWorkplace = false) {
   const gitDir = path.join(repoPath, '.git');
@@ -97,7 +98,8 @@ function checkAuthorshipAndActivity(repoPath, isWorkplace = false) {
     } catch {}
 
     const authorFilters = Array.from(repoIdentities).map(id => `--author="${id}"`).join(' ');
-    const logCmd = `git log --all --no-merges ${authorFilters} --since="${lookbackDays} days ago" --format="%cd|%h|%s" --date=iso -n 25`;
+    // Use --branches and standard remote targets instead of --all to avoid inspecting dangling stashes or arbitrary peer review refs
+    const logCmd = `git log --branches --remotes=origin/main --remotes=origin/master --remotes=origin/develop --no-merges ${authorFilters} --since="${lookbackDays} days ago" --format="%cd|%h|%an|%ae|%cn|%ce|%s" --date=iso -n 50`;
     const logOutput = execSync(logCmd, {
       cwd: repoPath,
       encoding: 'utf-8',
@@ -109,16 +111,41 @@ function checkAuthorshipAndActivity(repoPath, isWorkplace = false) {
       return null;
     }
 
-    authorCommits = logOutput.split('\n').map(line => {
-      const [dateStr, hash, ...subjectParts] = line.split('|');
-      return {
-        date: dateStr ? new Date(dateStr) : null,
-        hash: hash || '',
-        subject: subjectParts.join('|') || '',
-      };
-    }).filter(c => c.date && c.date >= cutoffDate);
+    const seenHashes = new Set();
+    const rawCommits = [];
+    for (const line of logOutput.split('\n')) {
+      const [dateStr, hash, an, ae, cn, ce, ...subjectParts] = line.split('|');
+      const subject = subjectParts.join('|') || '';
+      if (!hash || seenHashes.has(hash)) continue;
+      seenHashes.add(hash);
 
-    if (authorCommits.length === 0) return null;
+      // Exclude git stash commits created during review or local workspace stashing
+      if (/^(index on |untracked files on |WIP on |stash@\{)/i.test(subject)) continue;
+
+      // Committer verification: committer must be the user or GitHub merge bot
+      const committerEmail = (ce || '').toLowerCase();
+      const committerName = (cn || '').toLowerCase();
+      const isUserCommitter = Array.from(repoIdentities).some(id => committerEmail.includes(id) || committerName.includes(id)) ||
+                             committerEmail.includes('github.com') || committerEmail.includes('noreply');
+      if (!isUserCommitter) continue;
+
+      // Exclude commits that are purely review feedback or suggestions applied to someone else's PR
+      if (/^(docs\(.*?\):\s*address review|address review|review feedback|suggestions from code review|apply suggestions from code review)/i.test(subject)) continue;
+
+      const date = dateStr ? new Date(dateStr) : null;
+      if (date && date >= cutoffDate) {
+        rawCommits.push({ date, hash, subject });
+      }
+    }
+
+    // In workplace repositories: filter out repositories where the user only had incidental contributions or code reviews
+    // (threshold of at least 3 direct author commits to count as an active core development repository)
+    if (isWorkplace && rawCommits.length < 3) {
+      return null;
+    }
+
+    if (rawCommits.length === 0) return null;
+    authorCommits = rawCommits;
   } catch {
     return null;
   }

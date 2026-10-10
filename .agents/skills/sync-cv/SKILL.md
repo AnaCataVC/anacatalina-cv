@@ -17,12 +17,15 @@ Esta skill guía el proceso de inspección periódica de la actividad del usuari
    - Siempre resuelve dinámicamente las rutas utilizando `$HOME` o `$env:USERPROFILE`:
      - **Repositorios personales:** `Join-Path $HOME "Repos"` (o variable `$env:PERSONAL_REPOS_DIR` si está definida).
      - **Repositorios de trabajo:** `Join-Path $HOME "SimplitSolutions"` (o variable `$env:WORK_REPOS_DIR` si está definida).
-2. **Filtro de Autoría Efectiva (No atribuir trabajo de terceros):**
-   - El hecho de que un repositorio esté clonado localmente o tenga actividad reciente **NO** implica que esos avances sean del usuario, especialmente en repositorios laborales compartidos con otros desarrolladores.
-   - Antes de extraer cualquier logro o tecnología de un repositorio, verifica estrictamente que los commits hayan sido realizados por el usuario:
-     - Resuelve las identidades del usuario dinámicamente desde la configuración local (`git config user.email`, `git config user.name`, cuentas activas en `gh auth status` o las identidades definidas en las instrucciones globales del entorno, sin hardcodear usuarios laborales en el repositorio público).
-     - Ejecuta: `git log --no-merges --author="<identidad>" --since="90 days ago" --oneline` (o período indicado).
-     - Analiza **únicamente** los commits y cambios de autoría propia; nunca asumas que el trabajo de otra persona en el mismo repositorio pertenece al usuario. Si no hay commits propios en ese repo, **ignóralo por completo**.
+2. **Filtro Anti-Review & Autoría Efectiva (No atribuir trabajo de terceros ni revisiones):**
+   - El hecho de que un repositorio esté clonado localmente, tenga actividad reciente o el usuario haya revisado Pull Requests **NO** implica que esos desarrollos pertenezcan al usuario.
+   - Antes de extraer cualquier logro o tecnología de un repositorio, verifica estrictamente que los commits hayan sido efectivamente desarrollados y autorados por el usuario:
+     - Resuelve las identidades del usuario dinámicamente desde la configuración local (`git config user.email`, `git config user.name`, cuentas activas en `gh auth status` o las identidades definidas en las instrucciones globales del entorno).
+     - **Ámbito de ramas limpias:** Usa `--branches --remotes=origin/main --remotes=origin/master --remotes=origin/develop` en lugar de `--all` para no inspeccionar ramas de revisión de PRs ajenas ni commits huérfanos.
+     - **Exclusión de Stashes:** Ignora cualquier commit derivado de `git stash` (`index on`, `untracked files on`, `WIP on`).
+     - **Verificación de Committer:** El committer debe ser el propio usuario o el bot de merge de GitHub (`noreply@github.com`). Si el committer es otro compañero de equipo, el commit pertenece al flujo de trabajo de otra persona.
+     - **Exclusión de Commits de Revisión:** Omite commits que correspondan a sugerencias o ajustes menores de revisión en PRs de terceros (`address review`, `suggestions from code review`).
+     - **Umbral de Contribución Sustantiva (Workplace):** En repositorios laborales, exige al menos 3 commits propios directos para considerar el repositorio como un área de desarrollo activo, descartando repositorios donde el usuario solo haya realizado revisiones de código o merges incidentales.
 3. **Anonimización y Confidencialidad Empresarial Estricta:**
    - En proyectos laborales (ej. SimpliRoute o cualquier otro empleo):
      - **PROHIBIDO:** revelar nombres de clientes, credenciales, URLs internas, esquemas de BD privados o nombres clave de proyectos confidenciales.

@@ -162,12 +162,12 @@ export const cvData: CVData = {
           en: 'Design and production deployment of <strong class="text-slate-800 dark:text-slate-100 font-semibold">enterprise agentic infrastructure leveraging Model Context Protocol (MCP)</strong> for logistics engines, establishing deterministic guardrails, least-privilege tool execution boundaries, and distributed state persistence on Kubernetes with Redis.'
         },
         {
-          es: '<strong class="text-slate-800 dark:text-slate-100 font-semibold">Arquitectura e implementación de un sistema distribuido de geolocalización y geocodificación multi-proveedor</strong>, diseñando pipelines asíncronos desacoplados, estrategias de alta disponibilidad y estandarización de microservicios con tolerancia a fallos.',
-          en: '<strong class="text-slate-800 dark:text-slate-100 font-semibold">Architecture and implementation of a fault-tolerant, multi-provider geolocation and geocoding platform</strong>, designing decoupled asynchronous pipelines, high-availability fallback strategies, and standardized microservices.'
+          es: '<strong class="text-slate-800 dark:text-slate-100 font-semibold">Arquitectura e implementación de un sistema distribuido de geolocalización y geocodificación multi-proveedor</strong>, diseñando pipelines asíncronos desacoplados, estrategias de alta disponibilidad, concurrencia segura y tolerancia a fallos.',
+          en: '<strong class="text-slate-800 dark:text-slate-100 font-semibold">Architecture and implementation of a fault-tolerant, multi-provider geolocation and geocoding platform</strong>, designing decoupled asynchronous pipelines, high-availability fallback strategies, thread-safe concurrency, and standardized microservices.'
         },
         {
-          es: 'Gestión y modelado de datos a gran escala en <strong class="text-slate-800 dark:text-slate-100 font-semibold">Google BigQuery</strong> y orquestación de flujos de eventos mediante <strong class="text-slate-800 dark:text-slate-100 font-semibold">Google Pub/Sub y Apache Airflow</strong>, garantizando alta confiabilidad operativa, linaje de datos y telemetría crítica.',
-          en: 'Large-scale data modeling and event orchestration in <strong class="text-slate-800 dark:text-slate-100 font-semibold">Google Cloud (BigQuery, Pub/Sub, and Apache Airflow)</strong>, ensuring data lineage, operational reliability, and real-time telemetry for optimization systems.'
+          es: 'Gestión y modelado de datos a gran escala en <strong class="text-slate-800 dark:text-slate-100 font-semibold">Google BigQuery</strong>, canalizaciones de procesamiento distribuido con <strong class="text-slate-800 dark:text-slate-100 font-semibold">Google Cloud Dataflow / Apache Beam</strong> y orquestación con <strong class="text-slate-800 dark:text-slate-100 font-semibold">Google Pub/Sub y Apache Airflow</strong>, garantizando linaje de datos y telemetría crítica.',
+          en: 'Large-scale data modeling in <strong class="text-slate-800 dark:text-slate-100 font-semibold">Google BigQuery</strong>, distributed processing pipelines with <strong class="text-slate-800 dark:text-slate-100 font-semibold">Google Cloud Dataflow / Apache Beam</strong>, and event orchestration with <strong class="text-slate-800 dark:text-slate-100 font-semibold">Google Pub/Sub and Apache Airflow</strong>, ensuring data lineage, operational reliability, and real-time telemetry.'
         },
         {
           es: 'Participación en la evolución y operación de <strong class="text-slate-800 dark:text-slate-100 font-semibold">modelos predictivos en producción</strong>, automatizando flujos de reentrenamiento y monitoreo de desempeño.',
@@ -180,12 +180,12 @@ export const cvData: CVData = {
           en: 'Designed and deployed production agentic infrastructure using Model Context Protocol (MCP), featuring deterministic guardrails, least-privilege execution, and Redis/Kubernetes state persistence.'
         },
         {
-          es: 'Arquitectura de plataforma distribuida de geolocalización y geocodificación multi-proveedor mediante microservicios asíncronos desacoplados de alta disponibilidad y tolerancia a fallos.',
-          en: 'Architected a high-availability, fault-tolerant multi-provider geolocation and geocoding platform using decoupled asynchronous microservices.'
+          es: 'Arquitectura de plataforma distribuida de geolocalización y geocodificación multi-proveedor mediante microservicios asíncronos desacoplados, alta disponibilidad, concurrencia segura y tolerancia a fallos.',
+          en: 'Architected a high-availability, fault-tolerant multi-provider geolocation and geocoding platform using decoupled asynchronous microservices, thread-safe concurrency, and fallback strategies.'
         },
         {
-          es: 'Modelado de datos a gran escala en Google BigQuery y orquestación de eventos con Google Pub/Sub y Apache Airflow, asegurando linaje de datos y confiabilidad operativa.',
-          en: 'Large-scale data modeling in Google BigQuery and event orchestration with Google Pub/Sub and Apache Airflow, ensuring data lineage and operational reliability.'
+          es: 'Modelado de datos en Google BigQuery, procesamiento distribuido con Google Cloud Dataflow y orquestación de eventos con Google Pub/Sub y Apache Airflow, asegurando linaje y confiabilidad operativa.',
+          en: 'Data modeling in Google BigQuery, distributed processing with Google Cloud Dataflow, and event orchestration with Google Pub/Sub and Apache Airflow, ensuring lineage and operational reliability.'
         },
         {
           es: 'Automatización de pipelines de reentrenamiento y monitoreo operativo para modelos predictivos de Machine Learning en producción.',
@@ -345,7 +345,9 @@ export const cvData: CVData = {
         { name: 'SQL' },
         { name: 'TypeScript' },
         { name: 'JavaScript' },
-        { name: 'MATLAB' }
+        { name: 'MATLAB' },
+        { name: 'C# / .NET' },
+        { name: 'Kotlin' }
       ],
       pdfFormatted: {
         es: 'Python (Principal/Avanzado) | SQL | TypeScript | JavaScript | MATLAB.',
@@ -363,15 +365,15 @@ export const cvData: CVData = {
         en: 'Cloud & DevOps:'
       },
       skills: [
-        { name: 'Google Cloud Platform (BigQuery, Cloud Run, Artifact Registry, Pub/Sub, Cloud Storage, GKE)' },
+        { name: 'Google Cloud Platform (BigQuery, Dataflow, Cloud Run, Artifact Registry, Pub/Sub, Cloud Storage, GKE)' },
         { name: 'ArgoCD' },
         { name: 'Git' },
         { name: 'GitHub' },
         { name: 'Bitbucket' }
       ],
       pdfFormatted: {
-        es: 'Google Cloud Platform (BigQuery, Cloud Run, Artifact Registry, Google Pub/Sub, Cloud Storage, GKE) | ArgoCD | Git | GitHub | Bitbucket.',
-        en: 'Google Cloud Platform (BigQuery, Cloud Run, Artifact Registry, Google Pub/Sub, Cloud Storage, GKE) | ArgoCD | Git | GitHub | Bitbucket.'
+        es: 'Google Cloud Platform (BigQuery, Dataflow, Cloud Run, Artifact Registry, Google Pub/Sub, Cloud Storage, GKE) | ArgoCD | Git | GitHub | Bitbucket.',
+        en: 'Google Cloud Platform (BigQuery, Dataflow, Cloud Run, Artifact Registry, Google Pub/Sub, Cloud Storage, GKE) | ArgoCD | Git | GitHub | Bitbucket.'
       }
     },
     {
