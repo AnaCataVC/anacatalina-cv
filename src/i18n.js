@@ -205,8 +205,8 @@ export const translations = {
 
   // Footer
   "footer.rights": {
-    es: "© 2026 <a href=\"https://ana-catalina.com/\" class=\"hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors\">Ana-Catalina Villalobos Contardo</a>. Todos los derechos reservados.",
-    en: "© 2026 <a href=\"https://ana-catalina.com/\" class=\"hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors\">Ana-Catalina Villalobos Contardo</a>. All rights reserved."
+    es: "© 2026 <a href=\"https://ana-catalina.com/\" class=\"hover:text-brand-purple dark:hover:text-brand-purple transition-colors\">Ana-Catalina Villalobos Contardo</a>. Todos los derechos reservados.",
+    en: "© 2026 <a href=\"https://ana-catalina.com/\" class=\"hover:text-brand-purple dark:hover:text-brand-purple transition-colors\">Ana-Catalina Villalobos Contardo</a>. All rights reserved."
   },
   "footer.made": {
     es: "Diseño y desarrollo propio · Creado con <span class=\"text-pink-500\">♥</span> usando Astro + Tailwind CSS · Publicado en Vercel",
