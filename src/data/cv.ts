@@ -26,6 +26,7 @@ export interface ContactInfo {
 export interface ExperienceItem {
   id: string;
   company: string;
+  url?: string;
   role: BilingualText;
   date: BilingualText;
   location: BilingualText;
@@ -52,6 +53,7 @@ export interface SkillCategory {
 export interface EducationItem {
   id: string;
   institution: BilingualText;
+  url?: string;
   degree: BilingualText;
   date: BilingualText;
   details: BilingualText;
@@ -121,16 +123,16 @@ export const cvData: CVData = {
           en: 'Engineer specialized in Data Science, Machine Learning, and Agentic AI, with experience leading teams and building intelligent systems for logistics, automation, and advanced analytics.'
         },
         {
-          es: 'De formación Ingeniera Civil de la Universidad de Chile, me motiva aplicar Machine Learning para resolver problemas complejos y transformar datos en valor real, tal como lo plasmé en mi trabajo de tesis publicado en <a href="#publicaciones" class="text-indigo-600 dark:text-indigo-400 hover:underline font-medium">Structural Control Health Monitoring</a> en 2021.',
-          en: 'With a background in Civil Engineering from the Universidad de Chile, I am driven to apply Machine Learning to solve complex problems and transform data into real value, as reflected in my thesis published in <a href="#publicaciones" class="text-indigo-600 dark:text-indigo-400 hover:underline font-medium">Structural Control Health Monitoring</a> in 2021.'
+          es: 'De formación Ingeniera Civil de la Universidad de Chile, me motiva aplicar Machine Learning para resolver problemas complejos y transformar datos en valor real, tal como lo plasmé en mi trabajo de tesis publicado en <a href="#publicaciones" class="text-brand-purple dark:text-pastel-lilac hover:underline font-medium">Structural Control Health Monitoring</a> en 2021.',
+          en: 'With a background in Civil Engineering from the Universidad de Chile, I am driven to apply Machine Learning to solve complex problems and transform data into real value, as reflected in my thesis published in <a href="#publicaciones" class="text-brand-purple dark:text-pastel-lilac hover:underline font-medium">Structural Control Health Monitoring</a> in 2021.'
         },
         {
           es: 'A lo largo de mi trayectoria, he liderado equipos multidisciplinarios y colaborado en el desarrollo de soluciones tecnológicas donde la ingeniería, el análisis avanzado y el impacto práctico convergen.',
           en: 'Throughout my career, I have led multidisciplinary teams and collaborated on the development of technological solutions where engineering, advanced analytics, and practical impact converge.'
         },
         {
-          es: 'Actualmente como <a href="#simpliroute" class="text-indigo-600 dark:text-indigo-400 hover:underline font-medium">Learning Engineer en SimpliRoute</a>, me enfoco principalmente en el diseño de infraestructura agéntica basada en MCP y sistemas distribuidos de geocodificación, junto con procesamiento de datos a gran escala y operación de modelos de ML.',
-          en: 'Currently working as a <a href="#simpliroute" class="text-indigo-600 dark:text-indigo-400 hover:underline font-medium">Learning Engineer at SimpliRoute</a>, I focus primarily on designing MCP-based agentic infrastructure and distributed geocoding systems, alongside large-scale data processing and ML model operations.'
+          es: 'Actualmente como <a href="#simpliroute" class="text-brand-purple dark:text-pastel-lilac hover:underline font-medium">Learning Engineer en SimpliRoute</a>, me enfoco principalmente en el diseño de infraestructura agéntica basada en MCP y sistemas distribuidos de geocodificación, junto con procesamiento de datos a gran escala y operación de modelos de ML.',
+          en: 'Currently working as a <a href="#simpliroute" class="text-brand-purple dark:text-pastel-lilac hover:underline font-medium">Learning Engineer at SimpliRoute</a>, I focus primarily on designing MCP-based agentic infrastructure and distributed geocoding systems, alongside large-scale data processing and ML model operations.'
         }
       ],
       pdf: {
@@ -143,6 +145,7 @@ export const cvData: CVData = {
     {
       id: 'simpliroute',
       company: 'SimpliRoute',
+      url: 'https://simpliroute.com/',
       role: {
         es: 'Learning Engineer',
         en: 'Learning Engineer'
@@ -196,6 +199,7 @@ export const cvData: CVData = {
     {
       id: 'fracttal1',
       company: 'Fracttal',
+      url: 'https://www.fracttal.com/',
       role: {
         es: 'Tech Lead Fracttal Hub',
         en: 'Tech Lead Fracttal Hub'
@@ -245,6 +249,7 @@ export const cvData: CVData = {
     {
       id: 'fracttal2',
       company: 'Fracttal',
+      url: 'https://www.fracttal.com/',
       role: {
         es: 'Data Scientist',
         en: 'Data Scientist'
@@ -290,6 +295,7 @@ export const cvData: CVData = {
     {
       id: 'fracttal3',
       company: 'Fracttal',
+      url: 'https://www.fracttal.com/',
       role: {
         es: 'Analista de Datos',
         en: 'Data Analyst'
@@ -502,6 +508,7 @@ export const cvData: CVData = {
         es: 'Universidad de Chile',
         en: 'Universidad de Chile'
       },
+      url: 'https://uchile.cl/',
       degree: {
         es: 'Ingeniería Civil con mención en estructuras, construcción y geotecnia',
         en: 'Civil Engineering with a minor in structures, construction, and geotechnics'
@@ -525,6 +532,7 @@ export const cvData: CVData = {
         es: 'Universidad de Chile',
         en: 'Universidad de Chile'
       },
+      url: 'https://fcfm.uchile.cl/',
       degree: {
         es: 'Licenciada en Ciencias de la Ingeniería, mención Civil',
         en: 'Bachelor of Engineering Sciences, Civil minor'

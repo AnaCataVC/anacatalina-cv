@@ -1,4 +1,6 @@
 User-agent: *
 Allow: /
+Disallow: /print/
 
 Sitemap: https://cv.ana-catalina.com/sitemap-index.xml
+

@@ -21,6 +21,10 @@ const { title, description } = Astro.props;
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
   <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="canonical" href={new URL(Astro.url.pathname, Astro.site || 'https://cv.ana-catalina.com/')} />
+  <link rel="alternate" hreflang="es" href="https://cv.ana-catalina.com/" />
+  <link rel="alternate" hreflang="en" href="https://cv.ana-catalina.com/" />
+  <link rel="alternate" hreflang="x-default" href="https://cv.ana-catalina.com/" />
+  <meta name="robots" content="index, follow, max-image-preview:large" />
 
   <!-- Preconnect to Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -56,13 +60,13 @@ const { title, description } = Astro.props;
 </head>
 <body class="bg-slate-50 text-slate-800 dark:bg-slate-900 dark:text-slate-100 transition-colors duration-300">
   <!-- Skip to content link -->
-  <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 z-50 bg-indigo-600 text-white px-4 py-2 rounded-lg shadow-lg font-medium" data-i18n="a11y.skipLink">
+  <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 z-50 bg-brand-purple text-white px-4 py-2 rounded-lg shadow-lg font-medium" data-i18n="a11y.skipLink">
     Saltar al contenido principal
   </a>
 
   <!-- Scroll Progress Bar -->
   <div class="fixed top-0 left-0 w-full h-1 z-50 bg-transparent">
-    <div id="scroll-progress" class="h-full bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 w-0 transition-all duration-75"></div>
+    <div id="scroll-progress" class="h-full bg-gradient-to-r from-brand-purple via-purple-400 to-pastel-pink w-0 transition-all duration-75"></div>
   </div>
 
   <Navbar />
@@ -74,7 +78,7 @@ const { title, description } = Astro.props;
   <Footer />
 
   <!-- Back to Top Button -->
-  <button id="back-to-top" aria-label="Volver arriba" class="fixed bottom-6 right-6 p-3 bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-500 hover:to-purple-500 text-white rounded-full shadow-2xl opacity-0 translate-y-10 pointer-events-none transition-all duration-300 z-50 focus:outline-none">
+  <button id="back-to-top" aria-label="Volver arriba" class="fixed bottom-6 right-6 p-3 bg-gradient-to-r from-brand-purple to-purple-400 hover:to-brand-purple text-white rounded-full shadow-2xl opacity-0 translate-y-10 pointer-events-none transition-all duration-300 z-50 focus:outline-none">
     <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
       <path d="m18 15-6-6-6 6"/>
     </svg>

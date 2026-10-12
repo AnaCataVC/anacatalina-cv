@@ -23,6 +23,10 @@ export const translations = {
     es: "Formación y Publicaciones",
     en: "Education & Publications"
   },
+  "nav.proyectos": {
+    es: "Proyectos",
+    en: "Projects"
+  },
   
   // Hero Section
   "hero.badge": {
@@ -213,14 +217,18 @@ export const translations = {
     en: "Designed & developed by me · Built with <span class=\"text-pink-500\">♥</span> using Astro + Tailwind CSS · Deployed on Vercel"
   },
   "footer.template": {
-    es: "¿Te gusta este diseño? <a href=\"https://github.com/AnaCataVC/my-cv/\" target=\"_blank\" class=\"text-indigo-500 dark:text-indigo-400 hover:underline font-medium\">Usa la plantilla base aquí</a>.",
-    en: "Do you like this design? <a href=\"https://github.com/AnaCataVC/my-cv/\" target=\"_blank\" class=\"text-indigo-500 dark:text-indigo-400 hover:underline font-medium\">Use the base template here</a>."
+    es: "¿Te gusta este diseño? <a href=\"https://github.com/AnaCataVC/my-cv/\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-brand-purple dark:text-pastel-lilac hover:underline font-medium\">Plantilla de CV en GitHub</a>.",
+    en: "Do you like this design? <a href=\"https://github.com/AnaCataVC/my-cv/\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-brand-purple dark:text-pastel-lilac hover:underline font-medium\">CV template on GitHub</a>."
   },
 
   // Accessibility strings (used for aria-label and skip-link via data-i18n-aria)
   "a11y.skipLink": {
     es: "Saltar al contenido principal",
     en: "Skip to main content"
+  },
+  "aria.home": {
+    es: "Portal de inicio de Ana-Catalina",
+    en: "Ana-Catalina's homepage portal"
   },
   "aria.changeLang": {
     es: "Cambiar idioma",
@@ -234,8 +242,20 @@ export const translations = {
     es: "Abrir menú de navegación",
     en: "Open navigation menu"
   },
+  "aria.email": {
+    es: "Enviar correo a Ana-Catalina",
+    en: "Send email to Ana-Catalina"
+  },
+  "aria.linkedin": {
+    es: "Perfil de LinkedIn de Ana-Catalina",
+    en: "Ana-Catalina's LinkedIn profile"
+  },
+  "aria.github": {
+    es: "Perfil de GitHub de Ana-Catalina",
+    en: "Ana-Catalina's GitHub profile"
+  },
   "aria.projects": {
-    es: "Portafolio de Proyectos",
-    en: "Projects Portfolio"
+    es: "Portafolio de Proyectos de Ana-Catalina",
+    en: "Ana-Catalina's Projects Portfolio"
   }
 };
