@@ -60,7 +60,6 @@ export const translations = {
   "about.p1": cvData.basics.summary.web[0],
   "about.p2": cvData.basics.summary.web[1],
   "about.p3": cvData.basics.summary.web[2],
-  "about.p4": cvData.basics.summary.web[3],
   
   // Experience Section
   "exp.title": {

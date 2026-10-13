@@ -119,20 +119,16 @@ export const cvData: CVData = {
     summary: {
       web: [
         {
-          es: 'Ingeniera especializada en Ciencia de Datos, Machine Learning e IA Agéntica, con experiencia liderando equipos y construyendo sistemas inteligentes para logística, automatización y análisis avanzado.',
-          en: 'Engineer specialized in Data Science, Machine Learning, and Agentic AI, with experience leading teams and building intelligent systems for logistics, automation, and advanced analytics.'
+          es: 'Ingeniera especializada en Ciencia de Datos, Machine Learning e IA Agéntica, con experiencia liderando equipos y construyendo sistemas inteligentes de alto impacto.',
+          en: 'Engineer specialized in Data Science, Machine Learning, and Agentic AI, with experience leading teams and building high-impact intelligent systems.'
         },
         {
-          es: 'De formación Ingeniera Civil de la Universidad de Chile, me motiva aplicar Machine Learning para resolver problemas complejos y transformar datos en valor real, tal como lo plasmé en mi trabajo de tesis publicado en <a href="#publicaciones" class="text-brand-purple dark:text-pastel-lilac hover:underline font-medium">Structural Control Health Monitoring</a> en 2021.',
-          en: 'With a background in Civil Engineering from the Universidad de Chile, I am driven to apply Machine Learning to solve complex problems and transform data into real value, as reflected in my thesis published in <a href="#publicaciones" class="text-brand-purple dark:text-pastel-lilac hover:underline font-medium">Structural Control Health Monitoring</a> in 2021.'
+          es: 'Ingeniera Civil de la Universidad de Chile con investigación aplicada en Machine Learning publicada en <a href="#publicaciones" class="text-brand-purple dark:text-pastel-lilac hover:underline font-medium">Structural Health Monitoring</a> (2021). Mi trayectoria integra liderazgo técnico en mantenimiento predictivo, visión computacional y optimización de operaciones.',
+          en: 'Civil Engineer from Universidad de Chile with applied Machine Learning research published in <a href="#publicaciones" class="text-brand-purple dark:text-pastel-lilac hover:underline font-medium">Structural Health Monitoring</a> (2021). My background integrates technical leadership across predictive maintenance, computer vision, and operations optimization.'
         },
         {
-          es: 'A lo largo de mi trayectoria, he liderado equipos multidisciplinarios y colaborado en el desarrollo de soluciones tecnológicas donde la ingeniería, el análisis avanzado y el impacto práctico convergen.',
-          en: 'Throughout my career, I have led multidisciplinary teams and collaborated on the development of technological solutions where engineering, advanced analytics, and practical impact converge.'
-        },
-        {
-          es: 'Actualmente como <a href="#simpliroute" class="text-brand-purple dark:text-pastel-lilac hover:underline font-medium">Learning Engineer en SimpliRoute</a>, me enfoco principalmente en el diseño de infraestructura agéntica basada en MCP y sistemas distribuidos de geocodificación, junto con procesamiento de datos a gran escala y operación de modelos de ML.',
-          en: 'Currently working as a <a href="#simpliroute" class="text-brand-purple dark:text-pastel-lilac hover:underline font-medium">Learning Engineer at SimpliRoute</a>, I focus primarily on designing MCP-based agentic infrastructure and distributed geocoding systems, alongside large-scale data processing and ML model operations.'
+          es: 'Actualmente como <a href="#simpliroute" class="text-brand-purple dark:text-pastel-lilac hover:underline font-medium">Learning Engineer en SimpliRoute</a>, me enfoco en el diseño de infraestructura agéntica con MCP, sistemas distribuidos de geocodificación y pipelines de datos a gran escala.',
+          en: 'Currently as <a href="#simpliroute" class="text-brand-purple dark:text-pastel-lilac hover:underline font-medium">Learning Engineer at SimpliRoute</a>, I focus on designing MCP-based agentic infrastructure, distributed geocoding systems, and large-scale data pipelines.'
         }
       ],
       pdf: {

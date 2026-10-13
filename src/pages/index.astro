@@ -78,28 +78,31 @@ const badgeClasses: Record<string, string> = {
             </div>
           )}
 
-          <h1 class="text-[3rem] sm:text-[4.5rem] lg:text-[5rem] font-bold tracking-tight text-slate-900 dark:text-white leading-[1.1] m-0">
-            <span class="text-brand-purple">Ana-Catalina</span> <br> Villalobos Contardo<span class="text-brand-purple hover:drop-shadow-[0_0_8px_rgba(140,114,219,0.8)] cursor-default transition-all duration-500 ease-out">.</span>
+          <h1 class="text-3xl sm:text-4xl md:text-[2.75rem] lg:text-[3.25rem] xl:text-[3.75rem] font-bold tracking-tight text-slate-900 dark:text-white leading-[1.12] m-0">
+            <span class="text-brand-purple">Ana-Catalina</span> <br> Villalobos Contardo<span class="text-brand-magenta hover:drop-shadow-[0_0_8px_rgba(229,115,167,0.7)] cursor-default transition-all duration-500 ease-out">.</span>
           </h1>
           
           <p data-i18n="hero.subtitle" class="text-lg sm:text-xl font-medium text-slate-600 dark:text-slate-300">
             Data Scientist & Machine Learning Engineer
           </p>
 
-          <!-- Interactive Profile Card -->
-          <div class="relative pt-2">
-            <!-- Decorative outline glows -->
+          <!-- Interactive Profile Card / Medallion -->
+          <div class="relative pt-2 group/avatar">
+            <!-- Decorative outline glow / Ambient medallion glow -->
+            <div class="absolute -inset-1 rounded-2xl blur-sm opacity-20 dark:opacity-30 bg-brand-purple pointer-events-none transition-opacity duration-500 group-hover/avatar:opacity-40"></div>
 
-            
-            <div class="relative w-56 h-56 sm:w-64 sm:h-64 bg-white dark:bg-slate-800 p-2.5 rounded-2xl shadow-xl flex items-center justify-center overflow-hidden">
-              <Image src={fotoPerfil} alt="Ana-Catalina Villalobos" width={320} height={320} loading="eager" fetchpriority="high" format="webp" quality={80} class="w-full h-full object-cover rounded-xl" />
+            <!-- Avatar medallion frame with solid primary color border -->
+            <div class="relative p-[2.5px] rounded-2xl bg-brand-purple shadow-sm transition-all duration-300 group-hover/avatar:scale-[1.01]">
+              <div class="relative w-56 h-56 sm:w-64 sm:h-64 bg-white dark:bg-slate-800 p-2 rounded-[13.5px] flex items-center justify-center overflow-hidden">
+                <Image src={fotoPerfil} alt="Ana-Catalina Villalobos" width={320} height={320} loading="eager" fetchpriority="high" format="webp" quality={80} class="w-full h-full object-cover rounded-xl" />
+              </div>
             </div>
             
             <!-- Minimal tag overlay linked to SimpliRoute experience -->
             <a href="#simpliroute" class="absolute -bottom-4 left-1/2 -translate-x-1/2 whitespace-nowrap bg-white dark:bg-slate-800 px-4 py-2 rounded-xl shadow-lg border border-slate-100 dark:border-slate-700 flex items-center space-x-2 hover:border-brand-purple dark:hover:border-brand-purple transition-colors group/tag">
               <span class="flex h-2.5 w-2.5 relative">
-                <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-purple opacity-75"></span>
-                <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-brand-purple"></span>
+                <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-cyan opacity-75"></span>
+                <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-brand-cyan"></span>
               </span>
               <span class="text-xs font-semibold text-slate-700 dark:text-slate-300 group-hover/tag:text-brand-purple dark:group-hover/tag:text-brand-purple transition-colors">Learning Engineer @ SimpliRoute</span>
             </a>
@@ -107,26 +110,26 @@ const badgeClasses: Record<string, string> = {
 
           <!-- Action Buttons (Mobile) -->
           <div class="flex md:hidden flex-wrap items-center justify-center gap-3 w-56 sm:w-64 pt-4">
-            <a href="ACVC_es.pdf" target="_blank" rel="noopener noreferrer" data-i18n="hero.downloadBtn" data-i18n-href="hero.cvUrl" class="flex-1 min-w-[120px] inline-flex items-center justify-center px-4 py-2.5 text-sm font-semibold text-white bg-gradient-to-r from-brand-purple to-purple-400 hover:to-brand-purple rounded-xl shadow-sm hover:shadow-[0_0_20px_rgba(140,114,219,0.4)] transition-all transform hover:-translate-y-0.5">
+            <a href="ACVC_es.pdf" target="_blank" rel="noopener noreferrer" data-i18n="hero.downloadBtn" data-i18n-href="hero.cvUrl" class="touch-manipulation flex-1 min-w-[140px] inline-flex items-center justify-center px-6 py-3 rounded-2xl bg-gradient-to-r from-brand-purple to-brand-magenta hover:from-brand-magenta hover:to-brand-purple shadow-sm hover:shadow-[0_0_20px_rgba(154,130,232,0.4)] transition-all transform hover:-translate-y-0.5 text-white tracking-wide font-semibold text-sm">
               Descargar CV
             </a>
           </div>
 
           <!-- Social Details Quick Links & Location -->
-          <div class="flex flex-wrap justify-center items-center gap-y-2 gap-x-6 pt-2 text-slate-600 dark:text-slate-400 w-56 sm:w-64">
-            <a href="mailto:anacatalina@outlook.cl" class="hover:text-brand-purple dark:hover:text-brand-purple transition-colors" title="Enviar correo a Ana-Catalina" aria-label="Enviar correo a Ana-Catalina" data-i18n-aria="aria.email">
-              <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+          <div class="flex flex-wrap justify-center items-center gap-3 pt-2 text-slate-600 dark:text-slate-400 w-56 sm:w-64">
+            <a href="mailto:anacatalina@outlook.cl" class="touch-manipulation flex items-center justify-center w-10 h-10 rounded-full bg-slate-50/80 dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700 text-slate-500 dark:text-slate-400 hover:bg-purple-500/10 dark:hover:bg-slate-700 hover:text-brand-purple dark:hover:text-pastel-lilac hover:border-brand-purple/40 dark:hover:border-pastel-lilac/50 transition-all duration-300 transform hover:-translate-y-0.5 shadow-sm hover:shadow-md" title="Enviar correo a Ana-Catalina" aria-label="Enviar correo a Ana-Catalina" data-i18n-aria="aria.email">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
             </a>
-            <a href="https://linkedin.com/in/ana-catalina/" target="_blank" rel="noopener noreferrer" class="hover:text-brand-purple dark:hover:text-brand-purple transition-colors" title="Perfil de LinkedIn de Ana-Catalina" aria-label="Perfil de LinkedIn de Ana-Catalina" data-i18n-aria="aria.linkedin">
-              <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
+            <a href="https://linkedin.com/in/ana-catalina/" target="_blank" rel="noopener noreferrer" class="touch-manipulation flex items-center justify-center w-10 h-10 rounded-full bg-slate-50/80 dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700 text-slate-500 dark:text-slate-400 hover:bg-purple-500/10 dark:hover:bg-slate-700 hover:text-brand-purple dark:hover:text-pastel-lilac hover:border-brand-purple/40 dark:hover:border-pastel-lilac/50 transition-all duration-300 transform hover:-translate-y-0.5 shadow-sm hover:shadow-md" title="Perfil de LinkedIn de Ana-Catalina" aria-label="Perfil de LinkedIn de Ana-Catalina" data-i18n-aria="aria.linkedin">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
             </a>
-            <a href="https://github.com/AnaCataVC/" target="_blank" rel="noopener noreferrer" class="hover:text-brand-purple dark:hover:text-brand-purple transition-colors" title="Perfil de GitHub de Ana-Catalina" aria-label="Perfil de GitHub de Ana-Catalina" data-i18n-aria="aria.github">
-              <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>
+            <a href="https://github.com/AnaCataVC/" target="_blank" rel="noopener noreferrer" class="touch-manipulation flex items-center justify-center w-10 h-10 rounded-full bg-slate-50/80 dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700 text-slate-500 dark:text-slate-400 hover:bg-purple-500/10 dark:hover:bg-slate-700 hover:text-brand-purple dark:hover:text-pastel-lilac hover:border-brand-purple/40 dark:hover:border-pastel-lilac/50 transition-all duration-300 transform hover:-translate-y-0.5 shadow-sm hover:shadow-md" title="Perfil de GitHub de Ana-Catalina" aria-label="Perfil de GitHub de Ana-Catalina" data-i18n-aria="aria.github">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>
             </a>
-            <a href="https://projects.ana-catalina.com/" target="_blank" rel="noopener noreferrer" class="hover:text-brand-purple dark:hover:text-brand-purple transition-colors" title="Portafolio de Proyectos de Ana-Catalina" aria-label="Portafolio de Proyectos de Ana-Catalina" data-i18n-aria="aria.projects">
-              <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M10 10.5 8 13l2 2.5"/><path d="m14 10.5 2 2.5-2 2.5"/><path d="M20 20a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-7.9a2 2 0 0 1-1.69-.9L9.6 3.9A2 2 0 0 0 7.93 3H4a2 2 0 0 0-2 2v13a2 2 0 0 0 2 2z"/></svg>
+            <a href="https://projects.ana-catalina.com/" target="_blank" rel="noopener noreferrer" class="touch-manipulation flex items-center justify-center w-10 h-10 rounded-full bg-slate-50/80 dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700 text-slate-500 dark:text-slate-400 hover:bg-purple-500/10 dark:hover:bg-slate-700 hover:text-brand-purple dark:hover:text-pastel-lilac hover:border-brand-purple/40 dark:hover:border-pastel-lilac/50 transition-all duration-300 transform hover:-translate-y-0.5 shadow-sm hover:shadow-md" title="Portafolio de Proyectos de Ana-Catalina" aria-label="Portafolio de Proyectos de Ana-Catalina" data-i18n-aria="aria.projects">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M10 10.5 8 13l2 2.5"/><path d="m14 10.5 2 2.5-2 2.5"/><path d="M20 20a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-7.9a2 2 0 0 1-1.69-.9L9.6 3.9A2 2 0 0 0 7.93 3H4a2 2 0 0 0-2 2v13a2 2 0 0 0 2 2z"/></svg>
             </a>
-            <span class="text-sm inline-flex md:hidden items-center space-x-1.5 font-medium whitespace-nowrap">
+            <span class="text-sm inline-flex md:hidden items-center space-x-1.5 font-medium whitespace-nowrap mt-2">
               <svg class="w-4 h-4 text-slate-500 dark:text-slate-400" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
                 <path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/>
               </svg>
@@ -151,13 +154,13 @@ const badgeClasses: Record<string, string> = {
             </span>
 
             <div class="flex flex-wrap items-center justify-start gap-3 lg:gap-4">
-              <a href="ACVC_es.pdf" target="_blank" rel="noopener noreferrer" data-i18n="hero.downloadBtn" data-i18n-href="hero.cvUrl" class="flex-1 lg:flex-none lg:min-w-[140px] inline-flex items-center justify-center px-4 lg:px-5 py-2.5 lg:py-3 text-xs lg:text-sm font-semibold text-white bg-gradient-to-r from-brand-purple to-purple-400 hover:to-brand-purple rounded-xl shadow-sm hover:shadow-[0_0_20px_rgba(140,114,219,0.4)] transition-all transform hover:-translate-y-0.5">
+              <a href="ACVC_es.pdf" target="_blank" rel="noopener noreferrer" data-i18n="hero.downloadBtn" data-i18n-href="hero.cvUrl" class="touch-manipulation flex-1 lg:flex-none lg:min-w-[150px] inline-flex items-center justify-center px-6 lg:px-8 py-3 lg:py-3.5 rounded-2xl bg-gradient-to-r from-brand-purple to-brand-magenta hover:from-brand-magenta hover:to-brand-purple shadow-sm hover:shadow-[0_0_20px_rgba(154,130,232,0.4)] transition-all transform hover:-translate-y-0.5 text-white tracking-wide font-semibold text-xs lg:text-sm">
                 Descargar CV
               </a>
-              <a href="#experience" data-i18n="hero.expBtn" class="flex-1 lg:flex-none lg:min-w-[140px] inline-flex items-center justify-center px-4 lg:px-5 py-2.5 lg:py-3 text-xs lg:text-sm font-semibold bg-slate-100 hover:bg-slate-200 text-slate-700 dark:bg-slate-800 dark:hover:bg-slate-700 dark:text-slate-300 rounded-xl transition-all transform hover:-translate-y-0.5">
+              <a href="#experience" data-i18n="hero.expBtn" class="touch-manipulation flex-1 lg:flex-none lg:min-w-[140px] inline-flex items-center justify-center px-5 lg:px-6 py-3 lg:py-3.5 rounded-2xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 shadow-sm hover:shadow-md hover:border-brand-purple dark:hover:border-brand-cyan hover:bg-slate-50 dark:hover:bg-slate-700/50 transition-all duration-300 transform hover:-translate-y-0.5 text-slate-700 dark:text-slate-200 hover:text-brand-purple dark:hover:text-brand-cyan tracking-wide font-medium text-xs lg:text-sm">
                 Experiencia
               </a>
-              <a href="#skills" data-i18n="hero.skillsBtn" class="flex-1 lg:flex-none lg:min-w-[140px] inline-flex items-center justify-center px-4 lg:px-5 py-2.5 lg:py-3 text-xs lg:text-sm font-semibold bg-slate-100 hover:bg-slate-200 text-slate-700 dark:bg-slate-800 dark:hover:bg-slate-700 dark:text-slate-300 rounded-xl transition-all transform hover:-translate-y-0.5">
+              <a href="#skills" data-i18n="hero.skillsBtn" class="touch-manipulation flex-1 lg:flex-none lg:min-w-[140px] inline-flex items-center justify-center px-5 lg:px-6 py-3 lg:py-3.5 rounded-2xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 shadow-sm hover:shadow-md hover:border-brand-purple dark:hover:border-brand-cyan hover:bg-slate-50 dark:hover:bg-slate-700/50 transition-all duration-300 transform hover:-translate-y-0.5 text-slate-700 dark:text-slate-200 hover:text-brand-purple dark:hover:text-brand-cyan tracking-wide font-medium text-xs lg:text-sm">
                 Habilidades
               </a>
             </div>
@@ -167,7 +170,6 @@ const badgeClasses: Record<string, string> = {
             <p data-i18n="about.p1" class="text-lg font-semibold text-slate-800 dark:text-slate-100 leading-relaxed text-justify md:text-left" set:html={cvData.basics.summary.web[0].es} />
             <p data-i18n="about.p2" set:html={cvData.basics.summary.web[1].es} />
             <p data-i18n="about.p3" set:html={cvData.basics.summary.web[2].es} />
-            <p data-i18n="about.p4" set:html={cvData.basics.summary.web[3].es} />
           </div>
         </div>
       </div>
