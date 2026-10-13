@@ -3,12 +3,34 @@
 
 @custom-variant dark (&:where(.dark, .dark *));
 
+:root {
+  --brand-purple: #9a82e8;
+  --brand-magenta: #e573a7;
+  --brand-cyan: #4dd0e1;
+}
+
+.dark {
+  --brand-purple: #a78bfa;
+  --brand-magenta: #ee8bb7;
+  --brand-cyan: #67e8f9;
+}
+
 @theme {
+  --color-brand-purple: var(--brand-purple);
+  --color-brand-magenta: var(--brand-magenta);
+  --color-brand-cyan: var(--brand-cyan);
+  
+  --color-brand-purple-light: #9a82e8;
+  --color-brand-purple-dark: #a78bfa;
+  --color-brand-magenta-light: #e573a7;
+  --color-brand-magenta-dark: #ee8bb7;
+  --color-brand-cyan-light: #4dd0e1;
+  --color-brand-cyan-dark: #67e8f9;
+
   --color-pastel-lilac: #c7b8ea;
   --color-pastel-pink: #f7c6d9;
   --color-pastel-blue: #bcdffb;
   --color-pastel-mint: #c8f3e0;
-  --color-brand-purple: #8c72db;
   
   --font-sans: 'Outfit', 'Inter', sans-serif;
   
