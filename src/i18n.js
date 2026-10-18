@@ -34,6 +34,10 @@ export const translations = {
     en: "Available for Data Leadership & Projects"
   },
   "hero.subtitle": cvData.basics.contact.title,
+  "hero.pillars": {
+    es: "IA Agéntica & MCP · Sistemas Distribuidos · Pipelines de Datos · Liderazgo Técnico",
+    en: "Agentic AI & MCP · Distributed Systems · Data Pipelines · Technical Leadership"
+  },
   "hero.downloadBtn": {
     es: "Descargar CV",
     en: "Download CV"
@@ -101,6 +105,26 @@ export const translations = {
   "skills.title": {
     es: "Habilidades & Herramientas",
     en: "Skills & Tools"
+  },
+  "skills.filter.all": {
+    es: "Todos",
+    en: "All"
+  },
+  "skills.filter.ai_ml": {
+    es: "IA & Machine Learning",
+    en: "AI & Machine Learning"
+  },
+  "skills.filter.data_cloud": {
+    es: "Data Platform & Cloud",
+    en: "Data Platform & Cloud"
+  },
+  "skills.filter.software": {
+    es: "Ingeniería de Software",
+    en: "Software Engineering"
+  },
+  "skills.filter.leadership": {
+    es: "Liderazgo & Arquitectura",
+    en: "Leadership & Architecture"
   },
   "skills.ai.title": {
     es: "IA Agéntica & Machine Learning",

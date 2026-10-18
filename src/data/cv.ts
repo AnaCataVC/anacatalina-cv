@@ -132,8 +132,8 @@ export const cvData: CVData = {
         }
       ],
       pdf: {
-        es: 'Ingeniera Civil con sólida trayectoria en Ciencia de Datos, Machine Learning, IA Agéntica e Ingeniería de Datos. Conjuga una base analítica y matemática rigurosa con experiencia práctica construyendo infraestructura agéntica basada en Model Context Protocol (MCP), sistemas distribuidos de alta disponibilidad (geocodificación, microservicios), pipelines de datos a escala (ETL/ELT) y soluciones de ML (mantenimiento predictivo, optimización operacional). Experiencia comprobada en liderazgo técnico de equipos multidisciplinarios, con foco en la resolución de problemas complejos, confiabilidad operativa e impacto estratégico.',
-        en: 'Civil Engineer with a strong track record in Data Science, Machine Learning, Agentic AI, and Data Engineering. Combines a rigorous analytical and mathematical foundation with hands-on experience building agentic infrastructure powered by Model Context Protocol (MCP), high-availability distributed systems (geocoding, microservices), large-scale data pipelines (ETL/ELT), and ML solutions (predictive maintenance, operational optimization). Proven technical leadership managing multidisciplinary teams, focused on solving complex problems, operational reliability, and strategic impact.'
+        es: 'Ingeniera Civil especializada en Ciencia de Datos, Machine Learning, IA Agéntica e Ingeniería de Datos. Combina una rigurosa base matemática con experiencia en producción diseñando infraestructura agéntica con Model Context Protocol (MCP), sistemas distribuidos de alta disponibilidad, pipelines de datos a gran escala en Google Cloud (BigQuery, Dataflow, Pub/Sub, Airflow) y modelos predictivos. Trayectoria comprobada liderando equipos técnicos multidisciplinarios con foco en arquitectura resiliente e impacto de negocio.',
+        en: 'Civil Engineer specialized in Data Science, Machine Learning, Agentic AI, and Data Engineering. Combines a rigorous mathematical foundation with production experience designing Model Context Protocol (MCP) agentic infrastructure, high-availability distributed systems, large-scale data pipelines on Google Cloud (BigQuery, Dataflow, Pub/Sub, Airflow), and predictive models. Proven track record leading multidisciplinary technical teams focused on resilient architecture and business impact.'
       }
     }
   },
@@ -143,8 +143,8 @@ export const cvData: CVData = {
       company: 'SimpliRoute',
       url: 'https://simpliroute.com/',
       role: {
-        es: 'Learning Engineer',
-        en: 'Learning Engineer'
+        es: 'Learning Engineer (Machine Learning & AI)',
+        en: 'Learning Engineer (Machine Learning & AI)'
       },
       date: {
         es: 'Agosto 2025 - Presente',
@@ -390,18 +390,18 @@ export const cvData: CVData = {
       },
       skills: [
         { name: 'FastAPI' },
-        { name: 'Pydantic' },
+        { name: 'LangChain' },
+        { name: 'Scikit-learn' },
+        { name: 'TensorFlow' },
         { name: 'Pandas' },
         { name: 'NumPy' },
-        { name: 'Scikit-learn' },
-        { name: 'LangChain' },
-        { name: 'TensorFlow' },
+        { name: 'Pydantic' },
         { name: 'Django' },
         { name: 'React JS' }
       ],
       pdfFormatted: {
-        es: 'FastAPI | Pydantic | Pandas | NumPy | Scikit-learn | LangChain | TensorFlow | Django | React JS.',
-        en: 'FastAPI | Pydantic | Pandas | NumPy | Scikit-learn | LangChain | TensorFlow | Django | React JS.'
+        es: 'FastAPI | LangChain | Scikit-learn | TensorFlow | Pandas | NumPy | Pydantic | Django | React JS.',
+        en: 'FastAPI | LangChain | Scikit-learn | TensorFlow | Pandas | NumPy | Pydantic | Django | React JS.'
       }
     },
     {

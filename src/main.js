@@ -182,6 +182,70 @@ function init() {
   revealElements.forEach(el => {
     observer.observe(el);
   });
+
+  // --- Interactive Specialty Lenses (#skills) ---
+  const lensButtons = document.querySelectorAll('.skill-lens-btn');
+  const skillCards = document.querySelectorAll('#skills .skill-group');
+
+  const LENS_ALIASES = {
+    'all': 'all',
+    'ai-ml': 'ai-ml',
+    'ai': 'ai-ml',
+    'ai-engineer': 'ai-ml',
+    'ml': 'ai-ml',
+    'ml-engineer': 'ai-ml',
+    'data-scientist': 'ai-ml',
+    'data-cloud': 'data-cloud',
+    'data': 'data-cloud',
+    'cloud': 'data-cloud',
+    'software': 'software',
+    'backend': 'software',
+    'leadership': 'leadership',
+    'tech-lead': 'leadership',
+    'staff': 'leadership'
+  };
+
+  function applySkillLens(rawLens) {
+    const activeLens = LENS_ALIASES[(rawLens || 'all').toLowerCase()] || 'all';
+
+    lensButtons.forEach(btn => {
+      const isSelected = btn.getAttribute('data-lens') === activeLens;
+      btn.setAttribute('aria-pressed', isSelected ? 'true' : 'false');
+      if (isSelected) {
+        btn.className = 'skill-lens-btn cursor-pointer px-4 py-1.5 rounded-full text-xs sm:text-sm font-semibold transition-all duration-200 bg-brand-purple text-white shadow-sm';
+      } else {
+        btn.className = 'skill-lens-btn cursor-pointer px-4 py-1.5 rounded-full text-xs sm:text-sm font-semibold transition-all duration-200 bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-700 hover:border-brand-purple dark:hover:border-pastel-lilac hover:text-brand-purple dark:hover:text-pastel-lilac';
+      }
+    });
+
+    skillCards.forEach(card => {
+      const domains = (card.getAttribute('data-domains') || '').split(/\s+/);
+      if (activeLens === 'all' || domains.includes(activeLens)) {
+        card.classList.remove('opacity-35', 'scale-[0.98]');
+        if (activeLens !== 'all') {
+          card.classList.add('ring-2', 'ring-brand-purple/50', 'dark:ring-pastel-lilac/40');
+        } else {
+          card.classList.remove('ring-2', 'ring-brand-purple/50', 'dark:ring-pastel-lilac/40');
+        }
+      } else {
+        card.classList.remove('ring-2', 'ring-brand-purple/50', 'dark:ring-pastel-lilac/40');
+        card.classList.add('opacity-35', 'scale-[0.98]');
+      }
+    });
+  }
+
+  lensButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const selectedLens = btn.getAttribute('data-lens') || 'all';
+      applySkillLens(selectedLens);
+    });
+  });
+
+  const urlParams = new URLSearchParams(window.location.search);
+  const initialFocus = urlParams.get('focus') || urlParams.get('track') || urlParams.get('role');
+  if (initialFocus && LENS_ALIASES[initialFocus.toLowerCase()]) {
+    applySkillLens(initialFocus);
+  }
 }
 
 if (document.readyState === 'loading') {

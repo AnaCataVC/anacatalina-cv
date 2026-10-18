@@ -76,13 +76,13 @@ const certificationsFormatted = cvData.certifications
 
     .header .contact {
       font-family: 'Roboto Mono', monospace;
-      font-size: 9.5pt;
-      color: #4dd0e1;
-      line-height: 1.3;
+      font-size: 9pt;
+      color: #0e7490;
+      line-height: 1.35;
     }
 
     .header .contact a {
-      color: #4dd0e1;
+      color: #0e7490;
       text-decoration: underline;
     }
 
@@ -183,7 +183,7 @@ const certificationsFormatted = cvData.certifications
     }
 
     a {
-      color: #4dd0e1;
+      color: #0e7490;
       text-decoration: underline;
     }
   </style>
@@ -195,8 +195,8 @@ const certificationsFormatted = cvData.certifications
     <h1>{cvData.basics.contact.name}</h1>
     <div class="subtitle">{cvData.basics.contact.title[lang].toUpperCase()}</div>
     <div class="contact">
-      {cvData.basics.contact.location[lang]}<br>
-      <a href={`mailto:${cvData.basics.contact.email}`}>{cvData.basics.contact.email}</a> &bull; <a href={cvData.basics.contact.website}>{cvData.basics.contact.websiteDisplay}</a>
+      {cvData.basics.contact.location[lang]} &bull; <a href={`mailto:${cvData.basics.contact.email}`}>{cvData.basics.contact.email}</a><br>
+      <a href={cvData.basics.contact.website}>{cvData.basics.contact.websiteDisplay}</a> &bull; <a href={cvData.basics.contact.linkedin}>linkedin.com/in/ana-catalina</a> &bull; <a href={cvData.basics.contact.github}>github.com/AnaCataVC</a>
     </div>
   </div>
 
