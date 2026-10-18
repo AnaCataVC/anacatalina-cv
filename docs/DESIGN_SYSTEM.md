@@ -48,6 +48,10 @@ The palette balances technical precision with friendly, desaturated warmth. Conf
 - **Text Primary**: `text-slate-800` (Light) / `text-white` or `text-slate-100` (Dark) — *Strictly avoiding pure `#000000`*.
 - **Text Secondary**: `text-slate-600` (Light) / `text-slate-400` (Dark).
 
+### 2.4 Print & PDF Document Adaptation (Paper-Friendly Contrast)
+
+For downloadable CV PDFs (`public/ACVC_es.pdf`, `public/ACVC_en.pdf`) generated via headless browser print (`src/pages/print/[lang].astro`), a paper-friendly contrast adaptation of the design system palette is utilized. Headings and section accents maintain the distinct hue family of the primary brand triad while optimizing value and saturation to ensure high-contrast legibility and sharpness against physical white paper and office printers.
+
 ---
 
 ## 🪞 3. Avatar Medallion & Geometric Gradients
