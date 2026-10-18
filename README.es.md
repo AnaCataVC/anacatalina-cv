@@ -51,7 +51,7 @@ Durante la construcción de este proyecto, los principales aprendizajes y desaf�
 - **UX/UI:** Optimización de la experiencia de usuario (UX) e interfaz de usuario (UI), incluyendo animaciones suaves y soporte para modo oscuro.
 - **Maquetación Avanzada:** Resolución de conflictos de scroll con headers sticky y estructuración de layouts complejos utilizando CSS Grid y Tailwind CSS.
 
-> 💡 **¿Te gusta este diseño?** He creado un template básico de este CV para que puedas usarlo y personalizarlo. Puedes encontrarlo aquí: [AnaCataVC/my-cv](https://github.com/AnaCataVC/my-cv/)
+> 💡 **¿Te gusta este diseño?** Existe una plantilla base de referencia (repositorio archivado) para explorar y personalizar: [AnaCataVC/my-cv](https://github.com/AnaCataVC/my-cv/)
 
 ---
 

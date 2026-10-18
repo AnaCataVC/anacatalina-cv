@@ -240,8 +240,8 @@ export const translations = {
     en: "Designed & developed by me · Built with <span class=\"text-pink-500\">♥</span> using Astro + Tailwind CSS · Deployed on Vercel"
   },
   "footer.template": {
-    es: "¿Te gusta este diseño? <a href=\"https://github.com/AnaCataVC/my-cv/\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-brand-purple dark:text-pastel-lilac hover:underline font-medium\">Plantilla de CV en GitHub</a>.",
-    en: "Do you like this design? <a href=\"https://github.com/AnaCataVC/my-cv/\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-brand-purple dark:text-pastel-lilac hover:underline font-medium\">CV template on GitHub</a>."
+    es: "¿Te gusta este diseño? <a href=\"https://github.com/AnaCataVC/my-cv/\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-brand-purple dark:text-pastel-lilac hover:underline font-medium\">Plantilla base en GitHub</a> (repositorio archivado).",
+    en: "Do you like this design? <a href=\"https://github.com/AnaCataVC/my-cv/\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-brand-purple dark:text-pastel-lilac hover:underline font-medium\">Base template on GitHub</a> (archived repository)."
   },
 
   // Accessibility strings (used for aria-label and skip-link via data-i18n-aria)
