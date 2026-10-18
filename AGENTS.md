@@ -49,15 +49,22 @@ anacatalina-cv/
 │   └── styles.css           # Tailwind v4 import, `@theme` tokens, custom utilities
 ├── astro.config.mjs         # Astro config: @tailwindcss/vite + @astrojs/sitemap
 ├── scripts/generate-pdf.mjs # Renders print pages to PDF via headless Chrome/Edge with 2-page check
-├── package.json             # Scripts: dev, build, build:pdf, preview
+├── package.json             # Scripts: dev, build, build:pdf, audit:activity, audit:integrity
 ├── .agents/                 # Workspace agent customizations
 │   ├── agents/
-│   │   └── cv-reviewer.md   # CV review & synchronization orchestrator
+│   │   ├── cv-reviewer.md   # Master CV Activity & Synchronization Orchestrator
+│   │   └── cv-qa-auditor.md # Master Quality, Integrity & Build Orchestrator
 │   └── skills/
-│       └── sync-cv/         # Procedures to audit repos and propose CV updates
+│       ├── sync-cv/         # Procedures to audit repos and propose CV updates
+│       │   ├── SKILL.md
+│       │   └── scripts/
+│       │       └── scan-activity.mjs # Dynamic repository audit script
+│       ├── tune-pdf-layout/ # Layout optimization & budget engineering for 2-page print PDF
+│       │   └── SKILL.md
+│       └── audit-cv-integrity/ # Static integrity suite (SSOT parity, DOM bindings, Zero Flags)
 │           ├── SKILL.md
 │           └── scripts/
-│               └── scan-activity.mjs # Dynamic repository audit script
+│               └── audit-integrity.mjs # Automated integrity verification script
 └── AGENTS.md                 # This file
 ```
 
@@ -125,10 +132,13 @@ The base theme uses Tailwind's `slate` scale for grays. Functional accents use `
 ## Development Commands
 
 ```bash
-npm install      # Install dependencies
-npm run dev      # Development server (Astro)
-npm run build    # Production build → ./dist/
-npm run preview  # Preview production build
+npm install           # Install dependencies
+npm run dev           # Development server (Astro)
+npm run build         # Production build (astro check && astro build) → ./dist/
+npm run build:pdf     # Render print pages to PDF with headless browser & 2-page verification
+npm run audit:activity # Dynamic git repository audit for personal & work achievements
+npm run audit:integrity # Static integrity suite (SSOT parity, DOM bindings, Zero Flags)
+npm run preview       # Preview production build
 ```
 
 ## Conventions & Rules

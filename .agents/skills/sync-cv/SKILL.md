@@ -94,5 +94,12 @@ Presenta al usuario un reporte estructurado y conciso en español con las siguie
    - Lista de herramientas o frameworks para agregar a la sección de habilidades (`skills` en web y, si son troncales, `pdfFormatted` en PDF).
 3. **Propuestas de Actualización para Experiencia Laboral:**
    - Redacción sugerida en español e inglés para `src/data/cv.ts` (distinguiendo versión extendida para `bullets` y versión concisa para `pdfBullets` cuando corresponda).
-4. **Acciones Concretas:**
-   - Lista de archivos a modificar y recordatorio de regenerar los PDFs con `npm run build:pdf` si el usuario aprueba los cambios.
+4. **Acciones Concretas y Plan de Aplicación:**
+   - Lista de archivos a modificar previa aprobación del usuario.
+
+### 7. Compuerta de Calidad Post-Actualización (Quality Gate)
+Una vez aplicados los cambios aprobados por el usuario en `src/data/cv.ts`:
+1. **Auditoría de Integridad Estática:** Ejecutar `npm run audit:integrity` (skill `audit-cv-integrity`) para verificar paridad bilingüe, enlace con el DOM y regla Zero Flags.
+2. **Validación del Presupuesto de Páginas (PDF):** Ejecutar `npm run build:pdf`.
+   - Si la generación arroja `Page count mismatch: Expected 2 pages, but got 3 pages`, activar inmediatamente la skill `tune-pdf-layout` para condensar `pdfBullets` o ajustar espaciados tipográficos en `src/pages/print/[lang].astro`.
+3. **Verificación de Tipos:** Asegurar que `npx astro check` pase con 0 errores y 0 advertencias.
