@@ -186,6 +186,8 @@ function init() {
   // --- Interactive Specialty Lenses (#skills) ---
   const lensButtons = document.querySelectorAll('.skill-lens-btn');
   const skillCards = document.querySelectorAll('#skills .skill-group');
+  const skillsGrid = document.getElementById('skills-grid');
+  const skillsStatus = document.getElementById('skills-filter-status');
 
   const LENS_ALIASES = {
     'all': 'all',
@@ -205,6 +207,18 @@ function init() {
     'staff': 'leadership'
   };
 
+  const GRID_CONFIG = {
+    all: ['grid-cols-1', 'sm:grid-cols-2', 'lg:grid-cols-4', 'max-w-7xl'],
+    3: ['grid-cols-1', 'sm:grid-cols-2', 'lg:grid-cols-3', 'max-w-5xl'],
+    2: ['grid-cols-1', 'sm:grid-cols-2', 'max-w-3xl'],
+    1: ['grid-cols-1', 'max-w-xl']
+  };
+
+  const ALL_GRID_CLASSES = [
+    'grid-cols-1', 'sm:grid-cols-2', 'lg:grid-cols-3', 'lg:grid-cols-4',
+    'max-w-xl', 'max-w-3xl', 'max-w-5xl', 'max-w-7xl'
+  ];
+
   function applySkillLens(rawLens) {
     const activeLens = LENS_ALIASES[(rawLens || 'all').toLowerCase()] || 'all';
 
@@ -218,26 +232,69 @@ function init() {
       }
     });
 
+    let visibleCount = 0;
     skillCards.forEach(card => {
       const domains = (card.getAttribute('data-domains') || '').split(/\s+/);
-      if (activeLens === 'all' || domains.includes(activeLens)) {
-        card.classList.remove('opacity-35', 'scale-[0.98]');
+      const isMatch = activeLens === 'all' || domains.includes(activeLens);
+
+      // Clean up legacy classes
+      card.classList.remove('opacity-35', 'scale-[0.98]');
+
+      if (isMatch) {
+        visibleCount++;
+        card.classList.remove('hidden');
+        card.setAttribute('aria-hidden', 'false');
+        card.classList.add('active'); // ensure reveal opacity is active
+
+        // Re-trigger entrance transition
+        card.classList.remove('skill-card-enter');
+        void card.offsetWidth;
+        card.classList.add('skill-card-enter');
+
         if (activeLens !== 'all') {
           card.classList.add('ring-2', 'ring-brand-purple/50', 'dark:ring-pastel-lilac/40');
         } else {
           card.classList.remove('ring-2', 'ring-brand-purple/50', 'dark:ring-pastel-lilac/40');
         }
       } else {
-        card.classList.remove('ring-2', 'ring-brand-purple/50', 'dark:ring-pastel-lilac/40');
-        card.classList.add('opacity-35', 'scale-[0.98]');
+        card.classList.add('hidden');
+        card.setAttribute('aria-hidden', 'true');
+        card.classList.remove('ring-2', 'ring-brand-purple/50', 'dark:ring-pastel-lilac/40', 'skill-card-enter');
       }
     });
+
+    // Adapt grid width and columns dynamically to center fewer cards
+    if (skillsGrid) {
+      skillsGrid.classList.remove(...ALL_GRID_CLASSES);
+      const classesToAdd = activeLens === 'all'
+        ? GRID_CONFIG.all
+        : (GRID_CONFIG[visibleCount] || GRID_CONFIG.all);
+      skillsGrid.classList.add(...classesToAdd);
+    }
+
+    // Accessible screen reader announcement
+    if (skillsStatus) {
+      if (activeLens === 'all') {
+        skillsStatus.textContent = currentLang === 'es'
+          ? 'Mostrando todas las habilidades y herramientas'
+          : 'Showing all skills and tools';
+      } else {
+        skillsStatus.textContent = currentLang === 'es'
+          ? `Filtro aplicado. Mostrando ${visibleCount} categorías de habilidades`
+          : `Filter applied. Showing ${visibleCount} skill categories`;
+      }
+    }
   }
 
   lensButtons.forEach(btn => {
     btn.addEventListener('click', () => {
-      const selectedLens = btn.getAttribute('data-lens') || 'all';
-      applySkillLens(selectedLens);
+      const targetLens = btn.getAttribute('data-lens') || 'all';
+      const isAlreadyActive = btn.getAttribute('aria-pressed') === 'true';
+      if (isAlreadyActive && targetLens !== 'all') {
+        applySkillLens('all');
+      } else {
+        applySkillLens(targetLens);
+      }
     });
   });
 

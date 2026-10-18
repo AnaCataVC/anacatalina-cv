@@ -281,7 +281,10 @@ const badgeClasses: Record<string, string> = {
         </button>
       </div>
 
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8 max-w-7xl mx-auto">
+      <!-- Accessible Live Status for Screen Readers -->
+      <div id="skills-filter-status" class="sr-only" role="status" aria-live="polite"></div>
+
+      <div id="skills-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8 max-w-7xl mx-auto transition-all duration-300">
         
         <!-- 1. AI & Data Science -->
         <div data-domains="ai-ml" class="skill-group reveal bg-white dark:bg-slate-800 p-6 rounded-2xl border border-slate-100 dark:border-slate-700 space-y-4 transition-all duration-300">
