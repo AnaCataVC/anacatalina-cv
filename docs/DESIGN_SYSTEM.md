@@ -8,11 +8,11 @@ The primary goal is to maintain absolute visual consistency based on minimalism,
 
 ## 💎 1. Visual Identity & Brand Emblem
 
-The brand identity is anchored by the geometric triangular **AV Emblem**:
-- **Geometry**: An equilateral triangular silhouette integrating letterforms 'A' and 'V' via clean geometric cuts (top diamond apex, bottom-left triangle, bottom-right triangle).
+The brand identity is anchored by the geometric triangular **ACVC Emblem**:
+- **Geometry**: An equilateral triangular silhouette integrating continuous ribbon loops that form the monogram letterforms 'A', 'C', 'V', and 'C' in an unbroken geometric flow.
 - **Assets in Repository**:
-  - `public/logo-av.svg` & `icon.svg`: Native resolution-independent vector asset.
-  - `public/logo-av.png`: 1024×1024 high-resolution transparent raster asset.
+  - `public/logo-acvc.svg` & `public/logo-av.svg` & `icon.svg`: Native resolution-independent vector asset.
+  - `public/logo-acvc.png` & `public/logo-av.png`: 1024×1024 high-resolution transparent raster asset.
   - `public/favicon.ico`: Standard multi-resolution 6-layer ICO (16×16, 32×32, 48×48, 64×64, 128×128, 256×256).
   - Webmanifest & Touch icons: `favicon-32x32.png`, `favicon-96x96.png`, `apple-touch-icon.png` (180×180), `icon-192.png`, `icon-512.png`.
 
@@ -26,10 +26,10 @@ The palette balances technical precision with friendly, desaturated warmth. Conf
 
 | Token / Class | Name | Hex Code | Semantic Role |
 | :--- | :--- | :--- | :--- |
-| `--color-brand-purple`<br/>`text-brand-purple`, `bg-brand-purple` | **Tech Lavender** | `#9A82E8` | Primary brand accent, button start gradient, name display |
-| `--color-brand-purple-light`<br/>`text-brand-purple-light` | **Luminous Lavender** | `#A78BFA` | High-contrast text & glowing states in Dark Mode (WCAG AAA) |
-| `--color-brand-magenta`<br/>`text-brand-magenta`, `bg-brand-magenta` | **Petal Rose** | `#E573A7` | Secondary action accent, button end gradient, terminal dot |
-| `--color-brand-cyan`<br/>`text-brand-cyan`, `bg-brand-cyan` | **Crystal Aqua** | `#4DD0E1` | High-light accent, Projects hover state, apex emblem color |
+| `--color-brand-purple`<br/>`text-brand-purple`, `bg-brand-purple` | **Tech Lavender** | `#B98DFD` | Primary brand accent, button start gradient, name display |
+| `--color-brand-purple-light`<br/>`text-brand-purple-light` | **Luminous Lavender** | `#BA8EFF` | High-contrast text & glowing states in Dark Mode (WCAG AAA) |
+| `--color-brand-magenta`<br/>`text-brand-magenta`, `bg-brand-magenta` | **Coral Rose** | `#FF7889` | Secondary action accent, button end gradient, terminal dot |
+| `--color-brand-cyan`<br/>`text-brand-cyan`, `bg-brand-cyan` | **Crystal Aqua** | `#2EE6E5` | High-light accent, Projects hover state, apex emblem color |
 
 ### 2.2 Pastel Support Tokens
 
@@ -62,10 +62,10 @@ The circular portrait medallion incorporates the 3-vertex geometry of the brand 
     linear-gradient(#131a34, #131a34) padding-box,
     conic-gradient(
       from 0deg,
-      #4DD0E1 0%,    /* Apex / Top (Crystal Aqua) */
-      #9A82E8 33%,   /* Bottom-Right (Tech Lavender) */
-      #E573A7 66%,   /* Bottom-Left (Petal Rose) */
-      #4DD0E1 100%   /* Return to Apex */
+      #2EE6E5 0%,    /* Apex / Top (Crystal Aqua) */
+      #B98DFD 33%,   /* Bottom-Right (Tech Lavender) */
+      #FF7889 66%,   /* Bottom-Left (Coral Rose) */
+      #2EE6E5 100%   /* Return to Apex */
     ) border-box;
 }
 ```
@@ -75,7 +75,7 @@ A blurred conic backdrop positioned directly behind the avatar:
 ```html
 <div
   class="absolute -inset-1 rounded-full blur-sm opacity-20 group-hover:opacity-35 transition-opacity duration-500 pointer-events-none"
-  style="background: conic-gradient(from 0deg, #4DD0E1 0%, #9A82E8 33%, #E573A7 66%, #4DD0E1 100%);"
+  style="background: conic-gradient(from 0deg, #2EE6E5 0%, #B98DFD 33%, #FF7889 66%, #2EE6E5 100%);"
   aria-hidden="true"
 ></div>
 ```
@@ -86,7 +86,7 @@ A blurred conic backdrop positioned directly behind the avatar:
 
 ### 4.1 Primary Action Button (CV Button)
 - **Gradient**: `bg-gradient-to-r from-brand-purple to-brand-magenta hover:from-brand-magenta hover:to-brand-purple`
-- **Glow Shadow**: `shadow-sm hover:shadow-[0_0_20px_rgba(154,130,232,0.4)]`
+- **Glow Shadow**: `shadow-sm hover:shadow-[0_0_20px_rgba(185,141,253,0.4)]`
 - **Shape & Elevation**: `rounded-2xl`, `hover:-translate-y-0.5`
 - **Typography**: Semibold white text, tracking-wide.
 
@@ -107,7 +107,7 @@ A blurred conic backdrop positioned directly behind the avatar:
 - **Headlines & Display:** `font-sans` (`Outfit`) — Clean, geometric curves with open apertures (`300`, `400`, `500`, `600`).
 - **Body & Paragraphs:** `Inter` — Optimal legibility in technical copy and descriptions (`400`, `500`).
 - **Code & Specs:** `JetBrains Mono` / `font-mono` — Monospaced technical elements.
-- **Hero Title Accent**: "Ana-Catalina" styled in `text-brand-purple dark:text-brand-purple-light`; terminal period styled in `text-brand-magenta` with `hover:drop-shadow-[0_0_8px_rgba(229,115,167,0.7)]`.
+- **Hero Title Accent**: "Ana-Catalina" styled in `text-brand-purple dark:text-brand-purple-light`; terminal period styled in `text-brand-magenta` with `hover:drop-shadow-[0_0_8px_rgba(255,120,137,0.7)]`.
 
 ---
 

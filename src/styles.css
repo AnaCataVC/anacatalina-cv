@@ -4,15 +4,15 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 :root {
-  --brand-purple: #9a82e8;
-  --brand-magenta: #e573a7;
-  --brand-cyan: #4dd0e1;
+  --brand-purple: #b98dfd;
+  --brand-magenta: #ff7889;
+  --brand-cyan: #2ee6e5;
 }
 
 .dark {
-  --brand-purple: #a78bfa;
-  --brand-magenta: #ee8bb7;
-  --brand-cyan: #67e8f9;
+  --brand-purple: #ba8eff;
+  --brand-magenta: #ff8da0;
+  --brand-cyan: #5eeeec;
 }
 
 @theme {
@@ -20,12 +20,12 @@
   --color-brand-magenta: var(--brand-magenta);
   --color-brand-cyan: var(--brand-cyan);
   
-  --color-brand-purple-light: #9a82e8;
-  --color-brand-purple-dark: #a78bfa;
-  --color-brand-magenta-light: #e573a7;
-  --color-brand-magenta-dark: #ee8bb7;
-  --color-brand-cyan-light: #4dd0e1;
-  --color-brand-cyan-dark: #67e8f9;
+  --color-brand-purple-light: #b98dfd;
+  --color-brand-purple-dark: #ba8eff;
+  --color-brand-magenta-light: #ff7889;
+  --color-brand-magenta-dark: #ff8da0;
+  --color-brand-cyan-light: #2ee6e5;
+  --color-brand-cyan-dark: #5eeeec;
 
   --color-pastel-lilac: #c7b8ea;
   --color-pastel-pink: #f7c6d9;
