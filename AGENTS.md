@@ -155,12 +155,6 @@ npm run preview       # Preview production build
 6. To regenerate the downloadable PDFs (`ACVC_es.pdf`, `ACVC_en.pdf`), run `npm run build:pdf`. The script automatically uses `dist/print/[lang]/index.html` compiled from `src/data/cv.ts` and enforces a strict 2-page limit. The print templates use a paper-friendly, high-contrast adaptation of the design system palette for physical readability on white paper.
 7. **Strict Authorship Verification (Workplace & Collaborative Repos):** When scanning local repositories to identify new achievements or skills for the CV, always filter commit history (`git log --author=... --no-merges`) strictly by the user's own Git/GitHub identities (resolved dynamically from local Git config, `gh auth status`, or global environment settings). Never attribute teammates' commits or third-party code in shared repositories to the user.
 
-### When modifying styles:
-1. Prefer inline Tailwind classes.
-2. Only add custom CSS in `src/styles.css` for things Tailwind can't handle.
-3. Respect the defined pastel palette.
-4. Everything must look good in both light and dark mode (`dark:` variants).
-
 ### When adding JS features:
 1. All logic goes in `src/main.js` inside the `init()` function.
 2. Follow the existing pattern: get element → add listener → handle state.
@@ -172,9 +166,11 @@ npm run preview       # Preview production build
 - Images meant to be build-time optimized (e.g. the hero photo) go in `src/assets/` and are imported with `astro:assets`' `<Image>` component.
 - `index.astro` is in `src/pages/`.
 
-### Layout and Styling Guidelines:
-- **Sticky Headers & Anchor Links:** When implementing anchor links (`#id`) that jump to sections below a sticky header, use Tailwind's `scroll-mt-*` (e.g., `scroll-mt-24`) on the target element to prevent the sticky header from hiding the content.
-- **Invisible Anchors in CSS Grid:** Do not place empty `<div>` anchor elements as direct children of a `grid` container, as this breaks the grid structure by consuming a full column. Instead, nest the anchor inside a grid item with `relative` positioning, and use absolute positioning for the offset (e.g., `absolute inset-x-0 -top-24`) on the invisible anchor.
+### Layout, Styling & UI Invariants:
+- **Concentric Radii Invariant ($R_{\text{inner}} = R_{\text{outer}} - W$):** When nesting rounded elements (e.g. portraits, badges, inner cards) inside a container with padding or border width $W$, always ensure $R_{\text{inner}} = R_{\text{outer}} - W$ to guarantee uniform padding along both straight edges and corner curves without diagonal pinching.
+- **Dark Mode & Scrollbar Parity:** Custom scrollbar rules in CSS must define dark mode variants (`.dark ::-webkit-scrollbar-*`) and standard `scrollbar-color` on `html.dark` to prevent glaring white scroll tracks against dark backgrounds in desktop browsers.
+- **Anchor Offsets & CSS Grid Invariance:** Use Tailwind's `scroll-mt-*` (e.g. `scroll-mt-24`) on targets below sticky headers. Never place empty anchor `<div>` elements as direct children of CSS grids; nest inside a relative container with absolute positioning instead.
+- **Styling Discipline:** Prefer inline Tailwind utilities over custom CSS; reserve `src/styles.css` for capabilities outside Tailwind; respect the pastel palette and ensure contrast parity across light and dark modes.
 
 ---
 
