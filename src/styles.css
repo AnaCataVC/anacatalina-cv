@@ -41,6 +41,12 @@
 @layer base {
   html {
     scroll-behavior: smooth;
+    scrollbar-color: #cbd5e1 #f1f5f9;
+    scrollbar-width: thin;
+  }
+
+  html.dark {
+    scrollbar-color: #334155 #0f172a;
   }
   
   body {
@@ -59,6 +65,14 @@
 
 ::-webkit-scrollbar-thumb {
   @apply bg-slate-300 rounded-full hover:bg-slate-400 transition-colors;
+}
+
+.dark ::-webkit-scrollbar-track {
+  @apply bg-slate-900;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  @apply bg-slate-700 rounded-full hover:bg-slate-600 transition-colors;
 }
 
 /* Scroll reveal animations */
@@ -99,10 +113,25 @@
   }
 }
 
+/* Tactile micro-interaction for skill badges */
+.skill-group span.rounded-lg {
+  display: inline-block;
+  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.2s ease;
+  cursor: default;
+}
+
+.skill-group span.rounded-lg:hover {
+  transform: translateY(-2px);
+}
+
 @media (prefers-reduced-motion: reduce) {
   .skill-card-enter {
     animation: none;
     opacity: 1;
+    transform: none;
+  }
+
+  .skill-group span.rounded-lg:hover {
     transform: none;
   }
 }
