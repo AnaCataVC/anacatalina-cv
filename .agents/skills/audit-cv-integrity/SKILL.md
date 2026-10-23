@@ -37,8 +37,10 @@ La auditoría ejecuta cinco compuertas de calidad inmutables:
    - Verifica que el correo de contacto sea el canónico: `anacatalina@outlook.cl`.
    - Escanea archivos públicos y de código en busca de fugas accidentales de rutas locales de la máquina (`C:\Users\...`, `/Users/...`, `/home/...`).
 
-5. **Disponibilidad de Artefactos de Impresión (PDF):**
+5. **Disponibilidad de Artefactos de Impresión (PDF) y Cache-Busting:**
    - Verifica la existencia y peso válido de `public/ACVC_es.pdf` y `public/ACVC_en.pdf`.
+   - Verifica la presencia y formato ISO (`YYYY-MM-DD`) de `cvData.meta.lastUpdated` en `src/data/cv.ts`.
+   - Verifica que los enlaces a los PDFs en `src/i18n.js` y `src/pages/index.astro` contengan el parámetro `?v=` alineado con la fecha de versión.
    - Verifica la integridad del template de renderizado headless `src/pages/print/[lang].astro`.
 
 ---

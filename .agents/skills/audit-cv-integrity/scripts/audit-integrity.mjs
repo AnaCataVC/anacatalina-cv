@@ -285,6 +285,24 @@ if (fs.existsSync(esPdfPath) && fs.existsSync(enPdfPath)) {
   reportFail('Missing downloadable PDF artifacts in public/ (run `npm run build:pdf`).');
 }
 
+// Verify metadata date and cache-busting query parameter
+const lastUpdated = cvData?.meta?.lastUpdated;
+const isoDateRegex = /^\d{4}-\d{2}-\d{2}$/;
+if (!lastUpdated || !isoDateRegex.test(lastUpdated)) {
+  reportFail(`cvData.meta.lastUpdated is missing or invalid ISO date in src/data/cv.ts (found: '${lastUpdated}').`);
+} else {
+  reportPass(`cvData.meta.lastUpdated verified as valid ISO date: '${lastUpdated}'.`);
+}
+
+// Check that i18n dictionary binds the version parameter
+const esUrl = translations && translations['hero.cvUrl'] ? translations['hero.cvUrl'].es : '';
+const enUrl = translations && translations['hero.cvUrl'] ? translations['hero.cvUrl'].en : '';
+if (!esUrl.includes(`?v=${lastUpdated}`) || !enUrl.includes(`?v=${lastUpdated}`)) {
+  reportFail(`hero.cvUrl in src/i18n.js must bind '?v=${lastUpdated}' (found: es='${esUrl}', en='${enUrl}').`);
+} else {
+  reportPass(`hero.cvUrl bilingual cache-busting parameters verified ('?v=${lastUpdated}').`);
+}
+
 const esPrintTemplate = path.join(projectRoot, 'src/pages/print/[lang].astro');
 if (fs.existsSync(esPrintTemplate)) {
   reportPass(`Print template verified: src/pages/print/[lang].astro`);

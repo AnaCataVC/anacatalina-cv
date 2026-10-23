@@ -43,8 +43,8 @@ export const translations = {
     en: "Download CV"
   },
   "hero.cvUrl": {
-    es: "ACVC_es.pdf",
-    en: "ACVC_en.pdf"
+    es: `ACVC_es.pdf?v=${cvData.meta.lastUpdated}`,
+    en: `ACVC_en.pdf?v=${cvData.meta.lastUpdated}`
   },
   "hero.expBtn": {
     es: "Experiencia",

@@ -14,7 +14,7 @@
  */
 
 import { execSync } from 'node:child_process';
-import { existsSync, copyFileSync, readFileSync } from 'node:fs';
+import { existsSync, copyFileSync, readFileSync, writeFileSync } from 'node:fs';
 import { resolve, join } from 'node:path';
 
 const projectRoot = resolve('.');
@@ -108,5 +108,25 @@ for (const job of jobs) {
     process.exit(1);
   }
 }
+
+function syncLastUpdatedDate() {
+  const cvTsPath = join(projectRoot, 'src', 'data', 'cv.ts');
+  if (!existsSync(cvTsPath)) return;
+
+  const todayIso = new Date().toISOString().slice(0, 10);
+  const content = readFileSync(cvTsPath, 'utf-8');
+
+  const updated = content.replace(
+    /(meta:\s*\{\s*lastUpdated:\s*['"])\d{4}-\d{2}-\d{2}(['"])/,
+    `$1${todayIso}$2`
+  );
+
+  if (updated !== content) {
+    writeFileSync(cvTsPath, updated, 'utf-8');
+    console.log(`✓ Synchronized cvData.meta.lastUpdated to ${todayIso} in src/data/cv.ts`);
+  }
+}
+
+syncLastUpdatedDate();
 
 console.log('All PDFs generated and verified successfully!');

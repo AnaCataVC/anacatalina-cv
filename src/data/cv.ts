@@ -83,6 +83,9 @@ export interface CertificationItem {
 }
 
 export interface CVData {
+  meta: {
+    lastUpdated: string;
+  };
   basics: {
     contact: ContactInfo;
     summary: {
@@ -99,6 +102,9 @@ export interface CVData {
 }
 
 export const cvData: CVData = {
+  meta: {
+    lastUpdated: '2026-10-23'
+  },
   basics: {
     contact: {
       name: 'Ana-Catalina Villalobos Contardo',
