@@ -35,8 +35,8 @@ export const translations = {
   },
   "hero.subtitle": cvData.basics.contact.title,
   "hero.pillars": {
-    es: "IA Agéntica & MCP · Sistemas Distribuidos · Pipelines de Datos · Liderazgo Técnico",
-    en: "Agentic AI & MCP · Distributed Systems · Data Pipelines · Technical Leadership"
+    es: "IA Agéntica & MCP · Pipelines de Datos · Liderazgo Técnico",
+    en: "Agentic AI & MCP · Data Pipelines · Technical Leadership"
   },
   "hero.downloadBtn": {
     es: "Descargar CV",

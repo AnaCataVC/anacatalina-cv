@@ -538,8 +538,8 @@ export const cvData: CVData = {
         en: 'Completed 2017'
       },
       details: {
-        es: 'Actividad destacada: Ayudante del curso Probabilidades y Estadística.',
-        en: 'Notable activity: Teaching Assistant for Probability and Statistics.'
+        es: 'Formación en ciencias físico-matemáticas, modelamiento numérico y optimización. Actividad destacada: Ayudante del curso Probabilidades y Estadística.',
+        en: 'Foundation in physical-mathematical sciences, numerical modeling, and optimization. Notable activity: Teaching Assistant for Probability and Statistics.'
       },
       pdfDetails: {
         es: 'Actividad destacada: Ayudante del curso Probabilidades y Estadística.',
@@ -559,8 +559,8 @@ export const cvData: CVData = {
       url: 'https://doi.org/10.1002/stc.2727',
       doi: '10.1002/stc.2727',
       description: {
-        es: 'Se propone una metodología para la detección y evaluación de delaminación en placas de materiales compuestos a partir de modos de vibración, utilizando Procesos Gaussianos y análisis Bayesiano.',
-        en: 'Proposes a methodology for delamination detection and assessment in composite material plates from vibration modes, using Gaussian Processes and Bayesian analysis.'
+        es: 'Investigación en monitorización de integridad estructural (SHM) y evaluación no destructiva en paneles sándwich de materiales compuestos de alto rendimiento.<br><br>Desarrolla una formulación matemática <em>baseline-free</em> basada en Procesos Gaussianos (GP) y análisis Bayesiano sobre modos de curvatura vibracional, detectando y cuantificando delaminaciones (<em>debonding</em>) sin requerir datos previos del estado intacto.',
+        en: 'Research on Structural Health Monitoring (SHM) and non-destructive evaluation of high-performance composite sandwich panels.<br><br>Develops a baseline-free mathematical formulation based on Gaussian Processes (GP) and Bayesian analysis on vibration curvature modes, detecting and quantifying debonding damage without requiring prior pristine reference data.'
       },
       pdfDescription: {
         es: 'Propuesta metodológica para detección y evaluación de delaminación en placas usando Procesos Gaussianos y análisis Bayesiano.',
