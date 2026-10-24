@@ -103,7 +103,7 @@ export interface CVData {
 
 export const cvData: CVData = {
   meta: {
-    lastUpdated: '2026-10-23'
+    lastUpdated: '2026-10-24'
   },
   basics: {
     contact: {
