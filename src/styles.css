@@ -4,28 +4,37 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 :root {
-  --brand-purple: #b98dfd;
-  --brand-magenta: #ff7889;
+  --brand-violet: #8b5cf6;
+  --brand-aqua: #2ee6e5;
+  --brand-purple: #8b5cf6;
+  --brand-magenta: #8b5cf6;
   --brand-cyan: #2ee6e5;
 }
 
 .dark {
-  --brand-purple: #ba8eff;
-  --brand-magenta: #ff8da0;
-  --brand-cyan: #5eeeec;
+  --brand-violet: #c49bff;
+  --brand-aqua: #a5f3fc;
+  --brand-purple: #c49bff;
+  --brand-magenta: #c49bff;
+  --brand-cyan: #a5f3fc;
 }
 
 @theme {
+  --color-brand-violet: var(--brand-violet);
+  --color-brand-aqua: var(--brand-aqua);
   --color-brand-purple: var(--brand-purple);
   --color-brand-magenta: var(--brand-magenta);
   --color-brand-cyan: var(--brand-cyan);
   
-  --color-brand-purple-light: #b98dfd;
-  --color-brand-purple-dark: #ba8eff;
-  --color-brand-magenta-light: #ff7889;
-  --color-brand-magenta-dark: #ff8da0;
-  --color-brand-cyan-light: #2ee6e5;
-  --color-brand-cyan-dark: #5eeeec;
+  --color-brand-violet-light: #c49bff;
+  --color-brand-violet-deep: #6d28d9;
+  --color-brand-aqua-light: #a5f3fc;
+  --color-brand-aqua-deep: #0891b2;
+
+  --color-brand-purple-light: #c49bff;
+  --color-brand-purple-dark: #6d28d9;
+  --color-brand-cyan-light: #a5f3fc;
+  --color-brand-cyan-dark: #0891b2;
 
   --color-pastel-lilac: #c7b8ea;
   --color-pastel-pink: #f7c6d9;

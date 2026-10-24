@@ -8,12 +8,12 @@ The primary goal is to maintain absolute visual consistency based on minimalism,
 
 ## 💎 1. Visual Identity & Brand Emblem
 
-The brand identity is anchored by the geometric triangular **ACVC Emblem**:
-- **Geometry**: An equilateral triangular silhouette integrating continuous ribbon loops that form the monogram letterforms 'A', 'C', 'V', and 'C' in an unbroken geometric flow.
+The brand identity is anchored by the 3D fluid glass **AC Monogram**:
+- **Geometry**: An interconnected, continuous tubular 3D monogram intertwining the letterforms **'A'** (vertical arch in luminous violet) and **'C'** (horizontal torus in crystal aqua) with optical refraction, smooth specular rim highlights, and spherical rounded cap terminations.
 - **Assets in Repository**:
-  - `public/logo-acvc.svg` & `public/logo-av.svg` & `icon.svg`: Native resolution-independent vector asset.
-  - `public/logo-acvc.png` & `public/logo-av.png`: 1024×1024 high-resolution transparent raster asset.
-  - `public/favicon.ico`: Standard multi-resolution 6-layer ICO (16×16, 32×32, 48×48, 64×64, 128×128, 256×256).
+  - `public/logo-ac.png`: 512×512 high-resolution transparent raster asset optimized for modern displays.
+  - `public/favicon.svg` & `icon.svg`: Native resolution-independent SVG wrappers with embedded high-DPI base64 imagery.
+  - `public/favicon.ico`: Standard multi-resolution 5-layer ICO (16×16, 24×24, 32×32, 48×48, 64×64).
   - Webmanifest & Touch icons: `favicon-32x32.png`, `favicon-96x96.png`, `apple-touch-icon.png` (180×180), `icon-192.png`, `icon-512.png`.
 
 ---
@@ -22,14 +22,16 @@ The brand identity is anchored by the geometric triangular **ACVC Emblem**:
 
 The palette balances technical precision with friendly, desaturated warmth. Configured as native CSS theme variables in Tailwind CSS v4 (`src/styles/global.css`).
 
-### 2.1 Brand Tokens (Core Triad)
+### 2.1 Brand Tokens (Core Palette)
 
 | Token / Class | Name | Hex Code | Semantic Role |
 | :--- | :--- | :--- | :--- |
-| `--color-brand-purple`<br/>`text-brand-purple`, `bg-brand-purple` | **Tech Lavender** | `#B98DFD` | Primary brand accent, button start gradient, name display |
-| `--color-brand-purple-light`<br/>`text-brand-purple-light` | **Luminous Lavender** | `#BA8EFF` | High-contrast text & glowing states in Dark Mode (WCAG AAA) |
-| `--color-brand-magenta`<br/>`text-brand-magenta`, `bg-brand-magenta` | **Coral Rose** | `#FF7889` | Secondary action accent, button end gradient, terminal dot |
-| `--color-brand-cyan`<br/>`text-brand-cyan`, `bg-brand-cyan` | **Crystal Aqua** | `#2EE6E5` | High-light accent, Projects hover state, apex emblem color |
+| `--color-brand-violet`<br/>`text-brand-violet`, `bg-brand-violet` | **Electric Violet** | `#8B5CF6` | Primary brand accent, 'A' loop color, CV action button |
+| `--color-brand-violet-light`<br/>`text-brand-violet-light` | **Luminous Lavender** | `#C49BFF` | High-contrast text & glowing states in Dark Mode (WCAG AAA) |
+| `--color-brand-violet-deep` | **Deep Violet** | `#6D28D9` | Button gradient depth, volumetric shading |
+| `--color-brand-aqua`<br/>`text-brand-aqua`, `bg-brand-aqua` | **Crystal Aqua** | `#2EE6E5` | Secondary brand accent, 'C' torus color, Projects button border & hover |
+| `--color-brand-aqua-light` | **Glacial Aqua** | `#A5F3FC` | Ambient reflections, specular ring shine |
+| `--color-brand-aqua-deep` | **Deep Cyan** | `#0891B2` | Shading of curved torus surfaces |
 
 ### 2.2 Pastel Support Tokens
 
@@ -48,15 +50,11 @@ The palette balances technical precision with friendly, desaturated warmth. Conf
 - **Text Primary**: `text-slate-800` (Light) / `text-white` or `text-slate-100` (Dark) — *Strictly avoiding pure `#000000`*.
 - **Text Secondary**: `text-slate-600` (Light) / `text-slate-400` (Dark).
 
-### 2.4 Print & PDF Document Adaptation (Paper-Friendly Contrast)
-
-For downloadable CV PDFs (`public/ACVC_es.pdf`, `public/ACVC_en.pdf`) generated via headless browser print (`src/pages/print/[lang].astro`), a paper-friendly contrast adaptation of the design system palette is utilized. Headings and section accents maintain the distinct hue family of the primary brand triad while optimizing value and saturation to ensure high-contrast legibility and sharpness against physical white paper and office printers.
-
 ---
 
 ## 🪞 3. Avatar Medallion & Geometric Gradients
 
-The circular portrait medallion incorporates the 3-vertex geometry of the brand emblem:
+The circular portrait medallion incorporates the two-tone geometry of the 3D brand monogram:
 
 ### 3.1 Conic Gradient Border
 ```css
@@ -65,11 +63,10 @@ The circular portrait medallion incorporates the 3-vertex geometry of the brand 
   background:
     linear-gradient(#131a34, #131a34) padding-box,
     conic-gradient(
-      from 0deg,
-      #2EE6E5 0%,    /* Apex / Top (Crystal Aqua) */
-      #B98DFD 33%,   /* Bottom-Right (Tech Lavender) */
-      #FF7889 66%,   /* Bottom-Left (Coral Rose) */
-      #2EE6E5 100%   /* Return to Apex */
+      from 180deg,
+      #2EE6E5 0%,    /* Top / Crystal Aqua */
+      #8B5CF6 50%,   /* Bottom / Electric Violet */
+      #2EE6E5 100%   /* Return to Aqua */
     ) border-box;
 }
 ```
@@ -78,8 +75,8 @@ The circular portrait medallion incorporates the 3-vertex geometry of the brand 
 A blurred conic backdrop positioned directly behind the avatar:
 ```html
 <div
-  class="absolute -inset-1 rounded-full blur-sm opacity-20 group-hover:opacity-35 transition-opacity duration-500 pointer-events-none"
-  style="background: conic-gradient(from 0deg, #2EE6E5 0%, #B98DFD 33%, #FF7889 66%, #2EE6E5 100%);"
+  class="absolute -inset-1 rounded-full blur-md opacity-25 group-hover:opacity-40 transition-opacity duration-500 pointer-events-none"
+  style="background: conic-gradient(from 180deg, #2EE6E5 0%, #8B5CF6 50%, #2EE6E5 100%);"
   aria-hidden="true"
 ></div>
 ```
@@ -89,20 +86,20 @@ A blurred conic backdrop positioned directly behind the avatar:
 ## 🔘 4. Button & Interactive Component Patterns
 
 ### 4.1 Primary Action Button (CV Button)
-- **Gradient**: `bg-gradient-to-r from-brand-purple to-brand-magenta hover:from-brand-magenta hover:to-brand-purple`
-- **Glow Shadow**: `shadow-sm hover:shadow-[0_0_20px_rgba(185,141,253,0.4)]`
+- **Gradient**: `bg-gradient-to-r from-violet-600 to-brand-violet hover:from-violet-500 hover:to-brand-violet-light`
+- **Glow Shadow**: `shadow-sm hover:shadow-[0_0_22px_rgba(139,92,246,0.45)]`
 - **Shape & Elevation**: `rounded-2xl`, `hover:-translate-y-0.5`
 - **Typography**: Semibold white text, tracking-wide.
 
 ### 4.2 Secondary Action Button (Projects Button)
-- **Base**: `bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700`
-- **Interactive Hover**: `hover:border-brand-purple dark:hover:border-brand-cyan hover:text-brand-purple dark:hover:text-brand-cyan`
+- **Base**: `bg-white dark:bg-slate-800/90 border border-brand-aqua/40 dark:border-brand-aqua/50`
+- **Interactive Hover**: `hover:border-brand-aqua dark:hover:border-brand-aqua hover:bg-cyan-500/5 dark:hover:bg-cyan-950/20 text-slate-800 dark:text-slate-100 hover:text-cyan-600 dark:hover:text-brand-aqua hover:shadow-[0_0_20px_rgba(46,230,229,0.3)]`
 - **Shape & Elevation**: `rounded-2xl`, `hover:-translate-y-0.5`
 
 ### 4.3 Circular Social Icon Buttons (56×56px)
 - **Dimensions**: `w-[56px] h-[56px] rounded-full`
 - **Base**: `bg-slate-50/80 dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700`
-- **Interactive Hover**: `hover:bg-purple-500/10 dark:hover:bg-slate-700 hover:text-brand-purple dark:hover:text-pastel-lilac hover:border-brand-purple/40 dark:hover:border-pastel-lilac/50 hover:-translate-y-1`
+- **Interactive Hover**: `hover:bg-cyan-500/10 dark:hover:bg-slate-700 hover:text-brand-aqua dark:hover:text-brand-aqua hover:border-brand-aqua/50 dark:hover:border-brand-aqua/50 hover:shadow-[0_0_15px_rgba(46,230,229,0.2)] hover:-translate-y-1`
 
 ---
 
@@ -111,14 +108,18 @@ A blurred conic backdrop positioned directly behind the avatar:
 - **Headlines & Display:** `font-sans` (`Outfit`) — Clean, geometric curves with open apertures (`300`, `400`, `500`, `600`).
 - **Body & Paragraphs:** `Inter` — Optimal legibility in technical copy and descriptions (`400`, `500`).
 - **Code & Specs:** `JetBrains Mono` / `font-mono` — Monospaced technical elements.
-- **Hero Title Accent**: "Ana-Catalina" styled in `text-brand-purple dark:text-brand-purple-light`; terminal period styled in `text-brand-magenta` with `hover:drop-shadow-[0_0_8px_rgba(255,120,137,0.7)]`.
+- **Hero Title Accent**: "Ana-Catalina" styled in `text-brand-violet dark:text-brand-violet-light` (Electric Violet); terminal period styled in `text-brand-aqua` with `hover:drop-shadow-[0_0_8px_rgba(46,230,229,0.8)]`.
 
 ---
 
-## 🌸 6. Decorative Background (PoppyBackground)
+## 🌸 6. Decorative Background & Studio Lighting
 
-The unifying signature element across the ecosystem:
-- Vector line-art botanical poppy flower (`PoppyBackground.astro`).
-- Positioned fixed: `fixed -bottom-10 -right-10 w-[600px] h-[600px] lg:w-[800px] lg:h-[800px]`.
-- Subtle opacity: `opacity-[0.04] dark:opacity-[0.06] pointer-events-none -z-10`.
-- Adapts dynamically to light/dark themes via `text-indigo-900 dark:text-indigo-100`.
+The signature background composition combines warm botanical line-art with soft studio refraction:
+- **Vector line-art botanical poppy flower (`PoppyBackground.astro`)**:
+  - Positioned fixed: `fixed -bottom-10 -right-10 w-[600px] h-[600px] lg:w-[800px] lg:h-[800px]`.
+  - Subtle opacity: `opacity-[0.04] dark:opacity-[0.06] pointer-events-none -z-10`.
+  - Adapts dynamically to light/dark themes via `text-indigo-900 dark:text-indigo-100`.
+- **Soft Ambient Studio Lights (`Layout.astro`)**:
+  - Top-left ambient violet orb (`w-[460px] h-[460px] bg-brand-violet/10 dark:bg-brand-violet/15 blur-3xl`).
+  - Bottom-right ambient aqua orb (`w-[500px] h-[500px] bg-brand-aqua/10 dark:brand-aqua/15 blur-3xl`).
+  - Enhances 3D glass translucency and depth while preserving generous negative space.

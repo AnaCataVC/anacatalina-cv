@@ -72,12 +72,11 @@ anacatalina-cv/
 
 Defined in `src/styles.css` under the `@theme` block (Tailwind v4 CSS-first config — there is no `tailwind.config.js`):
 
-### Brand Core Triad
+### Brand Core Palette
 | Token / Variable | Hex (Light / Dark) | Usage |
 | :--- | :--- | :--- |
-| `brand-purple` | `#b98dfd` / `#ba8eff` | Tech Lavender — Primary brand accent, headings, start gradients |
-| `brand-magenta` | `#ff7889` / `#ff8da0` | Coral Rose — Secondary brand accent, end gradients, terminal dots |
-| `brand-cyan` | `#2ee6e5` / `#5eeeec` | Crystal Aqua — Tertiary brand accent, active highlights |
+| `brand-violet` | `#8b5cf6` / `#c49bff` | Electric Violet — Primary brand accent, headings, start gradients |
+| `brand-aqua` | `#2ee6e5` / `#a5f3fc` | Crystal Aqua — Secondary brand accent, active highlights, end gradients |
 
 ### Pastel Support Tokens
 | Token          | Hex       | Usage                                    |
@@ -263,9 +262,9 @@ Every repository in the portfolio must strictly adhere to the following universa
    - Flags represent sovereign states, not languages; terminal emulators, Windows shells, and XAML render them as broken letters (`[U][S]`) or tofu glyphs (`□□`). Always use ISO codes (`ES`, `EN`) or text labels (`Español`, `English`).
 
 5. **Design Palette & Aesthetics (Pastel-Tech System):**
-   - **Brand Core Triad**: Tech Lavender (`#B98DFD` / `#BA8EFF` in dark text), Coral Rose (`#FF7889` / `#FF8DA0` in dark mode), Crystal Aqua (`#2EE6E5` / `#5EEEEC` in dark mode).
+   - **Brand Core Palette**: Electric Violet (`#8B5CF6` / `#C49BFF` in dark text), Crystal Aqua (`#2EE6E5` / `#A5F3FC`).
    - **Pastel Support Tokens**: Pastel Lilac (`#CDB4F6`), Pastel Pink (`#FBCFE8`), Pastel Cyan (`#B2EFF7`), Pastel Blue (`#BCDFFB`), Pastel Mint (`#C8F3E0`), and Dark Canvas (`#1E1A2B` / `#0F172A`).
-   - **Visual Brand Anchor**: Geometric ACVC triangular emblem with continuous ribbon loops and harmonic gradient.
+   - **Visual Brand Anchor**: 3D fluid glass 'AC' continuous tubular monogram with optical refraction and luminous specular highlights.
    - **Typography**: `Outfit` for geometric headings, `Inter` for crisp body copy, `JetBrains Mono` for code/specs.
    - **Zero Broken Mockups**: Every button, toggle, link, and interactive widget must be 100% operational in production.
 
