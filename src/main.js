@@ -228,7 +228,7 @@ function init() {
       if (isSelected) {
         btn.className = 'skill-lens-btn cursor-pointer px-4 py-1.5 rounded-full text-xs sm:text-sm font-semibold transition-all duration-200 bg-brand-purple text-white shadow-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-purple focus-visible:ring-offset-2 dark:focus-visible:ring-offset-slate-900';
       } else {
-        btn.className = 'skill-lens-btn cursor-pointer px-4 py-1.5 rounded-full text-xs sm:text-sm font-semibold transition-all duration-200 bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-700 hover:border-brand-purple dark:hover:border-pastel-lilac hover:text-brand-purple dark:hover:text-pastel-lilac focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-purple focus-visible:ring-offset-2 dark:focus-visible:ring-offset-slate-900';
+        btn.className = 'skill-lens-btn cursor-pointer px-4 py-1.5 rounded-full text-xs sm:text-sm font-semibold transition-all duration-200 bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-700 hover:border-brand-purple dark:hover:border-brand-violet-light hover:text-brand-purple dark:hover:text-brand-violet-light focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-purple focus-visible:ring-offset-2 dark:focus-visible:ring-offset-slate-900';
       }
     });
 
@@ -252,14 +252,14 @@ function init() {
         card.classList.add('skill-card-enter');
 
         if (activeLens !== 'all') {
-          card.classList.add('ring-2', 'ring-brand-purple/50', 'dark:ring-pastel-lilac/40');
+          card.classList.add('ring-2', 'ring-brand-purple/50', 'dark:ring-brand-violet-light/40');
         } else {
-          card.classList.remove('ring-2', 'ring-brand-purple/50', 'dark:ring-pastel-lilac/40');
+          card.classList.remove('ring-2', 'ring-brand-purple/50', 'dark:ring-brand-violet-light/40');
         }
       } else {
         card.classList.add('hidden');
         card.setAttribute('aria-hidden', 'true');
-        card.classList.remove('ring-2', 'ring-brand-purple/50', 'dark:ring-pastel-lilac/40', 'skill-card-enter');
+        card.classList.remove('ring-2', 'ring-brand-purple/50', 'dark:ring-brand-violet-light/40', 'skill-card-enter');
       }
     });
 

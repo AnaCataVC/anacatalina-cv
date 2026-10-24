@@ -10,10 +10,13 @@ import { cvData } from '../data/cv';
 const isAvailableForWork = false;
 
 const badgeClasses: Record<string, string> = {
-  mint: 'bg-pastel-mint/45 dark:bg-pastel-mint/10 text-emerald-900 dark:text-emerald-300',
-  pink: 'bg-pastel-pink/30 dark:bg-pastel-pink/10 text-pink-900 dark:text-pink-300',
-  blue: 'bg-pastel-blue/30 dark:bg-pastel-blue/10 text-blue-900 dark:text-blue-300',
-  lilac: 'bg-pastel-lilac/30 dark:bg-pastel-lilac/10 text-purple-950 dark:text-pastel-lilac',
+  violet: 'bg-brand-violet/10 dark:bg-brand-violet/15 text-brand-violet dark:text-brand-violet-light border border-brand-violet/20 dark:border-brand-violet/30',
+  aqua: 'bg-brand-aqua/10 dark:bg-brand-aqua/15 text-teal-800 dark:text-brand-aqua border border-brand-aqua/25 dark:border-brand-aqua/30',
+  slate: 'bg-slate-100 dark:bg-slate-700/60 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-600/50',
+  mint: 'bg-brand-aqua/10 dark:bg-brand-aqua/15 text-teal-800 dark:text-brand-aqua border border-brand-aqua/25 dark:border-brand-aqua/30',
+  pink: 'bg-brand-violet/10 dark:bg-brand-violet/15 text-brand-violet dark:text-brand-violet-light border border-brand-violet/20 dark:border-brand-violet/30',
+  blue: 'bg-brand-aqua/10 dark:bg-brand-aqua/15 text-teal-800 dark:text-brand-aqua border border-brand-aqua/25 dark:border-brand-aqua/30',
+  lilac: 'bg-brand-violet/10 dark:bg-brand-violet/15 text-brand-violet dark:text-brand-violet-light border border-brand-violet/20 dark:border-brand-violet/30',
 };
 ---
 <Layout title="Ana-Catalina Villalobos | Data Scientist, ML & AI Engineer" description="CV y Portafolio Profesional de Ana-Catalina Villalobos Contardo, Ingeniera Civil, Data Scientist, Machine Learning & AI Engineer especialista en infraestructura agéntica (MCP), sistemas distribuidos, pipelines de datos en GCP y liderazgo técnico.">
@@ -87,21 +90,21 @@ const badgeClasses: Record<string, string> = {
         <!-- Profile details & Photo (Left Column on Desktop, Top on Mobile) -->
         <div class="md:col-span-6 flex flex-col items-center md:items-start text-center md:text-left space-y-6 animate-fade-in-up">
           {isAvailableForWork && (
-            <div id="availability-badge" class="inline-flex items-center space-x-2 px-3 py-1.5 rounded-full bg-pastel-mint/45 dark:bg-pastel-mint/10 border border-pastel-mint text-emerald-800 dark:text-emerald-300 font-medium text-xs tracking-wide">
-              <span class="w-2 h-2 rounded-full bg-emerald-500 animate-ping"></span>
+            <div id="availability-badge" class="inline-flex items-center space-x-2 px-3 py-1.5 rounded-full bg-brand-aqua/15 dark:bg-brand-aqua/10 border border-brand-aqua/30 text-teal-900 dark:text-brand-aqua font-medium text-xs tracking-wide">
+              <span class="w-2 h-2 rounded-full bg-brand-aqua animate-ping"></span>
               <span data-i18n="hero.badge">Disponible para Proyectos & Liderazgo de Datos</span>
             </div>
           )}
 
           <h1 class="text-3xl sm:text-4xl md:text-[2.75rem] lg:text-[3.25rem] xl:text-[3.75rem] font-bold tracking-tight text-slate-900 dark:text-white leading-[1.12] m-0">
-            <span class="text-brand-purple">Ana-Catalina</span> <br> Villalobos Contardo<span class="text-brand-magenta hover:drop-shadow-[0_0_8px_var(--color-pastel-pink)/70] cursor-default transition-all duration-500 ease-out">.</span>
+            <span class="text-brand-violet dark:text-brand-violet-light">Ana-Catalina</span> <br> Villalobos Contardo<span class="text-brand-aqua hover:drop-shadow-[0_0_8px_rgba(46,230,229,0.8)] cursor-default transition-all duration-500 ease-out">.</span>
           </h1>
           
           <div class="space-y-1.5">
             <p data-i18n="hero.subtitle" class="text-lg sm:text-xl font-medium text-slate-600 dark:text-slate-300">
               Data Scientist & Machine Learning Engineer
             </p>
-            <p data-i18n="hero.pillars" class="text-xs sm:text-sm font-medium text-brand-purple dark:text-pastel-lilac tracking-wide">
+            <p data-i18n="hero.pillars" class="text-xs sm:text-sm font-medium text-brand-violet dark:text-brand-violet-light tracking-wide">
               IA Agéntica & MCP · Pipelines de Datos · Liderazgo Técnico
             </p>
           </div>
@@ -130,23 +133,23 @@ const badgeClasses: Record<string, string> = {
 
           <!-- Action Buttons (Mobile) -->
           <div class="flex md:hidden flex-wrap items-center justify-center gap-3 w-56 sm:w-64 pt-4">
-            <a href={`ACVC_es.pdf?v=${cvData.meta.lastUpdated}`} target="_blank" rel="noopener noreferrer" data-i18n="hero.downloadBtn" data-i18n-href="hero.cvUrl" class="touch-manipulation flex-1 min-w-[140px] inline-flex items-center justify-center px-6 py-3 rounded-2xl bg-gradient-to-r from-brand-purple to-brand-magenta hover:from-brand-magenta hover:to-brand-purple shadow-sm hover:shadow-[0_0_20px_var(--color-brand-purple)/40] transition-all transform hover:-translate-y-0.5 text-white tracking-wide font-semibold text-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-purple focus-visible:ring-offset-2 dark:focus-visible:ring-offset-slate-900">
+            <a href={`ACVC_es.pdf?v=${cvData.meta.lastUpdated}`} target="_blank" rel="noopener noreferrer" data-i18n="hero.downloadBtn" data-i18n-href="hero.cvUrl" class="touch-manipulation flex-1 min-w-[140px] inline-flex items-center justify-center px-6 py-3 rounded-2xl bg-gradient-to-r from-violet-600 to-brand-violet hover:from-violet-500 hover:to-brand-violet-light shadow-sm hover:shadow-[0_0_22px_rgba(139,92,246,0.45)] transition-all transform hover:-translate-y-0.5 text-white tracking-wide font-semibold text-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-purple focus-visible:ring-offset-2 dark:focus-visible:ring-offset-slate-900">
               Descargar CV
             </a>
           </div>
 
           <!-- Social Details Quick Links & Location -->
           <div class="flex flex-wrap justify-center items-center gap-3 pt-2 text-slate-600 dark:text-slate-400 w-56 sm:w-64">
-            <a href="mailto:anacatalina@outlook.cl" class="touch-manipulation flex items-center justify-center w-10 h-10 rounded-full bg-slate-50/80 dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700 text-slate-500 dark:text-slate-400 hover:bg-purple-500/10 dark:hover:bg-slate-700 hover:text-brand-purple dark:hover:text-pastel-lilac hover:border-brand-purple/40 dark:hover:border-pastel-lilac/50 transition-all duration-300 transform hover:-translate-y-0.5 shadow-sm hover:shadow-md focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-purple focus-visible:ring-offset-2 dark:focus-visible:ring-offset-slate-900" title="Enviar correo a Ana-Catalina" aria-label="Enviar correo a Ana-Catalina" data-i18n-aria="aria.email">
+            <a href="mailto:anacatalina@outlook.cl" class="touch-manipulation flex items-center justify-center w-10 h-10 rounded-full bg-slate-50/80 dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700 text-slate-500 dark:text-slate-400 hover:bg-cyan-500/10 dark:hover:bg-slate-700 hover:text-brand-aqua dark:hover:text-brand-aqua hover:border-brand-aqua/50 dark:hover:border-brand-aqua/50 transition-all duration-300 transform hover:-translate-y-0.5 shadow-sm hover:shadow-[0_0_15px_rgba(46,230,229,0.2)] focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-purple focus-visible:ring-offset-2 dark:focus-visible:ring-offset-slate-900" title="Enviar correo a Ana-Catalina" aria-label="Enviar correo a Ana-Catalina" data-i18n-aria="aria.email">
               <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
             </a>
-            <a href="https://linkedin.com/in/ana-catalina/" target="_blank" rel="noopener noreferrer" class="touch-manipulation flex items-center justify-center w-10 h-10 rounded-full bg-slate-50/80 dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700 text-slate-500 dark:text-slate-400 hover:bg-purple-500/10 dark:hover:bg-slate-700 hover:text-brand-purple dark:hover:text-pastel-lilac hover:border-brand-purple/40 dark:hover:border-pastel-lilac/50 transition-all duration-300 transform hover:-translate-y-0.5 shadow-sm hover:shadow-md focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-purple focus-visible:ring-offset-2 dark:focus-visible:ring-offset-slate-900" title="Perfil de LinkedIn de Ana-Catalina" aria-label="Perfil de LinkedIn de Ana-Catalina" data-i18n-aria="aria.linkedin">
+            <a href="https://linkedin.com/in/ana-catalina/" target="_blank" rel="noopener noreferrer" class="touch-manipulation flex items-center justify-center w-10 h-10 rounded-full bg-slate-50/80 dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700 text-slate-500 dark:text-slate-400 hover:bg-cyan-500/10 dark:hover:bg-slate-700 hover:text-brand-aqua dark:hover:text-brand-aqua hover:border-brand-aqua/50 dark:hover:border-brand-aqua/50 transition-all duration-300 transform hover:-translate-y-0.5 shadow-sm hover:shadow-[0_0_15px_rgba(46,230,229,0.2)] focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-purple focus-visible:ring-offset-2 dark:focus-visible:ring-offset-slate-900" title="Perfil de LinkedIn de Ana-Catalina" aria-label="Perfil de LinkedIn de Ana-Catalina" data-i18n-aria="aria.linkedin">
               <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
             </a>
-            <a href="https://github.com/AnaCataVC/" target="_blank" rel="noopener noreferrer" class="touch-manipulation flex items-center justify-center w-10 h-10 rounded-full bg-slate-50/80 dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700 text-slate-500 dark:text-slate-400 hover:bg-purple-500/10 dark:hover:bg-slate-700 hover:text-brand-purple dark:hover:text-pastel-lilac hover:border-brand-purple/40 dark:hover:border-pastel-lilac/50 transition-all duration-300 transform hover:-translate-y-0.5 shadow-sm hover:shadow-md focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-purple focus-visible:ring-offset-2 dark:focus-visible:ring-offset-slate-900" title="Perfil de GitHub de Ana-Catalina" aria-label="Perfil de GitHub de Ana-Catalina" data-i18n-aria="aria.github">
+            <a href="https://github.com/AnaCataVC/" target="_blank" rel="noopener noreferrer" class="touch-manipulation flex items-center justify-center w-10 h-10 rounded-full bg-slate-50/80 dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700 text-slate-500 dark:text-slate-400 hover:bg-cyan-500/10 dark:hover:bg-slate-700 hover:text-brand-aqua dark:hover:text-brand-aqua hover:border-brand-aqua/50 dark:hover:border-brand-aqua/50 transition-all duration-300 transform hover:-translate-y-0.5 shadow-sm hover:shadow-[0_0_15px_rgba(46,230,229,0.2)] focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-purple focus-visible:ring-offset-2 dark:focus-visible:ring-offset-slate-900" title="Perfil de GitHub de Ana-Catalina" aria-label="Perfil de GitHub de Ana-Catalina" data-i18n-aria="aria.github">
               <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>
             </a>
-            <a href="https://projects.ana-catalina.com/" target="_blank" rel="noopener noreferrer" class="touch-manipulation flex items-center justify-center w-10 h-10 rounded-full bg-slate-50/80 dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700 text-slate-500 dark:text-slate-400 hover:bg-purple-500/10 dark:hover:bg-slate-700 hover:text-brand-purple dark:hover:text-pastel-lilac hover:border-brand-purple/40 dark:hover:border-pastel-lilac/50 transition-all duration-300 transform hover:-translate-y-0.5 shadow-sm hover:shadow-md focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-purple focus-visible:ring-offset-2 dark:focus-visible:ring-offset-slate-900" title="Portafolio de Proyectos de Ana-Catalina" aria-label="Portafolio de Proyectos de Ana-Catalina" data-i18n-aria="aria.projects">
+            <a href="https://projects.ana-catalina.com/" target="_blank" rel="noopener noreferrer" class="touch-manipulation flex items-center justify-center w-10 h-10 rounded-full bg-slate-50/80 dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700 text-slate-500 dark:text-slate-400 hover:bg-cyan-500/10 dark:hover:bg-slate-700 hover:text-brand-aqua dark:hover:text-brand-aqua hover:border-brand-aqua/50 dark:hover:border-brand-aqua/50 transition-all duration-300 transform hover:-translate-y-0.5 shadow-sm hover:shadow-[0_0_15px_rgba(46,230,229,0.2)] focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-purple focus-visible:ring-offset-2 dark:focus-visible:ring-offset-slate-900" title="Portafolio de Proyectos de Ana-Catalina" aria-label="Portafolio de Proyectos de Ana-Catalina" data-i18n-aria="aria.projects">
               <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M10 10.5 8 13l2 2.5"/><path d="m14 10.5 2 2.5-2 2.5"/><path d="M20 20a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-7.9a2 2 0 0 1-1.69-.9L9.6 3.9A2 2 0 0 0 7.93 3H4a2 2 0 0 0-2 2v13a2 2 0 0 0 2 2z"/></svg>
             </a>
             <span class="text-sm inline-flex md:hidden items-center space-x-1.5 font-medium whitespace-nowrap mt-2">
@@ -160,9 +163,9 @@ const badgeClasses: Record<string, string> = {
 
         <!-- About Me Section (Right Column on Desktop, Bottom on Mobile) -->
         <div class="md:col-span-6 flex flex-col justify-center space-y-6 animate-fade-in md:pl-6 relative">
-          <PoppyBackground class="absolute top-1/2 -translate-y-1/2 -right-20 w-[600px] h-[600px] lg:w-[800px] lg:h-[800px] opacity-[0.04] dark:opacity-[0.06] pointer-events-none text-brand-purple dark:text-pastel-lilac -z-10" />
+          <PoppyBackground class="absolute top-1/2 -translate-y-1/2 -right-20 w-[600px] h-[600px] lg:w-[800px] lg:h-[800px] opacity-[0.04] dark:opacity-[0.06] pointer-events-none text-brand-purple dark:text-brand-violet-light -z-10" />
           <!-- "Sobre Mí" Title -->
-          <h2 class="text-xl font-bold tracking-wider text-brand-purple dark:text-brand-purple uppercase text-center md:text-left mb-4" data-i18n="about.title">Sobre Mí</h2>
+          <h2 class="text-xl font-bold tracking-wider text-brand-violet dark:text-brand-violet-light uppercase text-center md:text-left mb-4" data-i18n="about.title">Sobre Mí</h2>
 
           <!-- Desktop Top Meta & Actions -->
           <div class="hidden md:flex flex-col space-y-5 mb-4">
@@ -174,7 +177,7 @@ const badgeClasses: Record<string, string> = {
             </span>
 
             <div class="flex flex-wrap items-center justify-start gap-3 lg:gap-4">
-              <a href={`ACVC_es.pdf?v=${cvData.meta.lastUpdated}`} target="_blank" rel="noopener noreferrer" data-i18n="hero.downloadBtn" data-i18n-href="hero.cvUrl" class="touch-manipulation flex-1 lg:flex-none lg:min-w-[150px] inline-flex items-center justify-center px-6 lg:px-8 py-3 lg:py-3.5 rounded-2xl bg-gradient-to-r from-brand-purple to-brand-magenta hover:from-brand-magenta hover:to-brand-purple shadow-sm hover:shadow-[0_0_20px_var(--color-brand-purple)/40] transition-all transform hover:-translate-y-0.5 text-white tracking-wide font-semibold text-xs lg:text-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-purple focus-visible:ring-offset-2 dark:focus-visible:ring-offset-slate-900">
+              <a href={`ACVC_es.pdf?v=${cvData.meta.lastUpdated}`} target="_blank" rel="noopener noreferrer" data-i18n="hero.downloadBtn" data-i18n-href="hero.cvUrl" class="touch-manipulation flex-1 lg:flex-none lg:min-w-[150px] inline-flex items-center justify-center px-6 lg:px-8 py-3 lg:py-3.5 rounded-2xl bg-gradient-to-r from-violet-600 to-brand-violet hover:from-violet-500 hover:to-brand-violet-light shadow-sm hover:shadow-[0_0_22px_rgba(139,92,246,0.45)] transition-all transform hover:-translate-y-0.5 text-white tracking-wide font-semibold text-xs lg:text-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-purple focus-visible:ring-offset-2 dark:focus-visible:ring-offset-slate-900">
                 Descargar CV
               </a>
               <a href="#experience" data-i18n="hero.expBtn" class="touch-manipulation flex-1 lg:flex-none lg:min-w-[140px] inline-flex items-center justify-center px-5 lg:px-6 py-3 lg:py-3.5 rounded-2xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 shadow-sm hover:shadow-md hover:border-brand-purple dark:hover:border-brand-cyan hover:bg-slate-50 dark:hover:bg-slate-700/50 transition-all duration-300 transform hover:-translate-y-0.5 text-slate-700 dark:text-slate-200 hover:text-brand-purple dark:hover:text-brand-cyan tracking-wide font-medium text-xs lg:text-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-purple focus-visible:ring-offset-2 dark:focus-visible:ring-offset-slate-900">
@@ -203,7 +206,7 @@ const badgeClasses: Record<string, string> = {
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center space-y-3 mb-16">
         <h2 class="text-3xl font-bold tracking-tight text-slate-900 dark:text-white" data-i18n="exp.title">Experiencia Profesional</h2>
-        <div class="w-16 h-1.5 bg-pastel-pink mx-auto rounded-full"></div>
+        <div class="w-16 h-1 bg-gradient-to-r from-brand-violet to-brand-aqua mx-auto rounded-full"></div>
       </div>
 
       <div class="max-w-4xl mx-auto">
@@ -214,9 +217,9 @@ const badgeClasses: Record<string, string> = {
             return (
               <div id={exp.id} class="timeline-item reveal relative pl-8 md:pl-10 scroll-mt-24">
                 {idx === 0 ? (
-                  <div class="timeline-dot absolute -left-2 top-1.5 w-4 h-4 rounded-full border-2 border-white dark:border-slate-900 bg-brand-cyan z-10 ring-4 ring-brand-cyan/25"></div>
+                  <div class="timeline-dot absolute -left-2 top-1.5 w-4 h-4 rounded-full border-2 border-white dark:border-slate-900 bg-brand-aqua z-10 ring-4 ring-brand-aqua/25"></div>
                 ) : (
-                  <div class="timeline-dot absolute -left-2 top-1.5 w-4 h-4 rounded-full border-2 border-white dark:border-slate-900 bg-brand-purple z-10"></div>
+                  <div class="timeline-dot absolute -left-2 top-1.5 w-4 h-4 rounded-full border-2 border-white dark:border-slate-900 bg-brand-violet z-10"></div>
                 )}
                 
                 <div class="bg-white dark:bg-slate-800 p-6 rounded-2xl border border-slate-200 dark:border-slate-700 hover:-translate-y-1 hover:border-slate-300 dark:hover:border-slate-600 hover:shadow-xl hover:shadow-slate-200/50 dark:hover:shadow-black/30 transition-all duration-300">
@@ -242,7 +245,7 @@ const badgeClasses: Record<string, string> = {
                     </div>
                   </div>
                   
-                  <ul class="space-y-2.5 text-sm text-slate-600 dark:text-slate-300 list-disc list-outside ml-4 sm:ml-5 marker:text-brand-purple dark:marker:text-pastel-lilac leading-relaxed">
+                  <ul class="space-y-2.5 text-sm text-slate-600 dark:text-slate-300 list-disc list-outside ml-4 sm:ml-5 marker:text-brand-violet dark:marker:text-brand-violet-light leading-relaxed">
                     {exp.bullets.map((b, bIdx) => (
                       <li data-i18n={`exp.${exp.id}.b${bIdx + 1}`} set:html={b.es} />
                     ))}
@@ -263,7 +266,7 @@ const badgeClasses: Record<string, string> = {
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center space-y-3 mb-8">
         <h2 class="text-3xl font-bold tracking-tight text-slate-900 dark:text-white" data-i18n="skills.title">Habilidades & Herramientas</h2>
-        <div class="w-16 h-1.5 bg-pastel-blue mx-auto rounded-full"></div>
+        <div class="w-16 h-1 bg-gradient-to-r from-brand-violet to-brand-aqua mx-auto rounded-full"></div>
       </div>
 
       <!-- Interactive Specialty Lenses -->
@@ -271,16 +274,16 @@ const badgeClasses: Record<string, string> = {
         <button type="button" data-lens="all" aria-pressed="true" class="skill-lens-btn cursor-pointer px-4 py-1.5 rounded-full text-xs sm:text-sm font-semibold transition-all duration-200 bg-brand-purple text-white shadow-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-purple focus-visible:ring-offset-2 dark:focus-visible:ring-offset-slate-900">
           <span data-i18n="skills.filter.all">Todos</span>
         </button>
-        <button type="button" data-lens="ai-ml" aria-pressed="false" class="skill-lens-btn cursor-pointer px-4 py-1.5 rounded-full text-xs sm:text-sm font-semibold transition-all duration-200 bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-700 hover:border-brand-purple dark:hover:border-pastel-lilac hover:text-brand-purple dark:hover:text-pastel-lilac focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-purple focus-visible:ring-offset-2 dark:focus-visible:ring-offset-slate-900">
+        <button type="button" data-lens="ai-ml" aria-pressed="false" class="skill-lens-btn cursor-pointer px-4 py-1.5 rounded-full text-xs sm:text-sm font-semibold transition-all duration-200 bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-700 hover:border-brand-purple dark:hover:border-brand-violet-light hover:text-brand-purple dark:hover:text-brand-violet-light focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-purple focus-visible:ring-offset-2 dark:focus-visible:ring-offset-slate-900">
           <span data-i18n="skills.filter.ai_ml">IA & Machine Learning</span>
         </button>
-        <button type="button" data-lens="data-cloud" aria-pressed="false" class="skill-lens-btn cursor-pointer px-4 py-1.5 rounded-full text-xs sm:text-sm font-semibold transition-all duration-200 bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-700 hover:border-brand-purple dark:hover:border-pastel-lilac hover:text-brand-purple dark:hover:text-pastel-lilac focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-purple focus-visible:ring-offset-2 dark:focus-visible:ring-offset-slate-900">
+        <button type="button" data-lens="data-cloud" aria-pressed="false" class="skill-lens-btn cursor-pointer px-4 py-1.5 rounded-full text-xs sm:text-sm font-semibold transition-all duration-200 bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-700 hover:border-brand-purple dark:hover:border-brand-violet-light hover:text-brand-purple dark:hover:text-brand-violet-light focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-purple focus-visible:ring-offset-2 dark:focus-visible:ring-offset-slate-900">
           <span data-i18n="skills.filter.data_cloud">Data Platform & Cloud</span>
         </button>
-        <button type="button" data-lens="software" aria-pressed="false" class="skill-lens-btn cursor-pointer px-4 py-1.5 rounded-full text-xs sm:text-sm font-semibold transition-all duration-200 bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-700 hover:border-brand-purple dark:hover:border-pastel-lilac hover:text-brand-purple dark:hover:text-pastel-lilac focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-purple focus-visible:ring-offset-2 dark:focus-visible:ring-offset-slate-900">
+        <button type="button" data-lens="software" aria-pressed="false" class="skill-lens-btn cursor-pointer px-4 py-1.5 rounded-full text-xs sm:text-sm font-semibold transition-all duration-200 bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-700 hover:border-brand-purple dark:hover:border-brand-violet-light hover:text-brand-purple dark:hover:text-brand-violet-light focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-purple focus-visible:ring-offset-2 dark:focus-visible:ring-offset-slate-900">
           <span data-i18n="skills.filter.software">Ingeniería de Software</span>
         </button>
-        <button type="button" data-lens="leadership" aria-pressed="false" class="skill-lens-btn cursor-pointer px-4 py-1.5 rounded-full text-xs sm:text-sm font-semibold transition-all duration-200 bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-700 hover:border-brand-purple dark:hover:border-pastel-lilac hover:text-brand-purple dark:hover:text-pastel-lilac focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-purple focus-visible:ring-offset-2 dark:focus-visible:ring-offset-slate-900">
+        <button type="button" data-lens="leadership" aria-pressed="false" class="skill-lens-btn cursor-pointer px-4 py-1.5 rounded-full text-xs sm:text-sm font-semibold transition-all duration-200 bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-700 hover:border-brand-purple dark:hover:border-brand-violet-light hover:text-brand-purple dark:hover:text-brand-violet-light focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-purple focus-visible:ring-offset-2 dark:focus-visible:ring-offset-slate-900">
           <span data-i18n="skills.filter.leadership">Liderazgo & Arquitectura</span>
         </button>
       </div>
@@ -299,10 +302,10 @@ const badgeClasses: Record<string, string> = {
             <span data-i18n="skills.ai.title">IA Agéntica & Machine Learning</span>
           </h3>
           <div class="flex flex-wrap gap-2">
-            <span class="px-3 py-1 rounded-lg text-xs font-semibold bg-pastel-lilac text-slate-800 dark:text-slate-800 border border-pastel-lilac/70 dark:border-purple-900/50"><span data-i18n="skills.ai.1">Sistemas Multi-Agente</span></span>
-            <span class="px-3 py-1 rounded-lg text-xs font-semibold bg-pastel-pink text-slate-800 dark:text-slate-800 border border-pink-200"><span data-i18n="skills.ai.2">LLMs & GenAI</span></span>
-            <span class="px-3 py-1 rounded-lg text-xs font-semibold bg-pastel-blue text-slate-800 dark:text-slate-800 border border-blue-200"><span data-i18n="skills.ai.9">Model Context Protocol (MCP)</span></span>
-            <span class="px-3 py-1 rounded-lg text-xs font-semibold bg-pastel-mint text-slate-800 dark:text-slate-800 border border-emerald-200" data-i18n="skills.ai.6">Claude Code & Antigravity</span>
+            <span class="px-3 py-1 rounded-lg text-xs font-semibold bg-brand-violet/10 dark:bg-brand-violet/15 text-brand-violet dark:text-brand-violet-light border border-brand-violet/20 dark:border-brand-violet/30"><span data-i18n="skills.ai.1">Sistemas Multi-Agente</span></span>
+            <span class="px-3 py-1 rounded-lg text-xs font-semibold bg-brand-aqua/10 dark:bg-brand-aqua/15 text-teal-800 dark:text-brand-aqua border border-brand-aqua/25 dark:border-brand-aqua/30"><span data-i18n="skills.ai.2">LLMs & GenAI</span></span>
+            <span class="px-3 py-1 rounded-lg text-xs font-semibold bg-slate-100 dark:bg-slate-700/60 text-slate-700 dark:text-slate-300 border border-slate-200/80 dark:border-slate-600/50"><span data-i18n="skills.ai.9">Model Context Protocol (MCP)</span></span>
+            <span class="px-3 py-1 rounded-lg text-xs font-semibold bg-slate-100 dark:bg-slate-700/60 text-slate-700 dark:text-slate-300 border border-slate-200/80 dark:border-slate-600/50" data-i18n="skills.ai.6">Claude Code & Antigravity</span>
             <span class="px-3 py-1 rounded-lg text-xs font-semibold bg-slate-200 dark:bg-slate-700 text-slate-800 dark:text-slate-200" data-i18n="skills.ai.10">Monitoreo de Modelos ML</span>
             <span class="px-3 py-1 rounded-lg text-xs font-semibold bg-slate-200 dark:bg-slate-700 text-slate-800 dark:text-slate-200" data-i18n="skills.ai.7">Prompt Engineering</span>
             <span class="px-3 py-1 rounded-lg text-xs font-semibold bg-slate-200 dark:bg-slate-700 text-slate-800 dark:text-slate-200" data-i18n="skills.ai.8">Automatización CI/CD con IA</span>
@@ -318,10 +321,10 @@ const badgeClasses: Record<string, string> = {
             <span data-i18n="skills.ml.title">Ciencia de Datos & Librerías ML</span>
           </h3>
           <div class="flex flex-wrap gap-2">
-            <span class="px-3 py-1 rounded-lg text-xs font-semibold bg-pastel-lilac text-slate-800 dark:text-slate-800 border border-pastel-lilac/70 dark:border-purple-900/50">Pandas & NumPy</span>
-            <span class="px-3 py-1 rounded-lg text-xs font-semibold bg-pastel-pink text-slate-800 dark:text-slate-800 border border-pink-200">Scikit-learn</span>
-            <span class="px-3 py-1 rounded-lg text-xs font-semibold bg-pastel-blue text-slate-800 dark:text-slate-800 border border-blue-200">TensorFlow</span>
-            <span class="px-3 py-1 rounded-lg text-xs font-semibold bg-pastel-mint text-slate-800 dark:text-slate-800 border border-emerald-200">LangChain</span>
+            <span class="px-3 py-1 rounded-lg text-xs font-semibold bg-brand-violet/10 dark:bg-brand-violet/15 text-brand-violet dark:text-brand-violet-light border border-brand-violet/20 dark:border-brand-violet/30">Pandas & NumPy</span>
+            <span class="px-3 py-1 rounded-lg text-xs font-semibold bg-brand-aqua/10 dark:bg-brand-aqua/15 text-teal-800 dark:text-brand-aqua border border-brand-aqua/25 dark:border-brand-aqua/30">Scikit-learn</span>
+            <span class="px-3 py-1 rounded-lg text-xs font-semibold bg-slate-100 dark:bg-slate-700/60 text-slate-700 dark:text-slate-300 border border-slate-200/80 dark:border-slate-600/50">TensorFlow</span>
+            <span class="px-3 py-1 rounded-lg text-xs font-semibold bg-slate-100 dark:bg-slate-700/60 text-slate-700 dark:text-slate-300 border border-slate-200/80 dark:border-slate-600/50">LangChain</span>
             <span class="px-3 py-1 rounded-lg text-xs font-semibold bg-slate-200 dark:bg-slate-700 text-slate-800 dark:text-slate-200">Vertex AI</span>
             <span class="px-3 py-1 rounded-lg text-xs font-semibold bg-slate-200 dark:bg-slate-700 text-slate-800 dark:text-slate-200"><span data-i18n="skills.ai.4">Analítica de Datos</span></span>
             <span class="px-3 py-1 rounded-lg text-xs font-semibold bg-slate-200 dark:bg-slate-700 text-slate-800 dark:text-slate-200" data-i18n="skills.ai.5">Estadística & Probabilidad</span>
@@ -338,10 +341,10 @@ const badgeClasses: Record<string, string> = {
             <span data-i18n="skills.lang.title">Lenguajes de Programación</span>
           </h3>
           <div class="flex flex-wrap gap-2">
-            <span class="px-3 py-1 rounded-lg text-xs font-semibold bg-pastel-lilac text-slate-800 dark:text-slate-800 border border-pastel-lilac/70 dark:border-purple-900/50"><span data-i18n="skills.lang.1">Python</span></span>
-            <span class="px-3 py-1 rounded-lg text-xs font-semibold bg-pastel-pink text-slate-800 dark:text-slate-800 border border-pink-200"><span data-i18n="skills.lang.2">SQL</span></span>
-            <span class="px-3 py-1 rounded-lg text-xs font-semibold bg-pastel-blue text-slate-800 dark:text-slate-800 border border-blue-200"><span data-i18n="skills.lang.3">MATLAB</span></span>
-            <span class="px-3 py-1 rounded-lg text-xs font-semibold bg-pastel-mint text-slate-800 dark:text-slate-800 border border-emerald-200"><span data-i18n="skills.lang.4">JavaScript</span></span>
+            <span class="px-3 py-1 rounded-lg text-xs font-semibold bg-brand-violet/10 dark:bg-brand-violet/15 text-brand-violet dark:text-brand-violet-light border border-brand-violet/20 dark:border-brand-violet/30"><span data-i18n="skills.lang.1">Python</span></span>
+            <span class="px-3 py-1 rounded-lg text-xs font-semibold bg-brand-aqua/10 dark:bg-brand-aqua/15 text-teal-800 dark:text-brand-aqua border border-brand-aqua/25 dark:border-brand-aqua/30"><span data-i18n="skills.lang.2">SQL</span></span>
+            <span class="px-3 py-1 rounded-lg text-xs font-semibold bg-slate-100 dark:bg-slate-700/60 text-slate-700 dark:text-slate-300 border border-slate-200/80 dark:border-slate-600/50"><span data-i18n="skills.lang.3">MATLAB</span></span>
+            <span class="px-3 py-1 rounded-lg text-xs font-semibold bg-slate-100 dark:bg-slate-700/60 text-slate-700 dark:text-slate-300 border border-slate-200/80 dark:border-slate-600/50"><span data-i18n="skills.lang.4">JavaScript</span></span>
             <span class="px-3 py-1 rounded-lg text-xs font-semibold bg-slate-200 dark:bg-slate-700 text-slate-800 dark:text-slate-200"><span data-i18n="skills.lang.5">TypeScript</span></span>
             <span class="px-3 py-1 rounded-lg text-xs font-semibold bg-slate-200 dark:bg-slate-700 text-slate-800 dark:text-slate-200"><span data-i18n="skills.lang.6">Java</span></span>
             <span class="px-3 py-1 rounded-lg text-xs font-semibold bg-slate-200 dark:bg-slate-700 text-slate-800 dark:text-slate-200"><span data-i18n="skills.lang.7">C# (.NET)</span></span>
@@ -361,10 +364,10 @@ const badgeClasses: Record<string, string> = {
             <span data-i18n="skills.frontend.title">Frontend, Mobile & Desarrollo Web</span>
           </h3>
           <div class="flex flex-wrap gap-2">
-            <span class="px-3 py-1 rounded-lg text-xs font-semibold bg-pastel-lilac text-slate-800 dark:text-slate-800 border border-pastel-lilac/70 dark:border-purple-900/50">React JS</span>
-            <span class="px-3 py-1 rounded-lg text-xs font-semibold bg-pastel-pink text-slate-800 dark:text-slate-800 border border-pink-200">Astro</span>
-            <span class="px-3 py-1 rounded-lg text-xs font-semibold bg-pastel-blue text-slate-800 dark:text-slate-800 border border-blue-200">Tailwind CSS</span>
-            <span class="px-3 py-1 rounded-lg text-xs font-semibold bg-pastel-mint text-slate-800 dark:text-slate-800 border border-emerald-200">Android & Jetpack Compose</span>
+            <span class="px-3 py-1 rounded-lg text-xs font-semibold bg-brand-violet/10 dark:bg-brand-violet/15 text-brand-violet dark:text-brand-violet-light border border-brand-violet/20 dark:border-brand-violet/30">React JS</span>
+            <span class="px-3 py-1 rounded-lg text-xs font-semibold bg-brand-aqua/10 dark:bg-brand-aqua/15 text-teal-800 dark:text-brand-aqua border border-brand-aqua/25 dark:border-brand-aqua/30">Astro</span>
+            <span class="px-3 py-1 rounded-lg text-xs font-semibold bg-slate-100 dark:bg-slate-700/60 text-slate-700 dark:text-slate-300 border border-slate-200/80 dark:border-slate-600/50">Tailwind CSS</span>
+            <span class="px-3 py-1 rounded-lg text-xs font-semibold bg-slate-100 dark:bg-slate-700/60 text-slate-700 dark:text-slate-300 border border-slate-200/80 dark:border-slate-600/50">Android & Jetpack Compose</span>
             <span class="px-3 py-1 rounded-lg text-xs font-semibold bg-slate-200 dark:bg-slate-700 text-slate-800 dark:text-slate-200"><span data-i18n="skills.frontend.1">.NET 9 (WPF / WinUI 3)</span></span>
             <span class="px-3 py-1 rounded-lg text-xs font-semibold bg-slate-200 dark:bg-slate-700 text-slate-800 dark:text-slate-200"><span data-i18n="skills.frontend.2">FastHTML & HTMX</span></span>
             <span class="px-3 py-1 rounded-lg text-xs font-semibold bg-slate-200 dark:bg-slate-700 text-slate-800 dark:text-slate-200">Vite</span>
@@ -384,10 +387,10 @@ const badgeClasses: Record<string, string> = {
             <span data-i18n="skills.backend_db.title">Backend, Bases de Datos & Big Data</span>
           </h3>
           <div class="flex flex-wrap gap-2">
-            <span class="px-3 py-1 rounded-lg text-xs font-semibold bg-pastel-lilac text-slate-800 dark:text-slate-800 border border-pastel-lilac/70 dark:border-purple-900/50">FastAPI</span>
-            <span class="px-3 py-1 rounded-lg text-xs font-semibold bg-pastel-pink text-slate-800 dark:text-slate-800 border border-pink-200">PostgreSQL</span>
-            <span class="px-3 py-1 rounded-lg text-xs font-semibold bg-pastel-blue text-slate-800 dark:text-slate-800 border border-blue-200">BigQuery</span>
-            <span class="px-3 py-1 rounded-lg text-xs font-semibold bg-pastel-mint text-slate-800 dark:text-slate-800 border border-emerald-200">Redis</span>
+            <span class="px-3 py-1 rounded-lg text-xs font-semibold bg-brand-violet/10 dark:bg-brand-violet/15 text-brand-violet dark:text-brand-violet-light border border-brand-violet/20 dark:border-brand-violet/30">FastAPI</span>
+            <span class="px-3 py-1 rounded-lg text-xs font-semibold bg-brand-aqua/10 dark:bg-brand-aqua/15 text-teal-800 dark:text-brand-aqua border border-brand-aqua/25 dark:border-brand-aqua/30">PostgreSQL</span>
+            <span class="px-3 py-1 rounded-lg text-xs font-semibold bg-slate-100 dark:bg-slate-700/60 text-slate-700 dark:text-slate-300 border border-slate-200/80 dark:border-slate-600/50">BigQuery</span>
+            <span class="px-3 py-1 rounded-lg text-xs font-semibold bg-slate-100 dark:bg-slate-700/60 text-slate-700 dark:text-slate-300 border border-slate-200/80 dark:border-slate-600/50">Redis</span>
             <span class="px-3 py-1 rounded-lg text-xs font-semibold bg-slate-200 dark:bg-slate-700 text-slate-800 dark:text-slate-200">Pydantic</span>
             <span class="px-3 py-1 rounded-lg text-xs font-semibold bg-slate-200 dark:bg-slate-700 text-slate-800 dark:text-slate-200">Django</span>
             <span class="px-3 py-1 rounded-lg text-xs font-semibold bg-slate-200 dark:bg-slate-700 text-slate-800 dark:text-slate-200">SQL Server</span>
@@ -410,10 +413,10 @@ const badgeClasses: Record<string, string> = {
             <span data-i18n="skills.cloud.title">Contenedores, Orquestación & Cloud</span>
           </h3>
           <div class="flex flex-wrap gap-2">
-            <span class="px-3 py-1 rounded-lg text-xs font-semibold bg-pastel-lilac text-slate-800 dark:text-slate-800 border border-pastel-lilac/70 dark:border-purple-900/50">Airflow</span>
-            <span class="px-3 py-1 rounded-lg text-xs font-semibold bg-pastel-pink text-slate-800 dark:text-slate-800 border border-pink-200">Google Cloud (GCP)</span>
-            <span class="px-3 py-1 rounded-lg text-xs font-semibold bg-pastel-blue text-slate-800 dark:text-slate-800 border border-blue-200"><span data-i18n="skills.cloud.1">Google Cloud Run & Artifact Registry</span></span>
-            <span class="px-3 py-1 rounded-lg text-xs font-semibold bg-pastel-mint text-slate-800 dark:text-slate-800 border border-emerald-200">Docker</span>
+            <span class="px-3 py-1 rounded-lg text-xs font-semibold bg-brand-violet/10 dark:bg-brand-violet/15 text-brand-violet dark:text-brand-violet-light border border-brand-violet/20 dark:border-brand-violet/30">Airflow</span>
+            <span class="px-3 py-1 rounded-lg text-xs font-semibold bg-brand-aqua/10 dark:bg-brand-aqua/15 text-teal-800 dark:text-brand-aqua border border-brand-aqua/25 dark:border-brand-aqua/30">Google Cloud (GCP)</span>
+            <span class="px-3 py-1 rounded-lg text-xs font-semibold bg-slate-100 dark:bg-slate-700/60 text-slate-700 dark:text-slate-300 border border-slate-200/80 dark:border-slate-600/50"><span data-i18n="skills.cloud.1">Google Cloud Run & Artifact Registry</span></span>
+            <span class="px-3 py-1 rounded-lg text-xs font-semibold bg-slate-100 dark:bg-slate-700/60 text-slate-700 dark:text-slate-300 border border-slate-200/80 dark:border-slate-600/50">Docker</span>
             <span class="px-3 py-1 rounded-lg text-xs font-semibold bg-slate-200 dark:bg-slate-700 text-slate-800 dark:text-slate-200">Airbyte</span>
             <span class="px-3 py-1 rounded-lg text-xs font-semibold bg-slate-200 dark:bg-slate-700 text-slate-800 dark:text-slate-200">Kubernetes</span>
             <span class="px-3 py-1 rounded-lg text-xs font-semibold bg-slate-200 dark:bg-slate-700 text-slate-800 dark:text-slate-200">ArgoCD</span>
@@ -433,10 +436,10 @@ const badgeClasses: Record<string, string> = {
             <span data-i18n="skills.methodologies.title">Metodologías & Gestión de Producto</span>
           </h3>
           <div class="flex flex-wrap gap-2">
-            <span class="px-3 py-1 rounded-lg text-xs font-semibold bg-pastel-lilac text-slate-800 dark:text-slate-800 border border-pastel-lilac/70 dark:border-purple-900/50"><span data-i18n="skills.leadership.2">Metodologías Ágiles</span></span>
-            <span class="px-3 py-1 rounded-lg text-xs font-semibold bg-pastel-pink text-slate-800 dark:text-slate-800 border border-pink-200"><span data-i18n="skills.leadership.3">Planificación de Roadmaps</span></span>
-            <span class="px-3 py-1 rounded-lg text-xs font-semibold bg-pastel-blue text-slate-800 dark:text-slate-800 border border-blue-200"><span data-i18n="skills.methodologies.1">Diseño de Sistemas</span></span>
-            <span class="px-3 py-1 rounded-lg text-xs font-semibold bg-pastel-mint text-slate-800 dark:text-slate-800 border border-emerald-200"><span data-i18n="skills.methodologies.2">Test-Driven Development (TDD)</span></span>
+            <span class="px-3 py-1 rounded-lg text-xs font-semibold bg-brand-violet/10 dark:bg-brand-violet/15 text-brand-violet dark:text-brand-violet-light border border-brand-violet/20 dark:border-brand-violet/30"><span data-i18n="skills.leadership.2">Metodologías Ágiles</span></span>
+            <span class="px-3 py-1 rounded-lg text-xs font-semibold bg-brand-aqua/10 dark:bg-brand-aqua/15 text-teal-800 dark:text-brand-aqua border border-brand-aqua/25 dark:border-brand-aqua/30"><span data-i18n="skills.leadership.3">Planificación de Roadmaps</span></span>
+            <span class="px-3 py-1 rounded-lg text-xs font-semibold bg-slate-100 dark:bg-slate-700/60 text-slate-700 dark:text-slate-300 border border-slate-200/80 dark:border-slate-600/50"><span data-i18n="skills.methodologies.1">Diseño de Sistemas</span></span>
+            <span class="px-3 py-1 rounded-lg text-xs font-semibold bg-slate-100 dark:bg-slate-700/60 text-slate-700 dark:text-slate-300 border border-slate-200/80 dark:border-slate-600/50"><span data-i18n="skills.methodologies.2">Test-Driven Development (TDD)</span></span>
             <span class="px-3 py-1 rounded-lg text-xs font-semibold bg-slate-200 dark:bg-slate-700 text-slate-800 dark:text-slate-200">Jira</span>
             <span class="px-3 py-1 rounded-lg text-xs font-semibold bg-slate-200 dark:bg-slate-700 text-slate-800 dark:text-slate-200">Notion</span>
           </div>
@@ -451,10 +454,10 @@ const badgeClasses: Record<string, string> = {
             <span data-i18n="skills.soft.title">Liderazgo & Habilidades Blandas</span>
           </h3>
           <div class="flex flex-wrap gap-2">
-            <span class="px-3 py-1 rounded-lg text-xs font-semibold bg-pastel-lilac text-slate-800 dark:text-slate-800 border border-pastel-lilac/70 dark:border-purple-900/50"><span data-i18n="skills.leadership.1">Liderazgo Técnico</span></span>
-            <span class="px-3 py-1 rounded-lg text-xs font-semibold bg-pastel-pink text-slate-800 dark:text-slate-800 border border-pink-200"><span data-i18n="skills.soft.1">Team Building</span></span>
-            <span class="px-3 py-1 rounded-lg text-xs font-semibold bg-pastel-blue text-slate-800 dark:text-slate-800 border border-blue-200"><span data-i18n="skills.leadership.4">Colaboración Cross-functional</span></span>
-            <span class="px-3 py-1 rounded-lg text-xs font-semibold bg-pastel-mint text-slate-800 dark:text-slate-800 border border-emerald-200"><span data-i18n="skills.soft.2">Comunicación Efectiva</span></span>
+            <span class="px-3 py-1 rounded-lg text-xs font-semibold bg-brand-violet/10 dark:bg-brand-violet/15 text-brand-violet dark:text-brand-violet-light border border-brand-violet/20 dark:border-brand-violet/30"><span data-i18n="skills.leadership.1">Liderazgo Técnico</span></span>
+            <span class="px-3 py-1 rounded-lg text-xs font-semibold bg-brand-aqua/10 dark:bg-brand-aqua/15 text-teal-800 dark:text-brand-aqua border border-brand-aqua/25 dark:border-brand-aqua/30"><span data-i18n="skills.soft.1">Team Building</span></span>
+            <span class="px-3 py-1 rounded-lg text-xs font-semibold bg-slate-100 dark:bg-slate-700/60 text-slate-700 dark:text-slate-300 border border-slate-200/80 dark:border-slate-600/50"><span data-i18n="skills.leadership.4">Colaboración Cross-functional</span></span>
+            <span class="px-3 py-1 rounded-lg text-xs font-semibold bg-slate-100 dark:bg-slate-700/60 text-slate-700 dark:text-slate-300 border border-slate-200/80 dark:border-slate-600/50"><span data-i18n="skills.soft.2">Comunicación Efectiva</span></span>
             <span class="px-3 py-1 rounded-lg text-xs font-semibold bg-slate-200 dark:bg-slate-700 text-slate-800 dark:text-slate-200"><span data-i18n="skills.soft.4">Resolución de Problemas</span></span>
           </div>
         </div>
@@ -474,12 +477,12 @@ const badgeClasses: Record<string, string> = {
         <div class="reveal flex flex-col space-y-6">
           <div class="space-y-3">
             <h2 class="text-3xl font-bold tracking-tight text-slate-900 dark:text-white" data-i18n="edu.title.only">Educación</h2>
-            <div class="w-16 h-1.5 bg-pastel-mint rounded-full"></div>
+            <div class="w-16 h-1 bg-gradient-to-r from-brand-violet to-brand-aqua rounded-full"></div>
           </div>
 
           <div class="flex-1 flex flex-col justify-between bg-white dark:bg-slate-800 p-6 rounded-2xl border border-slate-200 dark:border-slate-700 hover:-translate-y-1 hover:border-slate-300 dark:hover:border-slate-600 hover:shadow-xl hover:shadow-slate-200/50 dark:hover:shadow-black/30 transition-all duration-300 gap-4">
             <div class="flex items-start space-x-3">
-              <div class="p-2 rounded-xl bg-pastel-lilac/30 dark:bg-pastel-lilac/10 text-brand-purple dark:text-pastel-lilac">
+              <div class="p-2 rounded-xl bg-brand-violet/10 dark:bg-brand-violet/15 text-brand-violet dark:text-brand-violet-light border border-brand-violet/20 dark:border-brand-violet/30">
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
                   <path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/>
                 </svg>
@@ -497,7 +500,7 @@ const badgeClasses: Record<string, string> = {
             </div>
             <hr class="border-slate-100 dark:border-slate-700">
             <div class="flex items-start space-x-3">
-              <div class="p-2 rounded-xl bg-pastel-mint/45 dark:bg-pastel-mint/10 text-emerald-900 dark:text-emerald-300">
+              <div class="p-2 rounded-xl bg-brand-aqua/10 dark:bg-brand-aqua/15 text-teal-800 dark:text-brand-aqua border border-brand-aqua/25 dark:border-brand-aqua/30">
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
                   <path d="M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76Z"/><path d="m9 12 2 2 4-4"/>
                 </svg>
@@ -521,12 +524,12 @@ const badgeClasses: Record<string, string> = {
           <div id="publicaciones" class="absolute inset-x-0 -top-24"></div>
           <div class="space-y-3">
             <h2 class="text-3xl font-bold tracking-tight text-slate-900 dark:text-white" data-i18n="pub.title">Publicaciones Científicas</h2>
-            <div class="w-16 h-1.5 bg-pastel-lilac rounded-full"></div>
+            <div class="w-16 h-1 bg-gradient-to-r from-brand-violet to-brand-aqua rounded-full"></div>
           </div>
           
           <div class="flex-1 flex flex-col justify-between bg-white dark:bg-slate-800 p-6 rounded-2xl border border-slate-200 dark:border-slate-700 hover:-translate-y-1 hover:border-slate-300 dark:hover:border-slate-600 hover:shadow-xl hover:shadow-slate-200/50 dark:hover:shadow-black/30 transition-all duration-300">
             <div class="space-y-4">
-            <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold bg-pastel-lilac/40 text-purple-950 dark:bg-pastel-lilac/15 dark:text-pastel-lilac">
+            <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold bg-brand-violet/10 text-brand-violet dark:bg-brand-violet/15 dark:text-brand-violet-light border border-brand-violet/20 dark:border-brand-violet/30">
               {cvData.publications[0].journal}
             </span>
             <h3 class="text-lg font-bold text-slate-900 dark:text-white leading-snug">
@@ -536,7 +539,7 @@ const badgeClasses: Record<string, string> = {
             <p data-i18n="pub.desc" class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed" set:html={cvData.publications[0].description.es} />
             </div>
             <div class="pt-4 mt-auto">
-              <a href="https://doi.org/10.1002/stc.2727" target="_blank" rel="noopener noreferrer" class="inline-flex items-center text-sm font-semibold text-brand-purple dark:text-pastel-lilac hover:opacity-80 transition-colors rounded-lg focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-purple focus-visible:ring-offset-2 dark:focus-visible:ring-offset-slate-900">
+              <a href="https://doi.org/10.1002/stc.2727" target="_blank" rel="noopener noreferrer" class="inline-flex items-center text-sm font-semibold text-brand-violet dark:text-brand-violet-light hover:opacity-80 transition-colors rounded-lg focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-purple focus-visible:ring-offset-2 dark:focus-visible:ring-offset-slate-900">
                 <span data-i18n="pub.link">Ver artículo en Wiley Online Library</span>
                 <svg class="w-4 h-4 ml-1.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
                   <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" x2="21" y1="14" y2="3"/>
@@ -552,14 +555,14 @@ const badgeClasses: Record<string, string> = {
       <div class="reveal space-y-6" style="transition-delay: 200ms;">
         <div class="space-y-3">
           <h2 class="text-3xl font-bold tracking-tight text-slate-900 dark:text-white" data-i18n="edu.cert.title">Cursos & Certificaciones</h2>
-          <div class="w-16 h-1.5 bg-pastel-pink rounded-full"></div>
+          <div class="w-16 h-1 bg-gradient-to-r from-brand-violet to-brand-aqua rounded-full"></div>
         </div>
         
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
           
           <div class="flex items-center justify-between p-4 bg-white dark:bg-slate-800 rounded-xl border border-slate-100 dark:border-slate-700 hover:-translate-y-0.5 hover:border-slate-300 dark:hover:border-slate-600 hover:shadow-md transition-all duration-300">
             <div class="flex items-center space-x-3">
-              <span class="w-2.5 h-2.5 rounded-full bg-pastel-lilac"></span>
+              <span class="w-2.5 h-2.5 rounded-full bg-brand-violet"></span>
               <div>
                 <h3 class="text-sm font-bold text-slate-900 dark:text-white">EFSET English Certificate</h3>
                 <p class="text-xs text-slate-600 dark:text-slate-400" data-i18n="edu.cert.1.desc">EF SET - Nivel C2 Proficient</p>
@@ -570,7 +573,7 @@ const badgeClasses: Record<string, string> = {
 
           <div class="flex items-center justify-between p-4 bg-white dark:bg-slate-800 rounded-xl border border-slate-100 dark:border-slate-700 hover:-translate-y-0.5 hover:border-slate-300 dark:hover:border-slate-600 hover:shadow-md transition-all duration-300">
             <div class="flex items-center space-x-3">
-              <span class="w-2.5 h-2.5 rounded-full bg-pastel-pink"></span>
+              <span class="w-2.5 h-2.5 rounded-full bg-brand-aqua"></span>
               <div>
                 <h3 class="text-sm font-bold text-slate-900 dark:text-white">Applied Machine Learning in Python</h3>
                 <p class="text-xs text-slate-600 dark:text-slate-400">University of Michigan (Coursera)</p>
@@ -581,7 +584,7 @@ const badgeClasses: Record<string, string> = {
 
           <div class="flex items-center justify-between p-4 bg-white dark:bg-slate-800 rounded-xl border border-slate-100 dark:border-slate-700 hover:-translate-y-0.5 hover:border-slate-300 dark:hover:border-slate-600 hover:shadow-md transition-all duration-300">
             <div class="flex items-center space-x-3">
-              <span class="w-2.5 h-2.5 rounded-full bg-pastel-blue"></span>
+              <span class="w-2.5 h-2.5 rounded-full bg-brand-violet"></span>
               <div>
                 <h3 class="text-sm font-bold text-slate-900 dark:text-white">React & Django Full Stack Developer</h3>
                 <p class="text-xs text-slate-600 dark:text-slate-400">Udemy Web & Backend Development</p>
@@ -592,7 +595,7 @@ const badgeClasses: Record<string, string> = {
 
           <div class="flex items-center justify-between p-4 bg-white dark:bg-slate-800 rounded-xl border border-slate-100 dark:border-slate-700 hover:-translate-y-0.5 hover:border-slate-300 dark:hover:border-slate-600 hover:shadow-md transition-all duration-300">
             <div class="flex items-center space-x-3">
-              <span class="w-2.5 h-2.5 rounded-full bg-pastel-mint"></span>
+              <span class="w-2.5 h-2.5 rounded-full bg-brand-aqua"></span>
               <div>
                 <h3 class="text-sm font-bold text-slate-900 dark:text-white">Mastering Data Visualization</h3>
                 <p class="text-xs text-slate-600 dark:text-slate-400">Udemy - Theory and Foundations</p>

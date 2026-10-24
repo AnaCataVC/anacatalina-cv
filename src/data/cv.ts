@@ -30,7 +30,7 @@ export interface ExperienceItem {
   role: BilingualText;
   date: BilingualText;
   location: BilingualText;
-  badgeVariant: 'lilac' | 'pink' | 'blue' | 'mint';
+  badgeVariant: 'violet' | 'aqua' | 'slate' | 'lilac' | 'pink' | 'blue' | 'mint';
   // Web bullets (can contain <strong> tags)
   bullets: BilingualText[];
   // Optional condensed bullets for the 2-page print layout
@@ -129,12 +129,12 @@ export const cvData: CVData = {
           en: 'Engineer specialized in Data Science, Machine Learning, and Agentic AI, with experience leading teams and building high-impact intelligent systems.'
         },
         {
-          es: 'Ingeniera Civil de la Universidad de Chile con investigación aplicada en Machine Learning publicada en <a href="#publicaciones" class="text-brand-purple dark:text-pastel-lilac hover:underline font-medium">Structural Health Monitoring</a> (2021). Mi trayectoria integra liderazgo técnico en mantenimiento predictivo, visión computacional y optimización de operaciones.',
-          en: 'Civil Engineer from Universidad de Chile with applied Machine Learning research published in <a href="#publicaciones" class="text-brand-purple dark:text-pastel-lilac hover:underline font-medium">Structural Health Monitoring</a> (2021). My background integrates technical leadership across predictive maintenance, computer vision, and operations optimization.'
+          es: 'Ingeniera Civil de la Universidad de Chile con investigación aplicada en Machine Learning publicada en <a href="#publicaciones" class="text-brand-purple dark:text-brand-violet-light hover:underline font-medium">Structural Health Monitoring</a> (2021). Mi trayectoria integra liderazgo técnico en mantenimiento predictivo, visión computacional y optimización de operaciones.',
+          en: 'Civil Engineer from Universidad de Chile with applied Machine Learning research published in <a href="#publicaciones" class="text-brand-purple dark:text-brand-violet-light hover:underline font-medium">Structural Health Monitoring</a> (2021). My background integrates technical leadership across predictive maintenance, computer vision, and operations optimization.'
         },
         {
-          es: 'Actualmente como <a href="#simpliroute" class="text-brand-purple dark:text-pastel-lilac hover:underline font-medium">Learning Engineer en SimpliRoute</a>, me enfoco en el diseño de infraestructura agéntica con MCP, sistemas distribuidos de geocodificación y pipelines de datos a gran escala.',
-          en: 'Currently as <a href="#simpliroute" class="text-brand-purple dark:text-pastel-lilac hover:underline font-medium">Learning Engineer at SimpliRoute</a>, I focus on designing MCP-based agentic infrastructure, distributed geocoding systems, and large-scale data pipelines.'
+          es: 'Actualmente como <a href="#simpliroute" class="text-brand-purple dark:text-brand-violet-light hover:underline font-medium">Learning Engineer en SimpliRoute</a>, me enfoco en el diseño de infraestructura agéntica con MCP, sistemas distribuidos de geocodificación y pipelines de datos a gran escala.',
+          en: 'Currently as <a href="#simpliroute" class="text-brand-purple dark:text-brand-violet-light hover:underline font-medium">Learning Engineer at SimpliRoute</a>, I focus on designing MCP-based agentic infrastructure, distributed geocoding systems, and large-scale data pipelines.'
         }
       ],
       pdf: {
@@ -160,7 +160,7 @@ export const cvData: CVData = {
         es: 'Santiago, Chile (Remoto)',
         en: 'Santiago, Chile (Remote)'
       },
-      badgeVariant: 'lilac',
+      badgeVariant: 'violet',
       bullets: [
         {
           es: 'Diseño y despliegue en producción de <strong class="text-slate-800 dark:text-slate-100 font-semibold">infraestructura agéntica basada en Model Context Protocol (MCP)</strong> para motores logísticos, implementando guardrails deterministas, permisos de ejecución de herramientas de mínimo privilegio y persistencia distribuida con Redis en Kubernetes.',
@@ -214,7 +214,7 @@ export const cvData: CVData = {
         es: 'Santiago, Chile',
         en: 'Santiago, Chile'
       },
-      badgeVariant: 'pink',
+      badgeVariant: 'aqua',
       bullets: [
         {
           es: '<strong class="text-slate-800 dark:text-slate-100 font-semibold">Liderazgo de equipo multidisciplinario de integraciones</strong> con personas en distintos países, enfocado en mentoría técnica, desarrollo profesional y un entorno colaborativo.',
@@ -264,7 +264,7 @@ export const cvData: CVData = {
         es: 'Santiago, Chile',
         en: 'Santiago, Chile'
       },
-      badgeVariant: 'blue',
+      badgeVariant: 'slate',
       bullets: [
         {
           es: 'Diseño e implementación de procesos de ciencia de datos para las plataformas Predictto y Fracttal One, con foco en generar valor a partir de datos operacionales de maquinaria.',
@@ -310,7 +310,7 @@ export const cvData: CVData = {
         es: 'Santiago, Chile',
         en: 'Santiago, Chile'
       },
-      badgeVariant: 'lilac',
+      badgeVariant: 'violet',
       bullets: [
         {
           es: 'Desarrollo desde cero de la herramienta de mantenimiento predictivo, utilizando análisis estadístico avanzado y modelos preliminares de Machine Learning.',
