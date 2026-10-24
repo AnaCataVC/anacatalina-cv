@@ -226,9 +226,9 @@ function init() {
       const isSelected = btn.getAttribute('data-lens') === activeLens;
       btn.setAttribute('aria-pressed', isSelected ? 'true' : 'false');
       if (isSelected) {
-        btn.className = 'skill-lens-btn cursor-pointer px-4 py-1.5 rounded-full text-xs sm:text-sm font-semibold transition-all duration-200 bg-brand-purple text-white shadow-sm';
+        btn.className = 'skill-lens-btn cursor-pointer px-4 py-1.5 rounded-full text-xs sm:text-sm font-semibold transition-all duration-200 bg-brand-purple text-white shadow-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-purple focus-visible:ring-offset-2 dark:focus-visible:ring-offset-slate-900';
       } else {
-        btn.className = 'skill-lens-btn cursor-pointer px-4 py-1.5 rounded-full text-xs sm:text-sm font-semibold transition-all duration-200 bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-700 hover:border-brand-purple dark:hover:border-pastel-lilac hover:text-brand-purple dark:hover:text-pastel-lilac';
+        btn.className = 'skill-lens-btn cursor-pointer px-4 py-1.5 rounded-full text-xs sm:text-sm font-semibold transition-all duration-200 bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-700 hover:border-brand-purple dark:hover:border-pastel-lilac hover:text-brand-purple dark:hover:text-pastel-lilac focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-purple focus-visible:ring-offset-2 dark:focus-visible:ring-offset-slate-900';
       }
     });
 

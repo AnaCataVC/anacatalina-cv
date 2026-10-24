@@ -253,6 +253,10 @@ export const translations = {
     es: "Portal de inicio de Ana-Catalina",
     en: "Ana-Catalina's homepage portal"
   },
+  "aria.backToTop": {
+    es: "Volver arriba",
+    en: "Back to top"
+  },
   "aria.changeLang": {
     es: "Cambiar idioma",
     en: "Switch language"

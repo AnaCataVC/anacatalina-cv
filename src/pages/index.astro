@@ -94,7 +94,7 @@ const badgeClasses: Record<string, string> = {
           )}
 
           <h1 class="text-3xl sm:text-4xl md:text-[2.75rem] lg:text-[3.25rem] xl:text-[3.75rem] font-bold tracking-tight text-slate-900 dark:text-white leading-[1.12] m-0">
-            <span class="text-brand-purple">Ana-Catalina</span> <br> Villalobos Contardo<span class="text-brand-magenta hover:drop-shadow-[0_0_8px_rgba(255,120,137,0.7)] cursor-default transition-all duration-500 ease-out">.</span>
+            <span class="text-brand-purple">Ana-Catalina</span> <br> Villalobos Contardo<span class="text-brand-magenta hover:drop-shadow-[0_0_8px_var(--color-pastel-pink)/70] cursor-default transition-all duration-500 ease-out">.</span>
           </h1>
           
           <div class="space-y-1.5">
@@ -119,7 +119,7 @@ const badgeClasses: Record<string, string> = {
             </div>
             
             <!-- Minimal tag overlay linked to SimpliRoute experience -->
-            <a href="#simpliroute" class="absolute -bottom-4 left-1/2 -translate-x-1/2 whitespace-nowrap bg-white dark:bg-slate-800 px-4 py-2 rounded-xl shadow-lg border border-slate-100 dark:border-slate-700 flex items-center space-x-2 hover:border-brand-purple dark:hover:border-brand-purple transition-colors group/tag">
+            <a href="#simpliroute" class="absolute -bottom-4 left-1/2 -translate-x-1/2 whitespace-nowrap bg-white dark:bg-slate-800 px-4 py-2 rounded-xl shadow-lg border border-slate-100 dark:border-slate-700 flex items-center space-x-2 hover:border-brand-purple dark:hover:border-brand-purple focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-purple focus-visible:ring-offset-2 dark:focus-visible:ring-offset-slate-900 transition-all group/tag">
               <span class="flex h-2.5 w-2.5 relative">
                 <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-cyan opacity-75"></span>
                 <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-brand-cyan"></span>
@@ -130,7 +130,7 @@ const badgeClasses: Record<string, string> = {
 
           <!-- Action Buttons (Mobile) -->
           <div class="flex md:hidden flex-wrap items-center justify-center gap-3 w-56 sm:w-64 pt-4">
-            <a href={`ACVC_es.pdf?v=${cvData.meta.lastUpdated}`} target="_blank" rel="noopener noreferrer" data-i18n="hero.downloadBtn" data-i18n-href="hero.cvUrl" class="touch-manipulation flex-1 min-w-[140px] inline-flex items-center justify-center px-6 py-3 rounded-2xl bg-gradient-to-r from-brand-purple to-brand-magenta hover:from-brand-magenta hover:to-brand-purple shadow-sm hover:shadow-[0_0_20px_rgba(185,141,253,0.4)] transition-all transform hover:-translate-y-0.5 text-white tracking-wide font-semibold text-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-purple focus-visible:ring-offset-2 dark:focus-visible:ring-offset-slate-900">
+            <a href={`ACVC_es.pdf?v=${cvData.meta.lastUpdated}`} target="_blank" rel="noopener noreferrer" data-i18n="hero.downloadBtn" data-i18n-href="hero.cvUrl" class="touch-manipulation flex-1 min-w-[140px] inline-flex items-center justify-center px-6 py-3 rounded-2xl bg-gradient-to-r from-brand-purple to-brand-magenta hover:from-brand-magenta hover:to-brand-purple shadow-sm hover:shadow-[0_0_20px_var(--color-brand-purple)/40] transition-all transform hover:-translate-y-0.5 text-white tracking-wide font-semibold text-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-purple focus-visible:ring-offset-2 dark:focus-visible:ring-offset-slate-900">
               Descargar CV
             </a>
           </div>
@@ -174,7 +174,7 @@ const badgeClasses: Record<string, string> = {
             </span>
 
             <div class="flex flex-wrap items-center justify-start gap-3 lg:gap-4">
-              <a href={`ACVC_es.pdf?v=${cvData.meta.lastUpdated}`} target="_blank" rel="noopener noreferrer" data-i18n="hero.downloadBtn" data-i18n-href="hero.cvUrl" class="touch-manipulation flex-1 lg:flex-none lg:min-w-[150px] inline-flex items-center justify-center px-6 lg:px-8 py-3 lg:py-3.5 rounded-2xl bg-gradient-to-r from-brand-purple to-brand-magenta hover:from-brand-magenta hover:to-brand-purple shadow-sm hover:shadow-[0_0_20px_rgba(185,141,253,0.4)] transition-all transform hover:-translate-y-0.5 text-white tracking-wide font-semibold text-xs lg:text-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-purple focus-visible:ring-offset-2 dark:focus-visible:ring-offset-slate-900">
+              <a href={`ACVC_es.pdf?v=${cvData.meta.lastUpdated}`} target="_blank" rel="noopener noreferrer" data-i18n="hero.downloadBtn" data-i18n-href="hero.cvUrl" class="touch-manipulation flex-1 lg:flex-none lg:min-w-[150px] inline-flex items-center justify-center px-6 lg:px-8 py-3 lg:py-3.5 rounded-2xl bg-gradient-to-r from-brand-purple to-brand-magenta hover:from-brand-magenta hover:to-brand-purple shadow-sm hover:shadow-[0_0_20px_var(--color-brand-purple)/40] transition-all transform hover:-translate-y-0.5 text-white tracking-wide font-semibold text-xs lg:text-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-purple focus-visible:ring-offset-2 dark:focus-visible:ring-offset-slate-900">
                 Descargar CV
               </a>
               <a href="#experience" data-i18n="hero.expBtn" class="touch-manipulation flex-1 lg:flex-none lg:min-w-[140px] inline-flex items-center justify-center px-5 lg:px-6 py-3 lg:py-3.5 rounded-2xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 shadow-sm hover:shadow-md hover:border-brand-purple dark:hover:border-brand-cyan hover:bg-slate-50 dark:hover:bg-slate-700/50 transition-all duration-300 transform hover:-translate-y-0.5 text-slate-700 dark:text-slate-200 hover:text-brand-purple dark:hover:text-brand-cyan tracking-wide font-medium text-xs lg:text-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-purple focus-visible:ring-offset-2 dark:focus-visible:ring-offset-slate-900">
@@ -268,19 +268,19 @@ const badgeClasses: Record<string, string> = {
 
       <!-- Interactive Specialty Lenses -->
       <div id="skills-lens-bar" class="flex flex-wrap items-center justify-center gap-2 sm:gap-2.5 mb-10" role="group" aria-label="Filtrar habilidades por especialidad">
-        <button type="button" data-lens="all" aria-pressed="true" class="skill-lens-btn cursor-pointer px-4 py-1.5 rounded-full text-xs sm:text-sm font-semibold transition-all duration-200 bg-brand-purple text-white shadow-sm">
+        <button type="button" data-lens="all" aria-pressed="true" class="skill-lens-btn cursor-pointer px-4 py-1.5 rounded-full text-xs sm:text-sm font-semibold transition-all duration-200 bg-brand-purple text-white shadow-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-purple focus-visible:ring-offset-2 dark:focus-visible:ring-offset-slate-900">
           <span data-i18n="skills.filter.all">Todos</span>
         </button>
-        <button type="button" data-lens="ai-ml" aria-pressed="false" class="skill-lens-btn cursor-pointer px-4 py-1.5 rounded-full text-xs sm:text-sm font-semibold transition-all duration-200 bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-700 hover:border-brand-purple dark:hover:border-pastel-lilac hover:text-brand-purple dark:hover:text-pastel-lilac">
+        <button type="button" data-lens="ai-ml" aria-pressed="false" class="skill-lens-btn cursor-pointer px-4 py-1.5 rounded-full text-xs sm:text-sm font-semibold transition-all duration-200 bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-700 hover:border-brand-purple dark:hover:border-pastel-lilac hover:text-brand-purple dark:hover:text-pastel-lilac focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-purple focus-visible:ring-offset-2 dark:focus-visible:ring-offset-slate-900">
           <span data-i18n="skills.filter.ai_ml">IA & Machine Learning</span>
         </button>
-        <button type="button" data-lens="data-cloud" aria-pressed="false" class="skill-lens-btn cursor-pointer px-4 py-1.5 rounded-full text-xs sm:text-sm font-semibold transition-all duration-200 bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-700 hover:border-brand-purple dark:hover:border-pastel-lilac hover:text-brand-purple dark:hover:text-pastel-lilac">
+        <button type="button" data-lens="data-cloud" aria-pressed="false" class="skill-lens-btn cursor-pointer px-4 py-1.5 rounded-full text-xs sm:text-sm font-semibold transition-all duration-200 bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-700 hover:border-brand-purple dark:hover:border-pastel-lilac hover:text-brand-purple dark:hover:text-pastel-lilac focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-purple focus-visible:ring-offset-2 dark:focus-visible:ring-offset-slate-900">
           <span data-i18n="skills.filter.data_cloud">Data Platform & Cloud</span>
         </button>
-        <button type="button" data-lens="software" aria-pressed="false" class="skill-lens-btn cursor-pointer px-4 py-1.5 rounded-full text-xs sm:text-sm font-semibold transition-all duration-200 bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-700 hover:border-brand-purple dark:hover:border-pastel-lilac hover:text-brand-purple dark:hover:text-pastel-lilac">
+        <button type="button" data-lens="software" aria-pressed="false" class="skill-lens-btn cursor-pointer px-4 py-1.5 rounded-full text-xs sm:text-sm font-semibold transition-all duration-200 bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-700 hover:border-brand-purple dark:hover:border-pastel-lilac hover:text-brand-purple dark:hover:text-pastel-lilac focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-purple focus-visible:ring-offset-2 dark:focus-visible:ring-offset-slate-900">
           <span data-i18n="skills.filter.software">Ingeniería de Software</span>
         </button>
-        <button type="button" data-lens="leadership" aria-pressed="false" class="skill-lens-btn cursor-pointer px-4 py-1.5 rounded-full text-xs sm:text-sm font-semibold transition-all duration-200 bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-700 hover:border-brand-purple dark:hover:border-pastel-lilac hover:text-brand-purple dark:hover:text-pastel-lilac">
+        <button type="button" data-lens="leadership" aria-pressed="false" class="skill-lens-btn cursor-pointer px-4 py-1.5 rounded-full text-xs sm:text-sm font-semibold transition-all duration-200 bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-700 hover:border-brand-purple dark:hover:border-pastel-lilac hover:text-brand-purple dark:hover:text-pastel-lilac focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-purple focus-visible:ring-offset-2 dark:focus-visible:ring-offset-slate-900">
           <span data-i18n="skills.filter.leadership">Liderazgo & Arquitectura</span>
         </button>
       </div>
@@ -428,7 +428,7 @@ const badgeClasses: Record<string, string> = {
         <div data-domains="leadership" class="skill-group reveal bg-white dark:bg-slate-800 p-6 rounded-2xl border border-slate-100 dark:border-slate-700 space-y-4 transition-all duration-300">
           <h3 class="text-md font-bold text-slate-900 dark:text-white flex items-center space-x-2">
             <svg class="w-5 h-5 text-brand-purple" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
-              <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+              <rect width="18" height="18" x="3" y="3" rx="2"/><path d="M8 7v7"/><path d="M12 7v4"/><path d="M16 7v10"/>
             </svg>
             <span data-i18n="skills.methodologies.title">Metodologías & Gestión de Producto</span>
           </h3>
@@ -536,7 +536,7 @@ const badgeClasses: Record<string, string> = {
             <p data-i18n="pub.desc" class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed" set:html={cvData.publications[0].description.es} />
             </div>
             <div class="pt-4 mt-auto">
-              <a href="https://doi.org/10.1002/stc.2727" target="_blank" rel="noopener noreferrer" class="inline-flex items-center text-sm font-semibold text-brand-purple dark:text-pastel-lilac hover:opacity-80 transition-colors">
+              <a href="https://doi.org/10.1002/stc.2727" target="_blank" rel="noopener noreferrer" class="inline-flex items-center text-sm font-semibold text-brand-purple dark:text-pastel-lilac hover:opacity-80 transition-colors rounded-lg focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-purple focus-visible:ring-offset-2 dark:focus-visible:ring-offset-slate-900">
                 <span data-i18n="pub.link">Ver artículo en Wiley Online Library</span>
                 <svg class="w-4 h-4 ml-1.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
                   <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" x2="21" y1="14" y2="3"/>
