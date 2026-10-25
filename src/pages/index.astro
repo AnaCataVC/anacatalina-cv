@@ -1,7 +1,6 @@
 ---
 import { Image } from 'astro:assets';
 import Layout from '../layouts/Layout.astro';
-import PoppyBackground from '../components/PoppyBackground.astro';
 import fotoPerfil from '../assets/foto-perfil.jpg';
 import { cvData } from '../data/cv';
 
@@ -163,7 +162,6 @@ const badgeClasses: Record<string, string> = {
 
         <!-- About Me Section (Right Column on Desktop, Bottom on Mobile) -->
         <div class="md:col-span-6 flex flex-col justify-center space-y-6 animate-fade-in md:pl-6 relative">
-          <PoppyBackground class="absolute top-1/2 -translate-y-1/2 -right-20 w-[600px] h-[600px] lg:w-[800px] lg:h-[800px] opacity-[0.04] dark:opacity-[0.06] pointer-events-none text-brand-purple dark:text-brand-violet-light -z-10" />
           <!-- "Sobre Mí" Title -->
           <h2 class="text-xl font-bold tracking-wider text-brand-violet dark:text-brand-violet-light uppercase text-center md:text-left mb-4" data-i18n="about.title">Sobre Mí</h2>
 
