@@ -235,13 +235,13 @@ export const translations = {
     es: "© 2026 <a href=\"https://ana-catalina.com/\" class=\"hover:text-brand-purple dark:hover:text-brand-purple transition-colors\">Ana-Catalina Villalobos Contardo</a>. Todos los derechos reservados.",
     en: "© 2026 <a href=\"https://ana-catalina.com/\" class=\"hover:text-brand-purple dark:hover:text-brand-purple transition-colors\">Ana-Catalina Villalobos Contardo</a>. All rights reserved."
   },
-  "footer.made": {
-    es: "Diseño y desarrollo propio · Creado con <span class=\"text-brand-violet dark:text-brand-violet-light\">♥</span> usando Astro + Tailwind CSS · Publicado en Vercel",
-    en: "Designed & developed by me · Built with <span class=\"text-brand-violet dark:text-brand-violet-light\">♥</span> using Astro + Tailwind CSS · Deployed on Vercel"
+  "footer.project": {
+    es: "Ficha técnica y arquitectura de este sitio en el <a href=\"https://projects.ana-catalina.com/anacatalina-cv\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-brand-purple dark:text-brand-violet-light hover:underline font-medium\">portafolio de proyectos</a>.",
+    en: "Technical specs and site architecture in the <a href=\"https://projects.ana-catalina.com/en/anacatalina-cv\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-brand-purple dark:text-brand-violet-light hover:underline font-medium\">projects portfolio</a>."
   },
   "footer.template": {
-    es: "¿Te gusta este diseño? <a href=\"https://github.com/AnaCataVC/my-cv/\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-brand-purple dark:text-brand-violet-light hover:underline font-medium\">Plantilla base en GitHub</a> (repositorio archivado).",
-    en: "Do you like this design? <a href=\"https://github.com/AnaCataVC/my-cv/\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-brand-purple dark:text-brand-violet-light hover:underline font-medium\">Base template on GitHub</a> (archived repository)."
+    es: "¿Quieres armar tu propio CV? Código libre en la <a href=\"https://github.com/AnaCataVC/my-cv/\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-brand-purple dark:text-brand-violet-light hover:underline font-medium\">plantilla base en GitHub</a> (repo archivado).",
+    en: "Looking to build your own CV? Open-source starter in the <a href=\"https://github.com/AnaCataVC/my-cv/\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-brand-purple dark:text-brand-violet-light hover:underline font-medium\">base template on GitHub</a> (archived repo)."
   },
 
   // Accessibility strings (used for aria-label and skip-link via data-i18n-aria)
