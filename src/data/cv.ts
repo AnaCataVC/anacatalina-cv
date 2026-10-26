@@ -129,8 +129,8 @@ export const cvData: CVData = {
           en: 'Engineer specialized in Data Science, Machine Learning, and Agentic AI, with experience leading teams and building high-impact intelligent systems.'
         },
         {
-          es: 'Ingeniera Civil de la Universidad de Chile con investigación aplicada en Machine Learning publicada en <a href="#publicaciones" class="text-brand-purple dark:text-brand-violet-light hover:underline font-medium">Structural Health Monitoring</a> (2021). Mi trayectoria integra liderazgo técnico en mantenimiento predictivo, visión computacional y optimización de operaciones.',
-          en: 'Civil Engineer from Universidad de Chile with applied Machine Learning research published in <a href="#publicaciones" class="text-brand-purple dark:text-brand-violet-light hover:underline font-medium">Structural Health Monitoring</a> (2021). My background integrates technical leadership across predictive maintenance, computer vision, and operations optimization.'
+          es: 'Ingeniera Civil de la Universidad de Chile con investigación aplicada en Machine Learning publicada en <a href="#publicaciones" class="text-brand-purple dark:text-brand-violet-light hover:underline font-medium">Structural Health Monitoring</a> (2021). Mi trayectoria integra liderazgo técnico en mantenimiento predictivo, modelamiento estadístico e ingeniería de datos.',
+          en: 'Civil Engineer from Universidad de Chile with applied Machine Learning research published in <a href="#publicaciones" class="text-brand-purple dark:text-brand-violet-light hover:underline font-medium">Structural Health Monitoring</a> (2021). My background integrates technical leadership across predictive maintenance, statistical modeling, and data engineering.'
         },
         {
           es: 'Actualmente como <a href="#simpliroute" class="text-brand-purple dark:text-brand-violet-light hover:underline font-medium">Learning Engineer en SimpliRoute</a>, me enfoco en el diseño de infraestructura agéntica con MCP, sistemas distribuidos de geocodificación y pipelines de datos a gran escala.',
