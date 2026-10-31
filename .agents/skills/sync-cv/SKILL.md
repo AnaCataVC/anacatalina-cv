@@ -29,7 +29,7 @@ Esta skill guía el proceso de inspección periódica de la actividad del usuari
 3. **Anonimización y Confidencialidad Empresarial Estricta:**
    - En proyectos laborales (ej. SimpliRoute o cualquier otro empleo):
      - **PROHIBIDO:** revelar nombres de clientes, credenciales, URLs internas, esquemas de BD privados o nombres clave de proyectos confidenciales.
-     - **PERMITIDO Y ESPERADO:** destacar a grandes rasgos las tecnologías utilizadas (ej. FastAPI, Celery, PostgreSQL, PyTorch, Docker, Kubernetes), patrones de diseño/arquitectura (ej. optimización de algoritmos de ruteo, microservicios, canalizaciones de streaming, optimización de queries SQL complejas) y tipos de impacto (ej. reducción de tiempos de latencia, modelos de forecasting, automatización de flujos).
+     - **PERMITIDO Y ESPERADO:** destacar a grandes rasgos las tecnologías utilizadas (ej. FastAPI, Celery, PostgreSQL, PyTorch, Docker, Kubernetes, BigQuery, Pub/Sub, Dataform, LangGraph, FastMCP), patrones de diseño/arquitectura (ej. optimización de algoritmos de ruteo, microservicios, canalizaciones de streaming, optimización de queries SQL complejas) y tipos de impacto (ej. reducción de tiempos de latencia, modelos de forecasting, automatización de flujos).
 4. **Granularidad Web vs. PDF (Asimetría Intencional sin Contradicciones):**
    - Toda la información del CV vive centralizada en `src/data/cv.ts` (Single Source of Truth), alimentando tanto la web interactiva (`src/pages/index.astro`, `src/i18n.js`) como la vista de impresión (`src/pages/print/[lang].astro`).
    - **No se requiere simetría textual 1:1 entre el sitio web y el PDF:**
@@ -63,7 +63,7 @@ node .agents/skills/sync-cv/scripts/scan-activity.mjs --days 30
 El script realiza automáticamente:
 - Resolución portable de `$HOME` (`os.homedir()`) para `~/Repos` y `~/SimplitSolutions`.
 - Comprobación de autoría efectiva (`git config user.email`, `git config user.name`) omitiendo repos sin aportes directos.
-- Detección de stack tecnológico analizando `package.json`, `requirements.txt`, `pyproject.toml`, `Cargo.toml`, etc.
+- Detección de stack tecnológico analizando `package.json`, `requirements*.txt`, `pyproject.toml`, `Cargo.toml`, `settings.gradle.kts`, etc. (incluyendo subdirectorios de monorepos hasta 2 niveles).
 - Sanitización de commits laborales (eliminación de tickets Jira, URLs y nombres de clientes).
 
 ### 3. Detección de Actividad en Proyectos Laborales (Anonimizada)
@@ -99,7 +99,8 @@ Presenta al usuario un reporte estructurado y conciso en español con las siguie
 
 ### 7. Compuerta de Calidad Post-Actualización (Quality Gate)
 Una vez aplicados los cambios aprobados por el usuario en `src/data/cv.ts`:
-1. **Auditoría de Integridad Estática:** Ejecutar `npm run audit:integrity` (skill `audit-cv-integrity`) para verificar paridad bilingüe, enlace con el DOM y regla Zero Flags.
+1. **Auditoría de Integridad Estática:** Ejecutar `npm run audit:integrity` (skill `audit-cv-integrity`) para verificar paridad bilingüe, enlace con el DOM, regla Zero Flags y conteo de páginas PDF.
 2. **Validación del Presupuesto de Páginas (PDF):** Ejecutar `npm run build:pdf`.
    - Si la generación arroja `Page count mismatch: Expected 2 pages, but got 3 pages`, activar inmediatamente la skill `tune-pdf-layout` para condensar `pdfBullets` o ajustar espaciados tipográficos en `src/pages/print/[lang].astro`.
 3. **Verificación de Tipos:** Asegurar que `npx astro check` pase con 0 errores y 0 advertencias.
+4. **Sincronización con Ecosistema (`anacatalina-mcp`):** Si se modificaron datos en `src/data/cv.ts` o etiquetas en `#skills`, verificar la alineación aguas abajo ejecutando `python ../anacatalina-mcp/scripts/sync_mcp_data.py --audit` (y `--sync` si corresponde).

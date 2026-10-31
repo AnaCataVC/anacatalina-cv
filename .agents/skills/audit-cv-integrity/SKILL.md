@@ -12,7 +12,7 @@ Esta skill define el procedimiento de auditoría estática y verificación integ
 
 ## Objetivos y Verificaciones Clave
 
-La auditoría ejecuta cinco compuertas de calidad inmutables:
+La auditoría ejecuta seis compuertas de calidad:
 
 1. **Paridad Bilingüe del Single Source of Truth (`src/data/cv.ts`):**
    - Recorre recursivamente todas las entidades del modelo de datos (`cvData.basics`, `experience`, `skillCategories`, `education`, `publications`, `languages`, `certifications`).
@@ -26,6 +26,7 @@ La auditoría ejecuta cinco compuertas de calidad inmutables:
      - `data-i18n-href` (reemplazo de URLs dinámicas por idioma)
      - `data-i18n-aria` (reemplazo accesible de etiquetas `aria-label` y `title`)
    - Verifica que el 100% de los identificadores referenciados en el DOM existan en el diccionario `translations`.
+   - Detecta llaves huérfanas o en desuso en `src/i18n.js` que no sean referenciadas estática o dinámicamente en `src/`, emitiendo una advertencia (`reportWarn`).
 
 3. **Regla Zero Flags (Ausencia Absoluta de Banderas):**
    - Inspecciona archivos fuente, documentación y configuraciones (`src/`, `docs/`, `public/`, `README.md`, `README.es.md`, `AGENTS.md`).
@@ -37,11 +38,15 @@ La auditoría ejecuta cinco compuertas de calidad inmutables:
    - Verifica que el correo de contacto sea el canónico: `anacatalina@outlook.cl`.
    - Escanea archivos públicos y de código en busca de fugas accidentales de rutas locales de la máquina (`C:\Users\...`, `/Users/...`, `/home/...`).
 
-5. **Disponibilidad de Artefactos de Impresión (PDF) y Cache-Busting:**
+5. **Disponibilidad de Artefactos de Impresión (PDF), Presupuesto de 2 Páginas y Cache-Busting:**
    - Verifica la existencia y peso válido de `public/ACVC_es.pdf` y `public/ACVC_en.pdf`.
+   - Inspecciona directamente el buffer binario de ambos PDFs (`/\/Type\s*\/Page\b/g`) para certificar que cada archivo tenga estrictamente `2` páginas (permitiendo validación en Linux CI sin navegador headless).
    - Verifica la presencia y formato ISO (`YYYY-MM-DD`) de `cvData.meta.lastUpdated` en `src/data/cv.ts`.
    - Verifica que los enlaces a los PDFs en `src/i18n.js` y `src/pages/index.astro` contengan el parámetro `?v=` alineado con la fecha de versión.
    - Verifica la integridad del template de renderizado headless `src/pages/print/[lang].astro`.
+
+6. **Verificación del Ecosistema Cross-Repo (`anacatalina-mcp`):**
+   - Detecta si el repositorio hermano `../anacatalina-mcp` está presente localmente y recuerda (o ejecuta con `--check-mcp`) la validación de sincronización aguas abajo (`python ../anacatalina-mcp/scripts/sync_mcp_data.py --audit`).
 
 ---
 
@@ -54,23 +59,26 @@ Desde la raíz del repositorio, ejecuta:
 npm run audit:integrity
 ```
 
-O invocando directamente el script con Node.js:
+O invocando directamente el script con Node.js (opcionalmente con `--check-mcp`):
 ```powershell
-node .agents/skills/audit-cv-integrity/scripts/audit-integrity.mjs
+node .agents/skills/audit-cv-integrity/scripts/audit-integrity.mjs --check-mcp
 ```
 
 ### 2. Flujo Completo de Compuerta Pre-Push
 Para una validación integral antes de crear un commit o publicar una actualización del CV:
 
 ```powershell
-# 1. Auditoría estática de integridad y paridad
+# 1. Auditoría estática de integridad, paridad y conteo de páginas PDF
 npm run audit:integrity
 
 # 2. Comprobación de tipos y sintaxis Astro/TypeScript
 npx astro check
 
-# 3. Compilación web y verificación del límite de 2 páginas del PDF
+# 3. Compilación web y regeneración/verificación del límite de 2 páginas del PDF
 npm run build:pdf
+
+# 4. (Si se modificó src/data/cv.ts o #skills) Verificar alineación con el servidor MCP hermano
+python ../anacatalina-mcp/scripts/sync_mcp_data.py --audit
 ```
 
 ---
@@ -81,6 +89,7 @@ npm run build:pdf
 | :--- | :--- | :--- |
 | `Empty or invalid 'en' translation at: cvData.experience[0].bullets[2]` | Se agregó una viñeta en español pero se dejó vacía o incompleta la traducción en inglés. | Completar la traducción simétrica en `src/data/cv.ts`. |
 | `DOM references missing translation key 'nav.nuevoItem'` | Se agregó un elemento en `index.astro` con `data-i18n="nav.nuevoItem"` sin declararlo en `src/i18n.js`. | Agregar la entrada `{ es: "...", en: "..." }` dentro del objeto `translations` en `src/i18n.js`. |
-| `Regional flag emoji detected in: README.md` | Se insertó un emoji de bandera (ej. 🇺🇸 o 🇪🇸). | Reemplazar por enlaces semánticos de texto (`[English](README.md) \| [Español](README.es.md)`) o códigos ISO (`EN` / `ES`). |
+| `Orphaned i18n key '...' in src/i18n.js` | Una llave de `src/i18n.js` ya no se utiliza en ningún componente de `src/`. | Eliminar la llave obsoleta de `src/i18n.js` o vincularla al DOM. |
+| `Regional flag emoji detected in: README.md` | Se insertó un emoji de bandera regional Unicode. | Reemplazar por enlaces semánticos de texto (`[English](README.md) \| [Español](README.es.md)`) o códigos ISO (`EN` / `ES`). |
 | `Local machine path leak detected` | Se incluyó una ruta absoluta de Windows/Linux en documentación o comentarios. | Reemplazar por rutas relativas o variables genéricas (`$HOME`, `/path/to/project`). |
-| `Missing downloadable PDF artifacts in public/` | No se han generado los PDFs o se eliminaron de `public/`. | Ejecutar `npm run build:pdf` para compilarlos mediante Edge/Chrome headless. |
+| `ACVC_es.pdf page count violation: expected strictly 2 pages` | El contenido del PDF desbordó a 3 páginas o quedó en 1 página. | Ejecutar `npm run build:pdf` y usar la skill `tune-pdf-layout` para ajustar el presupuesto de espacio. |

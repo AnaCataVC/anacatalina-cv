@@ -3,6 +3,7 @@ import '../styles.css';
 import Navbar from '../components/Navbar.astro';
 import Footer from '../components/Footer.astro';
 import PoppyBackground from "../components/PoppyBackground.astro";
+import { cvData } from '../data/cv';
 
 interface Props {
   title: string;
@@ -10,6 +11,7 @@ interface Props {
 }
 
 const { title, description } = Astro.props;
+const ogImageUrl = new URL(`/og-image.png?v=${cvData.meta.lastUpdated}`, Astro.site || 'https://cv.ana-catalina.com/');
 ---
 <!DOCTYPE html>
 <html lang="es" class="scroll-smooth">
@@ -25,8 +27,8 @@ const { title, description } = Astro.props;
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
   <link rel="manifest" href="/site.webmanifest" />
   <link rel="canonical" href={new URL(Astro.url.pathname, Astro.site || 'https://cv.ana-catalina.com/')} />
-  <link rel="alternate" hreflang="es" href="https://cv.ana-catalina.com/" />
-  <link rel="alternate" hreflang="en" href="https://cv.ana-catalina.com/" />
+  <link rel="alternate" hreflang="es" href="https://cv.ana-catalina.com/?lang=es" />
+  <link rel="alternate" hreflang="en" href="https://cv.ana-catalina.com/?lang=en" />
   <link rel="alternate" hreflang="x-default" href="https://cv.ana-catalina.com/" />
   <meta name="robots" content="index, follow, max-image-preview:large" />
 
@@ -40,7 +42,7 @@ const { title, description } = Astro.props;
   <meta property="og:description" content={description} />
   <meta property="og:type" content="website" />
   <meta property="og:url" content={new URL(Astro.url.pathname, Astro.site || 'https://cv.ana-catalina.com/')} />
-  <meta property="og:image" content={new URL('/og-image.png?v=20261007', Astro.site || 'https://cv.ana-catalina.com/')} />
+  <meta property="og:image" content={ogImageUrl} />
   <meta property="og:image:type" content="image/png" />
   <meta property="og:image:width" content="1536" />
   <meta property="og:image:height" content="1024" />
@@ -51,7 +53,7 @@ const { title, description } = Astro.props;
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content={title} />
   <meta name="twitter:description" content={description} />
-  <meta name="twitter:image" content={new URL('/og-image.png?v=20261007', Astro.site || 'https://cv.ana-catalina.com/')} />
+  <meta name="twitter:image" content={ogImageUrl} />
   <meta name="twitter:image:alt" content="Banner del portafolio y CV de Ana-Catalina Villalobos Contardo, Data Scientist & Engineer" />
 
   <script is:inline>
@@ -83,7 +85,7 @@ const { title, description } = Astro.props;
 
   <!-- Back to Top Button -->
   <button id="back-to-top" aria-label="Volver arriba" data-i18n-aria="aria.backToTop" class="touch-manipulation fixed bottom-6 right-6 p-3.5 bg-gradient-to-r from-violet-600 to-brand-violet hover:from-violet-500 hover:to-brand-violet-light text-white rounded-full shadow-2xl hover:shadow-[0_0_22px_rgba(139,92,246,0.45)] opacity-0 translate-y-10 pointer-events-none transition-all transform hover:-translate-y-0.5 duration-300 z-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-purple focus-visible:ring-offset-2 dark:focus-visible:ring-offset-slate-900">
-    <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+    <svg class="w-5 h-5" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
       <path d="m18 15-6-6-6 6"/>
     </svg>
   </button>

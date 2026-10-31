@@ -2,10 +2,31 @@ import { translations } from './i18n.js';
 
 function init() {
   // --- Internationalization (i18n) Logic ---
+  const urlParams = new URLSearchParams(window.location.search);
+  const urlLang = (urlParams.get('lang') || '').toLowerCase();
+
   let currentLang = localStorage.getItem('lang');
-  if (!currentLang) {
-    const browserLang = navigator.language;
+  if (urlLang === 'es' || urlLang === 'en') {
+    currentLang = urlLang;
+    localStorage.setItem('lang', currentLang);
+  } else if (!currentLang) {
+    const browserLang = navigator.language || '';
     currentLang = browserLang.toLowerCase().startsWith('en') ? 'en' : 'es';
+  }
+
+  const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+  const mobileMenu = document.getElementById('mobile-menu');
+  const menuIcon = document.getElementById('menu-icon');
+  const closeIcon = document.getElementById('close-icon');
+  const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
+
+  function updateMobileMenuAriaLabel() {
+    if (!mobileMenuBtn) return;
+    const isExpanded = mobileMenuBtn.getAttribute('aria-expanded') === 'true';
+    const ariaKey = isExpanded ? 'aria.closeMenu' : 'aria.openMenu';
+    if (translations[ariaKey] && translations[ariaKey][currentLang]) {
+      mobileMenuBtn.setAttribute('aria-label', translations[ariaKey][currentLang]);
+    }
   }
 
   function updateTexts() {
@@ -36,14 +57,29 @@ function init() {
         }
       }
     });
-    
+
+    updateMobileMenuAriaLabel();
+
+    // Update document title and meta description
+    if (translations['meta.title'] && translations['meta.title'][currentLang]) {
+      document.title = translations['meta.title'][currentLang];
+    }
+    if (translations['meta.description'] && translations['meta.description'][currentLang]) {
+      const metaDesc = document.querySelector('meta[name="description"]');
+      if (metaDesc) metaDesc.setAttribute('content', translations['meta.description'][currentLang]);
+      const ogDesc = document.querySelector('meta[property="og:description"]');
+      if (ogDesc) ogDesc.setAttribute('content', translations['meta.description'][currentLang]);
+      const twitterDesc = document.querySelector('meta[name="twitter:description"]');
+      if (twitterDesc) twitterDesc.setAttribute('content', translations['meta.description'][currentLang]);
+    }
+
     // Update toggle button text
     const desktopLangText = document.getElementById('current-lang-desktop');
     const mobileLangText = document.getElementById('current-lang-mobile');
     const langText = currentLang === 'es' ? 'EN' : 'ES'; // show the language to switch TO
     if (desktopLangText) desktopLangText.textContent = langText;
     if (mobileLangText) mobileLangText.textContent = langText;
-    
+
     // Update HTML lang attribute
     document.documentElement.lang = currentLang;
   }
@@ -66,10 +102,10 @@ function init() {
   // --- Theme Toggle Logic ---
   const themeToggleDesktop = document.getElementById('theme-toggle-desktop');
   const themeToggleMobile = document.getElementById('theme-toggle-mobile');
-  
+
   const lightIconDesktop = document.getElementById('theme-toggle-light-icon-desktop');
   const darkIconDesktop = document.getElementById('theme-toggle-dark-icon-desktop');
-  
+
   const lightIconMobile = document.getElementById('theme-toggle-light-icon-mobile');
   const darkIconMobile = document.getElementById('theme-toggle-dark-icon-mobile');
 
@@ -103,7 +139,7 @@ function init() {
   if (themeToggleDesktop) {
     themeToggleDesktop.addEventListener('click', toggleTheme);
   }
-  
+
   if (themeToggleMobile) {
     themeToggleMobile.addEventListener('click', toggleTheme);
   }
@@ -112,45 +148,52 @@ function init() {
   updateThemeIcons();
 
   // --- Mobile Menu Toggle ---
-  const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-  const mobileMenu = document.getElementById('mobile-menu');
-  const menuIcon = document.getElementById('menu-icon');
-  const closeIcon = document.getElementById('close-icon');
-  const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
+  function setMobileMenuOpen(open) {
+    if (!mobileMenuBtn || !mobileMenu) return;
+    mobileMenuBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    if (open) {
+      mobileMenu.classList.remove('hidden');
+      if (menuIcon) menuIcon.classList.add('hidden');
+      if (closeIcon) closeIcon.classList.remove('hidden');
+    } else {
+      mobileMenu.classList.add('hidden');
+      if (menuIcon) menuIcon.classList.remove('hidden');
+      if (closeIcon) closeIcon.classList.add('hidden');
+    }
+    updateMobileMenuAriaLabel();
+  }
 
   if (mobileMenuBtn && mobileMenu) {
     mobileMenuBtn.addEventListener('click', () => {
       const isExpanded = mobileMenuBtn.getAttribute('aria-expanded') === 'true';
-      mobileMenuBtn.setAttribute('aria-expanded', !isExpanded);
-      mobileMenu.classList.toggle('hidden');
-      menuIcon.classList.toggle('hidden');
-      closeIcon.classList.toggle('hidden');
+      setMobileMenuOpen(!isExpanded);
     });
 
     mobileNavLinks.forEach(link => {
       link.addEventListener('click', () => {
-        mobileMenu.classList.add('hidden');
-        menuIcon.classList.remove('hidden');
-        closeIcon.classList.add('hidden');
-        mobileMenuBtn.setAttribute('aria-expanded', 'false');
+        setMobileMenuOpen(false);
       });
+    });
+
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape' && mobileMenuBtn.getAttribute('aria-expanded') === 'true') {
+        setMobileMenuOpen(false);
+        mobileMenuBtn.focus();
+      }
     });
   }
 
-
-  // --- Scroll Progress Bar ---
+  // --- Consolidated Scroll Progress Bar & Back to Top Listener ---
   const progressBar = document.getElementById('scroll-progress');
+  const backToTopBtn = document.getElementById('back-to-top');
+
   window.addEventListener('scroll', () => {
     const winScroll = document.documentElement.scrollTop || document.body.scrollTop;
     const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
     const scrolled = height > 0 ? (winScroll / height) * 100 : 0;
     if (progressBar) progressBar.style.width = scrolled + '%';
-  });
 
-  // --- Back to Top Button ---
-  const backToTopBtn = document.getElementById('back-to-top');
-  if (backToTopBtn) {
-    window.addEventListener('scroll', () => {
+    if (backToTopBtn) {
       if (window.scrollY > 300) {
         backToTopBtn.classList.remove('opacity-0', 'translate-y-10', 'pointer-events-none');
         backToTopBtn.classList.add('opacity-100', 'translate-y-0');
@@ -158,10 +201,13 @@ function init() {
         backToTopBtn.classList.remove('opacity-100', 'translate-y-0');
         backToTopBtn.classList.add('opacity-0', 'translate-y-10', 'pointer-events-none');
       }
-    });
+    }
+  }, { passive: true });
 
+  if (backToTopBtn) {
     backToTopBtn.addEventListener('click', () => {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
+      const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      window.scrollTo({ top: 0, behavior: prefersReducedMotion ? 'auto' : 'smooth' });
     });
   }
 
@@ -298,7 +344,6 @@ function init() {
     });
   });
 
-  const urlParams = new URLSearchParams(window.location.search);
   const initialFocus = urlParams.get('focus') || urlParams.get('track') || urlParams.get('role');
   if (initialFocus && LENS_ALIASES[initialFocus.toLowerCase()]) {
     applySkillLens(initialFocus);

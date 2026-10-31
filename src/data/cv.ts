@@ -103,7 +103,7 @@ export interface CVData {
 
 export const cvData: CVData = {
   meta: {
-    lastUpdated: '2026-10-24'
+    lastUpdated: '2026-10-31'
   },
   basics: {
     contact: {
@@ -163,12 +163,12 @@ export const cvData: CVData = {
       badgeVariant: 'violet',
       bullets: [
         {
-          es: 'Diseño y despliegue en producción de <strong class="text-slate-800 dark:text-slate-100 font-semibold">infraestructura agéntica basada en Model Context Protocol (MCP)</strong> para motores logísticos, implementando guardrails deterministas, permisos de ejecución de herramientas de mínimo privilegio y persistencia distribuida con Redis en Kubernetes.',
-          en: 'Design and production deployment of <strong class="text-slate-800 dark:text-slate-100 font-semibold">enterprise agentic infrastructure leveraging Model Context Protocol (MCP)</strong> for logistics engines, establishing deterministic guardrails, least-privilege tool execution boundaries, and distributed state persistence on Kubernetes with Redis.'
+          es: 'Diseño y despliegue en producción de <strong class="text-slate-800 dark:text-slate-100 font-semibold">infraestructura agéntica multi-agente basada en Model Context Protocol (MCP)</strong> para motores de planificación logística, implementando delegación por dominios, flujos <em>Human-in-the-Loop</em>, suites de evaluación en producción (<em>Agent Evals</em>), guardrails deterministas y estado distribuido con Redis en Kubernetes.',
+          en: 'Design and production deployment of <strong class="text-slate-800 dark:text-slate-100 font-semibold">multi-agent infrastructure leveraging Model Context Protocol (MCP)</strong> for logistics planning engines, implementing domain-scoped subagent delegation, <em>Human-in-the-Loop</em> confirmation workflows, production evaluation suites (<em>Agent Evals</em>), deterministic guardrails, and distributed state on Kubernetes with Redis.'
         },
         {
-          es: '<strong class="text-slate-800 dark:text-slate-100 font-semibold">Arquitectura e implementación de un sistema distribuido de geolocalización y geocodificación multi-proveedor</strong>, diseñando pipelines asíncronos desacoplados, estrategias de alta disponibilidad, concurrencia segura y tolerancia a fallos.',
-          en: '<strong class="text-slate-800 dark:text-slate-100 font-semibold">Architecture and implementation of a fault-tolerant, multi-provider geolocation and geocoding platform</strong>, designing decoupled asynchronous pipelines, high-availability fallback strategies, thread-safe concurrency, and standardized microservices.'
+          es: '<strong class="text-slate-800 dark:text-slate-100 font-semibold">Arquitectura y evolución de una plataforma distribuida de geolocalización y geocodificación directa/inversa multi-proveedor</strong>, diseñando motores de puntaje de confianza (<em>confidence scoring</em>), <em>fallbacks</em> resilientes, paralelización de consultas con reutilización de sesiones HTTP y redacción automática de PII.',
+          en: '<strong class="text-slate-800 dark:text-slate-100 font-semibold">Architecture and evolution of a distributed multi-provider forward and reverse geocoding platform</strong>, designing confidence-scoring engines, cross-provider fallback strategies, parallelized request execution with HTTP connection pooling, and automated PII redaction.'
         },
         {
           es: 'Gestión y modelado de datos a gran escala en <strong class="text-slate-800 dark:text-slate-100 font-semibold">Google BigQuery</strong>, canalizaciones de procesamiento distribuido con <strong class="text-slate-800 dark:text-slate-100 font-semibold">Google Cloud Dataflow / Apache Beam</strong> y orquestación con <strong class="text-slate-800 dark:text-slate-100 font-semibold">Google Pub/Sub y Apache Airflow</strong>, garantizando linaje de datos y telemetría crítica.',
@@ -181,12 +181,12 @@ export const cvData: CVData = {
       ],
       pdfBullets: [
         {
-          es: 'Diseño y despliegue de infraestructura agéntica en producción basada en Model Context Protocol (MCP), con guardrails deterministas, mínimo privilegio y estado distribuido en Redis/Kubernetes.',
-          en: 'Designed and deployed production agentic infrastructure using Model Context Protocol (MCP), featuring deterministic guardrails, least-privilege execution, and Redis/Kubernetes state persistence.'
+          es: 'Diseño y despliegue de infraestructura multi-agente en producción con Model Context Protocol (MCP), delegación por dominios, flujos Human-in-the-Loop, evaluación automatizada (Evals) y estado en Redis/Kubernetes.',
+          en: 'Designed and deployed production multi-agent infrastructure using Model Context Protocol (MCP), domain subagent delegation, Human-in-the-Loop workflows, automated evaluation suites, and Redis/Kubernetes state.'
         },
         {
-          es: 'Arquitectura de plataforma distribuida de geolocalización y geocodificación multi-proveedor mediante microservicios asíncronos desacoplados, alta disponibilidad, concurrencia segura y tolerancia a fallos.',
-          en: 'Architected a high-availability, fault-tolerant multi-provider geolocation and geocoding platform using decoupled asynchronous microservices, thread-safe concurrency, and fallback strategies.'
+          es: 'Arquitectura de plataforma distribuida de geocodificación directa/inversa multi-proveedor con puntaje de confianza, fallbacks resilientes, paralelización de consultas, connection pooling HTTP y sanitización de PII.',
+          en: 'Architected a high-availability multi-provider forward/reverse geocoding platform with confidence scoring, resilient fallbacks, parallelized execution, HTTP connection pooling, and PII sanitization.'
         },
         {
           es: 'Modelado de datos en Google BigQuery, procesamiento distribuido con Google Cloud Dataflow y orquestación de eventos con Google Pub/Sub y Apache Airflow, asegurando linaje y confiabilidad operativa.',
@@ -354,8 +354,7 @@ export const cvData: CVData = {
         { name: 'TypeScript' },
         { name: 'JavaScript' },
         { name: 'MATLAB' },
-        { name: 'C# / .NET' },
-        { name: 'Kotlin' }
+        { name: 'Java' }
       ],
       pdfFormatted: {
         es: 'Python (Principal/Avanzado) | SQL | TypeScript | JavaScript | MATLAB.',

@@ -7,19 +7,22 @@
  * Enforces:
  * 1. Single Source of Truth (SSOT) parity in src/data/cv.ts (BilingualText { es, en } fields).
  * 2. i18n DOM binding integrity: verifies all data-i18n, data-i18n-href, data-i18n-aria
- *    attributes in Astro components exist in src/i18n.js.
+ *    attributes in Astro components exist in src/i18n.js, and warns on orphaned keys.
  * 3. Zero Flags Rule: ensures zero regional flag emojis in templates, documentation, and data.
  * 4. Identity & Privacy invariants: candidate name format, canonical email, and zero leaked local machine paths.
- * 5. Downloadable PDF 2-page print layout requirements.
+ * 5. Downloadable PDF 2-page print layout requirements (including buffer page-count verification).
+ * 6. Cross-Repo Ecosystem Check (optional check for local ../anacatalina-mcp upstream sync utility).
  */
 
 import fs from 'node:fs';
 import path from 'node:path';
+import { execSync } from 'node:child_process';
 import { fileURLToPath, pathToFileURL } from 'node:url';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const projectRoot = path.resolve(__dirname, '../../../../');
+const args = process.argv.slice(2);
 
 let errorCount = 0;
 let warningCount = 0;
@@ -36,6 +39,23 @@ function reportFail(message) {
 function reportWarn(message) {
   console.warn(`  \x1b[33m!\x1b[0m ${message}`);
   warningCount++;
+}
+
+// Helper getFiles closure
+function getFiles(dir, filterRegex) {
+  let results = [];
+  if (!fs.existsSync(dir)) return results;
+  const list = fs.readdirSync(dir, { withFileTypes: true });
+  for (const item of list) {
+    const fullPath = path.join(dir, item.name);
+    if (item.isDirectory()) {
+      if (item.name === 'node_modules' || item.name === '.git' || item.name === 'dist') continue;
+      results.push(...getFiles(fullPath, filterRegex));
+    } else if (filterRegex.test(item.name)) {
+      results.push(fullPath);
+    }
+  }
+  return results;
 }
 
 console.log('\n======================================================');
@@ -107,7 +127,7 @@ if (cvData) {
     if (!cat.id || !cat.title || !cat.pdfFormatted) {
       reportFail(`Skill category [${idx}] missing id, title, or pdfFormatted string.`);
     }
-    if (!Array.isArray(cat.skills) || cat.skills.length === 0) {
+    if (!Array.isArray(cat.skills) || !cat.skills.length) {
       reportFail(`Skill category '${cat.id || idx}' has no listed skills.`);
     }
   });
@@ -148,22 +168,6 @@ if (translations) {
   }
   reportPass(`Verified ${dictionaryKeyCount} translation keys in dictionary.`);
 
-  // Find all Astro/HTML files in src/
-  function getFiles(dir, filterRegex) {
-    let results = [];
-    if (!fs.existsSync(dir)) return results;
-    const list = fs.readdirSync(dir, { withFileTypes: true });
-    for (const item of list) {
-      const fullPath = path.join(dir, item.name);
-      if (item.isDirectory()) {
-        results.push(...getFiles(fullPath, filterRegex));
-      } else if (filterRegex.test(item.name)) {
-        results.push(fullPath);
-      }
-    }
-    return results;
-  }
-
   const astroFiles = getFiles(path.join(projectRoot, 'src'), /\.(astro|html|js|ts)$/);
   const referencedKeys = new Set();
   const attrRegexes = [
@@ -172,8 +176,14 @@ if (translations) {
     /data-i18n-aria="([^"]+)"/g
   ];
 
+  const i18nFilePath = path.join(projectRoot, 'src/i18n.js');
+  let combinedSrcContent = '';
+
   for (const filePath of astroFiles) {
     const content = fs.readFileSync(filePath, 'utf-8');
+    if (path.resolve(filePath) !== path.resolve(i18nFilePath)) {
+      combinedSrcContent += content + '\n';
+    }
     for (const regex of attrRegexes) {
       const matches = content.matchAll(regex);
       for (const m of matches) {
@@ -192,6 +202,35 @@ if (translations) {
 
   if (missingDomKeys === 0) {
     reportPass(`All ${referencedKeys.size} DOM bindings (data-i18n, href, aria) map directly to active keys in src/i18n.js.`);
+  }
+
+  // Check for unused/orphaned keys in src/i18n.js
+  // Allow dynamically constructed keys in index.astro or main.js
+  const dynamicAllowedKeys = new Set([
+    'skills.status.all',
+    'skills.status.filtered',
+    'meta.title',
+    'meta.description',
+    'aria.closeMenu'
+  ]);
+  const dynamicExpKeyRegex = /^(exp\.[a-zA-Z0-9_-]+\.(title|date|location|b[1-4]|siteTitle)|aria\.(company|edu)\.[a-zA-Z0-9_-]+)$/;
+
+  const orphanedKeys = [];
+  for (const key of Object.keys(translations)) {
+    const isReferencedInDom = referencedKeys.has(key);
+    const isDynamicAllowed = dynamicAllowedKeys.has(key) || dynamicExpKeyRegex.test(key);
+    const isReferencedInSrcCode = combinedSrcContent.includes(key);
+    if (!isReferencedInDom && !isDynamicAllowed && !isReferencedInSrcCode) {
+      orphanedKeys.push(key);
+    }
+  }
+
+  if (orphanedKeys.length > 0) {
+    for (const orphan of orphanedKeys) {
+      reportWarn(`Orphaned i18n key '${orphan}' in src/i18n.js is never referenced in src/`);
+    }
+  } else {
+    reportPass('Zero orphaned translation keys detected in src/i18n.js.');
   }
 }
 
@@ -277,10 +316,26 @@ console.log('\n5. Auditing Print PDF Artifacts & Templates...');
 const esPdfPath = path.join(projectRoot, 'public/ACVC_es.pdf');
 const enPdfPath = path.join(projectRoot, 'public/ACVC_en.pdf');
 
+function countPdfPagesFromBuffer(pdfPath) {
+  const buf = fs.readFileSync(pdfPath);
+  const content = buf.toString('latin1');
+  const matches = content.match(/\/Type\s*\/Page\b/g);
+  return matches ? matches.length : 0;
+}
+
 if (fs.existsSync(esPdfPath) && fs.existsSync(enPdfPath)) {
   const esStat = fs.statSync(esPdfPath);
   const enStat = fs.statSync(enPdfPath);
   reportPass(`Downloadable PDFs exist in public/ (ACVC_es.pdf: ${(esStat.size / 1024).toFixed(1)} KB, ACVC_en.pdf: ${(enStat.size / 1024).toFixed(1)} KB).`);
+
+  for (const [label, pdfFile] of [['ACVC_es.pdf', esPdfPath], ['ACVC_en.pdf', enPdfPath]]) {
+    const pageCount = countPdfPagesFromBuffer(pdfFile);
+    if (pageCount === 2) {
+      reportPass(`${label} strictly respects the 2-page budget (${pageCount} pages verified via PDF buffer).`);
+    } else {
+      reportFail(`${label} page count violation: expected strictly 2 pages, found ${pageCount} page(s).`);
+    }
+  }
 } else {
   reportFail('Missing downloadable PDF artifacts in public/ (run `npm run build:pdf`).');
 }
@@ -310,21 +365,25 @@ if (fs.existsSync(esPrintTemplate)) {
   reportFail('Missing print template in src/pages/print/[lang].astro');
 }
 
-// Helper getFiles closure
-function getFiles(dir, filterRegex) {
-  let results = [];
-  if (!fs.existsSync(dir)) return results;
-  const list = fs.readdirSync(dir, { withFileTypes: true });
-  for (const item of list) {
-    const fullPath = path.join(dir, item.name);
-    if (item.isDirectory()) {
-      if (item.name === 'node_modules' || item.name === '.git' || item.name === 'dist') continue;
-      results.push(...getFiles(fullPath, filterRegex));
-    } else if (filterRegex.test(item.name)) {
-      results.push(fullPath);
+// -----------------------------------------------------------------------------
+// 6. Optional Cross-Repo Ecosystem Check (anacatalina-mcp)
+// -----------------------------------------------------------------------------
+console.log('\n6. Checking Cross-Repo Ecosystem Synchronization (Optional)...');
+
+const mcpSyncScript = path.resolve(projectRoot, '../anacatalina-mcp/scripts/sync_mcp_data.py');
+if (fs.existsSync(mcpSyncScript)) {
+  if (args.includes('--check-mcp')) {
+    try {
+      execSync(`python "${mcpSyncScript}" --audit`, { stdio: 'inherit' });
+      reportPass('Downstream anacatalina-mcp synchronization audit passed.');
+    } catch {
+      reportWarn('Downstream anacatalina-mcp drift detected. Run `python ../anacatalina-mcp/scripts/sync_mcp_data.py --sync` in anacatalina-mcp.');
     }
+  } else {
+    reportPass('Sibling repository ../anacatalina-mcp detected. Run `python ../anacatalina-mcp/scripts/sync_mcp_data.py --audit` (or pass `--check-mcp`) to verify downstream MCP alignment.');
   }
-  return results;
+} else {
+  reportPass('Sibling repository ../anacatalina-mcp not present in parent directory (skipped in isolated/CI environment).');
 }
 
 // -----------------------------------------------------------------------------

@@ -10,6 +10,16 @@ const eduBsc = cvData.education.find(e => e.id === 'bsc');
 const pub = cvData.publications[0];
 
 export const translations = {
+  // Document Metadata
+  "meta.title": {
+    es: "Ana-Catalina Villalobos | Data Scientist, ML & AI Engineer",
+    en: "Ana-Catalina Villalobos | Data Scientist, ML & AI Engineer"
+  },
+  "meta.description": {
+    es: "CV y Portafolio Profesional de Ana-Catalina Villalobos Contardo, Ingeniera Civil, Data Scientist, Machine Learning & AI Engineer especialista en infraestructura agéntica (MCP), sistemas distribuidos, pipelines de datos en GCP y liderazgo técnico.",
+    en: "Professional CV and Portfolio of Ana-Catalina Villalobos Contardo, Civil Engineer, Data Scientist, Machine Learning & AI Engineer specialized in agentic infrastructure (MCP), distributed systems, GCP data pipelines, and technical leadership."
+  },
+
   // Navigation
   "nav.experiencia": {
     es: "Experiencia",
@@ -140,6 +150,7 @@ export const translations = {
   "skills.ai.8": { es: "Automatización CI/CD con IA", en: "AI-Powered CI/CD Automation" },
   "skills.ai.9": { es: "Model Context Protocol (MCP)", en: "Model Context Protocol (MCP)" },
   "skills.ai.10": { es: "Monitoreo de Modelos ML", en: "ML Model Monitoring" },
+  "skills.ai.11": { es: "Evaluación de Agentes (Evals)", en: "LLM & Agent Evals" },
 
   "skills.methodologies.title": {
     es: "Metodologías & Gestión de Producto",
@@ -171,13 +182,11 @@ export const translations = {
   "skills.lang.4": { es: "JavaScript", en: "JavaScript" },
   "skills.lang.5": { es: "TypeScript", en: "TypeScript" },
   "skills.lang.6": { es: "Java", en: "Java" },
-  "skills.lang.7": { es: "C# (.NET)", en: "C# (.NET)" },
 
   "skills.frontend.title": {
-    es: "Frontend, Mobile & Desarrollo Web",
-    en: "Frontend, Mobile & Web Development"
+    es: "Frontend & Desarrollo Web",
+    en: "Frontend & Web Development"
   },
-  "skills.frontend.1": { es: ".NET 9 (WPF / WinUI 3)", en: ".NET 9 (WPF / WinUI 3)" },
   "skills.frontend.2": { es: "FastHTML & HTMX", en: "FastHTML & HTMX" },
 
   "skills.ml.title": {
@@ -268,6 +277,38 @@ export const translations = {
   "aria.openMenu": {
     es: "Abrir menú de navegación",
     en: "Open navigation menu"
+  },
+  "aria.closeMenu": {
+    es: "Cerrar menú de navegación",
+    en: "Close navigation menu"
+  },
+  "aria.skillsLensGroup": {
+    es: "Filtrar habilidades por especialidad",
+    en: "Filter skills by specialty"
+  },
+  "aria.company.simpliroute": {
+    es: "Sitio web oficial de SimpliRoute",
+    en: "SimpliRoute official website"
+  },
+  "aria.company.fracttal1": {
+    es: "Sitio web oficial de Fracttal",
+    en: "Fracttal official website"
+  },
+  "aria.company.fracttal2": {
+    es: "Sitio web oficial de Fracttal",
+    en: "Fracttal official website"
+  },
+  "aria.company.fracttal3": {
+    es: "Sitio web oficial de Fracttal",
+    en: "Fracttal official website"
+  },
+  "aria.edu.civil": {
+    es: "Sitio web oficial de Universidad de Chile",
+    en: "Universidad de Chile official website"
+  },
+  "aria.edu.bsc": {
+    es: "Sitio web oficial de FCFM - Universidad de Chile",
+    en: "FCFM - Universidad de Chile official website"
   },
   "aria.email": {
     es: "Enviar correo a Ana-Catalina",

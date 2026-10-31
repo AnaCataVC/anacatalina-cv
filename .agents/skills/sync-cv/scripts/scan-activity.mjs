@@ -169,37 +169,81 @@ function checkAuthorshipAndActivity(repoPath, isWorkplace = false) {
 }
 
 /**
+ * Helper to find manifest files in root and up to maxDepth levels of subdirectories
+ */
+function findManifestFiles(baseDir, matcher, excludedDirs, maxDepth = 2, currentDepth = 0) {
+  const results = [];
+  if (!fs.existsSync(baseDir) || currentDepth > maxDepth) return results;
+
+  let entries = [];
+  try {
+    entries = fs.readdirSync(baseDir, { withFileTypes: true });
+  } catch {
+    return results;
+  }
+
+  for (const entry of entries) {
+    const fullPath = path.join(baseDir, entry.name);
+    if (entry.isDirectory()) {
+      if (excludedDirs.has(entry.name) || entry.name.startsWith('.')) continue;
+      if (currentDepth < maxDepth) {
+        results.push(...findManifestFiles(fullPath, matcher, excludedDirs, maxDepth, currentDepth + 1));
+      }
+    } else if (matcher(entry.name)) {
+      results.push(fullPath);
+    }
+  }
+  return results;
+}
+
+/**
  * Inspects package and project manifests to detect technologies
  */
 function detectTechStack(repoPath) {
   const stack = new Set();
 
-  // JavaScript / TypeScript / Node
-  const pkgJsonPath = path.join(repoPath, 'package.json');
-  if (fs.existsSync(pkgJsonPath)) {
+  // JavaScript / TypeScript / Node (root and up to 2 levels of subdirectories)
+  const jsExcluded = new Set(['node_modules', '.next', 'dist', '.git', '.venv', 'venv', 'releases']);
+  const pkgJsonFiles = findManifestFiles(repoPath, name => name === 'package.json', jsExcluded, 2);
+
+  for (const pkgJsonPath of pkgJsonFiles) {
     try {
       const pkg = JSON.parse(fs.readFileSync(pkgJsonPath, 'utf-8'));
       const allDeps = { ...pkg.dependencies, ...pkg.devDependencies };
       if (allDeps.astro) stack.add('Astro');
       if (allDeps.react) stack.add('React');
       if (allDeps.vue) stack.add('Vue');
+      if (allDeps.svelte) stack.add('Svelte');
       if (allDeps.tailwindcss) stack.add('Tailwind CSS');
       if (allDeps.typescript) stack.add('TypeScript');
       if (allDeps.vite) stack.add('Vite');
       if (allDeps.next) stack.add('Next.js');
       if (allDeps.express) stack.add('Express');
       if (allDeps.fastify) stack.add('Fastify');
+      if (allDeps['@dataform/core']) stack.add('Dataform');
+      if (allDeps.electron) stack.add('Electron');
+      if (allDeps['@modelcontextprotocol/sdk']) stack.add('MCP');
+      if (allDeps['@tauri-apps/api']) stack.add('Tauri');
     } catch {}
   }
 
-  // Python
-  const pyprojectPath = path.join(repoPath, 'pyproject.toml');
-  const reqsPath = path.join(repoPath, 'requirements.txt');
-  if (fs.existsSync(pyprojectPath) || fs.existsSync(reqsPath)) {
+  // Python (root and up to 2 levels of subdirectories)
+  const pyExcluded = new Set(['.venv', 'venv', 'node_modules', '.git', 'dist', 'releases', '.venv_ci']);
+  const pyManifestFiles = findManifestFiles(
+    repoPath,
+    name => name === 'pyproject.toml' || /^requirements.*\.txt$/i.test(name),
+    pyExcluded,
+    2
+  );
+
+  if (pyManifestFiles.length > 0) {
     stack.add('Python');
     let content = '';
-    if (fs.existsSync(pyprojectPath)) content += fs.readFileSync(pyprojectPath, 'utf-8') + '\n';
-    if (fs.existsSync(reqsPath)) content += fs.readFileSync(reqsPath, 'utf-8');
+    for (const file of pyManifestFiles) {
+      try {
+        content += fs.readFileSync(file, 'utf-8') + '\n';
+      } catch {}
+    }
 
     const lower = content.toLowerCase();
     if (lower.includes('fastapi')) stack.add('FastAPI');
@@ -211,6 +255,15 @@ function detectTechStack(repoPath) {
     if (lower.includes('pydantic')) stack.add('Pydantic');
     if (lower.includes('celery')) stack.add('Celery');
     if (lower.includes('sqlalchemy')) stack.add('SQLAlchemy');
+    if (lower.includes('sqlmodel')) stack.add('SQLModel');
+    if (lower.includes('python-fasthtml')) stack.add('FastHTML');
+    if (lower.includes('fastmcp') || /\bmcp\b/.test(lower)) stack.add('FastMCP / MCP');
+    if (lower.includes('langchain') || lower.includes('langgraph')) stack.add('LangChain / LangGraph');
+    if (lower.includes('apache-beam')) stack.add('Apache Beam / Dataflow');
+    if (lower.includes('google-cloud-bigquery')) stack.add('BigQuery');
+    if (lower.includes('google-cloud-pubsub')) stack.add('Pub/Sub');
+    if (lower.includes('redis')) stack.add('Redis');
+    if (lower.includes('apache-airflow')) stack.add('Airflow');
   }
 
   // Rust
@@ -232,7 +285,12 @@ function detectTechStack(repoPath) {
 
   // Android / Kotlin
   try {
-    if (fs.existsSync(path.join(repoPath, 'build.gradle')) || fs.existsSync(path.join(repoPath, 'build.gradle.kts')) || fs.existsSync(path.join(repoPath, 'settings.gradle'))) {
+    if (
+      fs.existsSync(path.join(repoPath, 'build.gradle')) ||
+      fs.existsSync(path.join(repoPath, 'build.gradle.kts')) ||
+      fs.existsSync(path.join(repoPath, 'settings.gradle')) ||
+      fs.existsSync(path.join(repoPath, 'settings.gradle.kts'))
+    ) {
       stack.add('Android / Kotlin');
     }
   } catch {}
