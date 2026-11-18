@@ -214,7 +214,7 @@ export const cvData: CVData = {
         es: 'Santiago, Chile',
         en: 'Santiago, Chile'
       },
-      badgeVariant: 'aqua',
+      badgeVariant: 'slate',
       bullets: [
         {
           es: '<strong class="text-slate-800 dark:text-slate-100 font-semibold">Liderazgo de equipo multidisciplinario de integraciones</strong> con personas en distintos países, enfocado en mentoría técnica, desarrollo profesional y un entorno colaborativo.',
@@ -310,7 +310,7 @@ export const cvData: CVData = {
         es: 'Santiago, Chile',
         en: 'Santiago, Chile'
       },
-      badgeVariant: 'violet',
+      badgeVariant: 'slate',
       bullets: [
         {
           es: 'Desarrollo desde cero de la herramienta de mantenimiento predictivo, utilizando análisis estadístico avanzado y modelos preliminares de Machine Learning.',

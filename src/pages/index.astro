@@ -121,14 +121,9 @@ const structuredData = {
             <span class="text-brand-violet dark:text-brand-violet-light">Ana-Catalina</span> <br> Villalobos Contardo<span class="text-brand-aqua hover:drop-shadow-[0_0_8px_rgba(46,230,229,0.8)] cursor-default transition-all duration-500 ease-out">.</span>
           </h1>
           
-          <div class="space-y-1.5">
-            <p data-i18n="hero.subtitle" class="text-lg sm:text-xl font-medium text-slate-600 dark:text-slate-300">
-              Data Scientist & Machine Learning Engineer
-            </p>
-            <p data-i18n="hero.pillars" class="text-xs sm:text-sm font-medium text-brand-violet dark:text-brand-violet-light tracking-wide">
-              IA Agéntica & MCP · Pipelines de Datos · Liderazgo Técnico
-            </p>
-          </div>
+          <p data-i18n="hero.subtitle" class="text-lg sm:text-xl font-medium text-slate-600 dark:text-slate-300">
+            Data Scientist & Machine Learning Engineer
+          </p>
 
           <!-- Interactive Profile Card / Medallion -->
           <div class="relative pt-2 group/avatar">
@@ -152,8 +147,12 @@ const structuredData = {
             </a>
           </div>
 
+          <p data-i18n="hero.pillars" class="pt-2 text-xs sm:text-sm font-medium text-brand-violet dark:text-brand-violet-light tracking-wide">
+            IA Agéntica & MCP · Pipelines de Datos · Liderazgo Técnico
+          </p>
+
           <!-- Action Buttons (Mobile) -->
-          <div class="flex md:hidden flex-wrap items-center justify-center gap-3 w-56 sm:w-64 pt-4">
+          <div class="flex md:hidden flex-wrap items-center justify-center gap-3 w-56 sm:w-64">
             <a href={`ACVC_es.pdf?v=${cvData.meta.lastUpdated}`} target="_blank" rel="noopener noreferrer" data-i18n="hero.downloadBtn" data-i18n-href="hero.cvUrl" class="touch-manipulation flex-1 min-w-[140px] inline-flex items-center justify-center px-6 py-3 rounded-2xl bg-gradient-to-r from-violet-600 to-brand-violet hover:from-violet-500 hover:to-brand-violet-light shadow-sm hover:shadow-[0_0_22px_rgba(139,92,246,0.45)] transition-all transform hover:-translate-y-0.5 text-white tracking-wide font-semibold text-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-purple focus-visible:ring-offset-2 dark:focus-visible:ring-offset-slate-900">
               Descargar CV
             </a>
